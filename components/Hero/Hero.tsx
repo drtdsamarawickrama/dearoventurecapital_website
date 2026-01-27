@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    image: "/Images/hero1.png",
+    image: "/images/hero1.png",
     title: "Fueling Tomorrow’s Innovators",
     subtitle:
       "We invest in visionary founders shaping the future of technology and business.",
@@ -13,7 +13,7 @@ const slides = [
     link: "#contact",
   },
   {
-    image: "/Images/slide.jpg",
+    image: "/images/slide.jpg",
     title: "Empowering Startups Globally",
     subtitle:
       "Strategic guidance, funding, and a global network to accelerate growth.",
