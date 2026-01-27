@@ -53,7 +53,7 @@ export default function Hero() {
               alt={slide.title}
               fill
               priority={index === 0}
-              className="hero-image"
+              className="hero-image "
             />
 
             {/* Overlay */}
@@ -63,6 +63,7 @@ export default function Hero() {
             <div className="content">
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
+             
             </div>
           </div>
         );
@@ -82,8 +83,8 @@ export default function Hero() {
       <style jsx>{`
         .hero {
           position: relative;
+          height: 120vh;
           width: 100%;
-          height: 100vh;
           overflow: hidden;
         }
 
@@ -148,6 +149,13 @@ export default function Hero() {
           opacity: 0.95;
         }
 
+       
+
+        .hero-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 30px rgba(13, 110, 253, 0.45);
+        }
+
         .dots {
           position: absolute;
           bottom: 28px;
@@ -184,41 +192,28 @@ export default function Hero() {
         }
 
         /* ===== MOBILE FIX ===== */
-        @media (max-width: 1024px) {
-          .hero {
-            height: 95vh;
-          }
-        }
-
         @media (max-width: 768px) {
           .hero {
-            height: 85vh;
+            height: 92vh;
           }
 
           .hero-image {
-            object-position: top center;
+            object-position: center top;
           }
 
           .content {
             text-align: center;
             align-items: center;
-            padding: 0 16px;
-            justify-content: center;
-          }
-
-          h1 {
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            padding-top: 80px;
           }
 
           p {
-            font-size: clamp(0.95rem, 3vw, 1.1rem);
             max-width: 100%;
           }
-        }
 
-        @media (max-width: 480px) {
-          .hero {
-            height: 75vh;
+          .hero-btn {
+            width: 100%;
+            text-align: center;
           }
         }
       `}</style>
