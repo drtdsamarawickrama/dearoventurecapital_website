@@ -38,7 +38,7 @@ export default function AboutSection() {
     },
     {
       title: "Peoples Excellency Awards 2024",
-      image: "/images/awards/Aw1.jpg",
+      image: "/images/awards/Aw23.jpg",
     },
     {
       title: "Iconic Awards Bangkok 2025",
