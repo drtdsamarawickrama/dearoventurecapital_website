@@ -6,7 +6,7 @@ import SectorsSection from "@/components/Sectors/SectorsSection";
 
 
 import ContactSection from "@/components/Contact/ContactSection";
-import CommunitySection from "@/components/Community/CommunitySection";
+
 import NewsSection from "@/components/News/NewsSection";
 
 
@@ -20,7 +20,7 @@ export default function Home() {
       <SectorsSection />
       {/* <AwardsSection /> */}
       {/* <TestimonialsSection /> */}
-      <CommunitySection />
+     
       <NewsSection/>
       <ContactSection />
     </>

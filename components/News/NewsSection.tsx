@@ -32,7 +32,7 @@ export default function HomeNewsSection() {
 
             {/* BUTTON */}
             <Link
-              href="/news"
+              href="/community"
               className="btn btn-primary btn-lg px-4"
             >
               View All News →

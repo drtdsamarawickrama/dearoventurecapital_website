@@ -50,10 +50,10 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { name: "Subsidiaries", href: "/sectors" },
-    { name: "Investor Relations", href: "/investors" },
+    { name: "Subsidiaries", href: "/sectors" }, 
     { name: "Community & Environment", href: "/community" },
-    { name: "News", href: "/news" },
+    { name: "Investor Relations", href: "/investors" },
+   
     { name: "Contact", href: "/contact" },
   ];
 
@@ -62,7 +62,7 @@ export default function Navbar() {
       <div className="container">
         {/* Logo */}
         <Link href="/" className="navbar-brand" onClick={closeMenu}>
-          <Image src="/images/venturelogo.jpeg" alt="Dearo Logo" width={140} height={44} />
+          <Image src="/images/venturelogo.jpeg" alt="Dearo Logo" width={140} height={55} />
         </Link>
 
         {/* Hamburger */}
