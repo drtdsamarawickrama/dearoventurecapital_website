@@ -11,7 +11,7 @@ const sliderImages = [
 
 export default function CommunityPage() {
   return (
-    <main className="bg-white text-dark">
+    <main className="bg-white text-dark"> 
       {/* Hero Section */}
       <section
         className="hero position-relative d-flex align-items-center justify-content-center text-center"
@@ -52,6 +52,7 @@ export default function CommunityPage() {
             <button
               className="carousel-control-prev"
               type="button"
+              
               data-bs-target="#communityCarousel"
               data-bs-slide="prev"
             >

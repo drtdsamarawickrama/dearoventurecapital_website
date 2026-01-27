@@ -39,17 +39,21 @@ const directors = [
     name: "Mr. Mohomed Nifri",
     role: "Manager Branch Operation and Development",
     image: "/images/management/nifri.jpg",
+  },{
+    name: "Mr. T. Maventhan ",
+    role: "Aissistant Manager - Investment North & East Region",
+    image: "/images/management/mawe.jpg",
   }, {
     name: "Mr. Chathura Ubesekara",
     role: "Senior Manager Down South Region",
     image: "/images/management/chathura.jpeg",
   },  {
     name: "Mr. Deepal Piris",
-    role: "Finance Head",
+    role: "Head of Finance",
     image: "/images/management/deepal.jpg",
   }, {
     name: "Mrs. D.M.N.N Dassanayaka",
-    role: "HR Head",
+    role: "Head of HR",
     image: "/images/management/D.M.N.N Dassanayaka.jpeg",
   },
 ];

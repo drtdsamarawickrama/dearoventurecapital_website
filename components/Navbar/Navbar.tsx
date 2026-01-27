@@ -52,7 +52,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Subsidiaries", href: "/sectors" },
     { name: "Investor Relations", href: "/investors" },
-    // { name: "Community & Environment", href: "/community" },
+    { name: "Community & Environment", href: "/community" },
     { name: "News", href: "/news" },
     { name: "Contact", href: "/contact" },
   ];
