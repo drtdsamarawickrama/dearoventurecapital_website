@@ -21,7 +21,7 @@ const directors = [
   {
     name: "Mr. Arun Kumar",
     role: "Director / Chief Operating Officer",
-    image: "/images/directors/arun.jpg",
+    image: "/images/directors/arun1.jpg",
   },
   {
     name: "Mr. Tharindu Dananjaya",
