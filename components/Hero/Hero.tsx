@@ -21,7 +21,7 @@ const slides = [
     link: "/portfolio",
   },
   {
-    image: "/Images/hero3.png",
+    image: "/images/hero3.png",
     title: "Shaping the Future of Industries",
     subtitle:
       "Backing innovation across technology, agriculture, and finance.",
