@@ -13,13 +13,13 @@ export default function AboutSection() {
       year: "2023",
       title: "Strategic Expansion & Branch Growth",
       description:
-        "Launch of Dearo Agri and Dearo Engineering, expanding Dearo’s operations into agricultural finance and engineering-led project facilitation. During the same year, Dearo expanded its physical presence to 9 branches across Sri Lanka.",
+        "Launch of Dearo Agri and Dearo Engineering, expanding Dearo’s operations into agricultural and engineering-led project facilitation. During the same year, Dearo expanded its physical presence to 9 branches across Sri Lanka.",
     },
     {
       year: "2024",
       title: "Launch of Dearo Education",
       description:
-        "Introduction of Dearo Education, extending Dearo’s impact beyond finance by supporting education initiatives and learning accessibility.",
+        "Introduction of Dearo Education, extending Dearo’s impact beyond  supporting education initiatives and learning accessibility.",
     },
     {
       year: "2025",
@@ -68,8 +68,7 @@ export default function AboutSection() {
               No. 07 of 2007 and officially registered on 1st September 2022.
             </p>
             <p className="text-muted text-dark">
-              With disciplined risk management, strong governance, and
-              insurance-backed protection, Dearo empowers businesses and
+              With disciplined risk management, strong governance,  Dearo empowers businesses and
               communities across Sri Lanka.
             </p>
           </div>
@@ -111,7 +110,7 @@ export default function AboutSection() {
     style={{ objectFit: "contain" }}
   />
 </div>
-<br /> <br /> <br/>
+<br />
 
 
       

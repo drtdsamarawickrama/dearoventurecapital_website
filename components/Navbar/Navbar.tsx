@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-// DropdownArrow component
 function DropdownArrow({ open }: { open?: boolean }) {
   return (
     <span
@@ -50,19 +49,25 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { name: "Subsidiaries", href: "/sectors" }, 
+    { name: "About", href: "/about" },
+    { name: "Subsidiaries", href: "/sectors" },
     { name: "Community & Environment", href: "/community" },
     { name: "Investor Relations", href: "/investors" },
-   
     { name: "Contact", href: "/contact" },
   ];
 
   return (
     <nav className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""}`}>
-      <div className="container">
+      <div className="container-fluid">
         {/* Logo */}
         <Link href="/" className="navbar-brand" onClick={closeMenu}>
-          <Image src="/images/venturelogo.jpeg" alt="Dearo Logo" width={140} height={55} />
+          <Image
+            src="/images/venturelogo.jpeg"
+            alt="Dearo Logo"
+            width={155}
+            height={55}
+            className="logo"
+          />
         </Link>
 
         {/* Hamburger */}
@@ -70,16 +75,9 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Nav Items */}
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-          <ul className="navbar-nav nav-menu ms-auto">
-
-            {/* About FIRST */}
-            <li className="nav-item">
-              <Link href="/about" className="nav-link" onClick={closeMenu}>
-                About
-              </Link>
-            </li>
-
+          <ul className="navbar-nav ms-auto align-items-center nav-menu">
             {/* Leadership Dropdown */}
             <li
               className={`nav-item leadership-wrapper ${leadershipOpen ? "open" : ""}`}
@@ -117,6 +115,12 @@ export default function Navbar() {
       </div>
 
       <style jsx>{`
+        /* Logo */
+        .logo {
+          display: block;
+        }
+
+        /* Navbar */
         .premium-nav {
           position: sticky;
           top: 0;
@@ -125,20 +129,27 @@ export default function Navbar() {
           transition: all 0.3s ease;
           padding: 10px 0;
         }
+
         .premium-nav.scrolled {
-          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-          padding: 6px 0;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
 
+        /* Nav menu spacing */
         .nav-menu {
           display: flex;
-          gap: 22px;
-          align-items: center;
+          gap: 30px;
         }
 
-        /* NAV LINK STYLES SAME FOR ALL */
+        @media (max-width: 991px) {
+          .nav-menu {
+            flex-direction: column;
+            gap: 20px;
+          }
+        }
+
+        /* Nav links professional style */
         .nav-link {
-          font-size: 0.78rem;
+          font-size: 0.85rem;
           font-weight: 600;
           text-transform: uppercase;
           color: #111;
@@ -149,21 +160,25 @@ export default function Navbar() {
           position: relative;
           display: flex;
           align-items: center;
-          transition: color 0.25s ease;
+          transition: all 0.3s ease;
         }
-        .nav-link:hover {
-          color: #0d6efd;
-        }
+
+        /* Smooth underline animation */
         .nav-link::after {
           content: "";
           position: absolute;
           left: 0;
-          bottom: -5px;
+          bottom: -4px;
           width: 0%;
           height: 2px;
-          background: linear-gradient(90deg,#0d6efd,#5aa2ff);
+          background: linear-gradient(90deg, #0d6efd, #5aa2ff);
           transition: width 0.3s ease;
         }
+
+        .nav-link:hover {
+          color: #0d6efd;
+        }
+
         .nav-link:hover::after {
           width: 100%;
         }
@@ -172,10 +187,12 @@ export default function Navbar() {
         .leadership-wrapper {
           position: relative;
         }
+
         .leadership-btn-text {
           justify-content: space-between;
           width: 100%;
         }
+
         .leadership-menu {
           position: absolute;
           top: 100%;
@@ -183,14 +200,15 @@ export default function Navbar() {
           min-width: 220px;
           opacity: 0;
           visibility: hidden;
-          transform: translateY(-6px);
+          transform: translateY(-10px);
           transition: all 0.25s ease;
           background: #fff;
           border-radius: 14px;
-          box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+          box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
           padding: 8px 0;
           z-index: 99;
         }
+
         .leadership-wrapper.open .leadership-menu {
           opacity: 1;
           visibility: visible;
@@ -198,19 +216,20 @@ export default function Navbar() {
         }
 
         .dropdown-item {
-          font-size: 0.75rem;
+          font-size: 0.78rem;
           font-weight: 600;
           text-transform: uppercase;
           color: #111;
           padding: 12px 18px;
-          transition: all 0.25s ease;
+          transition: all 0.25s ease, background 0.3s ease;
         }
+
         .dropdown-item:hover {
-          background: linear-gradient(90deg,#0d6efd,#5aa2ff);
+          background: linear-gradient(90deg, #0d6efd, #5aa2ff);
           color: #fff;
         }
 
-        @media(max-width: 991px){
+        @media (max-width: 991px) {
           .leadership-menu {
             position: static;
             opacity: 1 !important;
