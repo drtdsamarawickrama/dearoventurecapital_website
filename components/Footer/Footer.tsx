@@ -11,66 +11,112 @@ export default function Footer() {
     { name: "News", href: "/news" },
   ];
 
+  const subsidiaries = [
+    "Agriculture & Plantation",
+    "Engineering & Construction",
+    "Education & Training",
+    "Dearo Lime",
+    "DCCI – From Our Waters to the World",
+    "DEARO IT SOLUTION",
+  ];
+
   return (
-    <footer className="bg-dark text-white pt-5 pb-3 position-relative overflow-hidden">
+    <footer className="footer">
       <div className="container">
         <div className="row g-4">
+
           {/* Company Info */}
-          <div className="col-md-4">
-            <h5 className="fw-bold mb-3">Dearo Investment Limited</h5>
-            <p>8th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo 01</p>
-            <p>Phone: <a href="tel:+94743908274" className="text-white">011 478 2400</a></p>
-            <p>Email: <a href="mailto:info@dearoinvestment.com" className="text-white">info@dearoinvestment.com</a></p>
+          <div className="col-md-6 col-lg-3 footer-col">
+            <h5 className="footer-title">Dearo Investment Limited</h5>
+            <p>
+              8th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo 01
+            </p>
+            <p>
+              Phone:{" "}
+              <a href="tel:+94743908274" className="footer-link">
+                011 478 2400
+              </a>
+            </p>
+            <p>
+              Email:{" "}
+              <a href="mailto:info@dearoinvestment.com" className="footer-link">
+                info@dearoinvestment.com
+              </a>
+            </p>
           </div>
 
           {/* Quick Links */}
-          <div className="col-md-4">
-            <h5 className="fw-bold mb-3">Quick Links</h5>
-            <ul className="list-unstyled footer-links">
+          <div className="col-md-6 col-lg-3 footer-col">
+            <h5 className="footer-title">Quick Links</h5>
+            <ul className="footer-links">
               {quickLinks.map((link, i) => (
                 <li key={i} className="quick-link-item">
-                  <Link href={link.href} className="link-text">
-                    {link.name}
+                  <Link href={link.href} className="quick-link">
+                    <span className="quick-link-inner">{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Social Links */}
-          <div className="col-md-4">
-            <h5 className="fw-bold mb-3">Follow Us</h5>
-            <div className="d-flex gap-3 social-icons">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="facebook">
-                <Facebook size={24} />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="instagram">
-                <Instagram size={24} />
-              </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="youtube">
-                <Youtube size={24} />
-              </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="linkedin">
-                <Linkedin size={24} />
-              </a>
+          {/* Subsidiaries */}
+          <div className="col-md-6 col-lg-3 footer-col">
+            <h5 className="footer-title">Subsidiaries</h5>
+            <ul className="footer-links">
+              {subsidiaries.map((item, i) => (
+                <li key={i} className="quick-link-item">
+                  <span className="subsidiary-text">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div className="col-md-6 col-lg-3 footer-col">
+            <h5 className="footer-title">Follow Us</h5>
+            <div className="social-icons">
+              <a href="https://www.facebook.com/dearoinvestmentlimited/" target="_blank" className="facebook"><Facebook size={22} /></a>
+              <a href="https://www.instagram.com/dearoinvestmentlimited/" target="_blank" className="instagram"><Instagram size={22} /></a>
+              <a href="https://www.youtube.com/@DearoInvestmentlimited" target="_blank" className="youtube"><Youtube size={22} /></a>
+              <a href="https://www.linkedin.com/company/dearoinvestmentlimited" target="_blank" className="linkedin"><Linkedin size={22} /></a>
             </div>
           </div>
+
         </div>
 
-        <hr className="my-4 border-secondary" />
+        <hr />
 
-        <div className="text-center small">
+        <div className="copyright">
           © 2026 Dearo Investment Limited — All Rights Reserved
         </div>
       </div>
 
+      {/* ================= STYLES ================= */}
       <style jsx>{`
-        footer {
+        .footer {
           background: #0a0a0a;
+          color: #d1d5db;
+          padding: 4rem 0 2rem;
         }
 
-        /* Quick Links - Premium Animation */
+        .footer-title {
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: #ffffff;
+        }
+
+        p {
+          font-size: 0.95rem;
+          margin-bottom: 0.6rem;
+        }
+
+        .footer-link {
+          color: #ffffff;
+          text-decoration: none;
+        }
+
         .footer-links {
+          list-style: none;
           padding: 0;
           margin: 0;
         }
@@ -78,71 +124,86 @@ export default function Footer() {
         .quick-link-item {
           margin-bottom: 12px;
           opacity: 0;
-          transform: translateX(-20px);
-          animation: slideIn 0.6s forwards;
+          transform: translateY(10px);
+          animation: fadeUp 0.6s ease forwards;
         }
 
-        .quick-link-item:nth-child(1) { animation-delay: 0.1s; }
-        .quick-link-item:nth-child(2) { animation-delay: 0.2s; }
-        .quick-link-item:nth-child(3) { animation-delay: 0.3s; }
-        .quick-link-item:nth-child(4) { animation-delay: 0.4s; }
-
-        .link-text {
-          position: relative;
+        .quick-link {
+          color: #e5e7eb;
           text-decoration: none;
-          color: #ffffff;
-          font-weight: 500;
-          transition: color 0.3s ease;
+          font-size: 0.95rem;
+          position: relative;
+          display: inline-block;
         }
 
-        /* Gradient underline hover effect */
-        .link-text::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -3px;
-          width: 0%;
-          height: 2px;
-          background: linear-gradient(90deg, #0d6efd, #5aa2ff);
-          transition: width 0.35s ease;
+        .quick-link-inner {
+          transition: transform 0.35s ease;
         }
 
-        .link-text:hover {
-          color: #0d6efd;
+        .quick-link:hover .quick-link-inner {
+          transform: translateX(6px);
         }
 
-        .link-text:hover::after {
-          width: 100%;
+        .subsidiary-text {
+          font-size: 0.9rem;
+          color: #9ca3af;
         }
 
-        @keyframes slideIn {
+        @keyframes fadeUp {
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
         }
 
-        /* Social Icons */
-        .social-icons a {
-          transition: transform 0.3s ease, filter 0.3s ease;
+        .social-icons {
+          display: flex;
+          gap: 16px;
         }
-        .social-icons a.facebook { color: #1877F2; }
-        .social-icons a.instagram { color: #E1306C; }
-        .social-icons a.youtube { color: #FF0000; }
-        .social-icons a.linkedin { color: #0A66C2; }
+
+        .facebook { color: #1877f2; }
+        .instagram { color: #e1306c; }
+        .youtube { color: #ff0000; }
+        .linkedin { color: #0a66c2; }
+
         .social-icons a:hover {
           transform: scale(1.2);
           filter: brightness(1.2);
         }
 
         hr {
+          border-color: #374151;
+          margin: 2rem 0 1.5rem;
           opacity: 0.3;
         }
 
+        .copyright {
+          text-align: center;
+          font-size: 0.85rem;
+          color: #9ca3af;
+        }
+
+        /* ================= MOBILE CENTER ================= */
         @media (max-width: 768px) {
-          .social-icons { justify-content: start; }
+          .footer {
+            padding: 3rem 0 1.5rem;
+          }
+
+          .footer-col {
+            text-align: center;
+          }
+
+          .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .social-icons {
+            justify-content: center;
+          }
         }
       `}</style>
     </footer>
   );
-}
+}  

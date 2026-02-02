@@ -19,7 +19,7 @@ export default function AboutSection() {
       year: "2024",
       title: "Launch of Dearo Education",
       description:
-        "Introduction of Dearo Education, extending Dearo’s impact beyond  supporting education initiatives and learning accessibility.",
+        "Introduction of Dearo Education, extending Dearo’s impact beyond supporting education initiatives and learning accessibility.",
     },
     {
       year: "2025",
@@ -29,47 +29,30 @@ export default function AboutSection() {
     },
   ];
 
- 
-
   const awards = [
-    {
-      title: "Iconic Awards 2024",
-      image: "/images/awards/AW.jpg",
-    },
-    {
-      title: "Peoples Excellency Awards 2024",
-      image: "/images/awards/AW23.jpg",
-    },
-    {
-      title: "Iconic Awards Bangkok 2025",
-      image: "/images/awards/AW2.jpg",
-    }, {
-      title: "Asia Miracle Awards 2024",
-      image: "/images/awards/AW3.jpg",
-    }, {
-      title: "BWIO USAAwards 2025",
-      image: "/images/awards/AW4.jpg",
-    }, {
-      title: "Best SME Financing Initiative",
-      image: "/images/awards/AW5.jpg",
-    },
+    { title: "Iconic Awards 2024", image: "/images/awards/AW.jpg" },
+    { title: "Peoples Excellency Awards 2024", image: "/images/awards/AW23.jpg" },
+    { title: "Iconic Awards Bangkok 2025", image: "/images/awards/AW2.jpg" },
+    { title: "Asia Miracle Awards 2024", image: "/images/awards/AW3.jpg" },
+    { title: "BWIO USA Awards 2025", image: "/images/awards/AW4.jpg" },
+    { title: "Best SME Financing Initiative", image: "/images/awards/AW5.jpg" },
   ];
 
   return (
     <section id="about" className="py-5 bg-light">
       <div className="container">
 
-        {/* ================= ABOUT OVERVIEW ================= */}
+        {/* ===== ABOUT OVERVIEW ===== */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6">
             <h2 className="fw-bold mb-3 text-black">About Our Company</h2>
-            <p className="text-muted text-dark">
+            <p className="text-dark">
               Dearo Investment Limited was incorporated under the Companies Act
               No. 07 of 2007 and officially registered on 1st September 2022.
             </p>
-            <p className="text-muted text-dark">
-              With disciplined risk management, strong governance,  Dearo empowers businesses and
-              communities across Sri Lanka.
+            <p className="text-dark">
+              With disciplined risk management and strong governance, Dearo
+              empowers businesses and communities across Sri Lanka.
             </p>
           </div>
 
@@ -79,57 +62,54 @@ export default function AboutSection() {
               alt="About Dearo"
               width={600}
               height={420}
-              className="img-fluid rounded-4 shadow"
+              className="img-fluid rounded-4 shadow-sm"
             />
           </div>
         </div>
 
-        {/* ================= KEY MILESTONES ================= */}
+        {/* ===== KEY MILESTONES ===== */}
         <div className="row mb-5">
-          <div className="col-12">
-            <h3 className="fw-bold mb-3 text-black">Key Milestones</h3>
+          <div className="col-12 mb-3">
+            <h3 className="fw-bold text-black">Key Milestones</h3>
           </div>
 
           {milestones.map((item, i) => (
             <div key={i} className="col-md-6 mb-4">
-              <div className="milestone-card p-4 bg-white rounded-4 h-100">
-                <h5 className="fw-bold text-black">{item.year}</h5>
+              <div className="milestone-card h-100">
+                <h5>{item.year}</h5>
                 <h6 className="fw-semibold text-black">{item.title}</h6>
-                <p className="text-muted mb-0 text-dark">{item.description}</p>
+                <p className="mb-0 text-dark">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-       <div className="position-relative w-100 bg-light" style={{ height: "90vh" }}>
-  <Image
-    src="/images/directors/leader1.jpg"
-    alt="About Dearo"
-    fill
-    priority
-    style={{ objectFit: "contain" }}
-  />
-</div>
-<br />
+        {/* ===== LEADERSHIP IMAGE ===== */}
+        <div className="leader-section mb-5">
+          <div className="leader-image-wrapper">
+            <Image
+              src="/images/directors/leader1.jpg"
+              alt="Leadership"
+              fill
+              priority
+              className="leader-image"
+            />
+          </div>
+        </div>
 
-
-      
-
- 
-
-        {/* ================= AWARDS ================= */}
+        {/* ===== AWARDS ===== */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="fw-bold  text-black">Awards & Recognition</h3>
-            <p className="text-muted text-center text-black">
+            <h3 className="fw-bold text-black">Awards & Recognition</h3>
+            <p className="text-muted">
               Recognition of excellence and leadership
             </p>
           </div>
 
           {awards.map((award, i) => (
             <div key={i} className="col-md-4 mb-4">
-              <div className="award-card text-center p-4 h-100">
-                <div className="award-icon mx-auto mb-3">
+              <div className="award-card h-100">
+                <div className="award-icon">
                   <Image
                     src={award.image}
                     alt={award.title}
@@ -145,64 +125,137 @@ export default function AboutSection() {
 
       </div>
 
-      {/* ================= STYLES ================= */}
       <style jsx>{`
-        .milestone-card {
-          border-left: 4px solid #0d6efd;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        }
+  /* ================= TYPOGRAPHY ================= */
+  p {
+    line-height: 1.7;
+    color: #374151;
+    font-size: 1rem;
+  }
 
-        .director-card {
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-        }
+  h2, h3 {
+    line-height: 1.3;
+  }
 
-        .director-card:hover {
-          transform: translateY(-8px);
-        }
+  /* ================= MILESTONES ================= */
+  .milestone-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    border-left: 4px solid #1e40af;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    height: 100%;
+  }
 
-        .director-img {
-          position: relative;
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          overflow: hidden;
-        }
+  .milestone-card h5 {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: #1e40af;
+    margin-bottom: 6px;
+  }
 
-        .director-img :global(img) {
-          object-fit: cover;
-        }
+  /* ================= LEADERSHIP IMAGE ================= */
+  .leader-section {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
 
-        .award-card {
-          background: white;
-          border-radius: 18px;
-          border: 1px solid #e9ecef;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-          transition: all 0.35s ease;
-        }
+  .leader-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 560px;
+  }
 
-        .award-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
+  .leader-image {
+    object-fit: cover;
+    object-position: top center;
+    filter: contrast(1.05) brightness(0.95);
+  }
 
-        .award-icon {
-          position: relative;
-          width: 130px;
-          height: 130px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #0C0C0B, #f1f1f1);
-          box-shadow: inset 0 0 0 2px #d4af37;
-          overflow: hidden;
-        }
+  .leader-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.35)
+    );
+    pointer-events: none;
+  }
 
-        .award-img {
-          object-fit: contain;
-          padding: 14px;
-        }
-      `}</style>
+  /* ================= AWARDS ================= */
+  .award-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+  }
+
+  .award-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .award-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 16px;
+    position: relative;
+  }
+
+  .award-img {
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  /* ================= RESPONSIVE BREAKPOINTS ================= */
+
+  /* Tablets */
+  @media (max-width: 992px) {
+    .leader-image-wrapper {
+      height: 550px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 576px) {
+    section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .leader-image-wrapper {
+      height: 260px;
+    }
+
+    .milestone-card {
+      padding: 20px;
+    }
+
+    .award-icon {
+      width: 90px;
+      height: 90px;
+    }
+  }
+`}</style>
     </section>
   );
 }
