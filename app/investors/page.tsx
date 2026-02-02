@@ -105,7 +105,7 @@ export default function InvestorPage() {
                   <h5 className="card-title">Robust Risk Management</h5>
                   <p className="card-text">
                     Advanced credit assessment, collateral-backed lending, and portfolio insurance strategies safeguard capital and minimize exposure.
-                  </p>
+                    </p>
                 </div>
               </div>
             </div>
