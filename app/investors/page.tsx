@@ -6,145 +6,133 @@ export default function InvestorPage() {
   return (
     <main className="bg-light text-dark">
 
-      {/* Hero Section */}
-      <section className="bg-primary text-white text-center py-5">
-        <div className="container">
-          <h1 className="display-5 fw-bold">Financial Reports & Investor Opportunities</h1>
-          <p className="lead">Transparency and growth you can trust with Dearo Investment Limited</p>
+      {/* Hero Banner Section */}
+      <section
+        className="position-relative text-white text-center"
+        style={{ height: "70vh" }}
+      >
+        <Image
+          src="/images/inin.png"
+          alt="Dearo Investment Investors"
+          fill
+          priority
+          className="object-fit-cover"
+        />
+
+        <div className="overlay-dark" />
+
+        <div className="position-relative h-100 d-flex align-items-center justify-content-center">
+          <div className="container">
+            <h1 className="display-5 fw-bold">
+              Financial Reports & Investor Opportunities
+            </h1>
+            <p className="lead">
+              Transparency and growth you can trust with Dearo Investment Limited
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Financial Reports Section */}
+      {/* Financial Reports */}
       <section className="py-5">
         <div className="container">
           <h2 className="mb-4 text-center">Financial Reports</h2>
           <p className="text-center mb-5">
-            At Dearo Investment Limited, we believe in complete financial transparency. Our financial reports provide a clear view of our performance, risk management practices, and growth strategy—ensuring investors and stakeholders have the insights they need to make informed decisions.
+            At Dearo Investment Limited, we believe in complete financial transparency.
+            Our reports provide a clear view of performance, risk, and strategy.
           </p>
 
           <div className="row g-4">
-            {/* Annual & Quarterly Reports */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Annual & Quarterly Statements</h5>
-                  <p className="card-text">
-                    Balance sheets, income statements, and cash flow statements prepared under international accounting standards.
-                  </p>
+            {[
+              {
+                title: "Annual & Quarterly Statements",
+                text: "Balance sheets, income statements, and cash flow reports under international standards.",
+              },
+              {
+                title: "Performance Highlights",
+                text: "Key metrics, growth trends, and profitability indicators.",
+              },
+              {
+                title: "Risk & Compliance Overview",
+                text: "Credit, market, and operational risk with mitigation strategies.",
+              },
+              {
+                title: "Investment & Portfolio Reports",
+                text: "Portfolio performance, sector exposure, and ESG impact.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="col-md-6 col-lg-3 d-flex">
+                <div
+                  className="glass-card fade-up d-flex"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <div className="card-body d-flex flex-column justify-content-center text-center">
+                    <h5 className="card-title">{item.title}</h5>
+                    <p className="card-text">{item.text}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Performance Highlights */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Performance Highlights</h5>
-                  <p className="card-text">
-                    Key metrics, growth trends, and financial ratios reflecting operational efficiency and profitability.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Risk & Compliance */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Risk & Compliance Overview</h5>
-                  <p className="card-text">
-                    Credit, market, and operational risk insights with mitigation strategies and regulatory compliance.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Investment & Portfolio Reports */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Investment & Portfolio Reports</h5>
-                  <p className="card-text">
-                    Analysis of lending portfolios, sector exposure, and ESG impact outcomes.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <hr className="my-5"/>
+      <hr className="my-5" />
 
-      {/* Investor Invitation Section */}
-      <section className="py-5 bg-secondary text-white">
+      {/* Investor Invitation */}
+      <section className="py-5 investor-bg text-white">
         <div className="container">
           <h2 className="text-center mb-4">Investor Invitation</h2>
           <p className="text-center mb-5">
-            Partner With a High-Growth, Impact-Driven Financial Institution. Dearo Investment Limited welcomes foreign investors, institutional partners, and strategic stakeholders to participate in a fast-growing non-bank financial services institution in Sri Lanka and beyond.
+            Partner with a high-growth, impact-driven financial institution operating
+            in Sri Lanka and emerging global markets.
           </p>
 
           <div className="row g-4">
-            {/* Attractive Returns */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 bg-white text-dark shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Attractive & Predictable Returns</h5>
-                  <p className="card-text">
-                    Structured investment models delivering competitive and consistent returns, supported by transparent reporting aligned with international standards.
-                  </p>
+            {[
+              {
+                title: "Attractive & Predictable Returns",
+                text: "Structured investment models with transparent reporting.",
+              },
+              {
+                title: "Robust Risk Management",
+                text: "Collateral-backed lending and advanced credit controls.",
+              },
+              {
+                title: "Scalable Growth Strategy",
+                text: "Expansion across Sri Lanka and international markets.",
+              },
+              {
+                title: "Impact-Driven Investing",
+                text: "Strong ESG focus supporting SMEs and communities.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="col-md-6 col-lg-3 d-flex">
+                <div
+                  className="glass-card dark fade-up d-flex"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <div className="card-body d-flex flex-column justify-content-center text-center">
+                    <h5 className="card-title text-white">{item.title}</h5>
+                    <p className="card-text text-light">{item.text}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Risk Management */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 bg-white text-dark shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Robust Risk Management</h5>
-                  <p className="card-text">
-                    Advanced credit assessment, collateral-backed lending, and portfolio insurance strategies safeguard capital and minimize exposure.
-                    </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Scalable Growth */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 bg-white text-dark shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Scalable Growth Strategy</h5>
-                  <p className="card-text">
-                    Expansion into 25+ branches and international markets including Kenya and the Philippines, powered by digital transformation.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Impact-Driven Investing */}
-            <div className="col-md-6 col-lg-3">
-              <div className="card h-100 bg-white text-dark shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Impact-Driven Investing</h5>
-                  <p className="card-text">
-                    Focus on SMEs, agriculture, and underserved communities, delivering measurable financial, social, and ESG impact.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-5 text-center">
         <div className="container">
           <h3 className="mb-4">Ready to Partner With Dearo?</h3>
           <p className="mb-4">
-            Join us in driving sustainable growth and delivering impactful returns.
+            Join us in driving sustainable growth and impactful returns.
           </p>
-          <a href="/contact" className="btn btn-primary btn-lg">Contact Us</a>
+          <a href="/contact" className="btn btn-primary btn-lg">
+            Contact Us
+          </a>
         </div>
       </section>
 
