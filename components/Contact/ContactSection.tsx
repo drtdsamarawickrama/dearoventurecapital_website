@@ -18,20 +18,15 @@ export default function ContactSection() {
     phone: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const [loading, setLoading] = useState(false);
-
-  // Handle input changes
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Handle form submit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
+    setStatus("loading");
 
     try {
       const res = await fetch("/api/investor-message", {
@@ -41,23 +36,14 @@ export default function ContactSection() {
       });
 
       if (res.ok) {
-        alert("Message sent successfully!");
-        setForm({
-          name: "",
-          role: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
+        setStatus("success");
+        setForm({ name: "", role: "", email: "", phone: "", message: "" });
       } else {
-        const data = await res.json();
-        alert("Error: " + data.error);
+        setStatus("error");
       }
     } catch (err) {
       console.error(err);
-      alert("Server error. Please try again later.");
-    } finally {
-      setLoading(false);
+      setStatus("error");
     }
   };
 
@@ -75,24 +61,18 @@ export default function ContactSection() {
               <ul className="list-unstyled">
                 <li className="mb-3">
                   <strong>Email:</strong>
-                  <br />
-                  info@dearoventurecapital.lk
+                  <br /> info@dearoventurecapital.lk
                 </li>
                 <li className="mb-3">
                   <strong>Phone:</strong>
-                  <br />
-                  Hotline: 011 478 2400
-                  <br />
-                  General: +94 74 390 8274
-                  <br />
-                  Treasury: +94 74 987 6543
-                  <br />
-                  Financing: +94 74 390 8274
+                  <br /> Hotline: 011 478 2400
+                  <br /> General: +94 74 390 8274
+                  <br /> Treasury: +94 74 987 6543
+                  <br /> Financing: +94 74 390 8274
                 </li>
                 <li>
                   <strong>Office:</strong>
-                  <br />
-                  8th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo
+                  <br /> 8th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo
                   01
                 </li>
               </ul>
@@ -173,9 +153,15 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     className="btn btn-primary btn-lg w-100 rounded-pill"
-                    disabled={loading}
+                    disabled={status === "loading"}
                   >
-                    {loading ? "Sending..." : "Submit Message"}
+                    {status === "loading"
+                      ? "Sending..."
+                      : status === "success"
+                      ? "Sent ✅"
+                      : status === "error"
+                      ? "Error ❌"
+                      : "Submit Message"}
                   </button>
                 </div>
               </div>
