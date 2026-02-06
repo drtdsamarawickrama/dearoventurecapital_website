@@ -84,18 +84,7 @@ export default function AboutSection() {
           ))}
         </div>
 
-        {/* ===== LEADERSHIP IMAGE ===== */}
-        <div className="leader-section mb-5">
-          <div className="leader-image-wrapper">
-            <Image
-              src="/images/directors/leader1.jpg"
-              alt="Leadership"
-              fill
-              priority
-              className="leader-image"
-            />
-          </div>
-        </div>
+      
 
         {/* ===== AWARDS ===== */}
         <div className="row mb-5">
@@ -154,37 +143,7 @@ export default function AboutSection() {
     margin-bottom: 6px;
   }
 
-  /* ================= LEADERSHIP IMAGE ================= */
-  .leader-section {
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  }
-
-  .leader-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 560px;
-  }
-
-  .leader-image {
-    object-fit: cover;
-    object-position: top center;
-    filter: contrast(1.05) brightness(0.95);
-  }
-
-  .leader-image-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.35)
-    );
-    pointer-events: none;
-  }
-
+ 
   /* ================= AWARDS ================= */
   .award-card {
     background: #ffffff;
