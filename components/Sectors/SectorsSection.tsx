@@ -34,7 +34,7 @@ const sectors = [
     image: "/images/dcc.jpg",
   },
   {
-    title: "Dearo IT Solutions",
+    title: "DEARO IT SOLUTION",
     description:
       "Innovating the Digital Future: Smart, Secure and scalable IT solutions designed to empower your business.",
     image: "/images/it.jpg",
@@ -44,23 +44,30 @@ const sectors = [
 export default function BusinessSectors() {
   return (
     <section className="sectors-section">
-      {/* Header */}
+      {/* ===== Header ===== */}
       <div className="sectors-header">
         <h2>Our Subsidiaries</h2>
         <p>Driving growth through diversified and strategic business ventures</p>
       </div>
 
-      {/* Grid */}
+      {/* ===== Grid ===== */}
       <div className="sectors-grid">
         {sectors.map((sector, index) => (
-          <div key={index} className="sector-card">
+          <div
+            key={index}
+            className="sector-card"
+            style={{ animationDelay: `${index * 0.08}s` }}
+          >
             <div className="sector-image-wrapper">
               <Image
                 src={sector.image}
                 alt={sector.title}
                 fill
+                sizes="(max-width: 639px) 100vw,
+                       (max-width: 1023px) 50vw,
+                       33vw"
                 className="sector-image"
-                sizes="33vw"
+                priority={index === 0}
               />
             </div>
 
@@ -72,59 +79,87 @@ export default function BusinessSectors() {
         ))}
       </div>
 
+      {/* ===== Styles ===== */}
       <style jsx>{`
         /* ===== SECTION ===== */
         .sectors-section {
-          padding: 100px 24px;
+          width: 100%;
+          padding: clamp(70px, 8vw, 120px) 24px;
           background: #f9f9f9;
         }
 
         /* ===== HEADER ===== */
         .sectors-header {
           text-align: center;
-          margin-bottom: 70px;
+          margin-bottom: clamp(50px, 6vw, 80px);
+          animation: fadeUp 0.8s ease forwards;
         }
 
         .sectors-header h2 {
-          font-size: 2.6rem;
+          font-size: clamp(2rem, 3vw, 2.8rem);
           font-weight: 700;
           color: #111;
+          margin-bottom: 12px;
         }
 
         .sectors-header p {
-          font-size: 1rem;
+          font-size: clamp(0.95rem, 1.2vw, 1.1rem);
           color: #555;
         }
 
-        /* ===== GRID (HARD LOCKED) ===== */
+        /* ===== GRID ===== */
         .sectors-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 36px;
-
-          /* 🔒 THIS IS THE FIX */
-          max-width: 1200px; /* 3 cards only */
+          gap: clamp(24px, 3vw, 42px);
           margin: 0 auto;
+          width: 100%;
+        }
+
+        /* Mobile */
+        @media (max-width: 639px) {
+          .sectors-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        /* Tablet */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .sectors-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* Desktop & ALL large screens — LOCKED */
+        @media (min-width: 1024px) {
+          .sectors-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1200px; /* 🔒 prevents 4th card */
+          }
         }
 
         /* ===== CARD ===== */
         .sector-card {
-          background: #fff;
+          background: #ffffff;
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-          transition: transform 0.4s ease, box-shadow 0.4s ease;
+          transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.45s ease;
+          animation: fadeUp 0.6s ease forwards;
+          opacity: 0;
         }
 
         .sector-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 28px 60px rgba(0, 0, 0, 0.15);
+          transform: translateY(-10px);
+          box-shadow: 0 30px 70px rgba(0, 0, 0, 0.16);
         }
 
         /* ===== IMAGE ===== */
         .sector-image-wrapper {
           position: relative;
-          height: 230px;
+          width: 100%;
+          height: clamp(200px, 18vw, 260px);
+          overflow: hidden;
         }
 
         .sector-image {
@@ -133,24 +168,42 @@ export default function BusinessSectors() {
         }
 
         .sector-card:hover .sector-image {
-          transform: scale(1.05);
+          transform: scale(1.08);
         }
 
         /* ===== CONTENT ===== */
         .sector-content {
-          padding: 26px;
+          padding: clamp(22px, 2vw, 30px);
         }
 
         .sector-content h3 {
-          font-size: 1.3rem;
+          font-size: clamp(1.2rem, 1.5vw, 1.45rem);
           margin-bottom: 10px;
           color: #111;
         }
 
         .sector-content p {
-          font-size: 0.95rem;
+          font-size: clamp(0.9rem, 1vw, 0.95rem);
           color: #666;
           line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+          .sector-content {
+            text-align: center;
+          }
+        }
+
+        /* ===== ANIMATION ===== */
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </section>
