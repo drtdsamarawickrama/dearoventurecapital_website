@@ -51,38 +51,31 @@ export default function BusinessSectors() {
       </div>
 
       {/* Grid */}
-      <div className="sectors-grid-wrapper">
-        <div className="sectors-grid">
-          {sectors.map((sector, index) => (
-            <div
-              key={index}
-              className="sector-card"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="sector-image-wrapper">
-                <Image
-                  src={sector.image}
-                  alt={sector.title}
-                  fill
-                  sizes="33vw"
-                  className="sector-image"
-                  priority={index === 0}
-                />
-              </div>
-
-              <div className="sector-content">
-                <h3>{sector.title}</h3>
-                <p>{sector.description}</p>
-              </div>
+      <div className="sectors-grid">
+        {sectors.map((sector, index) => (
+          <div key={index} className="sector-card">
+            <div className="sector-image-wrapper">
+              <Image
+                src={sector.image}
+                alt={sector.title}
+                fill
+                className="sector-image"
+                sizes="33vw"
+              />
             </div>
-          ))}
-        </div>
+
+            <div className="sector-content">
+              <h3>{sector.title}</h3>
+              <p>{sector.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <style jsx>{`
         /* ===== SECTION ===== */
         .sectors-section {
-          padding: clamp(70px, 8vw, 120px) 24px;
+          padding: 100px 24px;
           background: #f9f9f9;
         }
 
@@ -93,28 +86,24 @@ export default function BusinessSectors() {
         }
 
         .sectors-header h2 {
-          font-size: clamp(2rem, 3vw, 2.8rem);
+          font-size: 2.6rem;
           font-weight: 700;
           color: #111;
         }
 
         .sectors-header p {
-          color: #555;
           font-size: 1rem;
+          color: #555;
         }
 
-        /* ===== GRID WRAPPER (FIX) ===== */
-        .sectors-grid-wrapper {
-          overflow-x: auto;
-          padding-bottom: 10px;
-        }
-
-        /* ===== GRID (ALWAYS 3) ===== */
+        /* ===== GRID (HARD LOCKED) ===== */
         .sectors-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(320px, 1fr));
-          gap: 32px;
-          max-width: 1400px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 36px;
+
+          /* 🔒 THIS IS THE FIX */
+          max-width: 1200px; /* 3 cards only */
           margin: 0 auto;
         }
 
@@ -124,8 +113,6 @@ export default function BusinessSectors() {
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-          animation: fadeUp 0.6s ease forwards;
-          opacity: 0;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
@@ -146,7 +133,7 @@ export default function BusinessSectors() {
         }
 
         .sector-card:hover .sector-image {
-          transform: scale(1.06);
+          transform: scale(1.05);
         }
 
         /* ===== CONTENT ===== */
@@ -164,28 +151,6 @@ export default function BusinessSectors() {
           font-size: 0.95rem;
           color: #666;
           line-height: 1.6;
-        }
-
-        /* ===== ANIMATION ===== */
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(25px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        /* ===== SCROLLBAR (CLEAN) ===== */
-        .sectors-grid-wrapper::-webkit-scrollbar {
-          height: 6px;
-        }
-
-        .sectors-grid-wrapper::-webkit-scrollbar-thumb {
-          background: #ccc;
-          border-radius: 6px;
         }
       `}</style>
     </section>
