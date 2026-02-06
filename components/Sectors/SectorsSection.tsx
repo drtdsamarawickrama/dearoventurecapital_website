@@ -34,7 +34,7 @@ const sectors = [
     image: "/images/dcc.jpg",
   },
   {
-    title: "DEARO IT SOLUTION",
+    title: "Dearo IT Solutions",
     description:
       "Innovating the Digital Future: Smart, Secure and scalable IT solutions designed to empower your business.",
     image: "/images/it.jpg",
