@@ -16,24 +16,17 @@ export default function InvestorPage() {
           alt="Dearo Investment Investors"
           fill
           priority
-          className="object-fit-cover"
+          className="object-fit-cover mt-0"
         />
 
-        <div className="overlay-dark" />
+       
 
-        <div className="position-relative h-100 d-flex align-items-center justify-content-center">
-          <div className="container">
-            <h1 className="display-5 fw-bold">
-              Financial Reports & Investor Opportunities
-            </h1>
-            <p className="lead">
-              Transparency and growth you can trust with Dearo Investment Limited
-            </p>
-          </div>
-        </div>
+        
       </section>
 
-      {/* Financial Reports */}
+      <br /><br />
+
+     
       <section className="py-5">
         <div className="container">
           <h2 className="mb-4 text-center">Financial Reports</h2>
