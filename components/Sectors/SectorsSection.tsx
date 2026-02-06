@@ -56,18 +56,14 @@ export default function BusinessSectors() {
           <div
             key={index}
             className="sector-card"
-            style={{ animationDelay: `${index * 0.08}s` }}
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="sector-image-wrapper">
               <Image
                 src={sector.image}
                 alt={sector.title}
                 fill
-                sizes="(max-width: 640px) 100vw,
-                       (max-width: 1024px) 50vw,
-                       (max-width: 1280px) 33vw,
-                       (max-width: 1600px) 25vw,
-                       20vw"
+                sizes="33vw"
                 className="sector-image"
                 priority={index === 0}
               />
@@ -81,6 +77,7 @@ export default function BusinessSectors() {
         ))}
       </div>
 
+      {/* ===== Styles ===== */}
       <style jsx>{`
         /* ===== SECTION ===== */
         .sectors-section {
@@ -108,47 +105,13 @@ export default function BusinessSectors() {
           color: #555;
         }
 
-        /* ===== GRID ===== */
+        /* ===== GRID (LOCKED 3 COLUMNS) ===== */
         .sectors-grid {
           display: grid;
-          gap: clamp(24px, 3vw, 42px);
-          max-width: 1800px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: clamp(20px, 2.5vw, 40px);
+          max-width: 1400px;
           margin: 0 auto;
-        }
-
-        /* Mobile */
-        @media (max-width: 639px) {
-          .sectors-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        /* Tablet */
-        @media (min-width: 640px) and (max-width: 1023px) {
-          .sectors-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        /* Laptop */
-        @media (min-width: 1024px) and (max-width: 1279px) {
-          .sectors-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        /* Desktop */
-        @media (min-width: 1280px) and (max-width: 1599px) {
-          .sectors-grid {
-            grid-template-columns: repeat(4, 1fr);
-          }
-        }
-
-        /* Ultra-wide */
-        @media (min-width: 1600px) {
-          .sectors-grid {
-            grid-template-columns: repeat(5, 1fr);
-          }
         }
 
         /* ===== CARD ===== */
@@ -172,7 +135,7 @@ export default function BusinessSectors() {
         .sector-image-wrapper {
           position: relative;
           width: 100%;
-          height: clamp(200px, 18vw, 260px);
+          height: clamp(180px, 20vw, 260px);
           overflow: hidden;
         }
 
@@ -191,24 +154,18 @@ export default function BusinessSectors() {
         }
 
         .sector-content h3 {
-          font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+          font-size: clamp(1rem, 1.3vw, 1.45rem);
           margin-bottom: 10px;
           color: #111;
         }
 
         .sector-content p {
-          font-size: clamp(0.9rem, 1vw, 0.95rem);
+          font-size: clamp(0.85rem, 1vw, 0.95rem);
           color: #666;
           line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-          .sector-content {
-            text-align: center;
-          }
-        }
-
-        /* ===== ANIMATIONS ===== */
+        /* ===== ANIMATION ===== */
         @keyframes fadeUp {
           from {
             opacity: 0;
