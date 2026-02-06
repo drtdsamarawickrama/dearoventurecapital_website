@@ -28,6 +28,7 @@ export default function Navbar() {
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
   const closeMenu = () => {
     setIsOpen(false);
     setLeadershipOpen(false);
@@ -45,7 +46,7 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    closeTimer.current = setTimeout(() => setLeadershipOpen(false), 250);
+    closeTimer.current = setTimeout(() => setLeadershipOpen(false), 200);
   };
 
   const navItems = [
@@ -118,23 +119,32 @@ export default function Navbar() {
         /* Logo */
         .logo {
           display: block;
+          transition: transform 0.35s ease;
         }
 
-        /* Navbar */
+        .premium-nav.scrolled .logo {
+          transform: scale(0.9);
+        }
+
+        /* Navbar (Glass) */
         .premium-nav {
           position: sticky;
           top: 0;
           z-index: 999;
-          background: #fff;
-          transition: all 0.3s ease;
-          padding: 10px 0;
+          background: rgb(255, 255, 255);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          padding: 14px 0;
+          transition: all 0.35s ease;
         }
 
         .premium-nav.scrolled {
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          padding: 6px 0;
+          background: rgb(255, 255, 255);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* Nav menu spacing */
+        /* Nav menu */
         .nav-menu {
           display: flex;
           gap: 30px;
@@ -147,23 +157,24 @@ export default function Navbar() {
           }
         }
 
-        /* Nav links professional style */
+        /* Nav links */
         .nav-link {
           font-size: 0.85rem;
           font-weight: 600;
           text-transform: uppercase;
           color: #111;
-          background: none;
-          border: none;
-          cursor: pointer;
           padding: 6px 12px;
-          position: relative;
           display: flex;
           align-items: center;
+          position: relative;
           transition: all 0.3s ease;
         }
 
-        /* Smooth underline animation */
+        .premium-nav.scrolled .nav-link {
+          padding: 4px 10px;
+          font-size: 0.8rem;
+        }
+
         .nav-link::after {
           content: "";
           position: absolute;
@@ -183,14 +194,9 @@ export default function Navbar() {
           width: 100%;
         }
 
-        /* Leadership Dropdown */
+        /* Dropdown */
         .leadership-wrapper {
           position: relative;
-        }
-
-        .leadership-btn-text {
-          justify-content: space-between;
-          width: 100%;
         }
 
         .leadership-menu {
@@ -202,11 +208,11 @@ export default function Navbar() {
           visibility: hidden;
           transform: translateY(-10px);
           transition: all 0.25s ease;
-          background: #fff;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
           border-radius: 14px;
           box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
           padding: 8px 0;
-          z-index: 99;
         }
 
         .leadership-wrapper.open .leadership-menu {
@@ -219,9 +225,8 @@ export default function Navbar() {
           font-size: 0.78rem;
           font-weight: 600;
           text-transform: uppercase;
-          color: #111;
           padding: 12px 18px;
-          transition: all 0.25s ease, background 0.3s ease;
+          transition: all 0.25s ease;
         }
 
         .dropdown-item:hover {
@@ -234,12 +239,7 @@ export default function Navbar() {
             position: static;
             opacity: 1 !important;
             visibility: visible !important;
-            transform: translateY(0);
             box-shadow: none;
-            margin-top: 8px;
-          }
-          .leadership-btn-text {
-            justify-content: flex-start;
           }
         }
       `}</style>
