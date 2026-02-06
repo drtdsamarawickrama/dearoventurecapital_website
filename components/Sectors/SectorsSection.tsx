@@ -44,44 +44,44 @@ const sectors = [
 export default function BusinessSectors() {
   return (
     <section className="sectors-section">
-      {/* ===== Header ===== */}
+      {/* Header */}
       <div className="sectors-header">
         <h2>Our Subsidiaries</h2>
         <p>Driving growth through diversified and strategic business ventures</p>
       </div>
 
-      {/* ===== Grid ===== */}
-      <div className="sectors-grid">
-        {sectors.map((sector, index) => (
-          <div
-            key={index}
-            className="sector-card"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <div className="sector-image-wrapper">
-              <Image
-                src={sector.image}
-                alt={sector.title}
-                fill
-                sizes="33vw"
-                className="sector-image"
-                priority={index === 0}
-              />
-            </div>
+      {/* Grid */}
+      <div className="sectors-grid-wrapper">
+        <div className="sectors-grid">
+          {sectors.map((sector, index) => (
+            <div
+              key={index}
+              className="sector-card"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="sector-image-wrapper">
+                <Image
+                  src={sector.image}
+                  alt={sector.title}
+                  fill
+                  sizes="33vw"
+                  className="sector-image"
+                  priority={index === 0}
+                />
+              </div>
 
-            <div className="sector-content">
-              <h3>{sector.title}</h3>
-              <p>{sector.description}</p>
+              <div className="sector-content">
+                <h3>{sector.title}</h3>
+                <p>{sector.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* ===== Styles ===== */}
       <style jsx>{`
         /* ===== SECTION ===== */
         .sectors-section {
-          width: 100%;
           padding: clamp(70px, 8vw, 120px) 24px;
           background: #f9f9f9;
         }
@@ -89,54 +89,55 @@ export default function BusinessSectors() {
         /* ===== HEADER ===== */
         .sectors-header {
           text-align: center;
-          margin-bottom: clamp(50px, 6vw, 80px);
-          animation: fadeUp 0.8s ease forwards;
+          margin-bottom: 70px;
         }
 
         .sectors-header h2 {
           font-size: clamp(2rem, 3vw, 2.8rem);
           font-weight: 700;
           color: #111;
-          margin-bottom: 12px;
         }
 
         .sectors-header p {
-          font-size: clamp(0.95rem, 1.2vw, 1.1rem);
           color: #555;
+          font-size: 1rem;
         }
 
-        /* ===== GRID (LOCKED 3 COLUMNS) ===== */
+        /* ===== GRID WRAPPER (FIX) ===== */
+        .sectors-grid-wrapper {
+          overflow-x: auto;
+          padding-bottom: 10px;
+        }
+
+        /* ===== GRID (ALWAYS 3) ===== */
         .sectors-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: clamp(20px, 2.5vw, 40px);
+          grid-template-columns: repeat(3, minmax(320px, 1fr));
+          gap: 32px;
           max-width: 1400px;
           margin: 0 auto;
         }
 
         /* ===== CARD ===== */
         .sector-card {
-          background: #ffffff;
+          background: #fff;
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-          transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-            box-shadow 0.45s ease;
           animation: fadeUp 0.6s ease forwards;
           opacity: 0;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .sector-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 30px 70px rgba(0, 0, 0, 0.16);
+          transform: translateY(-8px);
+          box-shadow: 0 28px 60px rgba(0, 0, 0, 0.15);
         }
 
         /* ===== IMAGE ===== */
         .sector-image-wrapper {
           position: relative;
-          width: 100%;
-          height: clamp(180px, 20vw, 260px);
-          overflow: hidden;
+          height: 230px;
         }
 
         .sector-image {
@@ -145,22 +146,22 @@ export default function BusinessSectors() {
         }
 
         .sector-card:hover .sector-image {
-          transform: scale(1.08);
+          transform: scale(1.06);
         }
 
         /* ===== CONTENT ===== */
         .sector-content {
-          padding: clamp(22px, 2vw, 30px);
+          padding: 26px;
         }
 
         .sector-content h3 {
-          font-size: clamp(1rem, 1.3vw, 1.45rem);
+          font-size: 1.3rem;
           margin-bottom: 10px;
           color: #111;
         }
 
         .sector-content p {
-          font-size: clamp(0.85rem, 1vw, 0.95rem);
+          font-size: 0.95rem;
           color: #666;
           line-height: 1.6;
         }
@@ -169,12 +170,22 @@ export default function BusinessSectors() {
         @keyframes fadeUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(25px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        /* ===== SCROLLBAR (CLEAN) ===== */
+        .sectors-grid-wrapper::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .sectors-grid-wrapper::-webkit-scrollbar-thumb {
+          background: #ccc;
+          border-radius: 6px;
         }
       `}</style>
     </section>
