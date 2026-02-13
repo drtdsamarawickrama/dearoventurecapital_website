@@ -8,7 +8,7 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
     { name: "Sectors", href: "/sectors" },
     { name: "Contact", href: "/contact" },
-    { name: "News", href: "/news" },
+    { name: "Community", href: "/community" },
   ];
 
   const subsidiaries = [
@@ -27,9 +27,9 @@ export default function Footer() {
 
           {/* Company Info */}
           <div className="col-md-6 col-lg-3 footer-col">
-            <h5 className="footer-title">Dearo Investment Limited</h5>
+            <h5 className="footer-title">Dearo Venture Capital Limited</h5>
             <p>
-              8th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo 01
+              9th Floor, Ceylinco House, No 69, Janadhipathi Mawatha, Colombo 01
             </p>
             <p>
               Phone:{" "}
@@ -87,7 +87,7 @@ export default function Footer() {
         <hr />
 
         <div className="copyright">
-          © 2026 Dearo Investment Limited — All Rights Reserved
+          ©2026 Dearo Venture Capital Limited — All Rights Reserved
         </div>
       </div>
 
