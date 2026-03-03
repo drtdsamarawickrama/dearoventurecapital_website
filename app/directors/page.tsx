@@ -10,12 +10,12 @@ const directors = [
   },
   {
     name: "Mr. Upul Edirisooriya",
-    role: "Non Board Director / Deputy Chief Executive Officer",
+    role: "Non Independent Non Executive Director",
     image: "/images/directors/upul.png",
   },
   {
     name: "Mr. Neranjan Warnasooriya",
-    role: "Non Independent Non Executive Director",
+    role: "Non Board Director / Deputy Chief Executive Officer ",
     image: "/images/directors/nerangen.png",
   },
   {
@@ -29,9 +29,13 @@ const directors = [
     image: "/images/directors/tharindu.png",
   },
   {
-    name: "Mr. Dananjaya Godagama",
-    role: "Chief Executive Officer - DBF Investment Limited",
-    image: "/images/directors/dbf.jpg",
+    name: "Mr. Asitha Suranjith",
+    role: "Head Of Investment and Treasury",
+    image: "/images/management/asith1.jpg",
+  },{
+    name: "Mr. Chathura Dissanayaka",
+    role: "Senior Manager - Investment & Treasury",
+    image: "/images/management/chathura.jpg",
   },
 ];
 

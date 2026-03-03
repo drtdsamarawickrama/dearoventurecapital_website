@@ -50,11 +50,7 @@ const directors = [
   },  {
     name: "Mr. Deepal Piris",
     role: "Head of Finance",
-    image: "/images/management/deepal.jpg",
-  }, {
-    name: "Mrs. D.M.N.N Dassanayaka",
-    role: "Head of HR",
-    image: "/images/management/D.M.N.N Dassanayaka.jpeg",
+    image: "/images/management/deepal.jpg", 
   },
 ];
 
