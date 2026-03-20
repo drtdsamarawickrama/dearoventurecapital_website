@@ -19,7 +19,7 @@ const directors = [
     image: "/images/directors/nerangen.png",
   },
   {
-    name: "Mr. Arun Kumar",
+    name: "Mr. Pushparaj Arun Kumar",
     role: "Director / Chief Operating Officer",
     image: "/images/directors/arun1.jpg",
   },
