@@ -47,10 +47,6 @@ const directors = [
     name: "Mr. Chathura Ubesekara",
     role: "Senior Manager Down South Region",
     image: "/images/management/chathura.jpeg",
-  },  {
-    name: "Mr. Deepal Piris",
-    role: "Head of Finance",
-    image: "/images/management/deepal.jpg", 
   },
 ];
 
