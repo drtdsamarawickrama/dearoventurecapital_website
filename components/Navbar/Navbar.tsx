@@ -91,9 +91,9 @@ export default function Navbar() {
 
               <ul className={`dropdown-menu leadership-menu ${leadershipOpen ? "show" : ""}`}>
                 <li>
-                  {/* <Link href="/directors" className="dropdown-item" onClick={closeMenu}>
+                  {<Link href="/director" className="dropdown-item" onClick={closeMenu}>
                     Directors
-                  </Link> */}
+                  </Link> }
                 </li>
                 <li>
                   <Link href="/management" className="dropdown-item" onClick={closeMenu}>

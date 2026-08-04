@@ -19,9 +19,9 @@ const directors = [
     image: "/images/directors/nerangen.png",
   },
   {
-    name: "Mr. Pushparaj Arun Kumar",
-    role: "Director / Chief Operating Officer",
-    image: "/images/directors/arun1.jpg",
+    name: "Mr. Terence Yatawara",
+    role: "Group Director - Sales & Marketing",
+    image: "/images/directors/terence.png",
   },
   {
     name: "Mr. Tharindu Dananjaya",
