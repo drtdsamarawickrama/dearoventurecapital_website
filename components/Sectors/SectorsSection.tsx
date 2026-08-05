@@ -39,12 +39,7 @@ const sectors = [
       "Innovating the Digital Future: Smart, Secure and scalable IT solutions designed to empower your business.",
     image: "/images/it.jpg",
   },
-  {
-    title: "Dearo Investment Limited",
-    description:
-      "Strategic investment arm focused on long-term value creation, portfolio growth, and sustainable financial opportunities.",
-    image: "/images/dearoin.png",
-  },
+ 
 ];
 
 export default function BusinessSectors() {

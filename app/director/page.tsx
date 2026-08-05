@@ -14,9 +14,9 @@ const directors = [
     image: "/images/directors/upul.png",
   },
   {
-    name: "Mr. Neranjan Warnasooriya",
-    role: "Non Board Director / Deputy Chief Executive Officer ",
-    image: "/images/directors/nerangen.png",
+    name: "Mr. Roshan Jasen",
+    role: "DCEO/Director",
+    image: "/images/directors/roshan.png",
   },
   {
     name: "Mr. Terence Yatawara",
@@ -24,18 +24,33 @@ const directors = [
     image: "/images/directors/terence.png",
   },
   {
-    name: "Mr. Tharindu Dananjaya",
-    role: "Non Board Director/ Chief Information Officer",
-    image: "/images/directors/tharindu.png",
+    name: "Mr. Seiichirou Ukegawa",
+    role: "Director",
+    image: "/images/directors/Seiichirou-Ukegawa.webp",
+  },
+  {
+    name: "Mr. Iwatsuka-Sangyo",
+    role: "Director",
+    image: "/images/directors/Iwatsuka-Sangyo.jpeg",
+  },
+  {
+    name: "Mr. Rajitha Madushanka",
+    role: "Director",
+    image: "/images/directors/rajitha.jpg",
   },
   {
     name: "Mr. Asitha Suranjith",
-    role: "Head Of Investment and Treasury",
+    role: "Director",
     image: "/images/management/asith1.jpg",
   },{
     name: "Mr. Chathura Dissanayaka",
-    role: "Senior Manager - Investment & Treasury",
+    role: "Director",
     image: "/images/management/chathura.jpg",
+  },
+  {
+    name: "Mr. Rex",
+    role: "Director ",
+    image: "/images/directors/rex1.jpg",
   },
 ];
 

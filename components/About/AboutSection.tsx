@@ -5,21 +5,21 @@ export default function AboutSection() {
   const milestones = [
     {
       year: "2022",
-      title: "Establishment of Dearo Investment",
+      title: "Our Journey",
       description:
         "Dearo Investment Limited was formally established, laying the foundation for a disciplined and growth-oriented investment platform.",
     },
     {
       year: "2023",
-      title: "Strategic Expansion & Branch Growth",
+      title: "Strategic Expansion",
       description:
-        "Launch of Dearo Agri and Dearo Engineering, expanding Dearo’s operations into agricultural and engineering-led project facilitation. During the same year, Dearo expanded its physical presence to 9 branches across Sri Lanka.",
+        "Launch of Dearo Agri and Dearo Engineering, expanding operations into agriculture and engineering-led project facilitation. Dearo also grew its physical presence to 9 branches across Sri Lanka.",
     },
     {
       year: "2024",
       title: "Launch of Dearo Education",
       description:
-        "Introduction of Dearo Education, extending Dearo’s impact beyond supporting education initiatives and learning accessibility.",
+        "Introduction of Dearo Education, extending impact into learning accessibility and educational initiatives.",
     },
     {
       year: "2025",
@@ -47,14 +47,22 @@ export default function AboutSection() {
           <div className="col-md-6">
             <h2 className="fw-bold mb-3 text-black">About Our Company</h2>
             <p className="text-dark">
-              Dearo Investment Limited was incorporated under the Companies Act
-              No. 07 of 2007 and officially registered on 1st September 2022.
+             Dearo Venture Capital Ltd is the parent company of Dearo Investment Limited, a dynamic and disciplined investment platform incorporated under the Companies Act No.
+            07 of 2007 and officially registered on 1st September 2022.
             </p>
             <p className="text-dark">
-              With disciplined risk management and strong governance, Dearo
-              empowers businesses and communities across Sri Lanka.
+             With strong governance and risk management, Dearo empowers businesses and communities across Sri Lanka,
+            driving sustainable growth and innovation.
             </p>
-          </div>
+            <h4 className="fw-bold mb-3 text-black">
+            Our Vision 
+            </h4>
+             <p className="text-dark">
+             To be a trusted partner in investment and innovation, empowering communities and businesses across Sri Lanka through diversified ventures in agriculture, engineering, education, and beyond.
+            </p>
+
+            </div>
+         
 
           <div className="col-md-6">
             <Image

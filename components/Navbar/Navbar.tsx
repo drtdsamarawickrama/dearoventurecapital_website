@@ -63,7 +63,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="navbar-brand" onClick={closeMenu}>
           <Image
-            src="/images/venturelogo.jpeg"
+            src="/images/venlogo.jpg"
             alt="Dearo Logo"
             width={155}
             height={55}
@@ -93,12 +93,10 @@ export default function Navbar() {
                 <li>
                   {<Link href="/director" className="dropdown-item" onClick={closeMenu}>
                     Directors
-                  </Link> }
+                  </Link>}
                 </li>
                 <li>
-                  <Link href="/management" className="dropdown-item" onClick={closeMenu}>
-                    Corporate Management
-                  </Link>
+                 
                 </li>
               </ul>
             </li>
