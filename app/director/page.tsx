@@ -29,7 +29,7 @@ const directors = [
     image: "/images/directors/Seiichirou-Ukegawa.webp",
   },
   {
-    name: "Mr. Iwatsuka-Sangyo",
+    name: "Mr. Iwatsuka Sangyo",
     role: "Director",
     image: "/images/directors/Iwatsuka-Sangyo.jpeg",
   },
