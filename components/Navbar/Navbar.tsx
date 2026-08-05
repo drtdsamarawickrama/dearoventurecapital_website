@@ -63,7 +63,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="navbar-brand" onClick={closeMenu}>
           <Image
-            src="/images/venlogo.jpg"
+            src="/images/logo1.jpg"
             alt="Dearo Logo"
             width={155}
             height={55}
@@ -129,7 +129,7 @@ export default function Navbar() {
           position: sticky;
           top: 0;
           z-index: 999;
-          background: rgb(255, 255, 255);
+          background: rgba(203, 203, 203, 1);
           backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px);
           padding: 14px 0;
