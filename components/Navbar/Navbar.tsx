@@ -124,22 +124,21 @@ export default function Navbar() {
           transform: scale(0.9);
         }
 
-        /* Navbar (Glass) */
+        /* Navbar */
         .premium-nav {
           position: sticky;
           top: 0;
           z-index: 999;
-          background: rgba(203, 203, 203, 1);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
+          background: #ffffff;
           padding: 14px 0;
           transition: all 0.35s ease;
+          border-bottom: 1px solid rgba(0,0,0,0.06);
         }
 
         .premium-nav.scrolled {
           padding: 6px 0;
-          background: rgb(255, 255, 255);
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+          background: #ffffff;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Nav menu */

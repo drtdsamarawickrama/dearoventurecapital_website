@@ -12,10 +12,7 @@ const slides = [
     titleAccent: "Innovators",
     subtitle:
       "We invest in visionary founders shaping the future of technology and business.",
-    cta: "Pitch Your Startup",
-    ctaSecondary: "Learn More",
-    link: "#contact",
-    linkSecondary: "#about",
+   
   },
   {
     image: "/images/slide.jpg",
@@ -24,10 +21,7 @@ const slides = [
     titleAccent: "Globally",
     subtitle:
       "Strategic guidance, funding, and a global network to accelerate growth.",
-    cta: "Explore Portfolio",
-    ctaSecondary: "Our Network",
-    link: "/portfolio",
-    linkSecondary: "/about",
+   
   },
   {
     image: "/images/hero3.png",
@@ -36,10 +30,7 @@ const slides = [
     titleAccent: "of Industries",
     subtitle:
       "Driving innovation across technology, agriculture, and financial solutions.",
-    cta: "Learn More",
-    ctaSecondary: "Our Sectors",
-    link: "#about",
-    linkSecondary: "/sectors",
+   
   },
 ];
 
@@ -114,16 +105,7 @@ export default function Hero() {
                 {/* Subtitle */}
                 <p className="subtitle">{slide.subtitle}</p>
 
-                {/* CTA Buttons */}
-                <div className="cta-group">
-                  <a href={slide.link} className="btn-primary">
-                    {slide.cta}
-                    <span className="btn-arrow">→</span>
-                  </a>
-                  <a href={slide.linkSecondary} className="btn-secondary">
-                    {slide.ctaSecondary}
-                  </a>
-                </div>
+              
 
               
                
