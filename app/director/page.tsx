@@ -9,7 +9,7 @@ const directors = [
     image: "/images/directors/prasanna 1.png",
   },
   {
-    name: "Mr. Roshan Jasen",
+    name: "Mr. Roshan Jansen",
     role: "Deputy Chief Executive Officer",
     image: "/images/directors/roshan.png",
   },
