@@ -276,7 +276,7 @@ export default function ContactSection() {
         .contact-hero {
           background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 50%, #0f2444 100%);
           position: relative;
-          padding: 80px 0 60px;
+          padding: 10px 0 10px;
           overflow: hidden;
         }
         .contact-hero::before {
