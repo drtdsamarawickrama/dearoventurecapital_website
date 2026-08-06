@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { Phone, Mail } from "lucide-react";
 
 function DropdownArrow({ open }: { open?: boolean }) {
   return (
@@ -58,7 +59,32 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""}`}>
+    <header className="header-wrapper">
+      {/* Top Bar */}
+      <div className={`top-bar ${scrolled ? "top-bar-hidden" : ""}`}>
+        <div className="container-fluid px-3 px-lg-4">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center py-1">
+            <div className="top-bar-left text-white small mb-1 mb-md-0 d-none d-md-block">
+              Building Wealth, Empowering Futures in Sri Lanka
+            </div>
+            <div className="top-bar-right d-flex flex-wrap justify-content-center align-items-center text-white small">
+              <a href="tel:0114782400" className="top-bar-link me-3 d-flex align-items-center gap-1">
+                <Phone size={14} /> 011 478 2400
+              </a>
+              <a href="mailto:info@dearoventurecapital.com" className="top-bar-link me-3 me-md-4 d-flex align-items-center gap-1">
+                <Mail size={14} /> info@dearoventurecapital.com
+              </a>
+              <div className="auth-links mt-1 mt-md-0">
+                <Link href="/login" className="top-bar-link">Login</Link>
+                <span className="mx-2 text-white-50">|</span>
+                <Link href="/register" className="top-bar-link">Register</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""}`}>
       <div className="container-fluid">
         {/* Logo */}
         <Link href="/" className="navbar-brand" onClick={closeMenu}>
@@ -112,6 +138,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
+      </nav>
 
       <style jsx>{`
         /* Logo */
@@ -124,11 +151,44 @@ export default function Navbar() {
           transform: scale(0.9);
         }
 
-        /* Navbar */
-        .premium-nav {
+        /* Header Wrapper & Top Bar */
+        .header-wrapper {
           position: sticky;
           top: 0;
           z-index: 999;
+          width: 100%;
+          background: #ffffff;
+        }
+
+        .top-bar {
+          background-color: #1a2850;
+          font-size: 0.85rem;
+          padding: 5px 0;
+          transition: all 0.3s ease;
+          overflow: hidden;
+          max-height: 100px;
+        }
+
+        .top-bar-hidden {
+          max-height: 0;
+          padding: 0;
+          opacity: 0;
+        }
+
+        .top-bar-link {
+          color: #ffffff;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .top-bar-link:hover {
+          color: #a5c8ff;
+        }
+
+        /* Navbar */
+        .premium-nav {
+          position: relative;
+          z-index: 998;
           background: #ffffff;
           padding: 14px 0;
           transition: all 0.35s ease;
@@ -241,6 +301,6 @@ export default function Navbar() {
           }
         }
       `}</style>
-    </nav>
+    </header>
   );
 }
