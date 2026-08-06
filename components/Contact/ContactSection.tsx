@@ -74,7 +74,7 @@ export default function ContactSection() {
     {
       icon: <Clock size={22} />,
       label: "Office Hours",
-      value: "Mon – Fri: 8:30 AM – 5:00 PM",
+      value: "Mon – Sat: 8:30 AM – 5:00 PM",
       href: null,
     },
     {
