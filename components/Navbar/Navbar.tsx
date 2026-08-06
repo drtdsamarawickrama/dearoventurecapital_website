@@ -65,8 +65,8 @@ export default function Navbar() {
           <Image
             src="/images/logo1.jpg"
             alt="Dearo Logo"
-            width={155}
-            height={55}
+            width={140}
+            height={50}
             className="logo"
           />
         </Link>
@@ -157,9 +157,9 @@ export default function Navbar() {
         /* Nav links */
         .nav-link {
           font-size: 0.85rem;
-          font-weight: 600;
+          font-weight: 700;
           text-transform: uppercase;
-          color: #111;
+          color: #000000;
           padding: 6px 12px;
           display: flex;
           align-items: center;
@@ -220,8 +220,9 @@ export default function Navbar() {
 
         .dropdown-item {
           font-size: 0.78rem;
-          font-weight: 600;
+          font-weight: 700;
           text-transform: uppercase;
+          color: #000000;
           padding: 12px 18px;
           transition: all 0.25s ease;
         }
