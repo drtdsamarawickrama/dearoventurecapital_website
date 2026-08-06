@@ -31,7 +31,7 @@ export default function InvestorPage() {
         <div className="container">
           <h2 className="mb-4 text-center">Financial Reports</h2>
           <p className="text-center mb-5">
-            At Dearo Investment Limited, we believe in complete financial transparency.
+            At Dearo Venture Capital Limited, we believe in complete financial transparency.
             Our reports provide a clear view of performance, risk, and strategy.
           </p>
 
@@ -50,7 +50,7 @@ export default function InvestorPage() {
                 text: "Credit, market, and operational risk with mitigation strategies.",
               },
               {
-                title: "Investment & Portfolio Reports",
+                title: "Venture & Portfolio Reports",
                 text: "Portfolio performance, sector exposure, and ESG impact.",
               },
             ].map((item, index) => (
@@ -85,7 +85,7 @@ export default function InvestorPage() {
             {[
               {
                 title: "Attractive & Predictable Returns",
-                text: "Structured investment models with transparent reporting.",
+                text: "Structured venture capital models with transparent reporting.",
               },
               {
                 title: "Robust Risk Management",
