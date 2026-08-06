@@ -7,7 +7,7 @@ export default function AboutSection() {
       year: "2022",
       title: "Our Journey",
       description:
-        "Dearo Investment Limited was formally established, laying the foundation for a disciplined and growth-oriented investment platform.",
+        "Dearo Venture Capital Limited was formally established, laying the foundation for a disciplined and growth-oriented venture platform.",
     },
     {
       year: "2023",
@@ -47,7 +47,7 @@ export default function AboutSection() {
           <div className="col-md-6">
             <h2 className="fw-bold mb-3 text-black">About Our Company</h2>
             <p className="text-dark">
-             Dearo Venture Capital Ltd is the parent company of Dearo Investment Limited, a dynamic and disciplined investment platform incorporated under the Companies Act No.
+             Dearo Venture Capital Ltd is the parent company of Dearo Venture Capital Limited, a dynamic and disciplined venture platform incorporated under the Companies Act No.
             07 of 2007 and officially registered on 1st September 2022.
             </p>
             <p className="text-dark">

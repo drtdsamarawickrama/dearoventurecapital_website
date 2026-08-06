@@ -65,8 +65,8 @@ export default function Navbar() {
           <Image
             src="/images/logo1.jpg"
             alt="Dearo Logo"
-            width={140}
-            height={50}
+            width={100}
+            height={30}
             className="logo"
           />
         </Link>

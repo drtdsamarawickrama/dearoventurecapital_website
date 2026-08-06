@@ -11,6 +11,11 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Dearo Venture Capital",
   description: "Building Wealth, Empowering Futures in Sri Lanka",
+  icons: {
+    icon: "/images/favicon.jpg",
+    shortcut: "/images/favicon.jpg",
+    apple: "/images/favicon.jpg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
