@@ -9,15 +9,16 @@ const directors = [
     image: "/images/directors/prasanna 1.png",
   },
   {
+    name: "Mr. Roshan Jasen",
+    role: "Deputy Chief Executive Officer",
+    image: "/images/directors/roshan.png",
+  },
+  {
     name: "Mr. Upul Edirisooriya",
     role: "Non Independent Non Executive Director",
     image: "/images/directors/upul.png",
   },
-  {
-    name: "Mr. Roshan Jasen",
-    role: "DCEO/Director",
-    image: "/images/directors/roshan.png",
-  },
+  
   {
     name: "Mr. Terence Yatawara",
     role: "Group Director - Sales & Marketing",
