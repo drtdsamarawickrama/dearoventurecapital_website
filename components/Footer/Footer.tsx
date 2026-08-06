@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Youtube, Linkedin, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Facebook, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -44,7 +44,7 @@ export default function Footer() {
               </div>
               <div className="info-item mt-3">
                 <Mail className="info-icon" size={18} />
-                <a href="mailto:info@dearoinvestment.com" className="footer-link">info@dearoinvestment.com</a>
+                <a href="mailto:info@dearoventurecapital.com" className="footer-link">info@dearoventurecapital.com</a>
               </div>
             </div>
           </div>
@@ -84,17 +84,8 @@ export default function Footer() {
             <h5 className="footer-title">Connect With Us</h5>
             <p className="footer-desc mt-4 mb-3">Follow us on social media for the latest updates and insights.</p>
             <div className="social-icons">
-              <a href="https://www.facebook.com/dearoinvestmentlimited/" target="_blank" rel="noopener noreferrer" className="social-btn facebook" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Dearo-Venture-Capital-Ltd/61566725151766/" target="_blank" rel="noopener noreferrer" className="social-btn facebook" aria-label="Facebook">
                 <Facebook size={20} />
-              </a>
-              <a href="https://www.instagram.com/dearoinvestmentlimited/" target="_blank" rel="noopener noreferrer" className="social-btn instagram" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="https://www.youtube.com/@DearoInvestmentlimited" target="_blank" rel="noopener noreferrer" className="social-btn youtube" aria-label="YouTube">
-                <Youtube size={20} />
-              </a>
-              <a href="https://www.linkedin.com/company/dearoinvestmentlimited" target="_blank" rel="noopener noreferrer" className="social-btn linkedin" aria-label="LinkedIn">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -266,9 +257,6 @@ export default function Footer() {
         }
 
         .social-btn.facebook:hover { background: #1877f2; box-shadow: 0 8px 16px rgba(24,119,242,0.4); }
-        .social-btn.instagram:hover { background: #e1306c; box-shadow: 0 8px 16px rgba(225,48,108,0.4); }
-        .social-btn.youtube:hover { background: #ff0000; box-shadow: 0 8px 16px rgba(255,0,0,0.4); }
-        .social-btn.linkedin:hover { background: #0a66c2; box-shadow: 0 8px 16px rgba(10,102,194,0.4); }
 
         .footer-divider {
           border-color: rgba(255,255,255,0.08);
