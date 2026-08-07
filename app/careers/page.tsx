@@ -219,12 +219,12 @@ export default function CareersPage() {
                           <div className="text-center mt-5">
                             <p className="fw-bold mb-3 text-black">Take the first step towards a successful future!</p>
                             <a 
-                              href="mailto:careers@dearoinvestment.com?subject=Application%20for%20Business%20Development%20Professional%20-%20Investments" 
+                              href="mailto:info@dearoventurecapital.com?subject=Application%20for%20Business%20Development%20Professional%20-%20Investments" 
                               className="btn btn-dark rounded-pill px-5 py-3 d-inline-flex align-items-center gap-2 apply-btn w-100 justify-content-center fw-bold shadow-sm"
                             >
                               Apply Now <ArrowRight size={18} />
                             </a>
-                            <p className="small text-muted mt-3 mb-0">Send your CV to careers@dearoinvestment.com</p>
+                            <p className="small text-muted mt-3 mb-0">Send your CV to info@dearoventurecapital.com</p>
                           </div>
                         </div>
                       </div>
@@ -245,7 +245,7 @@ export default function CareersPage() {
         .careers-hero {
           min-height: 500px;
           height: 60vh;
-          background: url('/images/hero1.jpg') no-repeat center center;
+          background: url('/images/careers_hero.png') no-repeat center center;
           background-size: cover;
           position: relative;
         }
