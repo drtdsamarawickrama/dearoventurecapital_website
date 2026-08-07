@@ -55,6 +55,7 @@ export default function Navbar() {
     { name: "Subsidiaries", href: "/sectors" },
     { name: "Community & Environment", href: "/community" },
     { name: "Investor Relations", href: "/investors" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ];
 
