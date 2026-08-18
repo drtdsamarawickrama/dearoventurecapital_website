@@ -102,44 +102,64 @@ export default function Navbar() {
         <button className="navbar-toggler border-0" onClick={toggleMenu}>
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        {/* Nav Items */}
-        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-          <ul className="navbar-nav ms-auto align-items-center nav-menu">
-            {/* Leadership Dropdown */}
-            <li
-              className={`nav-item leadership-wrapper ${leadershipOpen ? "open" : ""}`}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href="#" className="nav-link leadership-btn-text">
-                Our Leadership <DropdownArrow open={leadershipOpen} />
-              </Link>
-
-              <ul className={`dropdown-menu leadership-menu ${leadershipOpen ? "show" : ""}`}>
-                <li>
-                  {<Link href="/director" className="dropdown-item" onClick={closeMenu}>
-                    Directors
-                  </Link>}
-                </li>
-                <li>
-                 
-                </li>
-              </ul>
-            </li>
-
-            {/* Other nav items */}
-            {navItems.map((item) => (
-              <li className="nav-item" key={item.name}>
-                <Link href={item.href} className="nav-link" onClick={closeMenu}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
-      </div>
-      </nav>
+
+       {/* Nav Items */}
+<div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+  <ul className="navbar-nav ms-auto align-items-center nav-menu">
+
+    {/* About Us */}
+    <li className="nav-item">
+      <Link href="/about" className="nav-link" onClick={closeMenu}>
+        About Us
+      </Link>
+    </li>
+
+    {/* Leadership */}
+    <li className="nav-item">
+      <Link href="/director" className="nav-link" onClick={closeMenu}>
+        Our Leadership
+      </Link>
+    </li>
+
+    {/* Subsidiaries */}
+    <li className="nav-item">
+      <Link href="/sectors" className="nav-link" onClick={closeMenu}>
+        Subsidiaries
+      </Link>
+    </li>
+
+    {/* Community */}
+    <li className="nav-item">
+      <Link href="/community" className="nav-link" onClick={closeMenu}>
+        Community & Environment
+      </Link>
+    </li>
+
+    {/* Investors */}
+    <li className="nav-item">
+      <Link href="/investors" className="nav-link" onClick={closeMenu}>
+        Investor Relations
+      </Link>
+    </li>
+
+    {/* Careers */}
+    <li className="nav-item">
+      <Link href="/careers" className="nav-link" onClick={closeMenu}>
+        Careers
+      </Link>
+    </li>
+
+    {/* Contact */}
+    <li className="nav-item">
+      <Link href="/contact" className="nav-link" onClick={closeMenu}>
+        Contact
+      </Link>
+    </li>
+
+  </ul>
+</div>
+</nav>
 
       <style jsx>{`
         /* Logo */

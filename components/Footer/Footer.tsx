@@ -1,7 +1,8 @@
 "use client";
 
-import { Facebook, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Facebook, MapPin, Phone, Mail, ArrowRight, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
+import { PiTiktokLogo } from "react-icons/pi";
 
 export default function Footer() {
   const quickLinks = [
@@ -88,9 +89,31 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
             </div>
-          </div>
+
+            <div className="social-icons">
+              <a href="https://www.instagram.com/dearoventurecapitalltd?igsh=MWlxYjNtOTJ5ZHhpZg==/" target="_blank" rel="noopener noreferrer" className="social-btn Instagram" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+            </div>
+          
+
+           <div className="social-icons">
+              <a href="https://www.youtube.com/@dearoventurecapital" target="_blank" rel="noopener noreferrer" className="social-btn Youtube" aria-label="Youtube">
+                <Youtube size={20} />
+              </a>
+            </div>
+
+             <div className="social-icons">
+              <a href="" target="_blank" rel="noopener noreferrer" className="social-btn Tiktok" aria-label="Tiktok">
+                <PiTiktokLogo size={20} />
+              </a>
+            </div>
+          
+
+
+          
         </div>
-        
+        </div>
         <hr className="footer-divider" />
 
         <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
