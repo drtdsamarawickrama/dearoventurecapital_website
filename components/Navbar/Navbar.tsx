@@ -57,8 +57,9 @@ export default function Navbar() {
     { name: "Investor Relations", href: "/investors" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
-  ];
+    { name: "Gallery", href: "/gallery" },
 
+  ];
   return (
     <header className="header-wrapper">
       {/* Top Bar */}
@@ -75,91 +76,98 @@ export default function Navbar() {
               <a href="mailto:info@dearoventurecapital.com" className="top-bar-link me-3 me-md-4 d-flex align-items-center gap-1">
                 <Mail size={14} /> info@dearoventurecapital.com
               </a>
-              <div className="auth-links mt-1 mt-md-0">
+              {/* <div className="auth-links mt-1 mt-md-0">
                 <Link href="/login" className="top-bar-link">Login</Link>
                 <span className="mx-2 text-white-50">|</span>
                 <Link href="/register" className="top-bar-link">Register</Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
 
       <nav className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""}`}>
-      <div className="container-fluid">
-        {/* Logo */}
-        <Link href="/" className="navbar-brand" onClick={closeMenu}>
-          <Image
-            src="/images/logo1.jpg"
-            alt="Dearo Logo"
-            width={100}
-            height={30}
-            className="logo"
-          />
-        </Link>
+        <div className="container-fluid">
+          {/* Logo */}
+          <Link href="/" className="navbar-brand" onClick={closeMenu}>
+            <Image
+              src="/images/logo1.jpg"
+              alt="Dearo Logo"
+              width={160}
+              height={40}
+              className="logo"
+            />
+          </Link>
 
-        {/* Hamburger */}
-        <button className="navbar-toggler border-0" onClick={toggleMenu}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          {/* Hamburger */}
+          <button className="navbar-toggler border-0" onClick={toggleMenu}>
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
 
-       {/* Nav Items */}
-<div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-  <ul className="navbar-nav ms-auto align-items-center nav-menu">
+        {/* Nav Items */}
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+          <ul className="navbar-nav ms-auto align-items-center nav-menu">
 
-    {/* About Us */}
-    <li className="nav-item">
-      <Link href="/about" className="nav-link" onClick={closeMenu}>
-        About Us
-      </Link>
-    </li>
+            {/* About Us */}
+            <li className="nav-item">
+              <Link href="/about" className="nav-link" onClick={closeMenu}>
+                About Us
+              </Link>
+            </li>
 
-    {/* Leadership */}
-    <li className="nav-item">
-      <Link href="/director" className="nav-link" onClick={closeMenu}>
-        Our Leadership
-      </Link>
-    </li>
+            {/* Leadership */}
+            <li className="nav-item">
+              <Link href="/director" className="nav-link" onClick={closeMenu}>
+                Our Leadership
+              </Link>
+            </li>
 
-    {/* Subsidiaries */}
-    <li className="nav-item">
-      <Link href="/sectors" className="nav-link" onClick={closeMenu}>
-        Subsidiaries
-      </Link>
-    </li>
+            {/* Subsidiaries */}
+            <li className="nav-item">
+              <Link href="/sectors" className="nav-link" onClick={closeMenu}>
+                Subsidiaries
+              </Link>
+            </li>
 
-    {/* Community */}
-    <li className="nav-item">
-      <Link href="/community" className="nav-link" onClick={closeMenu}>
-        Community & Environment
-      </Link>
-    </li>
+            {/* Community */}
+            <li className="nav-item">
+              <Link href="/community" className="nav-link" onClick={closeMenu}>
+                Community & Environment
+              </Link>
+            </li>
 
-    {/* Investors */}
-    <li className="nav-item">
-      <Link href="/investors" className="nav-link" onClick={closeMenu}>
-        Investor Relations
-      </Link>
-    </li>
+            {/* Investors */}
+            <li className="nav-item">
+              <Link href="/investors" className="nav-link" onClick={closeMenu}>
+                Investor Relations
+              </Link>
+            </li>
 
-    {/* Careers */}
-    <li className="nav-item">
-      <Link href="/careers" className="nav-link" onClick={closeMenu}>
-        Careers
-      </Link>
-    </li>
+            {/* Gallery */}
+            <li className="nav-item">
+              <Link href="/gallery" className="nav-link" onClick={closeMenu}>
+                Gallery
+              </Link>
+            </li>
 
-    {/* Contact */}
-    <li className="nav-item">
-      <Link href="/contact" className="nav-link" onClick={closeMenu}>
-        Contact
-      </Link>
-    </li>
+            {/* Careers */}
+            <li className="nav-item">
+              <Link href="/careers" className="nav-link" onClick={closeMenu}>
+                Careers
+              </Link>
+            </li>
 
-  </ul>
-</div>
-</nav>
+            {/* Contact */}
+            <li className="nav-item">
+              <Link href="/contact" className="nav-link" onClick={closeMenu}>
+                Contact
+              </Link>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
 
       <style jsx>{`
         /* Logo */
