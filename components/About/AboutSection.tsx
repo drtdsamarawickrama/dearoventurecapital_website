@@ -138,10 +138,13 @@ export default function AboutSection() {
 
         {/* ================= KEY MILESTONES ================= */}
         <div className="row mb-5">
-          <div className="col-12 mb-3">
+          <div className="col-12 text-center mb-4">
+
             <h3 className="section-title">
-              Key Milestones
-            </h3>
+Key Milestones            </h3>
+
+            
+
           </div>
 
           {milestones.map((item, i) => (
@@ -242,6 +245,8 @@ export default function AboutSection() {
 
         h2,
         h3 {
+          font-size: clamp(2rem, 3vw, 2.8rem);
+          font-weight: 700;
           line-height: 1.3;
         }
 
