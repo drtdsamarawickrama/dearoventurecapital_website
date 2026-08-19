@@ -61,13 +61,13 @@ export default function AboutSection() {
     <section id="about" className="pt-0 pb-5 bg-light">
       <div className="container">
 
-        {/* ===== ABOUT SECTION ===== */}
+        {/* ================= ABOUT SECTION ================= */}
         <div className="row mb-5">
           <div className="col-12">
 
-            {/* ===== ABOUT CONTENT ===== */}
-            <h2 className="fw-bold mb-3 mt-5 text-black text-center">
-              About Our Company
+            {/* ===== ABOUT TITLE ===== */}
+            <h2 className="mb-3 mt-5 text-center section-title">
+              <strong>About</strong> Our Company
             </h2>
 
             {/* ===== ABOUT IMAGE ===== */}
@@ -82,7 +82,7 @@ export default function AboutSection() {
               />
             </div>
 
-
+            {/* ===== ABOUT PARAGRAPHS ===== */}
             <p className="text-dark">
               Dearo Venture Capital Ltd is a diversified investment and business
               development organization dedicated to creating sustainable value
@@ -111,8 +111,8 @@ export default function AboutSection() {
             </p>
 
             {/* ===== VISION ===== */}
-            <h4 className="fw-bold mb-3 text-black">
-              Our Vision
+            <h4 className="mb-3 section-title">
+              Our <strong>Vision</strong>
             </h4>
 
             <p className="text-dark">
@@ -123,8 +123,8 @@ export default function AboutSection() {
             </p>
 
             {/* ===== MISSION ===== */}
-            <h4 className="fw-bold mb-3 text-black">
-              Our Mission
+            <h4 className="mb-3 section-title">
+              Our <strong>Mission</strong>
             </h4>
 
             <p className="text-dark">
@@ -136,10 +136,10 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ===== KEY MILESTONES ===== */}
+        {/* ================= KEY MILESTONES ================= */}
         <div className="row mb-5">
           <div className="col-12 mb-3">
-            <h3 className="fw-bold text-black">
+            <h3 className="section-title">
               Key Milestones
             </h3>
           </div>
@@ -147,6 +147,7 @@ export default function AboutSection() {
           {milestones.map((item, i) => (
             <div key={i} className="col-md-6 mb-4">
               <div className="milestone-card h-100">
+
                 <h5>{item.year}</h5>
 
                 <h6 className="fw-semibold text-black">
@@ -156,21 +157,24 @@ export default function AboutSection() {
                 <p className="mb-0 text-dark">
                   {item.description}
                 </p>
+
               </div>
             </div>
           ))}
         </div>
 
-        {/* ===== AWARDS ===== */}
+        {/* ================= AWARDS ================= */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="fw-bold text-black">
+
+            <h3 className="section-title">
               Awards & Recognition
             </h3>
 
             <p className="text-muted">
               Recognition of excellence and leadership
             </p>
+
           </div>
 
           {awards.map((award, i) => (
@@ -194,10 +198,23 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
+
       </div>
 
-      {/* ===== STYLES ===== */}
+      {/* ================= STYLES ================= */}
       <style jsx>{`
+
+        /* ================= SECTION TITLES ================= */
+
+        .section-title {
+          color: #0b1f4b !important;
+          font-weight: 400;
+        }
+
+        .section-title strong {
+          font-weight: 700;
+        }
+
         /* ================= ABOUT IMAGE ================= */
 
         .about-image-wrapper {
@@ -324,6 +341,7 @@ export default function AboutSection() {
             height: 90px;
           }
         }
+
       `}</style>
     </section>
   );

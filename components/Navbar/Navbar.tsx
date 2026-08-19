@@ -130,6 +130,14 @@ export default function Navbar() {
               </Link>
             </li>
 
+            {/* Establish finance */}
+            <li className="nav-item">
+              <Link href="" className="nav-link" onClick={closeMenu}>
+                 Establish Finance
+              </Link>
+            </li>
+
+
             {/* Community */}
             <li className="nav-item">
               <Link href="/community" className="nav-link" onClick={closeMenu}>
