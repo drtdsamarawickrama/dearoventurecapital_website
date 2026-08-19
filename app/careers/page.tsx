@@ -46,20 +46,20 @@ export default function CareersPage() {
         <title>Careers - Dearo Venture Capital</title>
         <meta name="description" content="Join Dearo Venture Capital and build wealth while empowering futures." />
       </Head>
-      
+
       {/* Hero Section */}
       <section className="careers-hero position-relative d-flex align-items-center justify-content-center text-center">
         <div className="hero-overlay"></div>
         <div className="container position-relative z-1 py-5">
-          <motion.h1 
+          <motion.h1
             className="display-3 fw-bold text-white mb-4"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Shape the Future <br/> With Us
+            Shape the Future <br /> With Us
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="lead text-white-50 mb-5 mx-auto"
             style={{ maxWidth: "700px" }}
             initial={{ opacity: 0, y: 20 }}
@@ -68,14 +68,14 @@ export default function CareersPage() {
           >
             Step into a rewarding career in the investment industry with unlimited growth opportunities.
           </motion.p>
-          <motion.a 
+          <motion.a
             href="#open-roles"
             className="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold hero-btn"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-             View Open Roles
+            View Open Roles
           </motion.a>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function CareersPage() {
       <section className="py-5 bg-white">
         <div className="container py-5">
           <div className="text-center mb-5">
-            <motion.h2 
+            <motion.h2
               className="display-5 fw-bold mb-3 text-black section-title"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export default function CareersPage() {
             >
               Why Join Dearo?
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-muted"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ export default function CareersPage() {
           <div className="row g-4 pt-3">
             {benefits.map((benefit, index) => (
               <div className="col-md-6 col-lg-3" key={index}>
-                <motion.div 
+                <motion.div
                   className="benefit-card h-100 p-4 bg-light rounded-4 text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function CareersPage() {
         <div className="container py-5">
           <div className="row align-items-center mb-5">
             <div className="col-md-12 text-center">
-              <motion.h2 
+              <motion.h2
                 className="display-5 fw-bold text-black section-title mb-3"
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ export default function CareersPage() {
           </div>
 
           <div className="role-list max-w-4xl mx-auto" style={{ maxWidth: "800px", margin: "0 auto" }}>
-            <motion.div 
+            <motion.div
               className="role-card rounded-4 mb-4 shadow-sm border bg-white overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export default function CareersPage() {
                   </p>
                 </div>
                 <div className="role-action text-md-end">
-                  <button 
+                  <button
                     onClick={() => setDetailsOpen(!detailsOpen)}
                     className="btn btn-outline-primary rounded-pill px-4 py-2 d-flex align-items-center gap-2 text-nowrap fw-bold mx-auto mx-md-0"
                   >
@@ -177,7 +177,7 @@ export default function CareersPage() {
               {/* Expansible Details */}
               <AnimatePresence>
                 {detailsOpen && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -185,7 +185,7 @@ export default function CareersPage() {
                     className="border-top"
                   >
                     <div className="p-4 p-md-5 bg-light bg-opacity-50">
-                      
+
                       <div className="row g-4">
                         {/* Who Can Apply */}
                         <div className="col-lg-6">
@@ -210,16 +210,16 @@ export default function CareersPage() {
                               Walk-In Interview Venue
                             </h5>
                             <p className="text-muted mb-0">
-                              The Ceylinco House, 9th Floor, <br/>
-                              No. 69, Janadhipathi Mawatha, <br/>
+                              The Ceylinco House, 9th Floor, <br />
+                              No. 69, Janadhipathi Mawatha, <br />
                               Colombo 01.
                             </p>
                           </div>
-                          
+
                           <div className="text-center mt-5">
                             <p className="fw-bold mb-3 text-black">Take the first step towards a successful future!</p>
-                            <a 
-                              href="mailto:info@dearoventurecapital.com?subject=Application%20for%20Business%20Development%20Professional%20-%20Investments" 
+                            <a
+                              href="mailto:info@dearoventurecapital.com?subject=Application%20for%20Business%20Development%20Professional%20-%20Investments"
                               className="btn btn-dark rounded-pill px-5 py-3 d-inline-flex align-items-center gap-2 apply-btn w-100 justify-content-center fw-bold shadow-sm"
                             >
                               Apply Now <ArrowRight size={18} />
