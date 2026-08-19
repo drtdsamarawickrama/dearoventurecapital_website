@@ -82,7 +82,7 @@ export default function Gallery() {
         .gallery-header h2 {
           font-size: clamp(2rem, 3vw, 2.8rem);
           font-weight: 700;
-          color: #111;
+          color: #0b1f4b !important;
           margin-bottom: 12px;
         }
 

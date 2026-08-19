@@ -134,10 +134,14 @@ export default function DirectorsPage() {
           min-height: 100vh;
         }
 
+       
+
+
+
         .page-title {
           font-size: 2rem;
           font-weight: 700;
-          color: #111;
+          color: #0b1f4b !important;
         }
 
         .page-subtitle {
