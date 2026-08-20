@@ -31,13 +31,12 @@ export default function Footer() {
 
   return (
     <footer className="footer position-relative">
-      {/* Decorative Glow */}
       <div className="footer-glow"></div>
 
       <div className="container position-relative z-1">
         <div className="row g-5">
 
-          {/* ================= COMPANY INFO ================= */}
+          {/* COMPANY INFO */}
           <div className="col-md-6 col-lg-4 footer-col">
             <h4 className="footer-brand">
               Dearo Venture Capital Limited
@@ -49,8 +48,6 @@ export default function Footer() {
             </p>
 
             <div className="contact-info mt-4">
-
-              {/* Address */}
               <div className="info-item">
                 <MapPin className="info-icon" size={20} />
 
@@ -61,7 +58,6 @@ export default function Footer() {
                 </span>
               </div>
 
-              {/* Phone */}
               <div className="info-item mt-3">
                 <Phone className="info-icon" size={18} />
 
@@ -73,7 +69,6 @@ export default function Footer() {
                 </a>
               </div>
 
-              {/* Email */}
               <div className="info-item mt-3">
                 <Mail className="info-icon" size={18} />
 
@@ -84,24 +79,18 @@ export default function Footer() {
                   info@dearoventurecapital.com
                 </a>
               </div>
-
             </div>
           </div>
 
-          {/* ================= QUICK LINKS ================= */}
+          {/* QUICK LINKS */}
           <div className="col-md-6 col-lg-2 footer-col">
-
             <h5 className="footer-title">
               Quick Links
             </h5>
 
             <ul className="footer-links mt-4">
-
               {quickLinks.map((link, i) => (
-                <li
-                  key={i}
-                  className="quick-link-item"
-                >
+                <li key={i} className="quick-link-item">
                   <Link
                     href={link.href}
                     className="quick-link"
@@ -110,44 +99,29 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-
             </ul>
-
           </div>
 
-          {/* ================= SUBSIDIARIES ================= */}
+          {/* SUBSIDIARIES */}
           <div className="col-md-6 col-lg-3 footer-col">
-
             <h5 className="footer-title">
               Subsidiaries
             </h5>
 
             <ul className="footer-links mt-4">
-
               {subsidiaries.map((item, i) => (
-                <li
-                  key={i}
-                  className="quick-link-item"
-                >
+                <li key={i} className="quick-link-item">
                   <div className="quick-link subsidiary-link">
-
                     <span className="dot"></span>
-
-                    <span>
-                      {item}
-                    </span>
-
+                    <span>{item}</span>
                   </div>
                 </li>
               ))}
-
             </ul>
-
           </div>
 
-          {/* ================= SOCIAL MEDIA ================= */}
+          {/* SOCIAL MEDIA */}
           <div className="col-md-6 col-lg-3 footer-col">
-
             <h5 className="footer-title">
               Connect With Us
             </h5>
@@ -157,8 +131,6 @@ export default function Footer() {
             </p>
 
             <div className="social-icons">
-
-              {/* Facebook */}
               <a
                 href="https://www.facebook.com/people/Dearo-Venture-Capital-Ltd/61566725151766/"
                 target="_blank"
@@ -169,7 +141,6 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
 
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/dearoventurecapitalltd?igsh=MWlxYjNtOTJ5ZHhpZg==/"
                 target="_blank"
@@ -180,7 +151,6 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
 
-              {/* YouTube */}
               <a
                 href="https://www.youtube.com/@dearoventurecapital"
                 target="_blank"
@@ -191,7 +161,6 @@ export default function Footer() {
                 <Youtube size={20} />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/dearo-venture-capital-ltd/"
                 target="_blank"
@@ -202,7 +171,6 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
 
-              {/* TikTok */}
               <a
                 href="#"
                 className="social-btn tiktok"
@@ -210,571 +178,339 @@ export default function Footer() {
               >
                 <PiTiktokLogo size={20} />
               </a>
-
             </div>
-
           </div>
         </div>
 
-        {/* ================= DIVIDER ================= */}
         <hr className="footer-divider" />
 
-        {/* ================= FOOTER BOTTOM ================= */}
+        {/* FOOTER BOTTOM */}
         <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
-
           <div className="copyright">
             © {new Date().getFullYear()} Dearo Venture Capital Limited.
             All Rights Reserved.
           </div>
-
-          {/* <div className="legal-links mt-3 mt-md-0">
-
-            <Link
-              href="/privacy"
-              className="legal-link"
-            >
-              Privacy Policy
-            </Link>
-
-            <span className="mx-2 separator">
-              •
-            </span>
-
-            <Link
-              href="/terms"
-              className="legal-link"
-            >
-              Terms of Service
-            </Link> */}
-
-        {/* </div> */}
-
         </div>
       </div>
 
-      {/* ================= STYLES ================= */}
-
       <style jsx>{`
-
-        /* ================= FOOTER ================= */
-
-.footer {
-  background: #020617;
-  color: #94a3b8;
-  padding: 3.5rem 0 1.5rem;
-  overflow: hidden;
-  font-family: inherit;
-}
-
-
-/* ================= GLOW ================= */
-
-.footer-glow {
-  position: absolute;
-  top: -150px;
-  right: -150px;
-  width: 500px;
-  height: 500px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(56, 189, 248, 0.06) 0%,
-      rgba(2, 6, 23, 0) 70%
-    );
-
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-
-/* ================= COMPANY ================= */
-
-.footer-brand {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: -0.01em;
-}
-
-.footer-title {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-desc {
-  color: #94a3b8;
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact-info .info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.info-icon {
-  color: #38bdf8;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-.footer-link {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-
-/* ================= QUICK LINKS ================= */
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.quick-link-item {
-  margin-bottom: 2px;
-  width: 100%;
-}
-
-.quick-link {
-  display: inline-flex;
-  align-items: center;
-
-  /* Reduced spacing */
-  padding: 5px 0;
-
-  max-width: 100%;
-
-  /* White text */
-  color: #ffffff;
-
-  /* Remove underline */
-  text-decoration: none !important;
-
-  font-size: 0.96rem;
-  font-weight: 500;
-
-  line-height: 1.4;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.quick-link:hover {
-  color: #ffffff;
-  text-decoration: none !important;
-  transform: translateX(5px);
-}
-
-.quick-link:focus,
-.quick-link:active,
-.quick-link:visited {
-  color: #ffffff;
-  text-decoration: none !important;
-}
-
-
-/* ================= SUBSIDIARIES ================= */
-
-.subsidiary-link {
-  cursor: default;
-  color: #ffffff;
-}
-
-.subsidiary-link:hover {
-  color: #ffffff;
-  transform: translateX(5px);
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-
-  background: #475569;
-
-  border-radius: 50%;
-
-  /* Reduced gap between dot and text */
-  margin-right: 8px;
-
-  transition: background 0.3s ease;
-
-  flex-shrink: 0;
-}
-
-.subsidiary-link:hover .dot {
-  background: #38bdf8;
-
-  box-shadow:
-    0 0 8px rgba(56, 189, 248, 0.6);
-}
-
-
-/* ================= SOCIAL MEDIA ================= */
-
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 42px;
-  height: 42px;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  text-decoration: none;
-
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-/* Facebook */
-.social-btn.facebook {
-  color: #1877f2;
-}
-
-
-/* Instagram */
-.social-btn.instagram {
-  color: #e4405f;
-}
-
-
-/* YouTube */
-.social-btn.youtube {
-  color: #ff0000;
-}
-
-
-/* LinkedIn */
-.social-btn.linkedin {
-  color: #0a66c2;
-}
-
-
-/* TikTok */
-.social-btn.tiktok {
-  color: #ffffff;
-}
-
-
-/* Social hover */
-.social-btn:hover {
-  transform: translateY(-4px);
-}
-
-
-/* Facebook hover */
-.social-btn.facebook:hover {
-  background: #1877f2;
-  color: #ffffff;
-
-  box-shadow:
-    0 8px 16px rgba(24, 119, 242, 0.4);
-}
-
-
-/* Instagram hover */
-.social-btn.instagram:hover {
-  background: #e4405f;
-  color: #ffffff;
-
-  box-shadow:
-    0 8px 16px rgba(228, 64, 95, 0.4);
-}
-
-
-/* YouTube hover */
-.social-btn.youtube:hover {
-  background: #ff0000;
-  color: #ffffff;
-
-  box-shadow:
-    0 8px 16px rgba(255, 0, 0, 0.4);
-}
-
-
-/* LinkedIn hover */
-.social-btn.linkedin:hover {
-  background: #0a66c2;
-  color: #ffffff;
-
-  box-shadow:
-    0 8px 16px rgba(10, 102, 194, 0.4);
-}
-
-
-/* TikTok hover */
-.social-btn.tiktok:hover {
-  background: #000000;
-  color: #ffffff;
-
-  box-shadow:
-    0 8px 16px rgba(255, 255, 255, 0.15);
-}
-
-
-/* ================= DIVIDER ================= */
-
-.footer-divider {
-  border-color: rgba(255, 255, 255, 0.08);
-  margin: 2.5rem 0 1.5rem;
-}
-
-
-/* ================= FOOTER BOTTOM ================= */
-
-.footer-bottom {
-  font-size: 0.95rem;
-  text-align: center;
-  justify-content: center;
-}
-
-.copyright {
-  color: #94a3b8;
-  text-align: center;
-  width: 100%;
-}
-
-.legal-links {
-  text-align: center;
-}
-
-.legal-link {
-  color: #94a3b8;
-  text-decoration: none;
-
-  transition: color 0.3s ease;
-}
-
-.legal-link:hover {
-  color: #38bdf8;
-  text-decoration: none;
-}
-
-.separator {
-  color: #475569;
-}
-
-
-/* ================= TABLET ================= */
-
-@media (max-width: 991px) {
-
-  .footer {
-    padding: 3rem 0 1.5rem;
-  }
-
-  .footer-col {
-    margin-bottom: 1rem;
-  }
-
-  .quick-link {
-    font-size: 0.95rem;
-    padding: 5px 0;
-  }
-
-  .social-icons {
-    gap: 10px;
-  }
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 576px) {
-
-  .footer {
-    padding: 2.5rem 15px 1.5rem;
-  }
-
-  .footer-col {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-
-  /* Company */
-
-  .footer-brand {
-    font-size: 1.25rem;
-  }
-
-  .footer-desc {
-    font-size: 0.92rem;
-  }
-
-
-  /* Contact */
-
-  .contact-info .info-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-  }
-
-  
-
-
-  // /* Quick Links */
-
-  // .footer-links {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  // }
-
-  // .quick-link-item {
-  //   width: 100%;
-  //   margin-bottom: 2px;
-  // }
-
-  // .quick-link {
-  //   justify-content: center;
-  //   text-align: center;
-
-  //   font-size: 1rem;
-
-  //   /* Large touch area */
-  //   padding: 6px 20px;
-
-  //   width: auto;
-
-  //   transform: none;
-  // }
-
-  // .quick-link:hover {
-  //   transform: none;
-  // }
-
-
-//   
-
-
-/* ================= QUICK LINKS ================= */
-
-.footer-links {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.footer-links .quick-link-item {
-  margin-bottom: 2px !important;
-  padding: 0 !important;
-  width: 100%;
-}
-
-.footer-links .quick-link {
-  display: inline-flex !important;
-  align-items: center !important;
-
-  padding: 5px 0 !important;
-  margin: 0 !important;
-
-  color: #ffffff !important;
-  background: transparent !important;
-
-  font-size: 0.96rem !important;
-  font-weight: 500 !important;
-  line-height: 1.4 !important;
-
-  text-decoration: none !important;
-
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-
-  transition: transform 0.3s ease !important;
-}
-
-/* All link states */
-.footer-links .quick-link:link,
-.footer-links .quick-link:visited,
-.footer-links .quick-link:hover,
-.footer-links .quick-link:active,
-.footer-links .quick-link:focus {
-  color: #ffffff !important;
-  background: transparent !important;
-  text-decoration: none !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Hover */
-.footer-links .quick-link:hover {
-  transform: translateX(5px);
-}
-
-
-  // /* Social */
-
-  .social-icons {
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .social-btn {
-    width: 44px;
-    height: 44px;
-  }
-
-
-  /* Footer bottom */
-
-  .footer-bottom {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .copyright {
-    width: 100%;
-    text-align: center;
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-
-  .legal-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .separator {
-    display: none;
-  }
-}
+        /* FOOTER */
+        .footer {
+          background-color: #001f3f;
+          color: #94a3b8;
+          padding: 3.5rem 0 1.5rem;
+          overflow: hidden;
+          font-family: inherit;
+        }
+
+        /* GLOW */
+        .footer-glow {
+          position: absolute;
+          top: -150px;
+          right: -150px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.06) 0%,
+            rgba(2, 6, 23, 0) 70%
+          );
+          border-radius: 50%;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* COMPANY */
+        .footer-brand {
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 1.4rem;
+          letter-spacing: -0.01em;
+        }
+
+        .footer-title {
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 1.15rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-desc {
+          color: #94a3b8;
+          line-height: 1.7;
+          font-size: 0.95rem;
+        }
+
+        /* CONTACT */
+        .contact-info .info-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
+        .info-icon {
+          color: #38bdf8;
+          margin-top: 3px;
+          flex-shrink: 0;
+        }
+
+        .footer-link,
+        .footer-link:link,
+        .footer-link:visited,
+        .footer-link:hover,
+        .footer-link:active {
+          color: #ffffff !important;
+          text-decoration: none !important;
+        }
+
+        /* QUICK LINKS */
+        .footer-links {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        .quick-link-item {
+          margin-bottom: 2px;
+          padding: 0;
+          width: 100%;
+        }
+
+        /* IMPORTANT: WHITE TEXT + NO UNDERLINE */
+        .quick-link,
+        .quick-link:link,
+        .quick-link:visited,
+        .quick-link:hover,
+        .quick-link:active,
+        .quick-link:focus {
+          display: inline-flex !important;
+          align-items: center !important;
+
+          padding: 5px 0 !important;
+          margin: 0 !important;
+
+          color: #ffffff !important;
+          background: transparent !important;
+
+          text-decoration: none !important;
+          text-decoration-line: none !important;
+
+          font-size: 0.96rem;
+          font-weight: 500;
+          line-height: 1.4;
+
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
+
+          transition: transform 0.3s ease;
+        }
+
+        .quick-link:hover {
+          color: #ffffff !important;
+          text-decoration: none !important;
+          transform: translateX(5px);
+        }
+
+        /* SUBSIDIARIES */
+        .subsidiary-link {
+          cursor: default;
+          color: #ffffff !important;
+        }
+
+        .subsidiary-link:hover {
+          color: #ffffff !important;
+          transform: translateX(5px);
+        }
+
+        .dot {
+          width: 6px;
+          height: 6px;
+          background: #475569;
+          border-radius: 50%;
+          margin-right: 8px;
+          transition: background 0.3s ease;
+          flex-shrink: 0;
+        }
+
+        .subsidiary-link:hover .dot {
+          background: #38bdf8;
+          box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+        }
+
+        /* SOCIAL MEDIA */
+        .social-icons {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
+        .social-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.06);
+          text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .social-btn.facebook {
+          color: #1877f2;
+        }
+
+        .social-btn.instagram {
+          color: #e4405f;
+        }
+
+        .social-btn.youtube {
+          color: #ff0000;
+        }
+
+        .social-btn.linkedin {
+          color: #0a66c2;
+        }
+
+        .social-btn.tiktok {
+          color: #ffffff;
+        }
+
+        .social-btn:hover {
+          transform: translateY(-4px);
+        }
+
+        .social-btn.facebook:hover {
+          background: #1877f2;
+          color: #ffffff;
+          box-shadow: 0 8px 16px rgba(24, 119, 242, 0.4);
+        }
+
+        .social-btn.instagram:hover {
+          background: #e4405f;
+          color: #ffffff;
+          box-shadow: 0 8px 16px rgba(228, 64, 95, 0.4);
+        }
+
+        .social-btn.youtube:hover {
+          background: #ff0000;
+          color: #ffffff;
+          box-shadow: 0 8px 16px rgba(255, 0, 0, 0.4);
+        }
+
+        .social-btn.linkedin:hover {
+          background: #0a66c2;
+          color: #ffffff;
+          box-shadow: 0 8px 16px rgba(10, 102, 194, 0.4);
+        }
+
+        .social-btn.tiktok:hover {
+          background: #000000;
+          color: #ffffff;
+          box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
+        }
+
+        /* DIVIDER */
+        .footer-divider {
+          border-color: rgba(255, 255, 255, 0.08);
+          margin: 2.5rem 0 1.5rem;
+        }
+
+        /* FOOTER BOTTOM */
+        .footer-bottom {
+          font-size: 0.95rem;
+          text-align: center;
+          justify-content: center;
+        }
+
+        .copyright {
+          color: #94a3b8;
+          text-align: center;
+          width: 100%;
+        }
+
+        /* TABLET */
+        @media (max-width: 991px) {
+          .footer {
+            padding: 3rem 0 1.5rem;
+          }
+
+          .footer-col {
+            margin-bottom: 1rem;
+          }
+
+          .quick-link {
+            font-size: 0.95rem !important;
+          }
+
+          .social-icons {
+            gap: 10px;
+          }
+        }
+
+        /* MOBILE */
+        @media (max-width: 576px) {
+          .footer {
+            padding: 2.5rem 15px 1.5rem;
+          }
+
+          .footer-col {
+            text-align: center;
+            margin-bottom: 1.5rem;
+          }
+
+          .footer-brand {
+            font-size: 1.25rem;
+          }
+
+          .footer-desc {
+            font-size: 0.92rem;
+          }
+
+          .contact-info .info-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+          }
+
+          .quick-link,
+          .quick-link:link,
+          .quick-link:visited,
+          .quick-link:hover,
+          .quick-link:active,
+          .quick-link:focus {
+            color: #ffffff !important;
+            text-decoration: none !important;
+          }
+
+          .social-icons {
+            justify-content: center;
+            gap: 10px;
+          }
+
+          .social-btn {
+            width: 44px;
+            height: 44px;
+          }
+
+          .footer-bottom {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .copyright {
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.6;
+          }
+        }
       `}</style>
     </footer>
   );

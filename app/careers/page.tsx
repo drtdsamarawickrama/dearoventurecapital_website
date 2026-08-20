@@ -87,6 +87,8 @@ export default function CareersPage() {
             <motion.h2
               className="display-5 fw-bold mb-3 text-black section-title"
               initial={{ opacity: 0, y: 20 }}
+                            color="#0b1f4b !important"
+
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
@@ -95,6 +97,7 @@ export default function CareersPage() {
             </motion.h2>
             <motion.p
               className="text-muted"
+              color="#0b1f4b !important"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -131,7 +134,7 @@ export default function CareersPage() {
           <div className="row align-items-center mb-5">
             <div className="col-md-12 text-center">
               <motion.h2
-                className="display-5 fw-bold text-black section-title mb-3"
+                className="display-5 fw-bold text-navy blue section-title mb-3"
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -309,6 +312,9 @@ export default function CareersPage() {
         .text-black {
           color: #111 !important;
         }
+        .text-navy blue {
+              color="#0b1f4b !important"
+        }  
         .btn-outline-primary {
           color: #0d6efd;
           border-color: #0d6efd;

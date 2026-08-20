@@ -67,7 +67,7 @@ export default function AboutSection() {
 
             {/* ===== ABOUT TITLE ===== */}
             <h2 className="mb-3 mt-5 text-center section-title">
-              <strong>About</strong> Our Company
+              <strong>About Our Company </strong> 
             </h2>
 
             {/* ===== ABOUT IMAGE ===== */}
@@ -141,7 +141,7 @@ export default function AboutSection() {
           <div className="col-12 text-center mb-4">
 
             <h3 className="section-title">
-Key Milestones            </h3>
+               Key Milestones            </h3>
 
             
 
@@ -243,11 +243,17 @@ Key Milestones            </h3>
           font-size: 1rem;
         }
 
-        h2,
-        h3 {
+        h2 {
           font-size: clamp(2rem, 3vw, 2.8rem);
           font-weight: 700;
-          line-height: 1.3;
+          color: #0b1f4b !important;
+          margin-bottom: 12px;
+        }
+
+         h3 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #0b1f4b !important;
         }
 
         /* ================= MILESTONES ================= */

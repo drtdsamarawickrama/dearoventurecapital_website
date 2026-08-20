@@ -139,9 +139,10 @@ export default function DirectorsPage() {
 
 
         .page-title {
-          font-size: 2rem;
+          font-size: clamp(2rem, 3vw, 2.8rem);
           font-weight: 700;
           color: #0b1f4b !important;
+          margin-bottom: 12px;
         }
 
         .page-subtitle {

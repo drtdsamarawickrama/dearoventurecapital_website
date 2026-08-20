@@ -145,3 +145,21 @@
   background: #ff0000;
   box-shadow: 0 8px 16px rgba(255,0,0,0.4);
 }
+
+/* FORCE FOOTER QUICK LINKS TO WHITE */
+footer .quick-link,
+footer .quick-link:link,
+footer .quick-link:visited,
+footer .quick-link:hover,
+footer .quick-link:active,
+footer .quick-link:focus {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+/* Remove any underline pseudo-elements */
+footer .quick-link::before,
+footer .quick-link::after {
+  text-decoration: none !important;
+} 
