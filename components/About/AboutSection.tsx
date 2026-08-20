@@ -58,156 +58,184 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="pt-0 pb-5 bg-light">
+    <section id="about" className="about-section bg-light">
       <div className="container">
 
-        {/* ================= ABOUT SECTION ================= */}
-        <div className="row mb-5">
+        {/* ================= ABOUT ================= */}
+
+        <div className="row about-row">
           <div className="col-12">
 
-            {/* ===== ABOUT TITLE ===== */}
-            <h2 className="mb-3 mt-5 text-center section-title">
-              <strong>About Our Company </strong> 
+            <h2 className="text-center section-title about-main-title">
+              <strong>About Our Company</strong>
             </h2>
 
-            {/* ===== ABOUT IMAGE ===== */}
-            <div className="about-image-wrapper mt-4">
+            <div className="about-image-wrapper">
               <Image
                 src="/images/about_new.png"
                 alt="About Dearo"
                 width={1300}
                 height={500}
                 className="about-image"
+                sizes="(max-width: 576px) 100vw, (max-width: 992px) 100vw, 1300px"
                 priority
               />
             </div>
 
-            {/* ===== ABOUT PARAGRAPHS ===== */}
-            <p className="text-dark">
-              Dearo Venture Capital Ltd is a diversified investment and business
-              development organization dedicated to creating sustainable value
-              for individuals, entrepreneurs, SMEs, and corporate partners
-              across Sri Lanka.
-            </p>
+            <div className="about-content">
 
-            <p className="text-dark">
-              Established in September 2022, the company has rapidly evolved
-              into one of the country's emerging investment institutions,
-              driven by a vision of empowering economic growth, supporting
-              innovation, and creating opportunities that uplift communities.
-            </p>
+              <p>
+                Dearo Venture Capital Ltd is a diversified investment and
+                business development organization dedicated to creating
+                sustainable value for individuals, entrepreneurs, SMEs, and
+                corporate partners across Sri Lanka.
+              </p>
 
-            <p className="text-dark">
-              Through disciplined risk management, sound governance practices,
-              and a client-centric approach, Dearo Venture Capital Ltd provides
-              investment solutions that help clients achieve financial
-              security while contributing to national economic development.
-            </p>
+              <p>
+                Established in September 2022, the company has rapidly evolved
+                into one of the country's emerging investment institutions,
+                driven by a vision of empowering economic growth, supporting
+                innovation, and creating opportunities that uplift communities.
+              </p>
 
-            <p className="text-dark">
-              Our strength lies in understanding market opportunities, building
-              strategic partnerships, and delivering innovative financial
-              solutions that generate long-term returns and sustainable growth.
-            </p>
+              <p>
+                Through disciplined risk management, sound governance practices,
+                and a client-centric approach, Dearo Venture Capital Ltd
+                provides investment solutions that help clients achieve
+                financial security while contributing to national economic
+                development.
+              </p>
 
-            {/* ===== VISION ===== */}
-            <h4 className="mb-3 section-title">
-              Our <strong>Vision</strong>
-            </h4>
+              <p>
+                Our strength lies in understanding market opportunities,
+                building strategic partnerships, and delivering innovative
+                financial solutions that generate long-term returns and
+                sustainable growth.
+              </p>
 
-            <p className="text-dark">
-              To become Sri Lanka's most trusted and innovative investment and
-              venture capital organization, creating lasting value for
-              stakeholders while contributing to the nation's economic
-              prosperity.
-            </p>
+              {/* VISION */}
 
-            {/* ===== MISSION ===== */}
-            <h4 className="mb-3 section-title">
-              Our <strong>Mission</strong>
-            </h4>
+              <h4 className="section-title vision-title">
+                Our <strong>Vision</strong>
+              </h4>
 
-            <p className="text-dark">
-              To empower individuals, entrepreneurs, SMEs, and corporate
-              partners through innovative investment solutions, strategic
-              partnerships, and responsible business practices that drive
-              sustainable growth and create meaningful economic opportunities.
-            </p>
+              <p>
+                To become Sri Lanka's most trusted and innovative investment and
+                venture capital organization, creating lasting value for
+                stakeholders while contributing to the nation's economic
+                prosperity.
+              </p>
+
+              {/* MISSION */}
+
+              <h4 className="section-title mission-title">
+                Our <strong>Mission</strong>
+              </h4>
+
+              <p>
+                To empower individuals, entrepreneurs, SMEs, and corporate
+                partners through innovative investment solutions, strategic
+                partnerships, and responsible business practices that drive
+                sustainable growth and create meaningful economic opportunities.
+              </p>
+
+            </div>
           </div>
         </div>
 
-        {/* ================= KEY MILESTONES ================= */}
-        <div className="row mb-5">
-          <div className="col-12 text-center mb-4">
+        {/* ================= MILESTONES ================= */}
 
-            <h3 className="section-title">
-               Key Milestones            </h3>
+        <div className="row milestones-section">
 
-            
-
+          <div className="col-12 text-center">
+            <h3 className="section-title section-heading">
+              Key Milestones
+            </h3>
           </div>
 
           {milestones.map((item, i) => (
-            <div key={i} className="col-md-6 mb-4">
+            <div
+              key={i}
+              className="col-12 col-md-6 milestone-column"
+            >
               <div className="milestone-card h-100">
 
                 <h5>{item.year}</h5>
 
-                <h6 className="fw-semibold text-black">
-                  {item.title}
-                </h6>
+                <h6>{item.title}</h6>
 
-                <p className="mb-0 text-dark">
+                <p className="mb-0">
                   {item.description}
                 </p>
 
               </div>
             </div>
           ))}
+
         </div>
 
         {/* ================= AWARDS ================= */}
-        <div className="row mb-5">
-          <div className="col-12 text-center mb-4">
 
-            <h3 className="section-title">
+        <div className="row awards-section">
+
+          <div className="col-12 text-center">
+
+            <h3 className="section-title section-heading">
               Awards & Recognition
             </h3>
 
-            <p className="text-muted">
+            <p className="awards-subtitle">
               Recognition of excellence and leadership
             </p>
 
           </div>
 
           {awards.map((award, i) => (
-            <div key={i} className="col-md-4 mb-4">
+            <div
+              key={i}
+              className="col-12 col-sm-6 col-md-4 award-column"
+            >
+
               <div className="award-card h-100">
 
                 <div className="award-icon">
+
                   <Image
                     src={award.image}
                     alt={award.title}
                     fill
                     className="award-img"
+                    sizes="(max-width: 576px) 90px, 110px"
                   />
+
                 </div>
 
-                <h6 className="fw-semibold text-black">
-                  {award.title}
-                </h6>
+                <h6>{award.title}</h6>
 
               </div>
+
             </div>
           ))}
+
         </div>
 
       </div>
 
-      {/* ================= STYLES ================= */}
       <style jsx>{`
 
-        /* ================= SECTION TITLES ================= */
+        /* ================= SECTION ================= */
+
+        .about-section {
+          padding: 0 0 80px;
+          overflow-x: hidden;
+        }
+
+        .about-row {
+          margin-bottom: 70px;
+        }
+
+
+        /* ================= TITLES ================= */
 
         .section-title {
           color: #0b1f4b !important;
@@ -218,63 +246,113 @@ export default function AboutSection() {
           font-weight: 700;
         }
 
+        .about-main-title {
+          margin-top: 48px;
+          margin-bottom: 28px;
+          font-size: clamp(1.8rem, 3vw, 2.8rem);
+        }
+
+        .section-heading {
+          font-size: clamp(1.5rem, 2.5vw, 2rem);
+          margin-bottom: 35px;
+          font-weight: 700;
+        }
+
+        .vision-title,
+        .mission-title {
+          margin-top: 32px;
+          margin-bottom: 14px;
+          font-size: clamp(1.2rem, 2vw, 1.5rem);
+        }
+
+
         /* ================= ABOUT IMAGE ================= */
 
         .about-image-wrapper {
           width: 100%;
-          margin: 0 0 30px 0;
-          padding: 0;
+          overflow: hidden;
+          margin-bottom: 32px;
         }
 
         .about-image {
-          width: 100%;
-          height: 500px;
-          object-fit: cover;
           display: block;
+          width: 100% !important;
+          height: auto !important;
+          max-width: 100%;
+          object-fit: cover;
           border-radius: 0 0 20px 20px;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
 
-        /* ================= TYPOGRAPHY ================= */
 
-        p {
-          line-height: 1.7;
+        /* ================= CONTENT ================= */
+
+        .about-content {
+          width: 100%;
+        }
+
+        .about-content p,
+        .milestone-card p {
           color: #374151;
           font-size: 1rem;
+          line-height: 1.75;
+          margin-bottom: 20px;
         }
 
-        h2 {
-          font-size: clamp(2rem, 3vw, 2.8rem);
-          font-weight: 700;
-          color: #0b1f4b !important;
-          margin-bottom: 12px;
-        }
-
-         h3 {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #0b1f4b !important;
-        }
 
         /* ================= MILESTONES ================= */
 
+        .milestones-section {
+          margin-bottom: 70px;
+        }
+
+        .milestone-column {
+          margin-bottom: 24px;
+        }
+
         .milestone-card {
           background: #ffffff;
-          padding: 24px;
+          padding: 26px;
           border-radius: 14px;
           border-left: 4px solid #1e40af;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-          height: 100%;
+          transition: transform 0.25s ease;
+        }
+
+        .milestone-card:hover {
+          transform: translateY(-4px);
         }
 
         .milestone-card h5 {
-          font-size: 0.8rem;
+          font-size: 0.85rem;
           letter-spacing: 0.08em;
           color: #1e40af;
-          margin-bottom: 6px;
+          margin-bottom: 8px;
+          font-weight: 700;
         }
 
+        .milestone-card h6 {
+          color: #000000;
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+
         /* ================= AWARDS ================= */
+
+        .awards-section {
+          margin-bottom: 20px;
+        }
+
+        .awards-subtitle {
+          color: #6b7280;
+          margin-bottom: 35px;
+        }
+
+        .award-column {
+          margin-bottom: 24px;
+        }
 
         .award-card {
           background: #ffffff;
@@ -284,7 +362,6 @@ export default function AboutSection() {
           text-align: center;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
           transition: transform 0.25s ease, box-shadow 0.25s ease;
-          height: 100%;
         }
 
         .award-card:hover {
@@ -295,62 +372,196 @@ export default function AboutSection() {
         .award-icon {
           width: 110px;
           height: 110px;
-          margin: 0 auto 16px;
           position: relative;
+          margin: 0 auto 18px;
         }
 
         .award-img {
           object-fit: contain;
-          padding: 10px;
         }
 
-        /* ================= RESPONSIVE ================= */
+        .award-card h6 {
+          color: #000000;
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
 
-        /* Tablets */
+
+        /* ================= TABLET ================= */
 
         @media (max-width: 992px) {
-          .about-image {
-            height: 400px;
+
+          .about-section {
+            padding-bottom: 60px;
           }
+
+          .about-row {
+            margin-bottom: 55px;
+          }
+
+          .milestones-section {
+            margin-bottom: 55px;
+          }
+
+          .milestone-card {
+            padding: 22px;
+          }
+
+          .award-card {
+            padding: 24px 16px;
+          }
+
         }
 
-        /* Mobile */
+
+        /* ================= MOBILE ================= */
 
         @media (max-width: 576px) {
-          section {
-            padding-top: 0;
-            padding-bottom: 3rem;
+
+          .about-section {
+            padding-bottom: 45px;
           }
+
+          .container {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+
+          .about-row {
+            margin-bottom: 45px;
+          }
+
+
+          /* TITLE */
+
+          .about-main-title {
+            margin-top: 32px;
+            margin-bottom: 22px;
+            font-size: 1.7rem;
+          }
+
+          .section-heading {
+            font-size: 1.45rem;
+            margin-bottom: 25px;
+          }
+
+          .vision-title,
+          .mission-title {
+            margin-top: 28px;
+            font-size: 1.2rem;
+          }
+
+
+          /* IMAGE */
 
           .about-image-wrapper {
             margin-bottom: 25px;
           }
 
           .about-image {
-            height: 260px;
-            border-radius: 0 0 15px 15px;
+            width: 100% !important;
+            height: auto !important;
+            min-height: auto !important;
+            border-radius: 0 0 14px 14px;
           }
 
-          h2 {
-            font-size: 1.6rem;
-          }
 
-          h3 {
-            font-size: 1.4rem;
-          }
+          /* TEXT */
 
-          p {
+          .about-content p,
+          .milestone-card p {
             font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+          }
+
+
+          /* MILESTONE */
+
+          .milestones-section {
+            margin-bottom: 45px;
+          }
+
+          .milestone-column {
+            margin-bottom: 18px;
           }
 
           .milestone-card {
             padding: 20px;
+            border-radius: 12px;
+          }
+
+          .milestone-card h6 {
+            font-size: 1rem;
+          }
+
+
+          /* AWARDS */
+
+          .award-column {
+            margin-bottom: 18px;
+          }
+
+          .award-card {
+            padding: 22px 14px;
+            border-radius: 14px;
           }
 
           .award-icon {
             width: 90px;
             height: 90px;
+            margin-bottom: 14px;
           }
+
+          .award-card h6 {
+            font-size: 0.92rem;
+            line-height: 1.4;
+          }
+
+          .awards-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+          }
+
+        }
+
+
+        /* ================= VERY SMALL MOBILE ================= */
+
+        @media (max-width: 375px) {
+
+          .container {
+            padding-left: 12px;
+            padding-right: 12px;
+          }
+
+          .about-main-title {
+            font-size: 1.5rem;
+          }
+
+          .section-heading {
+            font-size: 1.3rem;
+          }
+
+          .about-content p,
+          .milestone-card p {
+            font-size: 0.9rem;
+          }
+
+          .milestone-card {
+            padding: 18px;
+          }
+
+          .award-card {
+            padding: 20px 12px;
+          }
+
+          .award-icon {
+            width: 80px;
+            height: 80px;
+          }
+
         }
 
       `}</style>
