@@ -17,7 +17,7 @@ const newsArticles = [
     images: [
       "/images/news/school00.jpg",
       "/images/news/school1.jpg",
-      "/images/news/school2.jpg", 
+      "/images/news/school2.jpg",
       "/images/news/school4.jpg",
     ],
   },
@@ -27,7 +27,7 @@ const newsArticles = [
       "Dearo Investment Pvt. Ltd. won four awards, including Excellence in Workplace Development and Best Customer Service Provider, at the People’s Excellency Awards 2024 in Colombo. Known for its financial services, such as SME financing and entrepreneur loans, the company operates over 25 branches nationwide. Under CEO Prasanna Sanjeewa, Dearo plans to expand its offerings, focusing on the MSME sector.",
     images: ["/images/news/news1.jpg"],
   },
-   {
+  {
     title: "Dearo Supports Ampara Village Temple Annual Procession",
     description:
       "Dearo Investment Limited proudly supported the annual procession of the Ampara Village Temple, demonstrating its commitment to preserving local traditions and strengthening community bonds. Through this initiative, Dearo actively promotes cultural heritage and fosters meaningful engagement within the communities it serves.  ",
@@ -63,8 +63,7 @@ export default function NewsPage() {
     <main className="bg-light">
       {/* Hero Section */}
       <section className="hero text-center py-5 bg-white shadow-sm">
-        <h1 className="display-4 fw-bold mb-2 text-black">News & Updates</h1>
-        <p className="lead text-muted">
+        <h1 className="news-title">News & Updates</h1>        <p className="lead text-muted">
           Stay informed with the latest announcements, projects, and initiatives from Dearo.
         </p>
       </section>
@@ -86,9 +85,8 @@ export default function NewsPage() {
                       {news.images.map((img, i) => (
                         <div
                           key={i}
-                          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${
-                            i === currentSlide ? "opacity-100" : "opacity-0"
-                          }`}
+                          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${i === currentSlide ? "opacity-100" : "opacity-0"
+                            }`}
                         >
                           <Image
                             src={img}
@@ -111,8 +109,8 @@ export default function NewsPage() {
                         {isExpanded
                           ? news.description
                           : news.description.length > previewLength
-                          ? news.description.slice(0, previewLength) + "..."
-                          : news.description}
+                            ? news.description.slice(0, previewLength) + "..."
+                            : news.description}
                       </p>
 
                       {news.description.length > previewLength && (
@@ -138,6 +136,13 @@ export default function NewsPage() {
           transition: transform 0.2s ease, box-shadow 0.3s ease;
           border-radius: 0.5rem;
         }
+
+        .news-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: #0b1f4b !important;
+  margin-bottom: 12px;
+}
 
         .news-card:hover {
           transform: translateY(-6px);

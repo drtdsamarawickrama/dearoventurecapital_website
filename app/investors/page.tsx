@@ -19,18 +19,27 @@ export default function InvestorPage() {
           className="object-fit-cover mt-0"
         />
 
-       
 
-        
+
+
       </section>
 
       <br /><br />
 
-     
+
       <section className="py-5">
         <div className="container">
-          <h2 className="mb-4 text-center">Financial Reports</h2>
-          <p className="text-center mb-5">
+          <h2
+            className="text-center"
+            style={{
+              fontSize: "clamp(2rem, 3vw, 2.8rem)",
+              fontWeight: 700,
+              color: "#0b1f4b",
+              marginBottom: "12px",
+            }}
+          >
+            Financial Reports
+          </h2>          <p className="text-center mb-5">
             At Dearo Venture Capital Limited, we believe in complete financial transparency.
             Our reports provide a clear view of performance, risk, and strategy.
           </p>
@@ -132,3 +141,4 @@ export default function InvestorPage() {
     </main>
   );
 }
+
