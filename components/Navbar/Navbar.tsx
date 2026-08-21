@@ -91,7 +91,7 @@ export default function Navbar() {
             onClick={closeMenu}
           >
             <Image
-              src="/images/logo1.jpg"
+              src="/images/final_logo-venture.jpg"
               alt="Dearo Logo"
               width={160}
               height={40}
