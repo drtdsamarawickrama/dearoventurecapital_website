@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 
-// import GoogleTranslate from "./GoogleTranslate";
+import GoogleTranslate from "./GoogleTranslate";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,11 +61,10 @@ export default function Navbar() {
                 info@dearoventurecapital.com
               </a>
 
-              {/* ===================== LANGUAGE ===================== */}
 
-              {/* <div className="language-wrapper">
+              <div className="language-wrapper">
                 <GoogleTranslate />
-              </div> */}
+              </div>
 
             </div>
           </div>
@@ -91,7 +90,7 @@ export default function Navbar() {
             onClick={closeMenu}
           >
             <Image
-              src="/images/logo1.jpg"
+              src="/images/final_logo-venture.jpg"
               alt="Dearo Logo"
               width={160}
               height={40}
@@ -286,11 +285,11 @@ export default function Navbar() {
 
         /* ===================== LANGUAGE ===================== */
 
-        // .language-wrapper {
-        //   display: flex;
-        //   align-items: center;
-        //   margin-left: 2px;
-        // }
+        .language-wrapper {
+          display: flex;
+          align-items: center;
+          margin-left: 2px;
+        }
 
         /* ===================== NAVBAR ===================== */
 
