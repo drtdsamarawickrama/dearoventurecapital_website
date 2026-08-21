@@ -12,7 +12,6 @@ const slides = [
     titleAccent: "Innovators",
     subtitle:
       "We invest in visionary founders shaping the future of technology and business.",
-   
   },
   {
     image: "/images/slide.jpg",
@@ -21,7 +20,6 @@ const slides = [
     titleAccent: "Globally",
     subtitle:
       "Strategic guidance, funding, and a global network to accelerate growth.",
-   
   },
   {
     image: "/images/hero3.png",
@@ -30,7 +28,6 @@ const slides = [
     titleAccent: "of Industries",
     subtitle:
       "Driving innovation across technology, agriculture, and financial solutions.",
-   
   },
 ];
 
@@ -44,31 +41,45 @@ export default function Hero() {
   const goTo = useCallback(
     (idx: number) => {
       if (isTransitioning) return;
+
       setIsTransitioning(true);
       setProgress(0);
+
       setCurrent((idx + slides.length) % slides.length);
-      setTimeout(() => setIsTransitioning(false), 700);
+
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 700);
     },
     [isTransitioning]
   );
 
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+  const next = useCallback(() => {
+    goTo(current + 1);
+  }, [current, goTo]);
+
+  const prev = useCallback(() => {
+    goTo(current - 1);
+  }, [current, goTo]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
       setProgress(0);
     }, SLIDE_DURATION);
+
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     setProgress(0);
+
     const step = 100 / (SLIDE_DURATION / 50);
+
     const timer = setInterval(() => {
       setProgress((p) => Math.min(p + step, 100));
     }, 50);
+
     return () => clearInterval(timer);
   }, [current]);
 
@@ -77,18 +88,31 @@ export default function Hero() {
       {/* Slides */}
       {slides.map((slide, index) => {
         const active = index === current;
+
         return (
-          <div key={index} className={`slide ${active ? "active" : ""}`}>
+          <div
+            key={index}
+            className={`slide ${active ? "active" : ""}`}
+          >
+            {/* Hero Image */}
             <Image
               src={slide.image}
               alt={slide.title}
               fill
               priority={index === 0}
+              sizes="100vw"
               className="hero-image"
             />
+
+            {/* Overlay */}
             <div className="overlay" />
 
-            <div className={`content ${active ? "content-active" : ""}`}>
+            {/* Content */}
+            <div
+              className={`content ${
+                active ? "content-active" : ""
+              }`}
+            >
               <div className="content-inner">
                 {/* Tag */}
                 <div className="tag-wrapper">
@@ -97,29 +121,40 @@ export default function Hero() {
 
                 {/* Title */}
                 <h1>
-                  <span className="title-line">{slide.title}</span>
+                  <span className="title-line">
+                    {slide.title}
+                  </span>
                   <br />
-                  <span className="title-accent">{slide.titleAccent}</span>
+                  <span className="title-accent">
+                    {slide.titleAccent}
+                  </span>
                 </h1>
 
                 {/* Subtitle */}
-                <p className="subtitle">{slide.subtitle}</p>
-
-              
-
-              
-               
+                <p className="subtitle">
+                  {slide.subtitle}
+                </p>
               </div>
             </div>
           </div>
         );
       })}
 
-      {/* Prev / Next Arrows */}
-      <button className="nav-arrow nav-prev" onClick={prev} aria-label="Previous">
+      {/* Previous Arrow */}
+      <button
+        className="nav-arrow nav-prev"
+        onClick={prev}
+        aria-label="Previous slide"
+      >
         <ChevronLeft size={28} />
       </button>
-      <button className="nav-arrow nav-next" onClick={next} aria-label="Next">
+
+      {/* Next Arrow */}
+      <button
+        className="nav-arrow nav-next"
+        onClick={next}
+        aria-label="Next slide"
+      >
         <ChevronRight size={28} />
       </button>
 
@@ -135,80 +170,134 @@ export default function Hero() {
             {i === current && (
               <span
                 className="dot-progress"
-                style={{ width: `${progress}%` }}
+                style={{
+                  width: `${progress}%`,
+                }}
               />
             )}
           </button>
         ))}
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll Indicator */}
       <div className="scroll-indicator">
         <div className="scroll-line" />
         <span className="scroll-text">Scroll</span>
       </div>
 
       <style jsx>{`
+        /* =========================================
+           HERO
+        ========================================= */
+
         .hero {
           position: relative;
-          height: 100vh;
-          min-height: 600px;
           width: 100%;
+          height: 100vh;
+          height: 100svh;
+          min-height: 600px;
           overflow: hidden;
           background: #000;
         }
 
-        /* ── SLIDE ── */
+        /* =========================================
+           SLIDE
+        ========================================= */
+
         .slide {
           position: absolute;
           inset: 0;
+          width: 100%;
+          height: 100%;
           opacity: 0;
           transition: opacity 0.9s ease;
           pointer-events: none;
         }
+
         .slide.active {
           opacity: 1;
           z-index: 2;
           pointer-events: auto;
         }
 
+        /* =========================================
+           RESPONSIVE HERO IMAGE
+        ========================================= */
+
         .hero-image {
+          position: absolute !important;
+          inset: 0;
+          width: 100% !important;
+          height: 100% !important;
+
+          /*
+            Cover keeps the image filling the entire hero
+            without stretching or distortion.
+          */
           object-fit: cover;
-          object-position: center 30%;
+
+          /*
+            Center prevents important parts of the image
+            from being pushed too far to one side.
+          */
+          object-position: center center;
+
+          z-index: 0;
         }
 
-        /* ── OVERLAY ── */
+        /* =========================================
+           OVERLAY
+        ========================================= */
+
         .overlay {
           position: absolute;
           inset: 0;
+          z-index: 1;
+
           background: linear-gradient(
             110deg,
             rgba(2, 6, 23, 0.82) 0%,
             rgba(2, 6, 23, 0.55) 55%,
             rgba(2, 6, 23, 0.15) 100%
           );
-          z-index: 1;
         }
 
-        /* ── CONTENT ── */
+        /* =========================================
+           CONTENT
+        ========================================= */
+
         .content {
           position: relative;
           z-index: 3;
-          height: 100%;
+
+          width: 100%;
           max-width: 1280px;
+          height: 100%;
+
           margin: 0 auto;
+
           padding: 0 40px;
+
           display: flex;
           flex-direction: column;
           justify-content: center;
+
           color: #fff;
+
+          box-sizing: border-box;
         }
 
         .content-inner {
+          width: 100%;
           max-width: 680px;
+
           opacity: 0;
+
           transform: translateY(30px);
-          transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+
+          transition:
+            opacity 0.8s ease 0.3s,
+            transform 0.8s ease 0.3s;
         }
 
         .content-active .content-inner {
@@ -216,262 +305,461 @@ export default function Hero() {
           transform: translateY(0);
         }
 
-        /* Tag pill */
+        /* =========================================
+           TAG
+        ========================================= */
+
         .tag-wrapper {
           margin-bottom: 20px;
         }
+
         .tag {
           display: inline-block;
+
           background: rgba(56, 189, 248, 0.15);
+
           border: 1px solid rgba(56, 189, 248, 0.4);
+
           color: #38bdf8;
+
           font-size: 0.78rem;
           font-weight: 600;
+
           letter-spacing: 0.12em;
+
           text-transform: uppercase;
+
           padding: 6px 16px;
+
           border-radius: 100px;
+
           backdrop-filter: blur(8px);
+
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
-        /* Heading */
+        /* =========================================
+           HEADING
+        ========================================= */
+
         h1 {
-          font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+          margin: 0 0 22px;
+
+          font-size: clamp(
+            2.4rem,
+            5.5vw,
+            4.5rem
+          );
+
           font-weight: 800;
+
           line-height: 1.08;
-          margin-bottom: 22px;
+
           letter-spacing: -0.02em;
+
+          overflow-wrap: break-word;
+          word-break: normal;
         }
+
         .title-line {
           color: #f8fafc;
-          text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+
+          text-shadow:
+            0 4px 24px rgba(0, 0, 0, 0.5);
         }
+
         .title-accent {
-          background: linear-gradient(95deg, #38bdf8 0%, #818cf8 100%);
+          background: linear-gradient(
+            95deg,
+            #38bdf8 0%,
+            #818cf8 100%
+          );
+
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
-        /* Subtitle */
+        /* =========================================
+           SUBTITLE
+        ========================================= */
+
         .subtitle {
-          font-size: clamp(1rem, 2.2vw, 1.2rem);
-          color: rgba(255, 255, 255, 0.82);
-          line-height: 1.75;
-          margin-bottom: 36px;
+          width: 100%;
           max-width: 560px;
+
+          margin: 0 0 36px;
+
+          font-size: clamp(
+            1rem,
+            2.2vw,
+            1.2rem
+          );
+
+          line-height: 1.75;
+
+          color: rgba(255, 255, 255, 0.82);
+
+          overflow-wrap: break-word;
         }
 
-        /* CTA Group */
-        .cta-group {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          margin-bottom: 48px;
-          flex-wrap: wrap;
-        }
+        /* =========================================
+           NAVIGATION ARROWS
+        ========================================= */
 
-        .btn-primary {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: #38bdf8;
-          color: #020617;
-          font-weight: 700;
-          font-size: 0.97rem;
-          padding: 14px 28px;
-          border-radius: 50px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
-          white-space: nowrap;
-        }
-        .btn-primary:hover {
-          background: #0ea5e9;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 32px rgba(56, 189, 248, 0.5);
-          color: #020617;
-        }
-        .btn-arrow {
-          transition: transform 0.3s ease;
-        }
-        .btn-primary:hover .btn-arrow {
-          transform: translateX(4px);
-        }
-
-        .btn-secondary {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          color: #fff;
-          font-weight: 600;
-          font-size: 0.97rem;
-          padding: 14px 28px;
-          border-radius: 50px;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          white-space: nowrap;
-        }
-        .btn-secondary:hover {
-          background: rgba(255, 255, 255, 0.18);
-          border-color: rgba(255, 255, 255, 0.5);
-          color: #fff;
-        }
-
-        /* Stats Row */
-        .stats-row {
-          display: flex;
-          align-items: center;
-          gap: 24px;
-        }
-        .stat {
-          display: flex;
-          flex-direction: column;
-        }
-        .stat-num {
-          font-size: 1.4rem;
-          font-weight: 800;
-          color: #f8fafc;
-          line-height: 1;
-        }
-        .stat-label {
-          font-size: 0.78rem;
-          color: rgba(255,255,255,0.55);
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          margin-top: 4px;
-        }
-        .stat-divider {
-          width: 1px;
-          height: 36px;
-          background: rgba(255,255,255,0.2);
-        }
-
-        /* ── NAV ARROWS ── */
         .nav-arrow {
           position: absolute;
+
           top: 50%;
+
           transform: translateY(-50%);
+
           z-index: 10;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          color: #fff;
+
           width: 52px;
           height: 52px;
-          border-radius: 50%;
+
           display: flex;
           align-items: center;
           justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        .nav-arrow:hover {
-          background: rgba(56, 189, 248, 0.25);
-          border-color: rgba(56, 189, 248, 0.5);
-        }
-        .nav-prev { left: 28px; }
-        .nav-next { right: 28px; }
 
-        /* ── DOTS ── */
+          border-radius: 50%;
+
+          background: rgba(255, 255, 255, 0.1);
+
+          backdrop-filter: blur(10px);
+
+          border: 1px solid rgba(
+            255,
+            255,
+            255,
+            0.2
+          );
+
+          color: #fff;
+
+          cursor: pointer;
+
+          transition: all 0.3s ease;
+
+          padding: 0;
+        }
+
+        .nav-arrow:hover {
+          background: rgba(
+            56,
+            189,
+            248,
+            0.25
+          );
+
+          border-color: rgba(
+            56,
+            189,
+            248,
+            0.5
+          );
+        }
+
+        .nav-prev {
+          left: 28px;
+        }
+
+        .nav-next {
+          right: 28px;
+        }
+
+        /* =========================================
+           DOTS
+        ========================================= */
+
         .dots {
           position: absolute;
+
           bottom: 32px;
           left: 50%;
+
           transform: translateX(-50%);
+
           display: flex;
+          align-items: center;
+
           gap: 10px;
+
           z-index: 10;
-        }
-        .dot {
-          position: relative;
-          width: 36px;
-          height: 4px;
-          border: none;
-          border-radius: 2px;
-          background: rgba(255, 255, 255, 0.3);
-          cursor: pointer;
-          overflow: hidden;
-          padding: 0;
-          transition: background 0.3s ease;
-        }
-        .dot.active {
-          background: rgba(255, 255, 255, 0.3);
-          width: 52px;
-        }
-        .dot-progress {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          background: #38bdf8;
-          border-radius: 2px;
-          transition: width 0.05s linear;
+
+          max-width: calc(100% - 40px);
         }
 
-        /* ── SCROLL INDICATOR ── */
+        .dot {
+          position: relative;
+
+          width: 36px;
+          height: 4px;
+
+          padding: 0;
+
+          border: none;
+
+          border-radius: 2px;
+
+          background: rgba(
+            255,
+            255,
+            255,
+            0.3
+          );
+
+          cursor: pointer;
+
+          overflow: hidden;
+
+          flex-shrink: 0;
+
+          transition:
+            background 0.3s ease,
+            width 0.3s ease;
+        }
+
+        .dot.active {
+          background: rgba(
+            255,
+            255,
+            255,
+            0.3
+          );
+
+          width: 52px;
+        }
+
+        .dot-progress {
+          position: absolute;
+
+          left: 0;
+          top: 0;
+
+          height: 100%;
+
+          background: #38bdf8;
+
+          border-radius: 2px;
+
+          transition:
+            width 0.05s linear;
+        }
+
+        /* =========================================
+           SCROLL INDICATOR
+        ========================================= */
+
         .scroll-indicator {
           position: absolute;
-          bottom: 32px;
+
           right: 40px;
+          bottom: 32px;
+
           z-index: 10;
+
           display: flex;
           flex-direction: column;
+
           align-items: center;
+
           gap: 8px;
         }
+
         .scroll-line {
           width: 1px;
           height: 48px;
-          background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
-          animation: scrollPulse 2s ease-in-out infinite;
-        }
-        .scroll-text {
-          font-size: 0.68rem;
-          color: rgba(255, 255, 255, 0.5);
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          writing-mode: vertical-rl;
-        }
-        @keyframes scrollPulse {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 1; }
+
+          background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.6),
+            transparent
+          );
+
+          animation:
+            scrollPulse 2s
+            ease-in-out infinite;
         }
 
-        /* ═══════════════════════════════════════ */
-        /* ── TABLET (max 991px) ── */
-        /* ═══════════════════════════════════════ */
-        @media (max-width: 991px) {
+        .scroll-text {
+          font-size: 0.68rem;
+
+          color: rgba(
+            255,
+            255,
+            255,
+            0.5
+          );
+
+          letter-spacing: 0.15em;
+
+          text-transform: uppercase;
+
+          writing-mode: vertical-rl;
+        }
+
+        @keyframes scrollPulse {
+          0%,
+          100% {
+            opacity: 0.4;
+          }
+
+          50% {
+            opacity: 1;
+          }
+        }
+
+        /* =========================================
+           LARGE DESKTOP
+           1600px+
+        ========================================= */
+
+        @media (min-width: 1600px) {
+          .content {
+            max-width: 1440px;
+            padding-left: 60px;
+            padding-right: 60px;
+          }
+
+          .content-inner {
+            max-width: 720px;
+          }
+
+          .nav-prev {
+            left: 40px;
+          }
+
+          .nav-next {
+            right: 40px;
+          }
+
+          .scroll-indicator {
+            right: 60px;
+          }
+        }
+
+        /* =========================================
+           DESKTOP
+           1200px - 1599px
+        ========================================= */
+
+        @media (min-width: 1200px) and (max-width: 1599px) {
+          .content {
+            padding-left: 50px;
+            padding-right: 50px;
+          }
+        }
+
+        /* =========================================
+           LAPTOP
+           992px - 1199px
+        ========================================= */
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+          .content {
+            padding-left: 40px;
+            padding-right: 40px;
+          }
+
+          .content-inner {
+            max-width: 620px;
+          }
+
+          h1 {
+            font-size: clamp(
+              2.5rem,
+              5vw,
+              4rem
+            );
+          }
+
+          .nav-arrow {
+            width: 46px;
+            height: 46px;
+          }
+
+          .nav-prev {
+            left: 18px;
+          }
+
+          .nav-next {
+            right: 18px;
+          }
+        }
+
+        /* =========================================
+           TABLET
+           769px - 991px
+        ========================================= */
+
+        @media (min-width: 769px) and (max-width: 991px) {
+          .hero {
+            min-height: 600px;
+          }
+
+          .hero-image {
+            object-position: center center;
+          }
+
+          .content {
+            padding-left: 32px;
+            padding-right: 32px;
+          }
+
+          .content-inner {
+            max-width: 600px;
+          }
+
+          h1 {
+            font-size: clamp(
+              2.2rem,
+              5.5vw,
+              3.4rem
+            );
+          }
+
+          .subtitle {
+            max-width: 520px;
+          }
+
           .nav-arrow {
             width: 44px;
             height: 44px;
           }
-          .nav-prev { left: 16px; }
-          .nav-next { right: 16px; }
+
+          .nav-prev {
+            left: 14px;
+          }
+
+          .nav-next {
+            right: 14px;
+          }
 
           .scroll-indicator {
             display: none;
           }
-
-          h1 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-          }
         }
 
-        /* ═══════════════════════════════════════ */
-        /* ── MOBILE (max 768px) ── */
-        /* ═══════════════════════════════════════ */
+        /* =========================================
+           MOBILE
+           481px - 768px
+        ========================================= */
+
         @media (max-width: 768px) {
           .hero {
+            width: 100%;
+
+            height: 100vh;
             height: 100svh;
-            min-height: 580px;
+
+            min-height: 560px;
           }
 
           .hero-image {
-            object-position: center 20%;
+            object-position: center center;
           }
 
           .overlay {
@@ -484,55 +772,65 @@ export default function Hero() {
           }
 
           .content {
-            padding: 0 20px;
-            justify-content: flex-end;
+            width: 100%;
+
+            padding-left: 20px;
+            padding-right: 20px;
+
             padding-bottom: 90px;
+
+            justify-content: flex-end;
+
+            box-sizing: border-box;
           }
 
           .content-inner {
+            width: 100%;
             max-width: 100%;
+
             text-align: center;
+          }
+
+          .tag-wrapper {
+            margin-bottom: 16px;
           }
 
           .tag {
             font-size: 0.72rem;
+
+            padding: 6px 13px;
+
+            letter-spacing: 0.1em;
           }
 
           h1 {
-            font-size: clamp(2rem, 8vw, 2.8rem);
+            font-size: clamp(
+              2rem,
+              8vw,
+              2.8rem
+            );
+
+            line-height: 1.08;
+
             margin-bottom: 16px;
           }
 
           .subtitle {
-            font-size: 0.97rem;
-            margin-bottom: 28px;
+            width: 100%;
             max-width: 100%;
-            color: rgba(255,255,255,0.88);
-          }
 
-          .cta-group {
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 36px;
-          }
+            font-size: 0.97rem;
 
-          .btn-primary,
-          .btn-secondary {
-            font-size: 0.9rem;
-            padding: 12px 22px;
-          }
+            line-height: 1.6;
 
-          .stats-row {
-            justify-content: center;
-            gap: 16px;
-          }
+            margin-bottom: 28px;
 
-          .stat-num {
-            font-size: 1.2rem;
-          }
-
-          .stat-label {
-            font-size: 0.7rem;
+            color: rgba(
+              255,
+              255,
+              255,
+              0.88
+            );
           }
 
           .nav-arrow {
@@ -541,39 +839,154 @@ export default function Hero() {
 
           .dots {
             bottom: 20px;
+
+            gap: 7px;
+
+            max-width: calc(
+              100% - 32px
+            );
+          }
+
+          .dot {
+            width: 28px;
+          }
+
+          .dot.active {
+            width: 42px;
+          }
+
+          .scroll-indicator {
+            display: none;
           }
         }
 
-        /* ═══════════════════════════════════════ */
-        /* ── SMALL MOBILE (max 480px) ── */
-        /* ═══════════════════════════════════════ */
+        /* =========================================
+           SMALL MOBILE
+           376px - 480px
+        ========================================= */
+
         @media (max-width: 480px) {
           .hero {
-            min-height: 560px;
+            min-height: 540px;
+          }
+
+          .hero-image {
+            object-position: center center;
+          }
+
+          .content {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            padding-bottom: 72px;
+          }
+
+          .tag {
+            font-size: 0.65rem;
+
+            padding: 5px 11px;
           }
 
           h1 {
-            font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+            font-size: clamp(
+              1.75rem,
+              8.5vw,
+              2.35rem
+            );
+
+            line-height: 1.1;
+
+            margin-bottom: 14px;
           }
 
-          .cta-group {
-            flex-direction: column;
-            align-items: stretch;
+          .subtitle {
+            font-size: 0.9rem;
+
+            line-height: 1.55;
+
+            margin-bottom: 0;
           }
 
-          .btn-primary,
-          .btn-secondary {
-            justify-content: center;
-            text-align: center;
-            padding: 13px 20px;
+          .dots {
+            bottom: 16px;
           }
 
-          .stats-row {
-            gap: 12px;
+          .dot {
+            width: 24px;
+            height: 3px;
           }
 
-          .stat-divider {
-            height: 28px;
+          .dot.active {
+            width: 36px;
+          }
+        }
+
+        /* =========================================
+           VERY SMALL MOBILE
+           320px - 375px
+        ========================================= */
+
+        @media (max-width: 375px) {
+          .hero {
+            min-height: 520px;
+          }
+
+          .content {
+            padding-left: 14px;
+            padding-right: 14px;
+
+            padding-bottom: 64px;
+          }
+
+          .tag {
+            font-size: 0.6rem;
+            padding: 5px 10px;
+          }
+
+          h1 {
+            font-size: 1.65rem;
+          }
+
+          .subtitle {
+            font-size: 0.84rem;
+            line-height: 1.5;
+          }
+
+          .dots {
+            gap: 6px;
+          }
+
+          .dot {
+            width: 22px;
+          }
+
+          .dot.active {
+            width: 32px;
+          }
+        }
+
+        /* =========================================
+           EXTRA SMALL DEVICES
+           Below 320px
+        ========================================= */
+
+        @media (max-width: 319px) {
+          .hero {
+            min-height: 500px;
+          }
+
+          .content {
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 60px;
+          }
+
+          h1 {
+            font-size: 1.5rem;
+          }
+
+          .subtitle {
+            font-size: 0.8rem;
           }
         }
       `}</style>
