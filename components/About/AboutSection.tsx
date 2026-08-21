@@ -70,6 +70,7 @@ export default function AboutSection() {
               <strong>About Our Company</strong>
             </h2>
 
+            {/* ABOUT IMAGE */}
             <div className="about-image-wrapper">
               <Image
                 src="/images/about_new_1.png"
@@ -77,7 +78,7 @@ export default function AboutSection() {
                 width={1300}
                 height={500}
                 className="about-image"
-                sizes="(max-width: 576px) 100vw, (max-width: 992px) 100vw, 1300px"
+                sizes="100vw"
                 priority
               />
             </div>
@@ -99,11 +100,11 @@ export default function AboutSection() {
               </p>
 
               <p>
-                Through disciplined risk management, sound governance practices,
-                and a client-centric approach, Dearo Venture Capital Ltd
-                provides investment solutions that help clients achieve
-                financial security while contributing to national economic
-                development.
+                Through disciplined risk management, sound governance
+                practices, and a client-centric approach, Dearo Venture
+                Capital Ltd provides investment solutions that help clients
+                achieve financial security while contributing to national
+                economic development.
               </p>
 
               <p>
@@ -120,8 +121,8 @@ export default function AboutSection() {
               </h4>
 
               <p>
-                To become Sri Lanka's most trusted and innovative investment and
-                venture capital organization, creating lasting value for
+                To become Sri Lanka's most trusted and innovative investment
+                and venture capital organization, creating lasting value for
                 stakeholders while contributing to the nation's economic
                 prosperity.
               </p>
@@ -136,10 +137,54 @@ export default function AboutSection() {
                 To empower individuals, entrepreneurs, SMEs, and corporate
                 partners through innovative investment solutions, strategic
                 partnerships, and responsible business practices that drive
-                sustainable growth and create meaningful economic opportunities.
+                sustainable growth and create meaningful economic
+                opportunities.
               </p>
 
             </div>
+          </div>
+        </div>
+
+        {/* ================= STORY ================= */}
+
+        <div className="row milestones-section">
+
+          <div className="col-12 text-center">
+            <h3 className="section-title section-heading">
+              Our Story
+            </h3>
+          </div>
+
+          <div className="col-12">
+
+            <p>
+              At Dearo Venture Capital Ltd, we believe that every individual,
+              entrepreneur, and business has the potential to achieve
+              extraordinary growth when supported by the right financial
+              partner. Our brand was built on the vision of creating
+              opportunities, empowering ambitions, and guiding investments
+              toward long-term prosperity.
+            </p>
+
+            <p>
+              The Dearo logo represents a journey of progress. The
+              upward-moving arrow symbolizes growth, achievement, and the
+              continuous pursuit of success. The flowing paths beneath the
+              arrow reflect the diverse financial journeys of our clients—
+              individual investors, entrepreneurs, SMEs, and growing
+              enterprises—all converging toward a common destination:
+              financial security and wealth creation.
+            </p>
+
+            <p>
+              Just as roads lead to new opportunities, Dearo serves as a
+              trusted pathway connecting people with innovative investment
+              solutions, strategic financial guidance, and sustainable
+              wealth-building opportunities. The logo captures our commitment
+              to helping clients move forward with confidence, clarity, and
+              purpose.
+            </p>
+
           </div>
         </div>
 
@@ -270,16 +315,17 @@ export default function AboutSection() {
 
         .about-image-wrapper {
           width: 100%;
+          max-width: 1300px;
+          margin: 0 auto 32px;
           overflow: hidden;
-          margin-bottom: 32px;
         }
 
         .about-image {
           display: block;
           width: 100% !important;
+          max-width: 100% !important;
           height: auto !important;
-          max-width: 100%;
-          object-fit: cover;
+          object-fit: contain;
           border-radius: 0 0 20px 20px;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
@@ -297,6 +343,8 @@ export default function AboutSection() {
           font-size: 1rem;
           line-height: 1.75;
           margin-bottom: 20px;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
         }
 
 
@@ -361,7 +409,9 @@ export default function AboutSection() {
           padding: 28px 20px;
           text-align: center;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-          transition: transform 0.25s ease, box-shadow 0.25s ease;
+          transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
         }
 
         .award-card:hover {
@@ -453,16 +503,22 @@ export default function AboutSection() {
           }
 
 
-          /* IMAGE */
+          /* ================= RESPONSIVE ABOUT IMAGE ================= */
 
           .about-image-wrapper {
+            width: 100%;
+            max-width: 100%;
             margin-bottom: 25px;
+            overflow: hidden;
           }
 
           .about-image {
+            display: block;
             width: 100% !important;
+            max-width: 100% !important;
             height: auto !important;
-            min-height: auto !important;
+            min-height: 0 !important;
+            object-fit: contain;
             border-radius: 0 0 14px 14px;
           }
 
