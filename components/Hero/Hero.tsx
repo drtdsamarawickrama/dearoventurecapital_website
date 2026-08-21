@@ -95,14 +95,16 @@ export default function Hero() {
             className={`slide ${active ? "active" : ""}`}
           >
             {/* Hero Image */}
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="hero-image"
-            />
+            <div className="hero-image-wrapper">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="hero-image"
+              />
+            </div>
 
             {/* Overlay */}
             <div className="overlay" />
@@ -210,37 +212,50 @@ export default function Hero() {
           width: 100%;
           height: 100%;
           opacity: 0;
-          transition: opacity 0.9s ease;
+          visibility: hidden;
+          transition:
+            opacity 0.9s ease,
+            visibility 0.9s ease;
           pointer-events: none;
         }
 
         .slide.active {
           opacity: 1;
+          visibility: visible;
           z-index: 2;
           pointer-events: auto;
         }
 
         /* =========================================
-           RESPONSIVE HERO IMAGE
+           IMAGE WRAPPER
+        ========================================= */
+
+        .hero-image-wrapper {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 0;
+        }
+
+        /* =========================================
+           HERO IMAGE
         ========================================= */
 
         .hero-image {
           position: absolute !important;
           inset: 0;
+
           width: 100% !important;
           height: 100% !important;
 
-          /*
-            Cover keeps the image filling the entire hero
-            without stretching or distortion.
-          */
-          object-fit: cover;
+          max-width: none !important;
 
-          /*
-            Center prevents important parts of the image
-            from being pushed too far to one side.
-          */
+          object-fit: cover;
           object-position: center center;
+
+          display: block;
 
           z-index: 0;
         }
@@ -336,6 +351,7 @@ export default function Hero() {
           backdrop-filter: blur(8px);
 
           max-width: 100%;
+
           box-sizing: border-box;
         }
 
@@ -405,7 +421,7 @@ export default function Hero() {
         }
 
         /* =========================================
-           NAVIGATION ARROWS
+           NAVIGATION
         ========================================= */
 
         .nav-arrow {
@@ -545,8 +561,7 @@ export default function Hero() {
 
           border-radius: 2px;
 
-          transition:
-            width 0.05s linear;
+          transition: width 0.05s linear;
         }
 
         /* =========================================
@@ -614,12 +629,12 @@ export default function Hero() {
 
         /* =========================================
            LARGE DESKTOP
-           1600px+
         ========================================= */
 
         @media (min-width: 1600px) {
           .content {
             max-width: 1440px;
+
             padding-left: 60px;
             padding-right: 60px;
           }
@@ -643,7 +658,6 @@ export default function Hero() {
 
         /* =========================================
            DESKTOP
-           1200px - 1599px
         ========================================= */
 
         @media (min-width: 1200px) and (max-width: 1599px) {
@@ -655,7 +669,6 @@ export default function Hero() {
 
         /* =========================================
            LAPTOP
-           992px - 1199px
         ========================================= */
 
         @media (min-width: 992px) and (max-width: 1199px) {
@@ -692,7 +705,6 @@ export default function Hero() {
 
         /* =========================================
            TABLET
-           769px - 991px
         ========================================= */
 
         @media (min-width: 769px) and (max-width: 991px) {
@@ -745,20 +757,29 @@ export default function Hero() {
 
         /* =========================================
            MOBILE
-           481px - 768px
         ========================================= */
 
         @media (max-width: 768px) {
           .hero {
             width: 100%;
 
-            height: 100vh;
             height: 100svh;
 
             min-height: 560px;
           }
 
+          /*
+            MOBILE IMAGE FIX
+            Keep the image filling the hero,
+            but move the focus slightly upward.
+          */
+
           .hero-image {
+            width: 100% !important;
+            height: 100% !important;
+
+            object-fit: cover;
+
             object-position: center center;
           }
 
@@ -862,7 +883,6 @@ export default function Hero() {
 
         /* =========================================
            SMALL MOBILE
-           376px - 480px
         ========================================= */
 
         @media (max-width: 480px) {
@@ -870,7 +890,16 @@ export default function Hero() {
             min-height: 540px;
           }
 
+          /*
+            Image remains responsive.
+            No fixed pixel width or height.
+          */
+
           .hero-image {
+            width: 100% !important;
+            height: 100% !important;
+
+            object-fit: cover;
             object-position: center center;
           }
 
@@ -923,7 +952,6 @@ export default function Hero() {
 
         /* =========================================
            VERY SMALL MOBILE
-           320px - 375px
         ========================================= */
 
         @media (max-width: 375px) {
@@ -940,6 +968,7 @@ export default function Hero() {
 
           .tag {
             font-size: 0.6rem;
+
             padding: 5px 10px;
           }
 
@@ -949,6 +978,7 @@ export default function Hero() {
 
           .subtitle {
             font-size: 0.84rem;
+
             line-height: 1.5;
           }
 
@@ -966,8 +996,7 @@ export default function Hero() {
         }
 
         /* =========================================
-           EXTRA SMALL DEVICES
-           Below 320px
+           EXTRA SMALL
         ========================================= */
 
         @media (max-width: 319px) {
@@ -978,6 +1007,7 @@ export default function Hero() {
           .content {
             padding-left: 12px;
             padding-right: 12px;
+
             padding-bottom: 60px;
           }
 
