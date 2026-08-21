@@ -164,7 +164,7 @@ export default function Navbar() {
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Establish Finance
+                  Islamic Finance
                 </Link>
               </li>
 
