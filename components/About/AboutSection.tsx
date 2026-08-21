@@ -73,7 +73,7 @@ export default function AboutSection() {
             {/* ABOUT IMAGE */}
             <div className="about-image-wrapper">
               <Image
-                src="/images/about_new_1.png"
+                src="/images/about_dearo_new.jpg"
                 alt="About Dearo"
                 width={1300}
                 height={500}
