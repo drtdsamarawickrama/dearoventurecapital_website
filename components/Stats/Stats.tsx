@@ -33,7 +33,7 @@ export default function Stats() {
               </div>
 
               {/* Animated Number */}
-              <h3 className="display-5 fw-bold mb-2">
+              <h3 className="stats-number display-5 fw-bold mb-2">
                 {inView && typeof stat.value === "number" ? (
                   <CountUp end={stat.value} duration={2} separator="," />
                 ) : (
@@ -59,6 +59,10 @@ export default function Stats() {
           opacity: 1;
           transform: translateY(0);
         }
+
+        .stats-number {
+  color: #ffffff;
+}
 
         h3 {
           font-size: clamp(2rem, 3vw, 2.5rem);
