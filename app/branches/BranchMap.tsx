@@ -3,6 +3,8 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+// Leaflet ships its stylesheet without TypeScript declarations.
+// @ts-expect-error Leaflet CSS is a side-effect-only import.
 import "leaflet/dist/leaflet.css";
 
 
