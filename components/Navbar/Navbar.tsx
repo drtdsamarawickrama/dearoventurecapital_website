@@ -259,7 +259,7 @@ export default function Navbar() {
 
               <li className="nav-item">
                 <Link
-                  href=""
+                  href="/branches"
                   className="nav-link"
                   onClick={closeMenu}
                 >
