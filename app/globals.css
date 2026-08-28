@@ -245,4 +245,222 @@ body {
   .google-translate-container .goog-te-combo {
     width: 100px !important;
   }
+
+
+  /* =========================================================
+   ABOUT US DROPDOWN
+   ========================================================= */
+
+.premium-nav .dropdown-menu-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 240px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Dropdown links */
+
+.premium-nav .dropdown-menu-custom .dropdown-item-custom {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  width: 100% !important;
+
+  padding: 11px 14px !important;
+
+  color: #000000 !important;
+
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 5px;
+
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Remove link underline */
+
+.premium-nav .dropdown-menu-custom .dropdown-item-custom::before,
+.premium-nav .dropdown-menu-custom .dropdown-item-custom::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Normal state */
+
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:link,
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:visited {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Hover state */
+
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:hover {
+  background: #f2f6ff;
+  color: #000000;
+  padding-left: 20px;
+  text-decoration: none;
+}
+}
+
+/* Active / Focus */
+
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:active,
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:focus {
+  color: #000000 !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* Dropdown bullet points */
+
+.premium-nav .dropdown-point {
+  display: inline-block !important;
+
+  width: 8px;
+  min-width: 8px;
+
+  color: #000000 !important;
+
+  font-size: 18px !important;
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  text-decoration: none !important;
+}
+
+/* Text inside dropdown */
+
+.premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom
+  span:not(.dropdown-point) {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .premium-nav .dropdown-menu-custom {
+    position: static !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+
+    margin-top: 4px;
+
+    padding: 8px 0;
+
+    background: #f8faff;
+
+    border: none;
+
+    border-left: 2px solid #0d6efd;
+
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .premium-nav
+    .dropdown-menu-custom
+    .dropdown-item-custom {
+    padding: 10px 20px !important;
+
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+   /* =========================================================
+    FORCE REMOVE DROPDOWN UNDERLINE
+    ========================================================= */
+
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom,
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:link,
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:visited,
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:hover,
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:active,
+.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:focus {
+  color: #000000 !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-color: transparent !important;
+  text-underline-offset: 0 !important;
+}
+
+/* Remove ALL pseudo-elements from dropdown links */
+
+.premium-nav li.dropdown-custom
+.dropdown-menu-custom
+a.dropdown-item-custom::before,
+
+.premium-nav li.dropdown-custom
+.dropdown-menu-custom
+a.dropdown-item-custom::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Dropdown text */
+
+.premium-nav li.dropdown-custom
+.dropdown-menu-custom
+a.dropdown-item-custom span {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Bullet */
+
+.premium-nav li.dropdown-custom
+.dropdown-menu-custom
+.dropdown-point {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Hover */
+
+.premium-nav li.dropdown-custom
+.dropdown-menu-custom
+a.dropdown-item-custom:hover span {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
 }

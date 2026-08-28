@@ -1,1025 +1,1334 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
-const slides = [
+const texts = [
   {
-    image: "/images/hero1.png",
     tag: "Venture Capital",
     title: "Fueling Tomorrow's",
-    titleAccent: "Innovators",
-    subtitle:
+    accent: "Innovators",
+    description:
       "We invest in visionary founders shaping the future of technology and business.",
   },
   {
-    image: "/images/slide.jpg",
     tag: "Global Reach",
     title: "Empowering Startups",
-    titleAccent: "Globally",
-    subtitle:
+    accent: "Globally",
+    description:
       "Strategic guidance, funding, and a global network to accelerate growth.",
   },
   {
-    image: "/images/hero3.png",
     tag: "Industry Leaders",
     title: "Shaping the Future",
-    titleAccent: "of Industries",
-    subtitle:
+    accent: "of Industries",
+    description:
       "Driving innovation across technology, agriculture, and financial solutions.",
   },
 ];
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const SLIDE_DURATION = 7000;
-
-  const goTo = useCallback(
-    (idx: number) => {
-      if (isTransitioning) return;
-
-      setIsTransitioning(true);
-      setProgress(0);
-
-      setCurrent((idx + slides.length) % slides.length);
-
-      setTimeout(() => {
-        setIsTransitioning(false);
-      }, 700);
-    },
-    [isTransitioning]
-  );
-
-  const next = useCallback(() => {
-    goTo(current + 1);
-  }, [current, goTo]);
-
-  const prev = useCallback(() => {
-    goTo(current - 1);
-  }, [current, goTo]);
+  const [currentText, setCurrentText] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-      setProgress(0);
-    }, SLIDE_DURATION);
+      setCurrentText((prev) => (prev + 1) % texts.length);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    setProgress(0);
-
-    const step = 100 / (SLIDE_DURATION / 50);
-
-    const timer = setInterval(() => {
-      setProgress((p) => Math.min(p + step, 100));
-    }, 50);
-
-    return () => clearInterval(timer);
-  }, [current]);
+  const text = texts[currentText];
 
   return (
-    <section className="hero">
-      {/* Slides */}
-      {slides.map((slide, index) => {
-        const active = index === current;
+    <>
+      {/* ======================================================
+          HERO
+      ======================================================= */}
 
-        return (
-          <div
-            key={index}
-            className={`slide ${active ? "active" : ""}`}
-          >
-            {/* Hero Image */}
-            <div className="hero-image-wrapper">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className="hero-image"
-              />
-            </div>
+      <section className="hero">
 
-            {/* Overlay */}
-            <div className="overlay" />
+        {/* ====================================================
+            CINEMATIC IMAGE AREA
+        ===================================================== */}
 
-            {/* Content */}
-            <div
-              className={`content ${
-                active ? "content-active" : ""
-              }`}
-            >
-              <div className="content-inner">
-                {/* Tag */}
-                <div className="tag-wrapper">
-                  <span className="tag">{slide.tag}</span>
-                </div>
+        <div className="image-stage">
 
-                {/* Title */}
-                <h1>
-                  <span className="title-line">
-                    {slide.title}
-                  </span>
-                  <br />
-                  <span className="title-accent">
-                    {slide.titleAccent}
-                  </span>
-                </h1>
-
-                {/* Subtitle */}
-                <p className="subtitle">
-                  {slide.subtitle}
-                </p>
-              </div>
-            </div>
+          <div className="image-camera">
+            <Image
+              src="/images/lotus_tower_new.jpg"
+              alt="Dearo Venture Capital"
+              fill
+              priority
+              sizes="100vw"
+              className="hero-image"
+            />
           </div>
-        );
-      })}
 
-      {/* Previous Arrow */}
-      <button
-        className="nav-arrow nav-prev"
-        onClick={prev}
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={28} />
-      </button>
+          {/* MOVING LIGHT */}
 
-      {/* Next Arrow */}
-      <button
-        className="nav-arrow nav-next"
-        onClick={next}
-        aria-label="Next slide"
-      >
-        <ChevronRight size={28} />
-      </button>
+          <div className="light-orb light-one" />
+          <div className="light-orb light-two" />
 
-      {/* Dots + Progress */}
-      <div className="dots">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            className={`dot ${i === current ? "active" : ""}`}
-            onClick={() => goTo(i)}
-            aria-label={`Slide ${i + 1}`}
+          {/* PARTICLES */}
+
+          <div className="particles">
+            <span className="particle p1" />
+            <span className="particle p2" />
+            <span className="particle p3" />
+            <span className="particle p4" />
+            <span className="particle p5" />
+            <span className="particle p6" />
+            <span className="particle p7" />
+            <span className="particle p8" />
+          </div>
+        </div>
+
+        {/* ====================================================
+            LIGHT OVERLAY
+        ===================================================== */}
+
+        <div className="dark-overlay" />
+
+        {/* ====================================================
+            BOTTOM GRADIENT
+        ===================================================== */}
+
+        <div className="bottom-fade" />
+
+        {/* ====================================================
+            HERO TEXT
+            CENTER OF IMAGE
+        ===================================================== */}
+
+        <div className="hero-content">
+
+          <div
+            key={currentText}
+            className="text-animation"
           >
-            {i === current && (
-              <span
-                className="dot-progress"
-                style={{
-                  width: `${progress}%`,
-                }}
-              />
-            )}
-          </button>
-        ))}
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <div className="scroll-line" />
-        <span className="scroll-text">Scroll</span>
-      </div>
+            {/* TAG */}
+
+            <div className="tag">
+              {text.tag}
+            </div>
+
+            {/* TITLE */}
+
+            <h1>
+              <span className="title-main">
+                {text.title}
+              </span>
+
+              <br />
+
+              <span className="title-accent">
+                {text.accent}
+              </span>
+            </h1>
+
+            {/* DESCRIPTION */}
+
+            <p>
+              {text.description}
+            </p>
+
+            {/* SMALL LINE */}
+
+            <div className="hero-line">
+              <span />
+              <span />
+            </div>
+
+          </div>
+        </div>
+
+        {/* ====================================================
+            TEXT INDICATORS
+        ===================================================== */}
+
+        <div className="text-indicators">
+
+          {texts.map((_, index) => (
+            <button
+              key={index}
+              className={
+                index === currentText
+                  ? "indicator active"
+                  : "indicator"
+              }
+              onClick={() => setCurrentText(index)}
+              aria-label={`Show slide ${index + 1}`}
+            />
+          ))}
+
+        </div>
+
+        {/* ====================================================
+            SCROLL INDICATOR
+        ===================================================== */}
+
+        <div className="scroll-indicator">
+
+          <span className="scroll-text">
+            SCROLL
+          </span>
+
+          <span className="scroll-line" />
+
+        </div>
+
+      </section>
+
+      {/* ======================================================
+          CSS
+      ======================================================= */}
 
       <style jsx>{`
-        /* =========================================
+
+        /* ====================================================
            HERO
-        ========================================= */
+        ===================================================== */
 
         .hero {
           position: relative;
+
           width: 100%;
+
           height: 100vh;
           height: 100svh;
-          min-height: 600px;
+
+          min-height: 650px;
+
           overflow: hidden;
-          background: #000;
+
+          background: #050505;
         }
 
-        /* =========================================
-           SLIDE
-        ========================================= */
 
-        .slide {
+        /* ====================================================
+           IMAGE STAGE
+        ===================================================== */
+
+        .image-stage {
           position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          visibility: hidden;
-          transition:
-            opacity 0.9s ease,
-            visibility 0.9s ease;
-          pointer-events: none;
-        }
 
-        .slide.active {
-          opacity: 1;
-          visibility: visible;
-          z-index: 2;
-          pointer-events: auto;
-        }
+          inset: -12%;
 
-        /* =========================================
-           IMAGE WRAPPER
-        ========================================= */
+          width: 124%;
+          height: 124%;
 
-        .hero-image-wrapper {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
           overflow: hidden;
-          z-index: 0;
-        }
 
-        /* =========================================
-           HERO IMAGE
-        ========================================= */
-
-        .hero-image {
-          position: absolute !important;
-          inset: 0;
-
-          width: 100% !important;
-          height: 100% !important;
-
-          max-width: none !important;
-
-          object-fit: cover;
-          object-position: center center;
-
-          display: block;
-
-          z-index: 0;
-        }
-
-        /* =========================================
-           OVERLAY
-        ========================================= */
-
-        .overlay {
-          position: absolute;
-          inset: 0;
           z-index: 1;
 
-          background: linear-gradient(
-            110deg,
-            rgba(2, 6, 23, 0.82) 0%,
-            rgba(2, 6, 23, 0.55) 55%,
-            rgba(2, 6, 23, 0.15) 100%
-          );
+          transform-style: preserve-3d;
+
+          perspective: 1200px;
         }
 
-        /* =========================================
-           CONTENT
-        ========================================= */
 
-        .content {
-          position: relative;
-          z-index: 3;
+        /* ====================================================
+           CAMERA
+        ===================================================== */
 
-          width: 100%;
-          max-width: 1280px;
-          height: 100%;
-
-          margin: 0 auto;
-
-          padding: 0 40px;
-
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-
-          color: #fff;
-
-          box-sizing: border-box;
-        }
-
-        .content-inner {
-          width: 100%;
-          max-width: 680px;
-
-          opacity: 0;
-
-          transform: translateY(30px);
-
-          transition:
-            opacity 0.8s ease 0.3s,
-            transform 0.8s ease 0.3s;
-        }
-
-        .content-active .content-inner {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* =========================================
-           TAG
-        ========================================= */
-
-        .tag-wrapper {
-          margin-bottom: 20px;
-        }
-
-        .tag {
-          display: inline-block;
-
-          background: rgba(56, 189, 248, 0.15);
-
-          border: 1px solid rgba(56, 189, 248, 0.4);
-
-          color: #38bdf8;
-
-          font-size: 0.78rem;
-          font-weight: 600;
-
-          letter-spacing: 0.12em;
-
-          text-transform: uppercase;
-
-          padding: 6px 16px;
-
-          border-radius: 100px;
-
-          backdrop-filter: blur(8px);
-
-          max-width: 100%;
-
-          box-sizing: border-box;
-        }
-
-        /* =========================================
-           HEADING
-        ========================================= */
-
-        h1 {
-          margin: 0 0 22px;
-
-          font-size: clamp(
-            2.4rem,
-            5.5vw,
-            4.5rem
-          );
-
-          font-weight: 800;
-
-          line-height: 1.08;
-
-          letter-spacing: -0.02em;
-
-          overflow-wrap: break-word;
-          word-break: normal;
-        }
-
-        .title-line {
-          color: #f8fafc;
-
-          text-shadow:
-            0 4px 24px rgba(0, 0, 0, 0.5);
-        }
-
-        .title-accent {
-          background: linear-gradient(
-            95deg,
-            #38bdf8 0%,
-            #818cf8 100%
-          );
-
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        /* =========================================
-           SUBTITLE
-        ========================================= */
-
-        .subtitle {
-          width: 100%;
-          max-width: 560px;
-
-          margin: 0 0 36px;
-
-          font-size: clamp(
-            1rem,
-            2.2vw,
-            1.2rem
-          );
-
-          line-height: 1.75;
-
-          color: rgba(255, 255, 255, 0.82);
-
-          overflow-wrap: break-word;
-        }
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        .nav-arrow {
+        .image-camera {
           position: absolute;
 
-          top: 50%;
+          inset: 0;
 
-          transform: translateY(-50%);
+          overflow: hidden;
 
-          z-index: 10;
+          transform-origin: center center;
 
-          width: 52px;
-          height: 52px;
+          animation:
+            cinematicCamera
+            18s
+            cubic-bezier(
+              0.45,
+              0.05,
+              0.55,
+              0.95
+            )
+            infinite
+            alternate;
 
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          will-change: transform;
+
+          transform-style: preserve-3d;
+        }
+
+
+        /* ====================================================
+           IMAGE
+        ===================================================== */
+
+        .hero-image {
+          object-fit: cover;
+
+          object-position: center center;
+
+          transform: scale(1.08);
+
+          filter:
+            saturate(1.05)
+            contrast(1.03);
+
+          will-change: transform;
+        }
+
+
+        /* ====================================================
+           CINEMATIC CAMERA ANIMATION
+        ===================================================== */
+
+        @keyframes cinematicCamera {
+
+          0% {
+            transform:
+              translate3d(0%, 0%, 0)
+              scale(1)
+              rotateZ(0deg)
+              rotateX(0deg)
+              rotateY(0deg);
+          }
+
+          20% {
+            transform:
+              translate3d(1.2%, -0.8%, 0)
+              scale(1.035)
+              rotateZ(0.15deg)
+              rotateX(0.15deg)
+              rotateY(-0.15deg);
+          }
+
+          40% {
+            transform:
+              translate3d(-1.5%, 0.8%, 0)
+              scale(1.07)
+              rotateZ(-0.15deg)
+              rotateX(-0.15deg)
+              rotateY(0.15deg);
+          }
+
+          60% {
+            transform:
+              translate3d(1.5%, -1.2%, 0)
+              scale(1.10)
+              rotateZ(0.2deg)
+              rotateX(0.2deg)
+              rotateY(-0.2deg);
+          }
+
+          80% {
+            transform:
+              translate3d(-1.2%, 1%, 0)
+              scale(1.13)
+              rotateZ(-0.15deg)
+              rotateX(-0.15deg)
+              rotateY(0.15deg);
+          }
+
+          100% {
+            transform:
+              translate3d(1%, -0.6%, 0)
+              scale(1.16)
+              rotateZ(0.1deg)
+              rotateX(0.1deg)
+              rotateY(-0.1deg);
+          }
+
+        }
+
+
+        /* ====================================================
+           MOVING LIGHT
+        ===================================================== */
+
+        .light-orb {
+          position: absolute;
+
+          width: 35vw;
+          height: 35vw;
+
+          max-width: 500px;
+          max-height: 500px;
 
           border-radius: 50%;
 
-          background: rgba(255, 255, 255, 0.1);
+          pointer-events: none;
 
-          backdrop-filter: blur(10px);
+          mix-blend-mode: screen;
 
-          border: 1px solid rgba(
-            255,
-            255,
-            255,
-            0.2
-          );
+          filter: blur(90px);
 
-          color: #fff;
+          opacity: 0.12;
 
-          cursor: pointer;
-
-          transition: all 0.3s ease;
-
-          padding: 0;
+          z-index: 2;
         }
 
-        .nav-arrow:hover {
-          background: rgba(
-            56,
-            189,
-            248,
-            0.25
-          );
 
-          border-color: rgba(
-            56,
-            189,
-            248,
-            0.5
-          );
+        .light-one {
+          top: -15%;
+          left: -10%;
+
+          background:
+            radial-gradient(
+              circle,
+              rgba(56, 189, 248, 0.8),
+              transparent 70%
+            );
+
+          animation:
+            floatingLightOne
+            14s
+            ease-in-out
+            infinite
+            alternate;
         }
 
-        .nav-prev {
-          left: 28px;
+
+        .light-two {
+          right: -15%;
+          bottom: -20%;
+
+          background:
+            radial-gradient(
+              circle,
+              rgba(129, 140, 248, 0.8),
+              transparent 70%
+            );
+
+          animation:
+            floatingLightTwo
+            17s
+            ease-in-out
+            infinite
+            alternate;
         }
 
-        .nav-next {
-          right: 28px;
+
+        @keyframes floatingLightOne {
+
+          0% {
+            transform:
+              translate3d(0, 0, 0)
+              scale(1);
+          }
+
+          100% {
+            transform:
+              translate3d(25vw, 20vh, 0)
+              scale(1.25);
+          }
+
         }
 
-        /* =========================================
-           DOTS
-        ========================================= */
 
-        .dots {
+        @keyframes floatingLightTwo {
+
+          0% {
+            transform:
+              translate3d(0, 0, 0)
+              scale(1);
+          }
+
+          100% {
+            transform:
+              translate3d(-20vw, -15vh, 0)
+              scale(1.2);
+          }
+
+        }
+
+
+        /* ====================================================
+           PARTICLES
+        ===================================================== */
+
+        .particles {
           position: absolute;
 
-          bottom: 32px;
-          left: 50%;
+          inset: 0;
 
-          transform: translateX(-50%);
+          z-index: 3;
 
-          display: flex;
-          align-items: center;
-
-          gap: 10px;
-
-          z-index: 10;
-
-          max-width: calc(100% - 40px);
+          pointer-events: none;
         }
 
-        .dot {
-          position: relative;
 
-          width: 36px;
-          height: 4px;
+        .particle {
+          position: absolute;
 
-          padding: 0;
+          display: block;
 
-          border: none;
+          width: 3px;
+          height: 3px;
 
-          border-radius: 2px;
+          border-radius: 50%;
 
-          background: rgba(
-            255,
-            255,
-            255,
-            0.3
-          );
+          background:
+            rgba(
+              255,
+              255,
+              255,
+              0.55
+            );
 
-          cursor: pointer;
+          box-shadow:
+            0 0 15px
+            rgba(
+              255,
+              255,
+              255,
+              0.5
+            );
 
-          overflow: hidden;
-
-          flex-shrink: 0;
-
-          transition:
-            background 0.3s ease,
-            width 0.3s ease;
+          animation:
+            particleFloat
+            8s
+            ease-in-out
+            infinite
+            alternate;
         }
 
-        .dot.active {
-          background: rgba(
-            255,
-            255,
-            255,
-            0.3
-          );
 
-          width: 52px;
+        .p1 {
+          left: 12%;
+          top: 25%;
+          animation-delay: 0s;
         }
 
-        .dot-progress {
+        .p2 {
+          left: 25%;
+          top: 65%;
+          animation-delay: 2s;
+        }
+
+        .p3 {
+          left: 43%;
+          top: 20%;
+          animation-delay: 4s;
+        }
+
+        .p4 {
+          left: 62%;
+          top: 35%;
+          animation-delay: 1s;
+        }
+
+        .p5 {
+          left: 78%;
+          top: 22%;
+          animation-delay: 3s;
+        }
+
+        .p6 {
+          left: 86%;
+          top: 68%;
+          animation-delay: 5s;
+        }
+
+        .p7 {
+          left: 55%;
+          top: 75%;
+          animation-delay: 2.5s;
+        }
+
+        .p8 {
+          left: 18%;
+          top: 80%;
+          animation-delay: 4.5s;
+        }
+
+
+        @keyframes particleFloat {
+
+          0% {
+            opacity: 0.15;
+
+            transform:
+              translate3d(
+                0,
+                20px,
+                0
+              )
+              scale(0.7);
+          }
+
+          100% {
+            opacity: 0.65;
+
+            transform:
+              translate3d(
+                10px,
+                -30px,
+                0
+              )
+              scale(1.2);
+          }
+
+        }
+
+
+        /* ====================================================
+           LIGHT OVERLAY
+        ===================================================== */
+
+        .dark-overlay {
+          position: absolute;
+
+          inset: 0;
+
+          z-index: 4;
+
+          pointer-events: none;
+
+          background:
+            linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.10),
+              rgba(255, 255, 255, 0.02) 50%,
+              rgba(255, 255, 255, 0.10)
+            );
+        }
+
+
+        /* ====================================================
+           BOTTOM GRADIENT
+        ===================================================== */
+
+        .bottom-fade {
           position: absolute;
 
           left: 0;
-          top: 0;
+          right: 0;
+          bottom: 0;
 
-          height: 100%;
+          height: 55%;
+
+          z-index: 4;
+
+          pointer-events: none;
+
+          background:
+            linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 0.03) 20%,
+              rgba(255, 255, 255, 0.18) 65%,
+              rgba(255, 255, 255, 0.45) 100%
+            );
+        }
+
+
+        /* ====================================================
+           HERO CONTENT - EXACT CENTER
+        ===================================================== */
+
+        .hero-content {
+          position: absolute;
+
+          top: 50%;
+          left: 50%;
+
+          z-index: 10;
+
+          width: 100%;
+
+          max-width: 1300px;
+
+          padding: 0 55px;
+
+          box-sizing: border-box;
+
+          text-align: center;
+
+          color: #fff;
+
+          transform:
+            translate(-50%, -50%);
+        }
+
+
+        /* ====================================================
+           TEXT ANIMATION
+        ===================================================== */
+
+        .text-animation {
+          display: flex;
+
+          flex-direction: column;
+
+          align-items: center;
+
+          justify-content: center;
+
+          animation:
+            textReveal
+            1.1s
+            cubic-bezier(
+              0.16,
+              1,
+              0.3,
+              1
+            )
+            both;
+        }
+
+
+        @keyframes textReveal {
+
+          0% {
+            opacity: 0;
+
+            transform:
+              translate3d(
+                0,
+                80px,
+                0
+              )
+              scale(0.96);
+
+            filter: blur(8px);
+          }
+
+          60% {
+            opacity: 0.8;
+
+            filter: blur(1px);
+          }
+
+          100% {
+            opacity: 1;
+
+            transform:
+              translate3d(
+                0,
+                0,
+                0
+              )
+              scale(1);
+
+            filter: blur(0);
+          }
+
+        }
+
+
+        /* ====================================================
+           TAG
+        ===================================================== */
+
+        .tag {
+          display: inline-flex;
+
+          align-items: center;
+
+          margin-bottom: 18px;
+
+          padding: 8px 17px;
+
+          border:
+            1px solid
+            rgba(
+              255,
+              255,
+              255,
+              0.28
+            );
+
+          border-radius: 999px;
+
+          background:
+            rgba(
+              255,
+              255,
+              255,
+              0.08
+            );
+
+          backdrop-filter:
+            blur(12px);
+
+          -webkit-backdrop-filter:
+            blur(12px);
+
+          color: #fff;
+
+          font-size: 0.76rem;
+
+          font-weight: 500;
+
+          letter-spacing: 0.16em;
+
+          text-transform: uppercase;
+        }
+
+
+        /* ====================================================
+           TITLE
+        ===================================================== */
+
+        .hero-content h1 {
+          margin:
+            0 auto 18px;
+
+          max-width: 850px;
+
+          font-size:
+            clamp(
+              2.4rem,
+              5.3vw,
+              5.3rem
+            );
+
+          font-weight: 600;
+
+          line-height: 0.98;
+
+          letter-spacing: -0.045em;
+
+          color: #ffffff;
+
+          text-shadow:
+            0 8px 40px
+            rgba(
+              0,
+              0,
+              0,
+              0.55
+            );
+        }
+
+
+        .title-main {
+          color: #fff;
+        }
+
+
+        .title-accent {
+          background:
+            linear-gradient(
+              100deg,
+              #38bdf8 0%,
+              #818cf8 45%,
+              #c084fc 100%
+            );
+
+          -webkit-background-clip:
+            text;
+
+          -webkit-text-fill-color:
+            transparent;
+
+          background-clip: text;
+        }
+
+
+        /* ====================================================
+           DESCRIPTION - NAVY BLUE
+        ===================================================== */
+
+        .hero-content p {
+          max-width: 550px;
+
+          margin: 0 auto;
+
+          color: #000080;
+
+          font-size:
+            clamp(
+              0.88rem,
+              1.2vw,
+              1.1rem
+            );
+
+          font-weight: 600;
+
+          line-height: 1.65;
+
+          text-shadow:
+            0 2px 10px
+            rgba(
+              255,
+              255,
+              255,
+              0.65
+            );
+        }
+
+
+        /* ====================================================
+           SMALL DECORATIVE LINE
+        ===================================================== */
+
+        .hero-line {
+          display: flex;
+
+          align-items: center;
+
+          justify-content: center;
+
+          gap: 5px;
+
+          margin-top: 25px;
+        }
+
+
+        .hero-line span:first-child {
+          width: 42px;
+
+          height: 2px;
 
           background: #38bdf8;
 
-          border-radius: 2px;
-
-          transition: width 0.05s linear;
+          border-radius: 10px;
         }
 
-        /* =========================================
+
+        .hero-line span:last-child {
+          width: 8px;
+
+          height: 2px;
+
+          background:
+            rgba(
+              255,
+              255,
+              255,
+              0.55
+            );
+
+          border-radius: 10px;
+        }
+
+
+        /* ====================================================
+           INDICATORS
+        ===================================================== */
+
+        .text-indicators {
+          position: absolute;
+
+          right: 50px;
+          bottom: 50px;
+
+          z-index: 12;
+
+          display: flex;
+
+          align-items: center;
+
+          gap: 7px;
+        }
+
+
+        .indicator {
+          width: 24px;
+          height: 2px;
+
+          padding: 0;
+
+          border: 0;
+
+          border-radius: 10px;
+
+          background:
+            rgba(
+              255,
+              255,
+              255,
+              0.35
+            );
+
+          cursor: pointer;
+
+          transition:
+            width 0.5s ease,
+            background 0.5s ease;
+        }
+
+
+        .indicator.active {
+          width: 48px;
+
+          background: #38bdf8;
+        }
+
+
+        /* ====================================================
            SCROLL INDICATOR
-        ========================================= */
+        ===================================================== */
 
         .scroll-indicator {
           position: absolute;
 
-          right: 40px;
-          bottom: 32px;
+          left: 50px;
+          bottom: 45px;
 
-          z-index: 10;
+          z-index: 12;
 
           display: flex;
-          flex-direction: column;
 
           align-items: center;
 
-          gap: 8px;
+          gap: 12px;
         }
 
-        .scroll-line {
-          width: 1px;
-          height: 48px;
-
-          background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.6),
-            transparent
-          );
-
-          animation:
-            scrollPulse 2s
-            ease-in-out infinite;
-        }
 
         .scroll-text {
-          font-size: 0.68rem;
+          color:
+            rgba(
+              255,
+              255,
+              255,
+              0.55
+            );
 
-          color: rgba(
-            255,
-            255,
-            255,
-            0.5
-          );
+          font-size: 0.62rem;
 
-          letter-spacing: 0.15em;
-
-          text-transform: uppercase;
+          letter-spacing: 0.2em;
 
           writing-mode: vertical-rl;
         }
 
-        @keyframes scrollPulse {
-          0%,
+
+        .scroll-line {
+          position: relative;
+
+          display: block;
+
+          width: 1px;
+          height: 45px;
+
+          overflow: hidden;
+
+          background:
+            rgba(
+              255,
+              255,
+              255,
+              0.25
+            );
+        }
+
+
+        .scroll-line::after {
+          content: "";
+
+          position: absolute;
+
+          top: -100%;
+          left: 0;
+
+          width: 100%;
+          height: 50%;
+
+          background: #38bdf8;
+
+          animation:
+            scrollLine
+            2s
+            ease-in-out
+            infinite;
+        }
+
+
+        @keyframes scrollLine {
+
+          0% {
+            top: -100%;
+          }
+
           100% {
-            opacity: 0.4;
+            top: 200%;
           }
 
-          50% {
-            opacity: 1;
-          }
         }
 
-        /* =========================================
-           LARGE DESKTOP
-        ========================================= */
 
-        @media (min-width: 1600px) {
-          .content {
-            max-width: 1440px;
-
-            padding-left: 60px;
-            padding-right: 60px;
-          }
-
-          .content-inner {
-            max-width: 720px;
-          }
-
-          .nav-prev {
-            left: 40px;
-          }
-
-          .nav-next {
-            right: 40px;
-          }
-
-          .scroll-indicator {
-            right: 60px;
-          }
-        }
-
-        /* =========================================
-           DESKTOP
-        ========================================= */
-
-        @media (min-width: 1200px) and (max-width: 1599px) {
-          .content {
-            padding-left: 50px;
-            padding-right: 50px;
-          }
-        }
-
-        /* =========================================
-           LAPTOP
-        ========================================= */
-
-        @media (min-width: 992px) and (max-width: 1199px) {
-          .content {
-            padding-left: 40px;
-            padding-right: 40px;
-          }
-
-          .content-inner {
-            max-width: 620px;
-          }
-
-          h1 {
-            font-size: clamp(
-              2.5rem,
-              5vw,
-              4rem
-            );
-          }
-
-          .nav-arrow {
-            width: 46px;
-            height: 46px;
-          }
-
-          .nav-prev {
-            left: 18px;
-          }
-
-          .nav-next {
-            right: 18px;
-          }
-        }
-
-        /* =========================================
+        /* ====================================================
            TABLET
-        ========================================= */
+        ===================================================== */
 
-        @media (min-width: 769px) and (max-width: 991px) {
-          .hero {
-            min-height: 600px;
-          }
+        @media (max-width: 991px) {
 
-          .hero-image {
-            object-position: center center;
-          }
-
-          .content {
-            padding-left: 32px;
-            padding-right: 32px;
-          }
-
-          .content-inner {
-            max-width: 600px;
-          }
-
-          h1 {
-            font-size: clamp(
-              2.2rem,
-              5.5vw,
-              3.4rem
-            );
-          }
-
-          .subtitle {
-            max-width: 520px;
-          }
-
-          .nav-arrow {
-            width: 44px;
-            height: 44px;
-          }
-
-          .nav-prev {
-            left: 14px;
-          }
-
-          .nav-next {
-            right: 14px;
+          .hero-content {
+            padding: 0 35px;
           }
 
           .scroll-indicator {
-            display: none;
+            left: 30px;
           }
+
+          .text-indicators {
+            right: 30px;
+          }
+
         }
 
-        /* =========================================
+
+        /* ====================================================
            MOBILE
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 768px) {
+
           .hero {
+            min-height: 580px;
+          }
+
+
+          /* IMAGE */
+
+          .image-stage {
+            inset: -16%;
+
+            width: 132%;
+            height: 132%;
+          }
+
+
+          .image-camera {
+            animation:
+              mobileCamera
+              13s
+              cubic-bezier(
+                0.45,
+                0.05,
+                0.55,
+                0.95
+              )
+              infinite
+              alternate;
+          }
+
+
+          @keyframes mobileCamera {
+
+            0% {
+              transform:
+                translate3d(
+                  0,
+                  0,
+                  0
+                )
+                scale(1);
+            }
+
+            30% {
+              transform:
+                translate3d(
+                  -1.5%,
+                  -1%,
+                  0
+                )
+                scale(1.06)
+                rotateZ(-0.2deg);
+            }
+
+            60% {
+              transform:
+                translate3d(
+                  1.5%,
+                  1%,
+                  0
+                )
+                scale(1.11)
+                rotateZ(0.2deg);
+            }
+
+            100% {
+              transform:
+                translate3d(
+                  -1%,
+                  -0.5%,
+                  0
+                )
+                scale(1.15);
+            }
+
+          }
+
+
+          /* LIGHT */
+
+          .light-orb {
+            width: 60vw;
+            height: 60vw;
+
+            filter: blur(70px);
+
+            opacity: 0.08;
+          }
+
+
+          /* CENTER TEXT */
+
+          .hero-content {
+            top: 50%;
+            left: 50%;
+
             width: 100%;
 
-            height: 100svh;
+            padding: 0 20px;
 
-            min-height: 560px;
+            transform:
+              translate(-50%, -50%);
           }
 
-          /*
-            MOBILE IMAGE FIX
-            Keep the image filling the hero,
-            but move the focus slightly upward.
-          */
-
-          .hero-image {
-            width: 100% !important;
-            height: 100% !important;
-
-            object-fit: cover;
-
-            object-position: center center;
-          }
-
-          .overlay {
-            background: linear-gradient(
-              180deg,
-              rgba(2, 6, 23, 0.3) 0%,
-              rgba(2, 6, 23, 0.75) 60%,
-              rgba(2, 6, 23, 0.92) 100%
-            );
-          }
-
-          .content {
-            width: 100%;
-
-            padding-left: 20px;
-            padding-right: 20px;
-
-            padding-bottom: 90px;
-
-            justify-content: flex-end;
-
-            box-sizing: border-box;
-          }
-
-          .content-inner {
-            width: 100%;
-            max-width: 100%;
-
-            text-align: center;
-          }
-
-          .tag-wrapper {
-            margin-bottom: 16px;
-          }
 
           .tag {
-            font-size: 0.72rem;
+            margin-bottom: 13px;
 
-            padding: 6px 13px;
+            padding: 6px 12px;
 
-            letter-spacing: 0.1em;
+            font-size: 0.62rem;
+
+            letter-spacing: 0.12em;
           }
 
-          h1 {
-            font-size: clamp(
-              2rem,
-              8vw,
-              2.8rem
-            );
 
-            line-height: 1.08;
-
-            margin-bottom: 16px;
-          }
-
-          .subtitle {
-            width: 100%;
+          .hero-content h1 {
             max-width: 100%;
 
-            font-size: 0.97rem;
+            font-size:
+              clamp(
+                2rem,
+                9vw,
+                3.2rem
+              );
 
-            line-height: 1.6;
+            line-height: 1.02;
 
-            margin-bottom: 28px;
-
-            color: rgba(
-              255,
-              255,
-              255,
-              0.88
-            );
-          }
-
-          .nav-arrow {
-            display: none;
-          }
-
-          .dots {
-            bottom: 20px;
-
-            gap: 7px;
-
-            max-width: calc(
-              100% - 32px
-            );
-          }
-
-          .dot {
-            width: 28px;
-          }
-
-          .dot.active {
-            width: 42px;
-          }
-
-          .scroll-indicator {
-            display: none;
-          }
-        }
-
-        /* =========================================
-           SMALL MOBILE
-        ========================================= */
-
-        @media (max-width: 480px) {
-          .hero {
-            min-height: 540px;
-          }
-
-          /*
-            Image remains responsive.
-            No fixed pixel width or height.
-          */
-
-          .hero-image {
-            width: 100% !important;
-            height: 100% !important;
-
-            object-fit: cover;
-            object-position: center center;
-          }
-
-          .content {
-            padding-left: 16px;
-            padding-right: 16px;
-
-            padding-bottom: 72px;
-          }
-
-          .tag {
-            font-size: 0.65rem;
-
-            padding: 5px 11px;
-          }
-
-          h1 {
-            font-size: clamp(
-              1.75rem,
-              8.5vw,
-              2.35rem
-            );
-
-            line-height: 1.1;
+            letter-spacing: -0.035em;
 
             margin-bottom: 14px;
           }
 
-          .subtitle {
-            font-size: 0.9rem;
+
+          .hero-content p {
+            max-width: 100%;
+
+            font-size: 0.86rem;
 
             line-height: 1.55;
 
-            margin-bottom: 0;
+            color: #000080;
           }
 
-          .dots {
-            bottom: 16px;
+
+          .hero-line {
+            margin-top: 18px;
           }
 
-          .dot {
-            width: 24px;
-            height: 3px;
+
+          /* INDICATORS */
+
+          .text-indicators {
+            left: 50%;
+            right: auto;
+
+            bottom: 24px;
+
+            transform:
+              translateX(-50%);
           }
 
-          .dot.active {
-            width: 36px;
+
+          /* SCROLL */
+
+          .scroll-indicator {
+            display: none;
           }
+
+
+          /* PARTICLES */
+
+          .particle {
+            width: 2px;
+            height: 2px;
+          }
+
         }
 
-        /* =========================================
-           VERY SMALL MOBILE
-        ========================================= */
 
-        @media (max-width: 375px) {
+        /* ====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
           .hero {
-            min-height: 520px;
+            min-height: 540px;
           }
 
-          .content {
-            padding-left: 14px;
-            padding-right: 14px;
 
-            padding-bottom: 64px;
+          .hero-content {
+            top: 50%;
+            left: 50%;
+
+            padding: 0 16px;
+
+            transform:
+              translate(-50%, -50%);
           }
 
-          .tag {
-            font-size: 0.6rem;
 
-            padding: 5px 10px;
+          .hero-content h1 {
+            font-size:
+              clamp(
+                1.8rem,
+                9.5vw,
+                2.6rem
+              );
           }
 
-          h1 {
-            font-size: 1.65rem;
-          }
 
-          .subtitle {
-            font-size: 0.84rem;
-
-            line-height: 1.5;
-          }
-
-          .dots {
-            gap: 6px;
-          }
-
-          .dot {
-            width: 22px;
-          }
-
-          .dot.active {
-            width: 32px;
-          }
-        }
-
-        /* =========================================
-           EXTRA SMALL
-        ========================================= */
-
-        @media (max-width: 319px) {
-          .hero {
-            min-height: 500px;
-          }
-
-          .content {
-            padding-left: 12px;
-            padding-right: 12px;
-
-            padding-bottom: 60px;
-          }
-
-          h1 {
-            font-size: 1.5rem;
-          }
-
-          .subtitle {
+          .hero-content p {
             font-size: 0.8rem;
+
+            color: #000080;
           }
+
+
+          .hero-line {
+            margin-top: 15px;
+          }
+
+
+          .indicator {
+            width: 18px;
+          }
+
+
+          .indicator.active {
+            width: 35px;
+          }
+
         }
+
+
+        /* ====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .image-camera,
+          .light-orb,
+          .particle,
+          .scroll-line::after,
+          .text-animation {
+
+            animation: none;
+          }
+
+        }
+
       `}</style>
-    </section>
+    </>
   );
 }
