@@ -208,6 +208,18 @@ export default function Navbar() {
                     </span>
                   </Link>
 
+                  <Link
+                    href="/community"
+                    className="dropdown-item-custom"
+                    onClick={closeMenu}
+                  >
+                    <span className="dropdown-point">•</span>
+                    <span className="dropdown-text">
+                      COMMUNITY 
+
+                    </span>
+                  </Link>
+
                 </div>
               </li>
 
@@ -242,16 +254,16 @@ export default function Navbar() {
               </li>
 
               {/* =================================================
-                  OUR LEADERSHIP
+                  COMMUNITY & ENVIRONMENT
               ================================================= */}
 
               <li className="nav-item">
                 <Link
-                  href="/community"
+                  href=""
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Community & Environment
+                  Branch Network
                 </Link>
               </li>
 

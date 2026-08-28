@@ -8,7 +8,7 @@ import { BiBuilding, BiGroup, BiDollar, BiBriefcase } from "react-icons/bi";
 const stats = [
   { label: "Branches", value: 25, icon: <BiBuilding size={40} /> },
   { label: "Happy Clients", value: 25000, icon: <BiGroup size={40} /> },
-  { label: "Total Assets", value: "2 Bn+", icon: <BiDollar size={40} /> },
+  { label: "Total Assets", value: "5 Bn+", icon: <BiDollar size={40} /> },
   { label: "Work Force", value: 350, icon: <BiBriefcase size={40} /> },
 ];
 
