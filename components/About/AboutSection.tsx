@@ -128,7 +128,7 @@ export default function AboutSection() {
                 Our <strong>Mission</strong>
               </h4>
 
-              <p>
+              <p className="story-text">
                 To empower individuals, entrepreneurs, SMEs, and corporate
                 partners through innovative investment solutions, strategic
                 partnerships, and responsible business practices that drive
@@ -142,10 +142,10 @@ export default function AboutSection() {
         {/* ================= STORY ================= */}
         <div className="row milestones-section">
           <div className="col-12 text-center">
-            <h3 className="section-title section-heading">Our Story</h3>
+            <h4 className="section-title section-heading">Our Story</h4>
           </div>
 
-          <div className="col-12">
+          <div className="col-12 story-content">
             <p>
               At Dearo Venture Capital Ltd, we believe that every individual,
               entrepreneur, and business has the potential to achieve
@@ -276,7 +276,7 @@ export default function AboutSection() {
           position: relative;
           width: 100%;
           height: 0;
-          padding-bottom: 40%; /* 2.5:1 aspect ratio */
+          padding-bottom: 40%;
           overflow: hidden;
           border-radius: 16px;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -287,19 +287,25 @@ export default function AboutSection() {
           object-position: center center;
         }
 
-        /* ================= CONTENT ================= */
-        .about-content {
+        /* ================= CONTENT - ALL PARAGRAPHS UNIFIED ================= */
+        .about-content,
+        .story-content {
           width: 100%;
         }
 
+        /* This targets ALL paragraph text consistently */
         .about-content p,
-        .milestone-card p {
+        .story-content p,
+        .milestone-card p,
+        .story-text {
           color: #374151;
           font-size: clamp(0.95rem, 1.1vw, 1.05rem);
           line-height: 1.75;
           margin-bottom: 20px;
           overflow-wrap: break-word;
           word-wrap: break-word;
+          font-family: inherit;
+          font-weight: 400;
         }
 
         /* ================= MILESTONES ================= */
@@ -429,7 +435,7 @@ export default function AboutSection() {
           }
 
           .about-image-container {
-            padding-bottom: 45%; /* Slightly taller on tablet */
+            padding-bottom: 45%;
           }
         }
 
@@ -464,7 +470,6 @@ export default function AboutSection() {
             margin-bottom: 40px;
           }
 
-          /* IMAGE - Full width with proper aspect ratio */
           .about-image-wrapper {
             padding: 0;
             margin-bottom: 24px;
@@ -476,7 +481,6 @@ export default function AboutSection() {
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
           }
 
-          /* TITLES */
           .about-main-title {
             margin-top: 32px;
             margin-bottom: 20px;
@@ -494,15 +498,16 @@ export default function AboutSection() {
             font-size: clamp(1.1rem, 4vw, 1.2rem);
           }
 
-          /* TEXT */
+          /* ALL PARAGRAPHS - MOBILE */
           .about-content p,
-          .milestone-card p {
+          .story-content p,
+          .milestone-card p,
+          .story-text {
             font-size: clamp(0.88rem, 2.8vw, 0.95rem);
             line-height: 1.7;
             margin-bottom: 16px;
           }
 
-          /* MILESTONE */
           .milestones-section {
             margin-bottom: 40px;
           }
@@ -524,7 +529,6 @@ export default function AboutSection() {
             font-size: 0.8rem;
           }
 
-          /* AWARDS - 2 columns on mobile */
           .award-column {
             margin-bottom: 16px;
           }
@@ -551,7 +555,6 @@ export default function AboutSection() {
             margin-bottom: 25px;
           }
 
-          /* AWARDS - 2 columns */
           .col-6 {
             flex: 0 0 50%;
             max-width: 50%;
@@ -574,7 +577,9 @@ export default function AboutSection() {
           }
 
           .about-content p,
-          .milestone-card p {
+          .story-content p,
+          .milestone-card p,
+          .story-text {
             font-size: clamp(0.82rem, 3vw, 0.88rem);
           }
 
@@ -607,7 +612,9 @@ export default function AboutSection() {
             padding-bottom: 38%;
           }
 
-          .about-content p {
+          .about-content p,
+          .story-content p,
+          .story-text {
             font-size: 1.05rem;
           }
 
@@ -627,7 +634,9 @@ export default function AboutSection() {
             padding-bottom: 35%;
           }
 
-          .about-content p {
+          .about-content p,
+          .story-content p,
+          .story-text {
             font-size: 1.1rem;
           }
         }
