@@ -48,16 +48,16 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
-        {/* IMAGE STAGE */}
-        <div className="image-stage">
-          <div className="image-camera">
+        {/* IMAGE - FULL SCREEN, NO BORDERS */}
+        <div className="image-wrapper">
+          <div className="image-container">
             <Image
               src="/images/lotus_tower_new.jpg"
               alt="Dearo Venture Capital"
               fill
               priority
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               className="hero-image"
+              sizes="100vw"
               quality={85}
             />
           </div>
@@ -89,20 +89,13 @@ export default function Hero() {
             key={currentText}
             className={`text-animation ${isTransitioning ? "exiting" : "entering"}`}
           >
-            {/* TAG */}
             <div className="tag">{text.tag}</div>
-
-            {/* TITLE */}
             <h1>
               <span className="title-main">{text.title}</span>
               <br />
               <span className="title-accent">{text.accent}</span>
             </h1>
-
-            {/* DESCRIPTION */}
             <p>{text.description}</p>
-
-            {/* DECORATIVE LINE */}
             <div className="hero-line">
               <span />
               <span />
@@ -145,40 +138,37 @@ export default function Hero() {
           height: 100vh;
           height: 100svh;
           min-height: 650px;
-          max-height: 900px;
+          max-height: 1000px;
           overflow: hidden;
           background: #050505;
         }
 
         /* ====================================================
-           IMAGE STAGE - IMPROVED
+           IMAGE - FULL SCREEN, NO BORDERS
         ===================================================== */
-        .image-stage {
-          position: absolute;
-          inset: -8%;
-          width: 116%;
-          height: 116%;
-          overflow: hidden;
-          z-index: 1;
-          transform-style: preserve-3d;
-          perspective: 1200px;
-        }
-
-        .image-camera {
+        .image-wrapper {
           position: absolute;
           inset: 0;
+          z-index: 1;
           overflow: hidden;
+          background: #050505;
+        }
+
+        .image-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
           transform-origin: center center;
           animation: cinematicCamera 20s cubic-bezier(0.45, 0.05, 0.55, 0.95)
             infinite alternate;
           will-change: transform;
-          transform-style: preserve-3d;
         }
 
         .hero-image {
-          object-fit: cover;
-          object-position: center 30%;
-          transform: scale(1.05);
+          object-fit: cover !important;
+          object-position: center center;
+          width: 100% !important;
+          height: 100% !important;
           filter: saturate(1.05) contrast(1.03) brightness(0.95);
           will-change: transform;
         }
@@ -211,7 +201,7 @@ export default function Hero() {
         }
 
         /* ====================================================
-           LIGHTS
+           LIGHTS - ANIMATED
         ===================================================== */
         .light-orb {
           position: absolute;
@@ -268,7 +258,7 @@ export default function Hero() {
         }
 
         /* ====================================================
-           PARTICLES
+           PARTICLES - ANIMATED
         ===================================================== */
         .particles {
           position: absolute;
@@ -350,9 +340,9 @@ export default function Hero() {
           pointer-events: none;
           background: linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.02) 50%,
-            rgba(255, 255, 255, 0.08)
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.02) 50%,
+            rgba(0, 0, 0, 0.1)
           );
         }
 
@@ -366,15 +356,15 @@ export default function Hero() {
           pointer-events: none;
           background: linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.03) 20%,
-            rgba(255, 255, 255, 0.18) 65%,
-            rgba(255, 255, 255, 0.45) 100%
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.03) 20%,
+            rgba(0, 0, 0, 0.18) 65%,
+            rgba(0, 0, 0, 0.45) 100%
           );
         }
 
         /* ====================================================
-           HERO CONTENT
+           HERO CONTENT - FULLY RESPONSIVE
         ===================================================== */
         .hero-content {
           position: absolute;
@@ -428,7 +418,7 @@ export default function Hero() {
         }
 
         /* ====================================================
-           TAG
+           TAG - RESPONSIVE
         ===================================================== */
         .tag {
           display: inline-flex;
@@ -441,22 +431,22 @@ export default function Hero() {
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           color: #fff;
-          font-size: clamp(0.65rem, 0.9vw, 0.76rem);
+          font-size: clamp(0.5rem, 0.9vw, 0.76rem);
           font-weight: 500;
-          letter-spacing: 0.16em;
+          letter-spacing: clamp(0.1em, 0.16em, 0.2em);
           text-transform: uppercase;
         }
 
         /* ====================================================
-           TITLE
+           TITLE - RESPONSIVE
         ===================================================== */
         .hero-content h1 {
           margin: 0 auto 18px;
           max-width: 850px;
-          font-size: clamp(2.2rem, 5.3vw, 5.3rem);
-          font-weight: 600;
-          line-height: 0.98;
-          letter-spacing: -0.045em;
+          font-size: clamp(1.8rem, 6vw, 5.3rem);
+          font-weight: 700;
+          line-height: clamp(0.95, 1, 1.02);
+          letter-spacing: clamp(-0.02em, -0.04em, -0.045em);
           color: #ffffff;
           text-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
         }
@@ -478,16 +468,16 @@ export default function Hero() {
         }
 
         /* ====================================================
-           DESCRIPTION
+           DESCRIPTION - RESPONSIVE
         ===================================================== */
         .hero-content p {
           max-width: 550px;
           margin: 0 auto;
-          color: #1a1a4e;
-          font-size: clamp(0.85rem, 1.2vw, 1.1rem);
-          font-weight: 600;
-          line-height: 1.65;
-          text-shadow: 0 2px 20px rgba(255, 255, 255, 0.7);
+          color: #ffffff;
+          font-size: clamp(0.7rem, 1.2vw, 1.1rem);
+          font-weight: 400;
+          line-height: clamp(1.4, 1.6, 1.8);
+          text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
           padding: 0 10px;
         }
 
@@ -498,19 +488,19 @@ export default function Hero() {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 5px;
-          margin-top: 25px;
+          gap: clamp(4px, 5px, 6px);
+          margin-top: clamp(16px, 25px, 30px);
         }
 
         .hero-line span:first-child {
-          width: 42px;
+          width: clamp(24px, 42px, 50px);
           height: 2px;
           background: #38bdf8;
           border-radius: 10px;
         }
 
         .hero-line span:last-child {
-          width: 8px;
+          width: clamp(6px, 8px, 10px);
           height: 2px;
           background: rgba(255, 255, 255, 0.55);
           border-radius: 10px;
@@ -602,10 +592,10 @@ export default function Hero() {
            RESPONSIVE BREAKPOINTS
         ==================================================== */
 
-        /* ===== LARGE TABLET (992px - 1200px) ===== */
-        @media (max-width: 1200px) {
+        /* ===== TABLET (768px - 1024px) ===== */
+        @media (max-width: 1024px) {
           .hero-content {
-            padding: 0 45px;
+            padding: 0 40px;
           }
 
           .hero-content h1 {
@@ -618,58 +608,16 @@ export default function Hero() {
           }
         }
 
-        /* ===== TABLET (768px - 992px) ===== */
-        @media (max-width: 992px) {
-          .hero {
-            min-height: 600px;
-          }
-
-          .scroll-indicator {
-            left: 30px;
-          }
-
-          .text-indicators {
-            right: 30px;
-          }
-
-          .hero-content {
-            padding: 0 35px;
-          }
-
-          .image-stage {
-            inset: -10%;
-            width: 120%;
-            height: 120%;
-          }
-
-          .hero-image {
-            object-position: center 25%;
-          }
-
-          .light-orb {
-            width: 40vw;
-            height: 40vw;
-            filter: blur(80px);
-            opacity: 0.12;
-          }
-        }
-
         /* ===== MOBILE (up to 768px) ===== */
         @media (max-width: 768px) {
           .hero {
-            min-height: 560px;
-            max-height: 800px;
+            min-height: 500px;
+            height: 80vh;
           }
 
-          /* IMAGE - More subtle movement */
-          .image-stage {
-            inset: -12%;
-            width: 124%;
-            height: 124%;
-          }
-
-          .image-camera {
-            animation: mobileCamera 13s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+          /* IMAGE - FULL SCREEN, NO BORDERS */
+          .image-container {
+            animation: mobileCamera 15s cubic-bezier(0.45, 0.05, 0.55, 0.95)
               infinite alternate;
           }
 
@@ -678,72 +626,124 @@ export default function Hero() {
               transform: translate3d(0, 0, 0) scale(1);
             }
             30% {
-              transform: translate3d(-1.2%, -0.8%, 0) scale(1.03)
-                rotateZ(-0.2deg);
+              transform: translate3d(-1%, -0.5%, 0) scale(1.04) rotateZ(-0.15deg);
             }
             60% {
-              transform: translate3d(1.2%, 0.8%, 0) scale(1.06) rotateZ(0.2deg);
+              transform: translate3d(1%, 0.5%, 0) scale(1.08) rotateZ(0.15deg);
             }
             100% {
-              transform: translate3d(-0.8%, -0.4%, 0) scale(1.09);
+              transform: translate3d(-0.5%, -0.3%, 0) scale(1.12);
             }
           }
 
           .hero-image {
             object-position: center 30%;
-            transform: scale(1.03);
           }
 
-          /* LIGHTS - More subtle */
+          /* LIGHTS */
           .light-orb {
-            width: 55vw;
-            height: 55vw;
+            width: 50vw;
+            height: 50vw;
             filter: blur(60px);
             opacity: 0.08;
           }
 
+          .light-one {
+            animation: floatingLightOneMobile 12s ease-in-out infinite alternate;
+          }
+
+          .light-two {
+            animation: floatingLightTwoMobile 14s ease-in-out infinite alternate;
+          }
+
+          @keyframes floatingLightOneMobile {
+            0% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            100% {
+              transform: translate3d(15vw, 10vh, 0) scale(1.15);
+            }
+          }
+
+          @keyframes floatingLightTwoMobile {
+            0% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            100% {
+              transform: translate3d(-10vw, -8vh, 0) scale(1.1);
+            }
+          }
+
+          /* PARTICLES */
+          .particle {
+            width: 2px;
+            height: 2px;
+          }
+
+          .p2,
+          .p4,
+          .p6,
+          .p8 {
+            display: none;
+          }
+
+          .p1,
+          .p3,
+          .p5,
+          .p7 {
+            display: block;
+          }
+
           /* CONTENT */
           .hero-content {
-            top: 50%;
-            left: 50%;
-            width: 100%;
+            top: 52%;
             padding: 0 20px;
-            transform: translate(-50%, -50%);
           }
 
           .tag {
-            margin-bottom: 13px;
-            padding: 6px 12px;
-            font-size: clamp(0.55rem, 1.5vw, 0.62rem);
+            margin-bottom: 12px;
+            padding: 5px 12px;
+            font-size: clamp(0.5rem, 1.5vw, 0.6rem);
             letter-spacing: 0.12em;
           }
 
           .hero-content h1 {
             max-width: 100%;
             font-size: clamp(1.8rem, 8vw, 3rem);
-            line-height: 1.02;
-            letter-spacing: -0.035em;
-            margin-bottom: 14px;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
           }
 
           .hero-content p {
             max-width: 100%;
             font-size: clamp(0.75rem, 2.5vw, 0.9rem);
             line-height: 1.5;
-            color: #1a1a4e;
             padding: 0 5px;
           }
 
           .hero-line {
-            margin-top: 18px;
+            margin-top: 16px;
           }
 
-          /* INDICATORS - Center bottom */
+          .hero-line span:first-child {
+            width: 30px;
+          }
+
+          /* INDICATORS */
           .text-indicators {
             left: 50%;
             right: auto;
-            bottom: 24px;
+            bottom: 20px;
             transform: translateX(-50%);
+          }
+
+          .indicator {
+            width: 16px;
+          }
+
+          .indicator.active {
+            width: 32px;
           }
 
           /* HIDE SCROLL */
@@ -751,129 +751,85 @@ export default function Hero() {
             display: none;
           }
 
-          /* PARTICLES - Smaller */
-          .particle {
-            width: 2px;
-            height: 2px;
+          /* TEXT ANIMATION */
+          .text-animation.entering {
+            animation: textRevealMobile 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
           }
 
-          .p1,
-          .p2,
-          .p3,
-          .p4,
-          .p5,
-          .p6,
-          .p7,
-          .p8 {
-            display: none;
-          }
-
-          /* Show only 4 particles on mobile */
-          .p1,
-          .p3,
-          .p5,
-          .p7 {
-            display: block;
+          @keyframes textRevealMobile {
+            0% {
+              opacity: 0;
+              transform: translate3d(0, 40px, 0) scale(0.96);
+              filter: blur(6px);
+            }
+            60% {
+              opacity: 0.8;
+              filter: blur(1px);
+            }
+            100% {
+              opacity: 1;
+              transform: translate3d(0, 0, 0) scale(1);
+              filter: blur(0);
+            }
           }
         }
 
         /* ===== SMALL MOBILE (480px - 576px) ===== */
         @media (max-width: 576px) {
           .hero {
-            min-height: 520px;
+            min-height: 450px;
+            height: 75vh;
           }
 
-          .hero-content {
-            padding: 0 16px;
+          .image-container {
+            animation: mobileCameraSmall 12s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+              infinite alternate;
           }
 
-          .hero-content h1 {
-            font-size: clamp(1.6rem, 9vw, 2.4rem);
-          }
-
-          .hero-content p {
-            font-size: clamp(0.7rem, 2.8vw, 0.8rem);
-            color: #1a1a4e;
-          }
-
-          .hero-line {
-            margin-top: 15px;
-          }
-
-          .hero-line span:first-child {
-            width: 30px;
-          }
-
-          .indicator {
-            width: 18px;
-          }
-
-          .indicator.active {
-            width: 35px;
-          }
-
-          .tag {
-            font-size: clamp(0.5rem, 1.8vw, 0.55rem);
-            padding: 5px 10px;
-          }
-        }
-
-        /* ===== EXTRA SMALL (up to 480px) ===== */
-        @media (max-width: 480px) {
-          .hero {
-            min-height: 480px;
-          }
-
-          .image-stage {
-            inset: -15%;
-            width: 130%;
-            height: 130%;
+          @keyframes mobileCameraSmall {
+            0% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            50% {
+              transform: translate3d(0.5%, 0.3%, 0) scale(1.04) rotateZ(0.1deg);
+            }
+            100% {
+              transform: translate3d(-0.5%, -0.3%, 0) scale(1.08);
+            }
           }
 
           .hero-image {
             object-position: center 25%;
-            transform: scale(1);
           }
 
-          .hero-content h1 {
-            font-size: clamp(1.4rem, 8.5vw, 2rem);
-          }
-
-          .hero-content p {
-            font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+          .hero-content {
+            padding: 0 16px;
+            top: 54%;
           }
 
           .tag {
-            font-size: clamp(0.45rem, 1.5vw, 0.5rem);
-            padding: 4px 8px;
-            margin-bottom: 10px;
-          }
-
-          .light-orb {
-            width: 60vw;
-            height: 60vw;
-            filter: blur(50px);
-            opacity: 0.06;
-          }
-        }
-
-        /* ===== EXTRA SMALL (up to 360px) ===== */
-        @media (max-width: 360px) {
-          .hero {
-            min-height: 440px;
+            font-size: clamp(0.45rem, 1.8vw, 0.55rem);
+            padding: 4px 10px;
+            letter-spacing: 0.1em;
           }
 
           .hero-content h1 {
-            font-size: clamp(1.2rem, 8vw, 1.6rem);
+            font-size: clamp(1.6rem, 9vw, 2.4rem);
+            line-height: 1.08;
+            letter-spacing: -0.015em;
           }
 
           .hero-content p {
-            font-size: 0.6rem;
+            font-size: clamp(0.7rem, 2.8vw, 0.82rem);
+            line-height: 1.4;
           }
 
-          .tag {
-            font-size: 0.45rem;
-            padding: 3px 6px;
+          .hero-line {
+            margin-top: 14px;
+          }
+
+          .hero-line span:first-child {
+            width: 24px;
           }
 
           .indicator {
@@ -882,6 +838,143 @@ export default function Hero() {
 
           .indicator.active {
             width: 28px;
+          }
+
+          .light-orb {
+            width: 55vw;
+            height: 55vw;
+            filter: blur(50px);
+            opacity: 0.06;
+          }
+        }
+
+        /* ===== EXTRA SMALL (up to 480px) ===== */
+        @media (max-width: 480px) {
+          .hero {
+            min-height: 420px;
+            height: 70vh;
+          }
+
+          .image-container {
+            animation: mobileCameraExtraSmall 10s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+              infinite alternate;
+          }
+
+          @keyframes mobileCameraExtraSmall {
+            0% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            100% {
+              transform: translate3d(0.3%, -0.2%, 0) scale(1.04);
+            }
+          }
+
+          .hero-image {
+            object-position: center 20%;
+          }
+
+          .hero-content {
+            padding: 0 14px;
+            top: 55%;
+          }
+
+          .tag {
+            font-size: clamp(0.4rem, 1.5vw, 0.48rem);
+            padding: 3px 8px;
+            margin-bottom: 10px;
+            letter-spacing: 0.08em;
+          }
+
+          .hero-content h1 {
+            font-size: clamp(1.4rem, 8.5vw, 2rem);
+            line-height: 1.1;
+            margin-bottom: 10px;
+          }
+
+          .hero-content p {
+            font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+            line-height: 1.35;
+          }
+
+          .hero-line {
+            margin-top: 12px;
+          }
+
+          .hero-line span:first-child {
+            width: 20px;
+          }
+
+          .light-orb {
+            width: 60vw;
+            height: 60vw;
+            filter: blur(40px);
+            opacity: 0.05;
+          }
+
+          .indicator {
+            width: 12px;
+          }
+
+          .indicator.active {
+            width: 24px;
+          }
+        }
+
+        /* ===== TINY (up to 360px) ===== */
+        @media (max-width: 360px) {
+          .hero {
+            min-height: 380px;
+            height: 65vh;
+          }
+
+          .image-container {
+            animation: none;
+          }
+
+          .hero-image {
+            object-position: center 15%;
+          }
+
+          .hero-content {
+            padding: 0 12px;
+          }
+
+          .tag {
+            font-size: 0.4rem;
+            padding: 2px 6px;
+            margin-bottom: 8px;
+          }
+
+          .hero-content h1 {
+            font-size: clamp(1.2rem, 8vw, 1.6rem);
+            margin-bottom: 8px;
+          }
+
+          .hero-content p {
+            font-size: clamp(0.55rem, 2.2vw, 0.65rem);
+          }
+
+          .hero-line {
+            margin-top: 10px;
+          }
+
+          .hero-line span:first-child {
+            width: 16px;
+          }
+
+          .indicator {
+            width: 10px;
+          }
+
+          .indicator.active {
+            width: 18px;
+          }
+
+          .light-orb {
+            width: 65vw;
+            height: 65vw;
+            filter: blur(30px);
+            opacity: 0.04;
           }
         }
 
@@ -898,12 +991,6 @@ export default function Hero() {
           .light-orb {
             width: 28vw;
             height: 28vw;
-          }
-
-          .image-stage {
-            inset: -6%;
-            width: 112%;
-            height: 112%;
           }
         }
 
@@ -928,39 +1015,13 @@ export default function Hero() {
             max-width: 500px;
             max-height: 500px;
           }
-
-          .image-stage {
-            inset: -4%;
-            width: 108%;
-            height: 108%;
-          }
-        }
-
-        /* ===== 4K SCREENS (2560px+) ===== */
-        @media (min-width: 2560px) {
-          .hero {
-            max-height: 1200px;
-          }
-
-          .hero-content {
-            max-width: 1800px;
-          }
-
-          .hero-content h1 {
-            font-size: clamp(5.5rem, 6vw, 7rem);
-          }
-
-          .hero-content p {
-            font-size: clamp(1.2rem, 1.5vw, 1.5rem);
-            max-width: 650px;
-          }
         }
 
         /* ====================================================
            REDUCED MOTION
         ===================================================== */
         @media (prefers-reduced-motion: reduce) {
-          .image-camera,
+          .image-container,
           .light-orb,
           .particle,
           .scroll-line::after,
@@ -971,10 +1032,11 @@ export default function Hero() {
           .text-animation.entering {
             opacity: 1;
             transform: none;
+            filter: none;
           }
 
-          .image-camera {
-            transform: scale(1.05);
+          .image-container {
+            transform: scale(1);
           }
         }
       `}</style>
