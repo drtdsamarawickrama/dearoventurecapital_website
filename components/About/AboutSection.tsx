@@ -58,33 +58,30 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="about-section bg-light">
+    <section id="about" className="about-section">
       <div className="container">
-
         {/* ================= ABOUT ================= */}
-
         <div className="row about-row">
           <div className="col-12">
-
             <h2 className="text-center section-title about-main-title">
               <strong>About Our Company</strong>
             </h2>
 
-            {/* ABOUT IMAGE */}
+            {/* ABOUT IMAGE - IMPROVED RESPONSIVE */}
             <div className="about-image-wrapper">
-              <Image
-                src="/images/about_dearo_new.jpg"
-                alt="About Dearo"
-                width={1300}
-                height={500}
-                className="about-image"
-                sizes="100vw"
-                priority
-              />
+              <div className="about-image-container">
+                <Image
+                  src="/images/about_dearo_new.jpg"
+                  alt="About Dearo Venture Capital"
+                  fill
+                  className="about-image"
+                  sizes="(max-width: 576px) 100vw, (max-width: 992px) 100vw, 100vw"
+                  priority
+                />
+              </div>
             </div>
 
             <div className="about-content">
-
               <p>
                 Dearo Venture Capital Ltd is a diversified investment and
                 business development organization dedicated to creating
@@ -115,7 +112,6 @@ export default function AboutSection() {
               </p>
 
               {/* VISION */}
-
               <h4 className="section-title vision-title">
                 Our <strong>Vision</strong>
               </h4>
@@ -128,7 +124,6 @@ export default function AboutSection() {
               </p>
 
               {/* MISSION */}
-
               <h4 className="section-title mission-title">
                 Our <strong>Mission</strong>
               </h4>
@@ -140,23 +135,17 @@ export default function AboutSection() {
                 sustainable growth and create meaningful economic
                 opportunities.
               </p>
-
             </div>
           </div>
         </div>
 
         {/* ================= STORY ================= */}
-
         <div className="row milestones-section">
-
           <div className="col-12 text-center">
-            <h3 className="section-title section-heading">
-              Our Story
-            </h3>
+            <h3 className="section-title section-heading">Our Story</h3>
           </div>
 
           <div className="col-12">
-
             <p>
               At Dearo Venture Capital Ltd, we believe that every individual,
               entrepreneur, and business has the potential to achieve
@@ -184,104 +173,69 @@ export default function AboutSection() {
               to helping clients move forward with confidence, clarity, and
               purpose.
             </p>
-
           </div>
         </div>
 
         {/* ================= MILESTONES ================= */}
-
         <div className="row milestones-section">
-
           <div className="col-12 text-center">
-            <h3 className="section-title section-heading">
-              Key Milestones
-            </h3>
+            <h3 className="section-title section-heading">Key Milestones</h3>
           </div>
 
           {milestones.map((item, i) => (
-            <div
-              key={i}
-              className="col-12 col-md-6 milestone-column"
-            >
+            <div key={i} className="col-12 col-md-6 milestone-column">
               <div className="milestone-card h-100">
-
                 <h5>{item.year}</h5>
-
                 <h6>{item.title}</h6>
-
-                <p className="mb-0">
-                  {item.description}
-                </p>
-
+                <p className="mb-0">{item.description}</p>
               </div>
             </div>
           ))}
-
         </div>
 
         {/* ================= AWARDS ================= */}
-
         <div className="row awards-section">
-
           <div className="col-12 text-center">
-
             <h3 className="section-title section-heading">
               Awards & Recognition
             </h3>
-
             <p className="awards-subtitle">
               Recognition of excellence and leadership
             </p>
-
           </div>
 
           {awards.map((award, i) => (
-            <div
-              key={i}
-              className="col-12 col-sm-6 col-md-4 award-column"
-            >
-
+            <div key={i} className="col-6 col-sm-6 col-md-4 col-lg-3 award-column">
               <div className="award-card h-100">
-
                 <div className="award-icon">
-
                   <Image
                     src={award.image}
                     alt={award.title}
                     fill
                     className="award-img"
-                    sizes="(max-width: 576px) 90px, 110px"
+                    sizes="(max-width: 576px) 70px, (max-width: 992px) 90px, 110px"
                   />
-
                 </div>
-
                 <h6>{award.title}</h6>
-
               </div>
-
             </div>
           ))}
-
         </div>
-
       </div>
 
       <style jsx>{`
-
         /* ================= SECTION ================= */
-
         .about-section {
           padding: 0 0 80px;
           overflow-x: hidden;
+          background: #f8fafc;
         }
 
         .about-row {
           margin-bottom: 70px;
         }
 
-
         /* ================= TITLES ================= */
-
         .section-title {
           color: #0b1f4b !important;
           font-weight: 400;
@@ -310,29 +264,30 @@ export default function AboutSection() {
           font-size: clamp(1.2rem, 2vw, 1.5rem);
         }
 
-
-        /* ================= ABOUT IMAGE ================= */
-
+        /* ================= RESPONSIVE ABOUT IMAGE ================= */
         .about-image-wrapper {
           width: 100%;
           max-width: 1300px;
           margin: 0 auto 32px;
+          padding: 0;
+        }
+
+        .about-image-container {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 40%; /* 2.5:1 aspect ratio */
           overflow: hidden;
+          border-radius: 16px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .about-image {
-          display: block;
-          width: 100% !important;
-          max-width: 100% !important;
-          height: auto !important;
-          object-fit: contain;
-          border-radius: 0 0 20px 20px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+          object-fit: cover;
+          object-position: center center;
         }
 
-
         /* ================= CONTENT ================= */
-
         .about-content {
           width: 100%;
         }
@@ -340,16 +295,14 @@ export default function AboutSection() {
         .about-content p,
         .milestone-card p {
           color: #374151;
-          font-size: 1rem;
+          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
           line-height: 1.75;
           margin-bottom: 20px;
           overflow-wrap: break-word;
           word-wrap: break-word;
         }
 
-
         /* ================= MILESTONES ================= */
-
         .milestones-section {
           margin-bottom: 70px;
         }
@@ -360,19 +313,20 @@ export default function AboutSection() {
 
         .milestone-card {
           background: #ffffff;
-          padding: 26px;
+          padding: 28px 26px;
           border-radius: 14px;
           border-left: 4px solid #1e40af;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-          transition: transform 0.25s ease;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .milestone-card:hover {
           transform: translateY(-4px);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
         }
 
         .milestone-card h5 {
-          font-size: 0.85rem;
+          font-size: clamp(0.8rem, 0.9vw, 0.85rem);
           letter-spacing: 0.08em;
           color: #1e40af;
           margin-bottom: 8px;
@@ -381,20 +335,19 @@ export default function AboutSection() {
 
         .milestone-card h6 {
           color: #000000;
-          font-size: 1.1rem;
+          font-size: clamp(1rem, 1.2vw, 1.1rem);
           font-weight: 700;
           margin-bottom: 12px;
         }
 
-
         /* ================= AWARDS ================= */
-
         .awards-section {
           margin-bottom: 20px;
         }
 
         .awards-subtitle {
           color: #6b7280;
+          font-size: clamp(0.9rem, 1vw, 1rem);
           margin-bottom: 35px;
         }
 
@@ -406,12 +359,15 @@ export default function AboutSection() {
           background: #ffffff;
           border-radius: 16px;
           border: 1px solid #e5e7eb;
-          padding: 28px 20px;
+          padding: 28px 16px;
           text-align: center;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-          transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 180px;
         }
 
         .award-card:hover {
@@ -420,28 +376,32 @@ export default function AboutSection() {
         }
 
         .award-icon {
+          position: relative;
           width: 110px;
           height: 110px;
-          position: relative;
-          margin: 0 auto 18px;
+          margin: 0 auto 16px;
+          flex-shrink: 0;
         }
 
         .award-img {
           object-fit: contain;
+          object-position: center;
         }
 
         .award-card h6 {
           color: #000000;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 0.9vw, 0.95rem);
           font-weight: 600;
           margin-bottom: 0;
+          line-height: 1.3;
         }
 
+        /* ====================================================
+           RESPONSIVE BREAKPOINTS
+        ==================================================== */
 
-        /* ================= TABLET ================= */
-
+        /* ===== TABLET (up to 992px) ===== */
         @media (max-width: 992px) {
-
           .about-section {
             padding-bottom: 60px;
           }
@@ -455,20 +415,42 @@ export default function AboutSection() {
           }
 
           .milestone-card {
-            padding: 22px;
+            padding: 24px 22px;
           }
 
           .award-card {
-            padding: 24px 16px;
+            padding: 24px 14px;
+            min-height: 160px;
           }
 
+          .award-icon {
+            width: 100px;
+            height: 100px;
+          }
+
+          .about-image-container {
+            padding-bottom: 45%; /* Slightly taller on tablet */
+          }
         }
 
+        /* ===== MOBILE (up to 768px) ===== */
+        @media (max-width: 768px) {
+          .about-image-container {
+            padding-bottom: 50%;
+            border-radius: 12px;
+          }
 
-        /* ================= MOBILE ================= */
+          .about-main-title {
+            font-size: clamp(1.6rem, 3.5vw, 2rem);
+          }
 
+          .section-heading {
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+          }
+        }
+
+        /* ===== SMALL MOBILE (up to 576px) ===== */
         @media (max-width: 576px) {
-
           .about-section {
             padding-bottom: 45px;
           }
@@ -479,147 +461,189 @@ export default function AboutSection() {
           }
 
           .about-row {
-            margin-bottom: 45px;
+            margin-bottom: 40px;
           }
 
+          /* IMAGE - Full width with proper aspect ratio */
+          .about-image-wrapper {
+            padding: 0;
+            margin-bottom: 24px;
+          }
 
-          /* TITLE */
+          .about-image-container {
+            padding-bottom: 55%;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+          }
 
+          /* TITLES */
           .about-main-title {
             margin-top: 32px;
-            margin-bottom: 22px;
-            font-size: 1.7rem;
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 5vw, 1.7rem);
           }
 
           .section-heading {
-            font-size: 1.45rem;
+            font-size: clamp(1.3rem, 4.5vw, 1.45rem);
             margin-bottom: 25px;
           }
 
           .vision-title,
           .mission-title {
             margin-top: 28px;
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 4vw, 1.2rem);
           }
-
-
-          /* ================= RESPONSIVE ABOUT IMAGE ================= */
-
-          .about-image-wrapper {
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 25px;
-            overflow: hidden;
-          }
-
-          .about-image {
-            display: block;
-            width: 100% !important;
-            max-width: 100% !important;
-            height: auto !important;
-            min-height: 0 !important;
-            object-fit: contain;
-            border-radius: 0 0 14px 14px;
-          }
-
 
           /* TEXT */
-
           .about-content p,
           .milestone-card p {
-            font-size: 0.95rem;
+            font-size: clamp(0.88rem, 2.8vw, 0.95rem);
             line-height: 1.7;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
           }
 
-
           /* MILESTONE */
-
           .milestones-section {
-            margin-bottom: 45px;
+            margin-bottom: 40px;
           }
 
           .milestone-column {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
           }
 
           .milestone-card {
-            padding: 20px;
+            padding: 20px 18px;
             border-radius: 12px;
           }
 
           .milestone-card h6 {
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 3vw, 1rem);
           }
 
+          .milestone-card h5 {
+            font-size: 0.8rem;
+          }
 
-          /* AWARDS */
-
+          /* AWARDS - 2 columns on mobile */
           .award-column {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
           }
 
           .award-card {
-            padding: 22px 14px;
+            padding: 20px 12px;
             border-radius: 14px;
+            min-height: 140px;
           }
 
           .award-icon {
-            width: 90px;
-            height: 90px;
-            margin-bottom: 14px;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 12px;
           }
 
           .award-card h6 {
-            font-size: 0.92rem;
-            line-height: 1.4;
+            font-size: clamp(0.78rem, 2.5vw, 0.85rem);
+            line-height: 1.3;
           }
 
           .awards-subtitle {
-            font-size: 0.9rem;
+            font-size: clamp(0.82rem, 2.8vw, 0.9rem);
             margin-bottom: 25px;
           }
 
+          /* AWARDS - 2 columns */
+          .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
         }
 
-
-        /* ================= VERY SMALL MOBILE ================= */
-
+        /* ===== VERY SMALL MOBILE (up to 375px) ===== */
         @media (max-width: 375px) {
-
           .container {
             padding-left: 12px;
             padding-right: 12px;
           }
 
           .about-main-title {
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 4.5vw, 1.5rem);
           }
 
           .section-heading {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
           }
 
           .about-content p,
           .milestone-card p {
-            font-size: 0.9rem;
+            font-size: clamp(0.82rem, 3vw, 0.88rem);
           }
 
           .milestone-card {
-            padding: 18px;
+            padding: 16px 14px;
           }
 
           .award-card {
-            padding: 20px 12px;
+            padding: 16px 10px;
+            min-height: 120px;
           }
 
           .award-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
           }
 
+          .award-card h6 {
+            font-size: clamp(0.7rem, 2.8vw, 0.78rem);
+          }
+
+          .about-image-container {
+            padding-bottom: 60%;
+          }
         }
 
+        /* ===== LARGE SCREENS (1200px+) ===== */
+        @media (min-width: 1200px) {
+          .about-image-container {
+            padding-bottom: 38%;
+          }
+
+          .about-content p {
+            font-size: 1.05rem;
+          }
+
+          .award-card {
+            min-height: 200px;
+          }
+
+          .award-icon {
+            width: 120px;
+            height: 120px;
+          }
+        }
+
+        /* ===== ULTRA WIDE (1600px+) ===== */
+        @media (min-width: 1600px) {
+          .about-image-container {
+            padding-bottom: 35%;
+          }
+
+          .about-content p {
+            font-size: 1.1rem;
+          }
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+          .milestone-card,
+          .award-card {
+            transition: none;
+          }
+
+          .milestone-card:hover,
+          .award-card:hover {
+            transform: none;
+          }
+        }
       `}</style>
     </section>
   );
