@@ -16,11 +16,11 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
-
+ 
   const closeMenu = () => {
     setIsOpen(false);
     setAboutOpen(false);
-  };
+  }; 
 
   const toggleAbout = () => {
     setAboutOpen((prev) => !prev);
@@ -105,7 +105,7 @@ export default function Navbar() {
             <Image
               src="/images/final_logo-venture.jpg"
               alt="Dearo Logo"
-              width={160}
+              width={140}
               height={40}
               className="logo"
               priority
