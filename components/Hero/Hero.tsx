@@ -59,6 +59,7 @@ export default function Hero() {
               className="hero-image"
               sizes="100vw"
               quality={85}
+              style={{ objectFit: "cover" }}
             />
           </div>
 
@@ -136,7 +137,7 @@ export default function Hero() {
           position: relative;
           width: 100%;
           height: 100vh;
-          height: 100dvh; /* Dynamic viewport height for mobile */
+          height: 100dvh;
           min-height: 650px;
           max-height: 1000px;
           overflow: hidden;
@@ -144,7 +145,7 @@ export default function Hero() {
         }
 
         /* ====================================================
-           IMAGE - FULL SCREEN, NO BORDERS
+           IMAGE - FULL SCREEN, RESPONSIVE
         ===================================================== */
         .image-wrapper {
           position: absolute;
@@ -152,6 +153,8 @@ export default function Hero() {
           z-index: 1;
           overflow: hidden;
           background: #050505;
+          width: 100%;
+          height: 100%;
         }
 
         .image-container {
@@ -630,6 +633,15 @@ export default function Hero() {
               infinite alternate;
           }
 
+          /* Ensure image wrapper and container maintain full height */
+          .image-wrapper,
+          .image-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+          }
+
           @keyframes mobileCamera {
             0% {
               transform: translate3d(0, 0, 0) scale(1);
@@ -797,6 +809,12 @@ export default function Hero() {
               infinite alternate;
           }
 
+          .image-wrapper,
+          .image-container {
+            width: 100%;
+            height: 100%;
+          }
+
           @keyframes mobileCameraSmall {
             0% {
               transform: translate3d(0, 0, 0) scale(1);
@@ -873,6 +891,12 @@ export default function Hero() {
               infinite alternate;
           }
 
+          .image-wrapper,
+          .image-container {
+            width: 100%;
+            height: 100%;
+          }
+
           @keyframes mobileCameraExtraSmall {
             0% {
               transform: translate3d(0, 0, 0) scale(1);
@@ -944,6 +968,12 @@ export default function Hero() {
 
           .image-container {
             animation: none;
+          }
+
+          .image-wrapper,
+          .image-container {
+            width: 100%;
+            height: 100%;
           }
 
           .hero-image {
