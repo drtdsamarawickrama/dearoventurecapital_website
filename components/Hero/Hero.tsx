@@ -130,13 +130,13 @@ export default function Hero() {
 
       <style jsx>{`
         /* ====================================================
-           HERO - BASE
+           HERO - BASE WITH RESPONSIVE HEIGHT
         ===================================================== */
         .hero {
           position: relative;
           width: 100%;
           height: 100vh;
-          height: 100svh;
+          height: 100dvh; /* Dynamic viewport height for mobile */
           min-height: 650px;
           max-height: 1000px;
           overflow: hidden;
@@ -594,6 +594,13 @@ export default function Hero() {
 
         /* ===== TABLET (768px - 1024px) ===== */
         @media (max-width: 1024px) {
+          .hero {
+            height: 90vh;
+            height: 90dvh;
+            min-height: 550px;
+            max-height: 900px;
+          }
+
           .hero-content {
             padding: 0 40px;
           }
@@ -611,11 +618,13 @@ export default function Hero() {
         /* ===== MOBILE (up to 768px) ===== */
         @media (max-width: 768px) {
           .hero {
-            min-height: 500px;
             height: 80vh;
+            height: 80dvh;
+            min-height: 450px;
+            max-height: 800px;
           }
 
-          /* IMAGE - FULL SCREEN, NO BORDERS */
+          /* IMAGE - FULL SCREEN, RESPONSIVE HEIGHT */
           .image-container {
             animation: mobileCamera 15s cubic-bezier(0.45, 0.05, 0.55, 0.95)
               infinite alternate;
@@ -777,8 +786,10 @@ export default function Hero() {
         /* ===== SMALL MOBILE (480px - 576px) ===== */
         @media (max-width: 576px) {
           .hero {
-            min-height: 450px;
             height: 75vh;
+            height: 75dvh;
+            min-height: 400px;
+            max-height: 700px;
           }
 
           .image-container {
@@ -851,8 +862,10 @@ export default function Hero() {
         /* ===== EXTRA SMALL (up to 480px) ===== */
         @media (max-width: 480px) {
           .hero {
-            min-height: 420px;
             height: 70vh;
+            height: 70dvh;
+            min-height: 380px;
+            max-height: 650px;
           }
 
           .image-container {
@@ -923,8 +936,10 @@ export default function Hero() {
         /* ===== TINY (up to 360px) ===== */
         @media (max-width: 360px) {
           .hero {
-            min-height: 380px;
             height: 65vh;
+            height: 65dvh;
+            min-height: 340px;
+            max-height: 600px;
           }
 
           .image-container {
