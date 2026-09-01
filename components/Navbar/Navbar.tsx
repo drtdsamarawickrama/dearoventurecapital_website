@@ -16,11 +16,11 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
- 
+
   const closeMenu = () => {
     setIsOpen(false);
     setAboutOpen(false);
-  }; 
+  };
 
   const toggleAbout = () => {
     setAboutOpen((prev) => !prev);
@@ -33,7 +33,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -91,7 +91,7 @@ export default function Navbar() {
           scrolled ? "scrolled" : ""
         }`}
       >
-        <div className="container-fluid">
+        <div className="container-fluid px-3 px-lg-4">
 
           {/* =================================================
               LOGO
@@ -104,7 +104,7 @@ export default function Navbar() {
           >
             <Image
               src="/images/final_logo-venture.jpg"
-              alt="Dearo Logo"
+              alt="Dearo Venture Capital Logo"
               width={140}
               height={40}
               className="logo"
@@ -163,13 +163,9 @@ export default function Navbar() {
                   />
                 </button>
 
-                {/* =================================================
-                    DROPDOWN MENU
-                ================================================= */}
+                {/* DROPDOWN MENU */}
 
                 <div className="dropdown-menu-custom">
-
-                  
 
                   <Link
                     href="/about"
@@ -182,8 +178,6 @@ export default function Navbar() {
                     </span>
                   </Link>
 
-                  {/* OUR LEADERSHIP */}
-
                   <Link
                     href="/director"
                     className="dropdown-item-custom"
@@ -194,8 +188,6 @@ export default function Navbar() {
                       OUR LEADERSHIP
                     </span>
                   </Link>
-
-                  {/* SUBSIDIARIES */}
 
                   <Link
                     href="/sectors"
@@ -215,15 +207,12 @@ export default function Navbar() {
                   >
                     <span className="dropdown-point">•</span>
                     <span className="dropdown-text">
-                      COMMUNITY 
-
+                      COMMUNITY
                     </span>
                   </Link>
 
                 </div>
               </li>
-
-              
 
               {/* =================================================
                   ISLAMIC FINANCE
@@ -254,7 +243,7 @@ export default function Navbar() {
               </li>
 
               {/* =================================================
-                  COMMUNITY & ENVIRONMENT
+                  BRANCH NETWORK
               ================================================= */}
 
               <li className="nav-item">
@@ -268,7 +257,7 @@ export default function Navbar() {
               </li>
 
               {/* =================================================
-                  SUBSIDIARIES
+                  GALLERY
               ================================================= */}
 
               <li className="nav-item">
@@ -327,44 +316,63 @@ export default function Navbar() {
         .header-wrapper {
           position: sticky;
           top: 0;
-          z-index: 999;
+          z-index: 9999;
           width: 100%;
           background: #ffffff;
         }
+
 
         /* =====================================================
            TOP BAR
         ===================================================== */
 
         .top-bar {
+          position: relative;
+          z-index: 10000;
+
           background-color: #1a2850;
+
           font-size: 0.85rem;
           padding: 5px 0;
-          transition: all 0.3s ease;
-          overflow: hidden;
+
           max-height: 100px;
+          overflow: hidden;
+
+          opacity: 1;
+
+          transition:
+            max-height 0.25s ease,
+            opacity 0.2s ease,
+            padding 0.25s ease;
         }
 
         .top-bar-hidden {
           max-height: 0;
-          padding: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+
           opacity: 0;
         }
+
 
         .top-bar-left {
           font-size: 0.8rem;
         }
 
+
         .top-bar-link {
           color: #ffffff !important;
           text-decoration: none !important;
+
           transition: color 0.2s ease;
         }
+
 
         .top-bar-link:hover {
           color: #a5c8ff !important;
           text-decoration: none !important;
         }
+
 
         /* =====================================================
            NAVBAR
@@ -372,18 +380,42 @@ export default function Navbar() {
 
         .premium-nav {
           position: relative;
-          z-index: 998;
+          z-index: 9998;
+
+          width: 100%;
+
           background: #ffffff;
+
+          /*
+           IMPORTANT:
+           Keep navbar height/padding fixed.
+           This prevents jumping/sticking during scroll.
+          */
+
           padding: 14px 0;
-          transition: all 0.35s ease;
+
           border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+          /*
+           Do NOT use transition: all.
+           Only animate shadow/background.
+          */
+
+          transition:
+            box-shadow 0.25s ease,
+            background-color 0.25s ease;
         }
 
+
+        /* SCROLLED NAVBAR */
+
         .premium-nav.scrolled {
-          padding: 6px 0;
           background: #ffffff;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+          box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.10);
         }
+
 
         /* =====================================================
            LOGO
@@ -391,12 +423,19 @@ export default function Navbar() {
 
         .logo {
           display: block;
-          transition: transform 0.35s ease;
+
+          /*
+           IMPORTANT:
+           No scale animation when scrolling.
+           This prevents visual jumping.
+          */
+
+          width: 140px;
+          height: 40px;
+
+          object-fit: contain;
         }
 
-        .premium-nav.scrolled .logo {
-          transform: scale(0.9);
-        }
 
         /* =====================================================
            NAVIGATION MENU
@@ -404,9 +443,12 @@ export default function Navbar() {
 
         .nav-menu {
           display: flex;
+
           gap: 20px;
+
           margin-bottom: 0;
         }
+
 
         /* =====================================================
            MAIN NAVIGATION LINKS
@@ -414,11 +456,15 @@ export default function Navbar() {
 
         .nav-link {
           position: relative;
+
           display: flex;
+
           align-items: center;
 
           font-size: 0.82rem;
+
           font-weight: 700;
+
           text-transform: uppercase;
 
           color: #000000;
@@ -427,26 +473,33 @@ export default function Navbar() {
 
           white-space: nowrap;
 
-          transition: color 0.3s ease;
+          text-decoration: none !important;
+
+          transition: color 0.2s ease;
+        }
+
+
+        .nav-link:hover {
+          color: #0d6efd;
 
           text-decoration: none !important;
         }
 
-        .premium-nav.scrolled .nav-link {
-          padding: 5px;
-          font-size: 0.78rem;
-        }
 
-        /* MAIN NAV UNDERLINE */
+        /* =====================================================
+           MAIN NAV UNDERLINE
+        ===================================================== */
 
         .nav-link::after {
           content: "";
+
           position: absolute;
 
           left: 0;
           bottom: 0;
 
           width: 0;
+
           height: 2px;
 
           background: linear-gradient(
@@ -455,17 +508,14 @@ export default function Navbar() {
             #5aa2ff
           );
 
-          transition: width 0.3s ease;
+          transition: width 0.25s ease;
         }
 
-        .nav-link:hover {
-          color: #0d6efd;
-          text-decoration: none !important;
-        }
 
         .nav-link:hover::after {
           width: 100%;
         }
+
 
         /* =====================================================
            ABOUT US BUTTON
@@ -473,21 +523,28 @@ export default function Navbar() {
 
         .dropdown-toggle-custom {
           border: none;
+
           background: transparent;
+
           cursor: pointer;
 
           font-family: inherit;
         }
 
+
         .dropdown-icon {
           margin-left: 5px;
-          transition: transform 0.3s ease;
+
+          transition: transform 0.25s ease;
+
           flex-shrink: 0;
         }
+
 
         .dropdown-icon.rotate {
           transform: rotate(180deg);
         }
+
 
         /* =====================================================
            DROPDOWN CONTAINER
@@ -497,10 +554,12 @@ export default function Navbar() {
           position: relative;
         }
 
+
         .dropdown-menu-custom {
           position: absolute;
 
           top: calc(100% + 8px);
+
           left: 0;
 
           min-width: 240px;
@@ -508,29 +567,34 @@ export default function Navbar() {
           padding: 10px;
 
           display: flex;
+
           flex-direction: column;
+
           gap: 2px;
 
           background: #ffffff;
 
           border: 1px solid rgba(0, 0, 0, 0.08);
+
           border-radius: 8px;
 
           box-shadow:
             0 10px 30px rgba(0, 0, 0, 0.12);
 
           opacity: 0;
+
           visibility: hidden;
 
-          transform: translateY(10px);
+          transform: translateY(8px);
 
           transition:
-            opacity 0.25s ease,
-            visibility 0.25s ease,
-            transform 0.25s ease;
+            opacity 0.2s ease,
+            visibility 0.2s ease,
+            transform 0.2s ease;
 
-          z-index: 1000;
+          z-index: 10001;
         }
+
 
         /* =====================================================
            DESKTOP DROPDOWN
@@ -542,41 +606,41 @@ export default function Navbar() {
           .dropdown-menu-custom {
 
             opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
 
+            visibility: visible;
+
+            transform: translateY(0);
           }
+
 
           .dropdown-custom:hover
           .dropdown-icon {
 
             transform: rotate(180deg);
-
           }
 
         }
 
+
         /* =====================================================
-           MOBILE / CLICK DROPDOWN
+           CLICK DROPDOWN
         ===================================================== */
 
         .dropdown-active
         .dropdown-menu-custom {
 
           opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
 
+          visibility: visible;
+
+          transform: translateY(0);
         }
+
 
         /* =====================================================
            DROPDOWN ITEMS
-           
-           IMPORTANT:
-           These styles are completely separated from .nav-link
-           ===================================================== */
+        ===================================================== */
 
-        .premium-nav
         .dropdown-menu-custom
         .dropdown-item-custom {
 
@@ -613,18 +677,14 @@ export default function Navbar() {
           text-decoration: none !important;
 
           box-shadow: none !important;
-
         }
 
-        /* =====================================================
-           REMOVE UNDERLINE FROM DROPDOWN
-        ===================================================== */
 
-        .premium-nav
+        /* REMOVE UNDERLINE */
+
         .dropdown-menu-custom
         .dropdown-item-custom::before,
 
-        .premium-nav
         .dropdown-menu-custom
         .dropdown-item-custom::after {
 
@@ -639,26 +699,20 @@ export default function Navbar() {
           background: none !important;
 
           border: none !important;
-
         }
 
-        /* =====================================================
-           DROPDOWN LINK STATES
-        ===================================================== */
 
-        .premium-nav
+        /* DROPDOWN STATES */
+
         .dropdown-menu-custom
         .dropdown-item-custom:link,
 
-        .premium-nav
         .dropdown-menu-custom
         .dropdown-item-custom:visited,
 
-        .premium-nav
         .dropdown-menu-custom
         .dropdown-item-custom:active,
 
-        .premium-nav
         .dropdown-menu-custom
         .dropdown-item-custom:focus {
 
@@ -667,14 +721,11 @@ export default function Navbar() {
           text-decoration: none !important;
 
           outline: none !important;
-
         }
 
-        /* =====================================================
-           DROPDOWN HOVER
-        ===================================================== */
 
-        .premium-nav
+        /* DROPDOWN HOVER */
+
         .dropdown-menu-custom
         .dropdown-item-custom:hover {
 
@@ -685,20 +736,19 @@ export default function Navbar() {
           text-decoration: none !important;
 
           transform: none !important;
-
         }
+
 
         /* =====================================================
            DROPDOWN BULLET
         ===================================================== */
 
-        .premium-nav
-        .dropdown-menu-custom
         .dropdown-point {
 
           display: inline-block !important;
 
           width: 8px;
+
           min-width: 8px;
 
           color: #000000 !important;
@@ -708,17 +758,13 @@ export default function Navbar() {
           font-weight: 700 !important;
 
           line-height: 1 !important;
-
-          text-decoration: none !important;
-
         }
+
 
         /* =====================================================
            DROPDOWN TEXT
         ===================================================== */
 
-        .premium-nav
-        .dropdown-menu-custom
         .dropdown-text {
 
           display: inline-block;
@@ -726,8 +772,8 @@ export default function Navbar() {
           color: #000000 !important;
 
           text-decoration: none !important;
-
         }
+
 
         /* =====================================================
            MOBILE
@@ -736,13 +782,18 @@ export default function Navbar() {
         @media (max-width: 991px) {
 
           .premium-nav {
+
             padding: 10px 0;
           }
 
+
           .navbar-collapse {
+
             background: #ffffff;
+
             padding: 15px 0;
           }
+
 
           .nav-menu {
 
@@ -751,12 +802,14 @@ export default function Navbar() {
             align-items: stretch !important;
 
             gap: 5px;
-
           }
+
 
           .nav-item {
+
             width: 100%;
           }
+
 
           .nav-link {
 
@@ -765,14 +818,16 @@ export default function Navbar() {
             justify-content: space-between;
 
             padding: 12px 15px;
-
           }
 
-          /* Remove main nav underline on mobile */
+
+          /* Remove underline on mobile */
 
           .nav-link::after {
+
             display: none;
           }
+
 
           /* MOBILE DROPDOWN */
 
@@ -805,31 +860,46 @@ export default function Navbar() {
             visibility: visible;
 
             transform: none;
-
           }
+
 
           .dropdown-active
           .dropdown-menu-custom {
 
             display: flex;
-
           }
+
 
           .dropdown-item-custom {
 
             padding: 10px 20px !important;
-
           }
 
+
           .dropdown-point {
+
             font-size: 18px !important;
           }
 
+
           .top-bar-right {
+
             justify-content: center;
           }
 
+
+          /*
+           Keep mobile logo fixed too.
+          */
+
+          .logo {
+
+            width: 140px;
+
+            height: 40px;
+          }
         }
+
 
         /* =====================================================
            LARGE SCREENS
@@ -838,30 +908,50 @@ export default function Navbar() {
         @media (min-width: 1200px) {
 
           .nav-menu {
+
             gap: 22px;
           }
 
+
           .nav-link {
+
             font-size: 0.8rem;
           }
-
         }
+
 
         @media (min-width: 1400px) {
 
           .nav-menu {
+
             gap: 28px;
           }
 
+
           .nav-link {
+
             font-size: 0.83rem;
           }
+        }
 
+
+        /* =====================================================
+           ACCESSIBILITY / REDUCE MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .top-bar,
+          .premium-nav,
+          .nav-link::after,
+          .dropdown-menu-custom,
+          .dropdown-icon {
+
+            transition: none !important;
+          }
         }
 
       `}</style>
-
     </header>
   );
 }
-
