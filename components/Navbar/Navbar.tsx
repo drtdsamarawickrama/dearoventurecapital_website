@@ -232,7 +232,7 @@ export default function Navbar() {
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Islamic Service
+                  Islamic Services
                 </Link>
               </li>
 
