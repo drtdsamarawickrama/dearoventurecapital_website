@@ -9,9 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "bootstrap": "^5.3.8",
     "clsx": "^2.1.1",
     "framer-motion": "^12.24.12",
+    "jose": "^6.2.10",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.562.0",
     "mongodb": "^7.0.0",

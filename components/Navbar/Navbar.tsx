@@ -208,7 +208,7 @@ export default function Navbar() {
                     </span>
                   </Link>
 
-                  <Link
+                  {/* <Link
                     href="/community"
                     className="dropdown-item-custom"
                     onClick={closeMenu}
@@ -217,13 +217,13 @@ export default function Navbar() {
                     <span className="dropdown-text">
                       COMMUNITY
                     </span>
-                  </Link>
+                  </Link> */}
 
                 </div>
               </li>
 
               {/* =================================================
-                  ISLAMIC FINANCE
+                  ISLAMIC SERVICES
               ================================================= */}
 
               <li className="nav-item">
@@ -232,7 +232,7 @@ export default function Navbar() {
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Islamic Finance
+                  Islamic Services
                 </Link>
               </li>
 
@@ -270,11 +270,11 @@ export default function Navbar() {
 
               <li className="nav-item">
                 <Link
-                  href="/gallery"
+                  href="/community"
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Our Gallery
+                  News & Updates
                 </Link>
               </li>
 
@@ -305,6 +305,20 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
+
+              {/* {/* =================================================
+                  Apply Now
+              ================================================= */}
+
+              {/* <li className="nav-item">
+                <Link
+                  href="/portal"
+                  className="nav-link"
+                  onClick={closeMenu}
+                >
+                  Apply Now
+                </Link>
+              </li> */} 
 
             </ul>
           </div>
