@@ -309,8 +309,8 @@ export default function Navbar() {
               {/* {/* =================================================
                   Apply Now
               ================================================= */}
-
-              {/* { <li className="nav-item">
+{/* 
+               { <li className="nav-item">
                 <Link
                   href="/portal"
                   className="nav-link"
@@ -318,7 +318,7 @@ export default function Navbar() {
                 >
                   Apply Now
                 </Link>
-              </li> }  */} 
+              </li> }   */}
 
             </ul>
           </div>
