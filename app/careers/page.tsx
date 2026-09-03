@@ -87,7 +87,7 @@ export default function CareersPage() {
             <motion.h2
               className="display-5 fw-bold mb-3 text-black section-title"
               initial={{ opacity: 0, y: 20 }}
-                            color="#0b1f4b !important"
+              color="#0b1f4b !important"
 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -220,14 +220,21 @@ export default function CareersPage() {
                           </div>
 
                           <div className="text-center mt-5">
-                            <p className="fw-bold mb-3 text-black">Take the first step towards a successful future!</p>
+                            <p className="fw-bold mb-3 text-black">
+                              Take the first step towards a successful future!
+                            </p>
+
                             <a
-                              href="mailto:info@dearoventurecapital.com?subject=Application%20for%20Business%20Development%20Professional%20-%20Investments"
+                              href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@dearoinvestment.com&su=Application%20for%20Business%20Development%20Professional%20-%20Investments"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="btn btn-dark rounded-pill px-5 py-3 d-inline-flex align-items-center gap-2 apply-btn w-100 justify-content-center fw-bold shadow-sm"
                             >
                               Apply Now <ArrowRight size={18} />
                             </a>
-                            <p className="small text-muted mt-3 mb-0">Send your CV to info@dearoventurecapital.com</p>
+                            <p className="small text-muted mt-3 mb-0">
+                              Send your CV to careers@dearoinvestment.com
+                            </p>
                           </div>
                         </div>
                       </div>

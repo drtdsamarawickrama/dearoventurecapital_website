@@ -75,14 +75,20 @@ export default function ContactSection() {
       icon: <Clock size={22} />,
       label: "Office Hours",
       value: "Mon – Sat: 8:30 AM – 5:00 PM",
-      href: null,
+      href: "#",
+
+      
     },
+
+    
     {
       icon: <Globe size={22} />,
       label: "Website",
       value: "www.dearoventurecapital.com",
       href: "https://www.dearoventurecapital.com",
     },
+
+    
   ];
 
   return (
