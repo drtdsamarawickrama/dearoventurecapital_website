@@ -8,7 +8,7 @@ export default function InvestorPage() {
 
       {/* Hero Banner Section */}
       <section
-        className="position-relative text-white text-center"
+        className="position-relative text-black text-center"
         style={{ height: "70vh" }}
       >
         <Image
@@ -82,7 +82,7 @@ export default function InvestorPage() {
       <hr className="my-5" />
 
       {/* Investor Invitation */}
-      <section className="py-5 investor-bg text-white">
+      <section className="py-5 investor-bg text-black">
         <div className="container">
           <h2 className="text-center mb-4">Investor Invitation</h2>
           <p className="text-center mb-5">
@@ -115,8 +115,8 @@ export default function InvestorPage() {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   <div className="card-body d-flex flex-column justify-content-center text-center">
-                    <h5 className="card-title text-white">{item.title}</h5>
-                    <p className="card-text text-light">{item.text}</p>
+                    <h5 className="card-title text-black">{item.title}</h5>
+                    <p className="card-text text-black">{item.text}</p>
                   </div>
                 </div>
               </div>
