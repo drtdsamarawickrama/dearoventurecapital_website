@@ -93,18 +93,18 @@ export async function POST(request: Request) {
       },
       { status: 201 }
     );
-  } catch (error) {
-    console.error("Investor application error:", error);
+ } catch (error) {
+  console.error("Investor application error:", error);
 
-    // Return actual error while debugging
-    return NextResponse.json(
-      {
-        success: false,
-        message: "Failed to save investor application.",
-        error: error instanceof Error ? error.message : String(error),
-      },
-      { status: 500 }
-    );
+  return NextResponse.json(
+    {
+      success: false,
+      message: "Failed to save investor application.",
+      error: error instanceof Error ? error.message : String(error),
+    },
+    { status: 500 }
+  );
+
   }
 }
 
