@@ -1,5 +1,6 @@
+
 import { NextResponse } from "next/server";
-import pool from "@/lib/db";
+import clientPromise from "@/lib/mongodb";
 
 export async function POST(request: Request) {
   try {
@@ -42,61 +43,62 @@ export async function POST(request: Request) {
       );
     }
 
-    const sql = `
-      INSERT INTO customer_applications (
-        name,
-        nic,
-        phone,
-        email,
-        address,
-        business_name,
-        registration_number,
-        employee_count,
-        business_field,
-        capital,
-        existing_business_roi,
-        monthly_turnover,
-        monthly_expenses,
-        return_checks,
-        return_check_amount
-      )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `;
+    // Connect to MongoDB
+    const client = await clientPromise;
 
-    const values = [
+    // Your MongoDB database
+    const db = client.db("DearoVC");
+
+    // Your collection
+    const collection = db.collection("customer_application");
+
+    // Customer application document
+    const application = {
       name,
       nic,
       phone,
       email,
       address,
+
       businessName,
-      registrationNumber || null,
-      employeeCount ? Number(employeeCount) : null,
-      businessField || null,
-      capital ? Number(capital) : null,
-      existingBusinessROI
+      registrationNumber: registrationNumber || null,
+      employeeCount: employeeCount
+        ? Number(employeeCount)
+        : null,
+      businessField: businessField || null,
+      capital: capital ? Number(capital) : null,
+
+      existingBusinessROI: existingBusinessROI
         ? Number(existingBusinessROI)
         : null,
-      monthlyTurnover
+
+      monthlyTurnover: monthlyTurnover
         ? Number(monthlyTurnover)
         : null,
-      monthlyExpenses
+
+      monthlyExpenses: monthlyExpenses
         ? Number(monthlyExpenses)
         : null,
-      returnChecks
+
+      returnChecks: returnChecks
         ? Number(returnChecks)
         : null,
-      returnCheckAmount
+
+      returnCheckAmount: returnCheckAmount
         ? Number(returnCheckAmount)
         : null,
-    ];
 
-    await pool.execute(sql, values);
+      createdAt: new Date(),
+    };
+
+    // Save application to MongoDB
+    const result = await collection.insertOne(application);
 
     return NextResponse.json(
       {
         success: true,
         message: "Customer application submitted successfully.",
+        id: result.insertedId,
       },
       { status: 201 }
     );
@@ -112,3 +114,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
