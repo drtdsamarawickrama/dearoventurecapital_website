@@ -1,5 +1,6 @@
+
 import { NextResponse } from "next/server";
-import pool from "@/lib/db";
+import clientPromise from "@/lib/mongodb";
 
 export async function POST(request: Request) {
   try {
@@ -36,37 +37,36 @@ export async function POST(request: Request) {
       );
     }
 
-    const sql = `
-      INSERT INTO investor_applications (
-        name,
-        nic,
-        phone,
-        email,
-        address,
-        capital,
-        period,
-        rate
-      )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    `;
+    // Connect to MongoDB
+    const client = await clientPromise;
 
-    const values = [
+    // MongoDB database
+    const db = client.db("DearoVC");
+
+    // MongoDB collection
+    const collection = db.collection("investor_application");
+
+    // Investor application document
+    const application = {
       name,
       nic,
       phone,
       email,
       address,
-      Number(capital),
+      capital: Number(capital),
       period,
-      Number(rate),
-    ];
+      rate: Number(rate),
+      createdAt: new Date(),
+    };
 
-    await pool.execute(sql, values);
+    // Save application to MongoDB
+    const result = await collection.insertOne(application);
 
     return NextResponse.json(
       {
         success: true,
         message: "Investor application submitted successfully.",
+        id: result.insertedId,
       },
       { status: 201 }
     );
@@ -82,3 +82,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
