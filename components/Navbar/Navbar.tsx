@@ -1,4 +1,4 @@
- 
+
 "use client";
 
 import Link from "next/link";
@@ -82,6 +82,29 @@ export default function Navbar() {
                 <Mail size={14} />
                 <span>info@dearoventurecapital.com</span>
               </a>
+              {/* login
+
+              <Link
+                href="/login"
+                className="nav-link"
+                onClick={closeMenu}
+              >
+                Login
+              </Link>
+
+              <span className="opacity-50">|</span> */}
+
+
+              {/* Register
+
+              <Link
+                href="/register"
+                className="nav-link"
+                onClick={closeMenu}
+              >
+                Register */}
+              {/* </Link> */}
+
 
             </div>
 
@@ -95,9 +118,8 @@ export default function Navbar() {
       ================================================= */}
 
       <nav
-        className={`navbar navbar-expand-lg premium-nav ${
-          scrolled ? "scrolled" : ""
-        }`}
+        className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""
+          }`}
       >
         <div className="container-fluid px-3 px-lg-4">
 
@@ -139,9 +161,8 @@ export default function Navbar() {
           ================================================= */}
 
           <div
-            className={`collapse navbar-collapse ${
-              isOpen ? "show" : ""
-            }`}
+            className={`collapse navbar-collapse ${isOpen ? "show" : ""
+              }`}
           >
             <ul className="navbar-nav ms-auto align-items-lg-center nav-menu">
 
@@ -150,9 +171,8 @@ export default function Navbar() {
               ================================================= */}
 
               <li
-                className={`nav-item dropdown-custom ${
-                  aboutOpen ? "dropdown-active" : ""
-                }`}
+                className={`nav-item dropdown-custom ${aboutOpen ? "dropdown-active" : ""
+                  }`}
               >
 
                 <button
@@ -165,9 +185,8 @@ export default function Navbar() {
 
                   <ChevronDown
                     size={16}
-                    className={`dropdown-icon ${
-                      aboutOpen ? "rotate" : ""
-                    }`}
+                    className={`dropdown-icon ${aboutOpen ? "rotate" : ""
+                      }`}
                   />
                 </button>
 
@@ -208,6 +227,17 @@ export default function Navbar() {
                     </span>
                   </Link>
 
+                   <Link
+                    href="#"
+                    className="dropdown-item-custom"
+                    onClick={closeMenu}
+                  >
+                    <span className="dropdown-point">•</span>
+                    <span className="dropdown-text">
+                      ISLAMIC SERVICES
+                    </span>
+                  </Link>
+
                   {/* <Link
                     href="/community"
                     className="dropdown-item-custom"
@@ -226,7 +256,7 @@ export default function Navbar() {
                   ISLAMIC SERVICES
               ================================================= */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   href="#"
                   className="nav-link"
@@ -234,7 +264,7 @@ export default function Navbar() {
                 >
                   Islamic Services
                 </Link>
-              </li>
+              </li> */}
 
               {/* =================================================
                   INVESTOR RELATIONS
@@ -309,8 +339,8 @@ export default function Navbar() {
               {/* {/* =================================================
                   Apply Now
               ================================================= */}
-{/* 
-               { <li className="nav-item">
+
+              {<li className="nav-item">
                 <Link
                   href="/portal"
                   className="nav-link"
@@ -318,7 +348,7 @@ export default function Navbar() {
                 >
                   Apply Now
                 </Link>
-              </li> }   */}
+              </li>}
 
             </ul>
           </div>
