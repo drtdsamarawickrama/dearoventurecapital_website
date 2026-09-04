@@ -466,4 +466,413 @@ a.dropdown-item-custom:hover span {
   text-decoration: none !important;
 }
 
+/* Portal */
+/* =========================================================
+   JOIN DEARO PAGE
+   ========================================================= */
+
+.join-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #071a3d;
+}
+
+/* ===================== TOP NAVY BANNER ===================== */
+
+.join-hero {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #071a3d;
+}
+
+.join-hero::before,
+.join-hero::after {
+  content: "";
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.join-hero::before {
+  width: 350px;
+  height: 350px;
+
+  top: -180px;
+  left: -120px;
+}
+
+.join-hero::after {
+  width: 420px;
+  height: 420px;
+
+  right: -160px;
+  bottom: -220px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+}
+
+.hero-small-text {
+  margin: 0 0 14px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #ffffff;
+}
+
+.hero-description {
+  max-width: 650px;
+
+  margin: 22px auto 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* ===================== OPTIONS SECTION ===================== */
+
+.join-options {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 75px 20px 100px;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+
+  text-align: center;
+}
+
+.section-heading p {
+  margin: 0 0 10px;
+
+  color: #071a3d;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0 0 12px;
+
+  color: #071a3d;
+
+  font-size: clamp(30px, 4vw, 44px);
+
+  font-weight: 700;
+}
+
+.section-heading span {
+  color: #666666;
+
+  font-size: 16px;
+}
+
+
+/* ===================== CARDS ===================== */
+
+.cards-container {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+.join-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e8ee;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(7, 26, 61, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(7, 26, 61, 0.16);
+}
+
+
+/* ===================== CARD IMAGE ===================== */
+
+.card-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 280px;
+
+  overflow: hidden;
+}
+
+.card-image {
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.join-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 26, 61, 0.02),
+    rgba(7, 26, 61, 0.6)
+  );
+}
+
+
+/* ===================== CARD ICON ===================== */
+
+.card-icon {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #071a3d;
+
+  border-radius: 50%;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===================== CARD CONTENT ===================== */
+
+.card-content {
+  padding: 30px;
+}
+
+.card-label {
+  margin: 0 0 8px;
+
+  color: #718096;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.card-content h3 {
+  margin: 0 0 12px;
+
+  color: #071a3d;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card-content > p:not(.card-label) {
+  margin: 0 0 25px;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* ===================== CARD BUTTON ===================== */
+
+.card-content button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 13px 20px;
+
+  color: #ffffff;
+
+  background: #071a3d;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    gap 0.3s ease;
+}
+
+.card-content button:hover {
+  background: #102c60;
+
+  gap: 15px;
+}
+
+
+/* ===================== TABLET ===================== */
+
+@media (max-width: 768px) {
+
+  .join-hero {
+    min-height: 310px;
+
+    padding: 60px 20px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .join-options {
+    padding: 60px 18px 75px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .card-image-wrapper {
+    height: 270px;
+  }
+}
+
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 480px) {
+
+  .join-hero {
+    min-height: 285px;
+
+    padding: 50px 18px;
+  }
+
+  .hero-small-text {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .join-options {
+    padding: 45px 15px 60px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .section-heading span {
+    font-size: 14px;
+  }
+
+  .card-image-wrapper {
+    height: 220px;
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  .card-content h3 {
+    font-size: 24px;
+  }
+
+  .card-content button {
+    width: 100%;
+  }
+}
+
 }
