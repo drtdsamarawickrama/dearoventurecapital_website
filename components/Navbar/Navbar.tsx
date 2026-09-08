@@ -30,8 +30,6 @@ export default function Navbar() {
 
   /* =====================================================
      SCROLL
-     Only changes shadow.
-     Does NOT change navbar height or position.
   ===================================================== */
 
   useEffect(() => {
@@ -82,44 +80,21 @@ export default function Navbar() {
                 <Mail size={14} />
                 <span>info@dearoventurecapital.com</span>
               </a>
-              {/* login
-
-              <Link
-                href="/login"
-                className="nav-link"
-                onClick={closeMenu}
-              >
-                Login
-              </Link>
-
-              <span className="opacity-50">|</span> */}
-
-
-              {/* Register
-
-              <Link
-                href="/register"
-                className="nav-link"
-                onClick={closeMenu}
-              >
-                Register */}
-              {/* </Link> */}
-
 
             </div>
-
           </div>
         </div>
       </div>
 
+
       {/* =================================================
           NAVBAR
-          ONLY THIS ELEMENT IS STICKY
       ================================================= */}
 
       <nav
-        className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""
-          }`}
+        className={`navbar navbar-expand-lg premium-nav ${
+          scrolled ? "scrolled" : ""
+        }`}
       >
         <div className="container-fluid px-3 px-lg-4">
 
@@ -142,6 +117,7 @@ export default function Navbar() {
             />
           </Link>
 
+
           {/* =================================================
               MOBILE TOGGLE
           ================================================= */}
@@ -156,23 +132,27 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
+
           {/* =================================================
               NAVIGATION
           ================================================= */}
 
           <div
-            className={`collapse navbar-collapse ${isOpen ? "show" : ""
-              }`}
+            className={`collapse navbar-collapse ${
+              isOpen ? "show" : ""
+            }`}
           >
             <ul className="navbar-nav ms-auto align-items-lg-center nav-menu">
 
+
               {/* =================================================
-                  ABOUT US
+                  ABOUT US DROPDOWN
               ================================================= */}
 
               <li
-                className={`nav-item dropdown-custom ${aboutOpen ? "dropdown-active" : ""
-                  }`}
+                className={`nav-item dropdown-custom ${
+                  aboutOpen ? "dropdown-active" : ""
+                }`}
               >
 
                 <button
@@ -181,16 +161,18 @@ export default function Navbar() {
                   onClick={toggleAbout}
                   aria-expanded={aboutOpen}
                 >
-                  <span>About Us</span>
+                  About Us
 
                   <ChevronDown
-                    size={16}
-                    className={`dropdown-icon ${aboutOpen ? "rotate" : ""
-                      }`}
+                    size={15}
+                    className={`dropdown-icon ${
+                      aboutOpen ? "rotate" : ""
+                    }`}
                   />
                 </button>
 
-                {/* DROPDOWN */}
+
+                {/* DROPDOWN MENU */}
 
                 <div className="dropdown-menu-custom">
 
@@ -199,10 +181,7 @@ export default function Navbar() {
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
-                    <span className="dropdown-point">•</span>
-                    <span className="dropdown-text">
-                      ABOUT US
-                    </span>
+                    About Us
                   </Link>
 
                   <Link
@@ -210,10 +189,7 @@ export default function Navbar() {
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
-                    <span className="dropdown-point">•</span>
-                    <span className="dropdown-text">
-                      OUR LEADERSHIP
-                    </span>
+                    Our Leadership
                   </Link>
 
                   <Link
@@ -221,50 +197,20 @@ export default function Navbar() {
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
-                    <span className="dropdown-point">•</span>
-                    <span className="dropdown-text">
-                      SUBSIDIARIES
-                    </span>
+                    Subsidiaries
                   </Link>
 
-                   <Link
+                  <Link
                     href="#"
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
-                    <span className="dropdown-point">•</span>
-                    <span className="dropdown-text">
-                      ISLAMIC SERVICES
-                    </span>
+                    Islamic Services
                   </Link>
-
-                  {/* <Link
-                    href="/community"
-                    className="dropdown-item-custom"
-                    onClick={closeMenu}
-                  >
-                    <span className="dropdown-point">•</span>
-                    <span className="dropdown-text">
-                      COMMUNITY
-                    </span>
-                  </Link> */}
 
                 </div>
               </li>
 
-              {/* =================================================
-                  ISLAMIC SERVICES
-              ================================================= */}
-
-              {/* <li className="nav-item">
-                <Link
-                  href="#"
-                  className="nav-link"
-                  onClick={closeMenu}
-                >
-                  Islamic Services
-                </Link>
-              </li> */}
 
               {/* =================================================
                   INVESTOR RELATIONS
@@ -280,6 +226,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
+
               {/* =================================================
                   BRANCH NETWORK
               ================================================= */}
@@ -294,8 +241,9 @@ export default function Navbar() {
                 </Link>
               </li>
 
+
               {/* =================================================
-                  GALLERY
+                  NEWS & UPDATES
               ================================================= */}
 
               <li className="nav-item">
@@ -307,6 +255,7 @@ export default function Navbar() {
                   News & Updates
                 </Link>
               </li>
+
 
               {/* =================================================
                   CAREERS
@@ -322,6 +271,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
+
               {/* =================================================
                   CONTACT
               ================================================= */}
@@ -336,11 +286,12 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              {/* {/* =================================================
-                  Apply Now
+
+              {/* =================================================
+                  APPLY NOW
               ================================================= */}
 
-              {<li className="nav-item">
+              <li className="nav-item">
                 <Link
                   href="/portal"
                   className="nav-link"
@@ -348,12 +299,14 @@ export default function Navbar() {
                 >
                   Apply Now
                 </Link>
-              </li>}
+              </li>
 
             </ul>
           </div>
+
         </div>
       </nav>
+
 
       {/* =====================================================
           STYLES
@@ -387,10 +340,13 @@ export default function Navbar() {
 
         .top-bar-inner {
           min-height: 38px;
+
           display: flex;
           align-items: center;
           justify-content: space-between;
+
           gap: 20px;
+
           padding: 5px 0;
         }
 
@@ -406,7 +362,9 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           justify-content: flex-end;
+
           flex-wrap: wrap;
+
           gap: 18px;
         }
 
@@ -414,9 +372,11 @@ export default function Navbar() {
         .top-bar-link {
           display: inline-flex;
           align-items: center;
+
           gap: 5px;
 
           color: #ffffff !important;
+
           text-decoration: none !important;
 
           white-space: nowrap;
@@ -432,9 +392,6 @@ export default function Navbar() {
 
         /* =====================================================
            NAVBAR
-
-           IMPORTANT:
-           ONLY NAVBAR IS STICKY
         ===================================================== */
 
         .premium-nav {
@@ -450,11 +407,6 @@ export default function Navbar() {
           padding: 14px 0;
 
           border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-          /*
-             Only shadow/background transition.
-             No height, transform, padding, margin animation.
-          */
 
           transition:
             box-shadow 0.2s ease,
@@ -486,10 +438,6 @@ export default function Navbar() {
 
           object-fit: contain;
 
-          /*
-             Prevent image resizing/jumping.
-          */
-
           flex-shrink: 0;
         }
 
@@ -508,7 +456,7 @@ export default function Navbar() {
 
 
         /* =====================================================
-           NAV LINKS
+           NORMAL NAV LINKS
         ===================================================== */
 
         .nav-link {
@@ -517,10 +465,13 @@ export default function Navbar() {
           display: flex;
           align-items: center;
 
-          font-size: 0.82rem;
-          font-weight: 700;
+          font-family: inherit;
 
-          text-transform: uppercase;
+          font-size: 0.82rem;
+
+          font-weight: 600;
+
+          text-transform: none;
 
           color: #000000;
 
@@ -581,15 +532,42 @@ export default function Navbar() {
           cursor: pointer;
 
           font-family: inherit;
+
+          font-size: 0.82rem;
+
+          font-weight: 600;
+
+          color: #000000;
+
+          display: flex;
+
+          align-items: center;
+
+          gap: 5px;
+
+          padding: 8px 5px;
+
+          white-space: nowrap;
+
+          text-transform: none;
+
+          position: relative;
         }
 
 
+        .dropdown-toggle-custom:hover {
+          color: #0d6efd;
+        }
+
+
+        /* =====================================================
+           DROPDOWN ARROW
+        ===================================================== */
+
         .dropdown-icon {
-          margin-left: 5px;
-
-          transition: transform 0.25s ease;
-
           flex-shrink: 0;
+
+          transition: transform 0.2s ease;
         }
 
 
@@ -599,7 +577,7 @@ export default function Navbar() {
 
 
         /* =====================================================
-           DROPDOWN
+           DROPDOWN BOX
         ===================================================== */
 
         .dropdown-custom {
@@ -610,31 +588,32 @@ export default function Navbar() {
         .dropdown-menu-custom {
           position: absolute;
 
-          top: calc(100% + 8px);
+          top: calc(100% + 5px);
+
           left: 0;
 
-          min-width: 240px;
+          width: 220px;
 
-          padding: 10px;
-
-          display: flex;
-          flex-direction: column;
-
-          gap: 2px;
+          padding: 6px;
 
           background: #ffffff;
 
-          border: 1px solid rgba(0, 0, 0, 0.08);
+          border: 1px solid #e5e7eb;
 
-          border-radius: 8px;
+          border-radius: 6px;
 
           box-shadow:
-            0 10px 30px rgba(0, 0, 0, 0.12);
+            0 6px 18px rgba(0, 0, 0, 0.12);
+
+          display: flex;
+
+          flex-direction: column;
 
           opacity: 0;
+
           visibility: hidden;
 
-          transform: translateY(8px);
+          transform: translateY(5px);
 
           transition:
             opacity 0.2s ease,
@@ -653,16 +632,16 @@ export default function Navbar() {
 
           .dropdown-custom:hover
           .dropdown-menu-custom {
-
             opacity: 1;
+
             visibility: visible;
+
             transform: translateY(0);
           }
 
 
           .dropdown-custom:hover
           .dropdown-icon {
-
             transform: rotate(180deg);
           }
 
@@ -675,9 +654,10 @@ export default function Navbar() {
 
         .dropdown-active
         .dropdown-menu-custom {
-
           opacity: 1;
+
           visibility: visible;
+
           transform: translateY(0);
         }
 
@@ -686,53 +666,54 @@ export default function Navbar() {
            DROPDOWN ITEMS
         ===================================================== */
 
-        .dropdown-menu-custom
         .dropdown-item-custom {
+          display: block;
 
-          position: static !important;
+          width: 100%;
 
-          display: flex !important;
+          padding: 10px 12px;
 
-          align-items: center !important;
+          margin: 0;
 
-          gap: 10px !important;
+          color: #222222 !important;
 
-          width: 100% !important;
+          background: transparent;
 
-          padding: 11px 14px !important;
+          border-radius: 4px;
 
-          margin: 0 !important;
+          font-family: inherit;
 
-          color: #000000 !important;
+          font-size: 0.85rem;
 
-          background: transparent !important;
-
-          border: none !important;
-
-          border-radius: 5px;
-
-          font-size: 0.85rem !important;
-
-          font-weight: 600 !important;
-
-          text-transform: none !important;
-
-          line-height: 1.4;
+          font-weight: 500;
 
           text-decoration: none !important;
 
-          box-shadow: none !important;
+          text-transform: none;
 
-          transform: none !important;
+          line-height: 1.4;
 
           transition:
-            background-color 0.2s ease,
-            color 0.2s ease;
+            background-color 0.15s ease,
+            color 0.15s ease;
         }
 
 
         /* =====================================================
-           REMOVE UNDERLINES
+           DROPDOWN ITEM HOVER
+        ===================================================== */
+
+        .dropdown-item-custom:hover {
+          background: #f3f6fa;
+
+          color: #0d6efd !important;
+
+          text-decoration: none !important;
+        }
+
+
+        /* =====================================================
+           REMOVE DROPDOWN UNDERLINES
         ===================================================== */
 
         .dropdown-menu-custom
@@ -740,92 +721,9 @@ export default function Navbar() {
 
         .dropdown-menu-custom
         .dropdown-item-custom::after {
-
           content: none !important;
 
           display: none !important;
-
-          width: 0 !important;
-          height: 0 !important;
-
-          background: none !important;
-          border: none !important;
-        }
-
-
-        /* =====================================================
-           DROPDOWN STATES
-        ===================================================== */
-
-        .dropdown-menu-custom
-        .dropdown-item-custom:link,
-
-        .dropdown-menu-custom
-        .dropdown-item-custom:visited,
-
-        .dropdown-menu-custom
-        .dropdown-item-custom:active,
-
-        .dropdown-menu-custom
-        .dropdown-item-custom:focus {
-
-          color: #000000 !important;
-
-          text-decoration: none !important;
-
-          outline: none !important;
-        }
-
-
-        /* =====================================================
-           DROPDOWN HOVER
-        ===================================================== */
-
-        .dropdown-menu-custom
-        .dropdown-item-custom:hover {
-
-          color: #000000 !important;
-
-          background: #f2f6ff !important;
-
-          text-decoration: none !important;
-
-          transform: none !important;
-        }
-
-
-        /* =====================================================
-           BULLET
-        ===================================================== */
-
-        .dropdown-point {
-
-          display: inline-block !important;
-
-          width: 8px;
-          min-width: 8px;
-
-          color: #000000 !important;
-
-          font-size: 18px !important;
-
-          font-weight: 700 !important;
-
-          line-height: 1 !important;
-        }
-
-
-        /* =====================================================
-           TEXT
-        ===================================================== */
-
-        .dropdown-text {
-
-          display: inline-block;
-
-          color: #000000 !important;
-
-          text-decoration: none !important;
         }
 
 
@@ -845,12 +743,12 @@ export default function Navbar() {
 
             padding: 15px 0;
 
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-top:
+              1px solid rgba(0, 0, 0, 0.05);
           }
 
 
           .nav-menu {
-
             flex-direction: column;
 
             align-items: stretch !important;
@@ -865,12 +763,13 @@ export default function Navbar() {
 
 
           .nav-link {
-
             width: 100%;
 
             justify-content: space-between;
 
             padding: 12px 15px;
+
+            font-size: 0.9rem;
           }
 
 
@@ -885,28 +784,38 @@ export default function Navbar() {
              MOBILE DROPDOWN
           ================================================= */
 
+          .dropdown-toggle-custom {
+            width: 100%;
+
+            justify-content: space-between;
+
+            padding: 12px 15px;
+
+            font-size: 0.9rem;
+          }
+
+
           .dropdown-menu-custom {
-
-            position: static !important;
-
-            display: none;
+            position: static;
 
             width: 100%;
+
             min-width: 100%;
 
-            margin: 4px 0 0 0;
+            margin-top: 4px;
 
-            padding: 8px 0;
+            padding: 5px 0;
 
-            background: #f8faff !important;
+            background: #f8fafc;
 
-            border: none;
+            border:
+              1px solid #e5e7eb;
 
-            border-left: 2px solid #0d6efd;
-
-            border-radius: 0;
+            border-radius: 6px;
 
             box-shadow: none;
+
+            display: none;
 
             opacity: 1;
 
@@ -918,24 +827,20 @@ export default function Navbar() {
 
           .dropdown-active
           .dropdown-menu-custom {
-
             display: flex;
           }
 
 
           .dropdown-item-custom {
+            padding: 10px 18px;
 
-            padding: 10px 20px !important;
+            font-size: 0.85rem;
           }
 
 
-          .dropdown-point {
-            font-size: 18px !important;
-          }
-
+          /* TOP BAR */
 
           .top-bar-inner {
-
             flex-direction: column;
 
             justify-content: center;
@@ -947,22 +852,22 @@ export default function Navbar() {
 
 
           .top-bar-left {
-
             display: none;
           }
 
 
           .top-bar-right {
-
             justify-content: center;
 
             gap: 12px;
           }
 
 
-          .logo {
+          /* LOGO */
 
+          .logo {
             width: 140px;
+
             height: 40px;
           }
 
@@ -980,11 +885,17 @@ export default function Navbar() {
           }
 
 
-          .nav-link {
-            font-size: 0.8rem;
+          .nav-link,
+          .dropdown-toggle-custom {
+            font-size: 0.82rem;
           }
+
         }
 
+
+        /* =====================================================
+           EXTRA LARGE SCREENS
+        ===================================================== */
 
         @media (min-width: 1400px) {
 
@@ -993,9 +904,11 @@ export default function Navbar() {
           }
 
 
-          .nav-link {
-            font-size: 0.83rem;
+          .nav-link,
+          .dropdown-toggle-custom {
+            font-size: 0.84rem;
           }
+
         }
 
 
@@ -1006,13 +919,17 @@ export default function Navbar() {
         @media (prefers-reduced-motion: reduce) {
 
           .premium-nav,
-          .nav-link::after,
-          .dropdown-menu-custom,
-          .dropdown-icon,
-          .dropdown-item-custom {
 
+          .nav-link::after,
+
+          .dropdown-menu-custom,
+
+          .dropdown-icon,
+
+          .dropdown-item-custom {
             transition: none !important;
           }
+
         }
 
       `}</style>

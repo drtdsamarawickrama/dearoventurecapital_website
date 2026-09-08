@@ -1,81 +1,149 @@
+
 /* ===================== Navbar ===================== */
 
 @import "leaflet/dist/leaflet.css";
 
 
+/* =====================================================
+   PREMIUM NAVBAR
+===================================================== */
+
 .premium-nav {
   position: sticky;
+
   top: 0;
+
   z-index: 999;
+
   width: 100%;
+
   background: #ffffff;
+
   padding: 14px 0;
-  transition: all 0.35s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  transition:
+    padding 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+
+  border-bottom:
+    1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Navbar when scrolling */
+
+/* =====================================================
+   NAVBAR WHEN SCROLLING
+===================================================== */
+
 .premium-nav.scrolled {
   padding: 6px 0;
+
   background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ===================== Logo ===================== */
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .premium-nav .logo {
   display: block;
-  transition: transform 0.35s ease;
+
+  width: 140px;
+  height: 40px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.35s ease;
 }
+
 
 .premium-nav.scrolled .logo {
   transform: scale(0.9);
 }
 
-/* ===================== Navigation Menu ===================== */
+
+/* =====================================================
+   NAVIGATION MENU
+===================================================== */
 
 .premium-nav .nav-menu {
   display: flex;
+
   flex-direction: row;
+
   align-items: center;
+
   justify-content: flex-end;
-  gap: 8px;
+
+  gap: 20px;
+
   margin-left: auto;
+
   padding: 0;
+
+  margin-bottom: 0;
 }
 
-/* ===================== Navigation Links ===================== */
+
+/* =====================================================
+   NORMAL NAVIGATION LINKS
+===================================================== */
 
 .premium-nav .nav-link {
   position: relative;
+
   display: flex;
+
   align-items: center;
 
-  color: #000000;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-family: inherit;
 
-  padding: 6px 10px;
+  color: #000000;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  text-transform: none;
+
+  padding: 8px 5px;
+
   white-space: nowrap;
 
-  transition: all 0.3s ease;
+  text-decoration: none !important;
+
+  transition:
+    color 0.2s ease;
 }
 
-/* Hover color */
+
+/* Hover */
+
 .premium-nav .nav-link:hover {
   color: #0d6efd;
 }
 
-/* Underline */
+
+/* =====================================================
+   NAVIGATION UNDERLINE
+===================================================== */
+
 .premium-nav .nav-link::after {
   content: "";
+
   position: absolute;
 
-  left: 10px;
+  left: 0;
+
   bottom: 0;
 
   width: 0;
+
   height: 2px;
 
   background: linear-gradient(
@@ -84,409 +152,702 @@
     #5aa2ff
   );
 
-  transition: width 0.3s ease;
+  transition:
+    width 0.25s ease;
 }
 
-/* Hover underline */
+
 .premium-nav .nav-link:hover::after {
-  width: calc(100% - 20px);
+  width: 100%;
 }
 
-/* Scrolled navbar links */
+
+/* =====================================================
+   SCROLLED NAVIGATION LINKS
+===================================================== */
+
 .premium-nav.scrolled .nav-link {
   font-size: 0.78rem;
-  padding: 4px 8px;
+
+  padding: 6px 5px;
 }
 
-/* ===================== Mobile ===================== */
+
+/* =====================================================
+   ABOUT US DROPDOWN
+===================================================== */
+
+.premium-nav .dropdown-custom {
+  position: relative;
+}
+
+
+/* =====================================================
+   ABOUT US BUTTON
+===================================================== */
+
+.premium-nav .dropdown-toggle-custom {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  text-transform: none;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.premium-nav .dropdown-toggle-custom:hover {
+  color: #0d6efd;
+}
+
+
+/* =====================================================
+   DROPDOWN ARROW
+===================================================== */
+
+.premium-nav .dropdown-icon {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.premium-nav .dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   DROPDOWN BOX
+===================================================== */
+
+.premium-nav .dropdown-menu-custom {
+  position: absolute;
+
+  top: calc(100% + 5px);
+
+  left: 0;
+
+  width: 220px;
+
+  min-width: 220px;
+
+  padding: 6px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e5e7eb;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 10001;
+}
+
+
+/* =====================================================
+   DESKTOP DROPDOWN
+===================================================== */
+
+@media (min-width: 992px) {
+
+  .premium-nav
+  .dropdown-custom:hover
+  .dropdown-menu-custom {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  .premium-nav
+  .dropdown-custom:hover
+  .dropdown-icon {
+
+    transform: rotate(180deg);
+  }
+}
+
+
+/* =====================================================
+   CLICK ACTIVE DROPDOWN
+===================================================== */
+
+.premium-nav
+.dropdown-custom.dropdown-active
+.dropdown-menu-custom {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   DROPDOWN ITEMS
+===================================================== */
+
+.premium-nav
+.dropdown-menu-custom
+.dropdown-item-custom {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 10px 12px;
+
+  margin: 0;
+
+  background: transparent;
+
+  color: #222222 !important;
+
+  border: none;
+
+  border-radius: 4px;
+
+  font-family: inherit;
+
+  font-size: 0.85rem;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  text-decoration: none !important;
+
+  text-transform: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+/* =====================================================
+   DROPDOWN ITEM HOVER
+===================================================== */
+
+.premium-nav
+.dropdown-menu-custom
+.dropdown-item-custom:hover {
+
+  background: #f3f6fa;
+
+  color: #0d6efd !important;
+
+  text-decoration: none !important;
+}
+
+
+/* =====================================================
+   REMOVE DROPDOWN UNDERLINES
+===================================================== */
+
+.premium-nav
+.dropdown-menu-custom
+.dropdown-item-custom::before,
+
+.premium-nav
+.dropdown-menu-custom
+.dropdown-item-custom::after {
+
+  content: none !important;
+
+  display: none !important;
+}
+
+
+/* =====================================================
+   DROPDOWN FOCUS
+===================================================== */
+
+.premium-nav
+.dropdown-menu-custom
+.dropdown-item-custom:focus {
+
+  outline: none;
+
+  background: #f3f6fa;
+
+  color: #0d6efd !important;
+
+  text-decoration: none !important;
+}
+
+
+/* =====================================================
+   GOOGLE TRANSLATE
+===================================================== */
+
+.google-translate-container {
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  width: 105px !important;
+
+  height: 28px !important;
+}
+
+
+.google-translate-container
+.goog-te-gadget {
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  font-size: 0 !important;
+}
+
+
+.google-translate-container
+.goog-te-combo {
+
+  display: block !important;
+
+  width: 105px !important;
+
+  height: 28px !important;
+
+  padding: 2px 7px !important;
+
+  font-family:
+    Arial,
+    sans-serif !important;
+
+  font-size: 12px !important;
+
+  font-weight: 500 !important;
+
+  color: #ffffff !important;
+
+  background-color: #1a2850 !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.5) !important;
+
+  border-radius: 4px !important;
+
+  cursor: pointer !important;
+
+  outline: none !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+
+.google-translate-container
+.goog-te-combo:hover {
+
+  border-color: #ffffff !important;
+}
+
+
+.google-translate-container
+.goog-te-combo option {
+
+  color: #000000 !important;
+
+  background-color: #ffffff !important;
+}
+
+
+/* =====================================================
+   HIDE GOOGLE BRANDING
+===================================================== */
+
+.google-translate-container
+.goog-te-gadget
+span {
+
+  display: none !important;
+}
+
+
+.goog-te-gadget-icon {
+
+  display: none !important;
+}
+
+
+/* =====================================================
+   HIDE GOOGLE TOP TRANSLATION BAR
+===================================================== */
+
+.goog-te-banner-frame {
+
+  display: none !important;
+}
+
+
+body {
+
+  top: 0 !important;
+}
+
+
+/* =====================================================
+   GOOGLE TRANSLATE MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+  .google-translate-container {
+
+    width: 100px !important;
+  }
+
+
+  .google-translate-container
+  .goog-te-combo {
+
+    width: 100px !important;
+  }
+}
+
+
+/* =====================================================
+   MOBILE NAVBAR
+===================================================== */
 
 @media (max-width: 991px) {
 
   .premium-nav {
+
     padding: 10px 15px;
   }
 
+
   .premium-nav .nav-menu {
+
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+
+    align-items: stretch;
+
+    gap: 5px;
+
     margin-top: 15px;
+
+    width: 100%;
   }
+
 
   .premium-nav .nav-link {
-    font-size: 0.85rem;
-    padding: 8px 12px;
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    padding: 12px 15px;
+
+    font-size: 0.9rem;
+
+    text-transform: none;
   }
+
+
+  /* Remove normal link underline on mobile */
+
+  .premium-nav .nav-link::after {
+
+    display: none;
+  }
+
+
+  /* =================================================
+     MOBILE ABOUT BUTTON
+  ================================================= */
+
+  .premium-nav
+  .dropdown-toggle-custom {
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    padding: 12px 15px;
+
+    font-size: 0.9rem;
+  }
+
+
+  /* =================================================
+     MOBILE DROPDOWN BOX
+  ================================================= */
+
+  .premium-nav
+  .dropdown-menu-custom {
+
+    position: static !important;
+
+    width: 100% !important;
+
+    min-width: 100% !important;
+
+    margin-top: 4px;
+
+    padding: 5px 0;
+
+    background: #f8fafc;
+
+    border:
+      1px solid #e5e7eb;
+
+    border-radius: 6px;
+
+    box-shadow: none;
+
+    display: none;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+  }
+
+
+  /* Show when clicked */
+
+  .premium-nav
+  .dropdown-custom.dropdown-active
+  .dropdown-menu-custom {
+
+    display: flex;
+  }
+
+
+  /* =================================================
+     MOBILE DROPDOWN ITEMS
+  ================================================= */
+
+  .premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom {
+
+    width: 100%;
+
+    padding: 10px 18px;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    color: #222222 !important;
+
+    text-decoration: none !important;
+  }
+
+
+  .premium-nav
+  .dropdown-menu-custom
+  .dropdown-item-custom:hover {
+
+    background: #eef3fa;
+
+    color: #0d6efd !important;
+  }
+
 }
 
-/* ===================== Large Screens ===================== */
+
+/* =====================================================
+   LARGE SCREENS
+===================================================== */
 
 @media (min-width: 1200px) {
 
   .premium-nav .nav-menu {
-    gap: 12px;
+
+    gap: 22px;
   }
 
-  .premium-nav .nav-link {
-    font-size: 0.85rem;
-    padding: 6px 10px;
+
+  .premium-nav .nav-link,
+  .premium-nav .dropdown-toggle-custom {
+
+    font-size: 0.82rem;
   }
+
 }
 
+
+/* =====================================================
+   EXTRA LARGE SCREENS
+===================================================== */
+
+@media (min-width: 1400px) {
+
+  .premium-nav .nav-menu {
+
+    gap: 28px;
+  }
+
+
+  .premium-nav .nav-link,
+  .premium-nav .dropdown-toggle-custom {
+
+    font-size: 0.84rem;
+  }
+
+}
+
+
+/* =====================================================
+   FOOTER SOCIAL BUTTONS
+===================================================== */
 
 .social-btn.instagram:hover {
+
   background: #e4405f;
-  box-shadow: 0 8px 16px rgba(228,64,95,0.4);
+
+  box-shadow:
+    0 8px 16px rgba(228, 64, 95, 0.4);
 }
+
 
 .social-btn.tiktok:hover {
+
   background: #000000;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.4);
 }
+
 
 .social-btn.youtube:hover {
+
   background: #ff0000;
-  box-shadow: 0 8px 16px rgba(255,0,0,0.4);
+
+  box-shadow:
+    0 8px 16px rgba(255, 0, 0, 0.4);
 }
 
-/* FORCE FOOTER QUICK LINKS TO WHITE */
+
+/* =====================================================
+   FOOTER QUICK LINKS
+===================================================== */
+
 footer .quick-link,
 footer .quick-link:link,
 footer .quick-link:visited,
 footer .quick-link:hover,
 footer .quick-link:active,
 footer .quick-link:focus {
+
   color: #ffffff !important;
+
   text-decoration: none !important;
+
   text-decoration-line: none !important;
 }
 
-/* Remove any underline pseudo-elements */
+
+/* Remove footer pseudo-elements */
+
 footer .quick-link::before,
 footer .quick-link::after {
-  text-decoration: none !important;
-} 
-
-
-/* ===================== GOOGLE TRANSLATE ===================== */
-
-.google-translate-container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 105px !important;
-  height: 28px !important;
-}
-
-.google-translate-container .goog-te-gadget {
-  display: flex !important;
-  align-items: center !important;
-  font-size: 0 !important;
-}
-
-.google-translate-container .goog-te-combo {
-  display: block !important;
-
-  width: 105px !important;
-  height: 28px !important;
-
-  padding: 2px 7px !important;
-
-  font-family: Arial, sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-
-  color: #ffffff !important;
-  background-color: #1a2850 !important;
-
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  border-radius: 4px !important;
-
-  cursor: pointer !important;
-  outline: none !important;
-
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.google-translate-container .goog-te-combo:hover {
-  border-color: #ffffff !important;
-}
-
-.google-translate-container .goog-te-combo option {
-  color: #000000 !important;
-  background-color: #ffffff !important;
-}
-
-/* Hide Google branding */
-
-.google-translate-container .goog-te-gadget span {
-  display: none !important;
-}
-
-.goog-te-gadget-icon {
-  display: none !important;
-}
-
-/* Hide Google top translation bar */
-
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-}
-
-/* Mobile */
-
-@media (max-width: 767px) {
-  .google-translate-container {
-    width: 100px !important;
-  }
-
-  .google-translate-container .goog-te-combo {
-    width: 100px !important;
-  }
-
-
-  /* =========================================================
-   ABOUT US DROPDOWN
-   ========================================================= */
-
-.premium-nav .dropdown-menu-custom {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 240px;
-  padding: 10px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* Dropdown links */
-
-.premium-nav .dropdown-menu-custom .dropdown-item-custom {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-
-  width: 100% !important;
-
-  padding: 11px 14px !important;
-
-  color: #000000 !important;
-
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
 
   text-decoration: none !important;
-  text-decoration-line: none !important;
 
-  background: transparent;
-
-  border: none;
-
-  border-radius: 5px;
-
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-/* Remove link underline */
-
-.premium-nav .dropdown-menu-custom .dropdown-item-custom::before,
-.premium-nav .dropdown-menu-custom .dropdown-item-custom::after {
   display: none !important;
+
   content: none !important;
 }
 
-/* Normal state */
 
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom:link,
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom:visited {
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-/* Hover state */
-
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom:hover {
-  background: #f2f6ff;
-  color: #000000;
-  padding-left: 20px;
-  text-decoration: none;
-}
-}
-
-/* Active / Focus */
-
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom:active,
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom:focus {
-  color: #000000 !important;
-  text-decoration: none !important;
-  outline: none !important;
-}
-
-/* Dropdown bullet points */
-
-.premium-nav .dropdown-point {
-  display: inline-block !important;
-
-  width: 8px;
-  min-width: 8px;
-
-  color: #000000 !important;
-
-  font-size: 18px !important;
-  font-weight: 700 !important;
-
-  line-height: 1 !important;
-
-  text-decoration: none !important;
-}
-
-/* Text inside dropdown */
-
-.premium-nav
-  .dropdown-menu-custom
-  .dropdown-item-custom
-  span:not(.dropdown-point) {
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-
-/* =========================================================
-   MOBILE DROPDOWN
-   ========================================================= */
-
-@media (max-width: 991px) {
-
-  .premium-nav .dropdown-menu-custom {
-    position: static !important;
-
-    width: 100% !important;
-    min-width: 100% !important;
-
-    margin-top: 4px;
-
-    padding: 8px 0;
-
-    background: #f8faff;
-
-    border: none;
-
-    border-left: 2px solid #0d6efd;
-
-    border-radius: 0;
-
-    box-shadow: none;
-  }
-
-  .premium-nav
-    .dropdown-menu-custom
-    .dropdown-item-custom {
-    padding: 10px 20px !important;
-
-    color: #000000 !important;
-    text-decoration: none !important;
-  }
-
-   /* =========================================================
-    FORCE REMOVE DROPDOWN UNDERLINE
-    ========================================================= */
-
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom,
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:link,
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:visited,
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:hover,
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:active,
-.premium-nav li.dropdown-custom .dropdown-menu-custom a.dropdown-item-custom:focus {
-  color: #000000 !important;
-  text-decoration: none !important;
-  text-decoration-line: none !important;
-  text-decoration-style: none !important;
-  text-decoration-color: transparent !important;
-  text-underline-offset: 0 !important;
-}
-
-/* Remove ALL pseudo-elements from dropdown links */
-
-.premium-nav li.dropdown-custom
-.dropdown-menu-custom
-a.dropdown-item-custom::before,
-
-.premium-nav li.dropdown-custom
-.dropdown-menu-custom
-a.dropdown-item-custom::after {
-  content: none !important;
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: none !important;
-  border: none !important;
-}
-
-/* Dropdown text */
-
-.premium-nav li.dropdown-custom
-.dropdown-menu-custom
-a.dropdown-item-custom span {
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-/* Bullet */
-
-.premium-nav li.dropdown-custom
-.dropdown-menu-custom
-.dropdown-point {
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-/* Hover */
-
-.premium-nav li.dropdown-custom
-.dropdown-menu-custom
-a.dropdown-item-custom:hover span {
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-/* Portal */
-/* =========================================================
+/* =====================================================
    JOIN DEARO PAGE
-   ========================================================= */
+===================================================== */
 
 .join-page {
+
   min-height: 100vh;
+
   background: #ffffff;
+
   color: #071a3d;
 }
 
-/* ===================== TOP NAVY BANNER ===================== */
+
+/* =====================================================
+   TOP NAVY BANNER
+===================================================== */
 
 .join-hero {
+
   position: relative;
+
   overflow: hidden;
 
   min-height: 350px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 70px 20px;
@@ -496,81 +857,114 @@ a.dropdown-item-custom:hover span {
   background: #071a3d;
 }
 
+
 .join-hero::before,
 .join-hero::after {
+
   content: "";
+
   position: absolute;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
 
   border-radius: 50%;
 
   pointer-events: none;
 }
 
+
 .join-hero::before {
+
   width: 350px;
+
   height: 350px;
 
   top: -180px;
+
   left: -120px;
 }
 
+
 .join-hero::after {
+
   width: 420px;
+
   height: 420px;
 
   right: -160px;
+
   bottom: -220px;
 }
 
+
 .hero-content {
+
   position: relative;
+
   z-index: 2;
 
   max-width: 760px;
 }
 
+
 .hero-small-text {
+
   margin: 0 0 14px;
 
-  color: rgba(255, 255, 255, 0.75);
+  color:
+    rgba(255, 255, 255, 0.75);
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 3px;
 }
 
+
 .hero-content h1 {
+
   margin: 0;
 
   color: #ffffff;
 
-  font-size: clamp(42px, 7vw, 72px);
+  font-size:
+    clamp(42px, 7vw, 72px);
+
   line-height: 1.1;
+
   font-weight: 700;
 }
 
+
 .hero-content h1 span {
+
   color: #ffffff;
 }
 
+
 .hero-description {
+
   max-width: 650px;
 
   margin: 22px auto 0;
 
-  color: rgba(255, 255, 255, 0.82);
+  color:
+    rgba(255, 255, 255, 0.82);
 
   font-size: 18px;
+
   line-height: 1.7;
 }
 
 
-/* ===================== OPTIONS SECTION ===================== */
+/* =====================================================
+   OPTIONS SECTION
+===================================================== */
 
 .join-options {
+
   max-width: 1200px;
 
   margin: 0 auto;
@@ -578,64 +972,82 @@ a.dropdown-item-custom:hover span {
   padding: 75px 20px 100px;
 }
 
+
 .section-heading {
+
   margin-bottom: 45px;
 
   text-align: center;
 }
 
+
 .section-heading p {
+
   margin: 0 0 10px;
 
   color: #071a3d;
 
   font-size: 13px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
 }
 
+
 .section-heading h2 {
+
   margin: 0 0 12px;
 
   color: #071a3d;
 
-  font-size: clamp(30px, 4vw, 44px);
+  font-size:
+    clamp(30px, 4vw, 44px);
 
   font-weight: 700;
 }
 
+
 .section-heading span {
+
   color: #666666;
 
   font-size: 16px;
 }
 
 
-/* ===================== CARDS ===================== */
+/* =====================================================
+   CARDS
+===================================================== */
 
 .cards-container {
+
   max-width: 1050px;
 
   margin: 0 auto;
 
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 30px;
 }
 
+
 .join-card {
+
   overflow: hidden;
 
   background: #ffffff;
 
-  border: 1px solid #e5e8ee;
+  border:
+    1px solid #e5e8ee;
 
   border-radius: 18px;
 
-  box-shadow: 0 10px 35px rgba(7, 26, 61, 0.08);
+  box-shadow:
+    0 10px 35px rgba(7, 26, 61, 0.08);
 
   cursor: pointer;
 
@@ -644,35 +1056,50 @@ a.dropdown-item-custom:hover span {
     box-shadow 0.3s ease;
 }
 
+
 .join-card:hover {
+
   transform: translateY(-8px);
 
-  box-shadow: 0 20px 45px rgba(7, 26, 61, 0.16);
+  box-shadow:
+    0 20px 45px rgba(7, 26, 61, 0.16);
 }
 
 
-/* ===================== CARD IMAGE ===================== */
+/* =====================================================
+   CARD IMAGE
+===================================================== */
 
 .card-image-wrapper {
+
   position: relative;
 
   width: 100%;
+
   height: 280px;
 
   overflow: hidden;
 }
 
+
 .card-image {
+
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  transition:
+    transform 0.5s ease;
 }
 
-.join-card:hover .card-image {
+
+.join-card:hover
+.card-image {
+
   transform: scale(1.06);
 }
 
+
 .image-overlay {
+
   position: absolute;
 
   inset: 0;
@@ -685,19 +1112,26 @@ a.dropdown-item-custom:hover span {
 }
 
 
-/* ===================== CARD ICON ===================== */
+/* =====================================================
+   CARD ICON
+===================================================== */
 
 .card-icon {
+
   position: absolute;
 
   left: 25px;
+
   bottom: 25px;
 
   width: 58px;
+
   height: 58px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #ffffff;
@@ -706,37 +1140,49 @@ a.dropdown-item-custom:hover span {
 
   border-radius: 50%;
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 
-/* ===================== CARD CONTENT ===================== */
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .card-content {
+
   padding: 30px;
 }
 
+
 .card-label {
+
   margin: 0 0 8px;
 
   color: #718096;
 
   font-size: 12px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
 }
 
+
 .card-content h3 {
+
   margin: 0 0 12px;
 
   color: #071a3d;
 
   font-size: 28px;
+
   font-weight: 700;
 }
 
+
 .card-content > p:not(.card-label) {
+
   margin: 0 0 25px;
 
   color: #666666;
@@ -747,12 +1193,16 @@ a.dropdown-item-custom:hover span {
 }
 
 
-/* ===================== CARD BUTTON ===================== */
+/* =====================================================
+   CARD BUTTON
+===================================================== */
 
 .card-content button {
+
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -768,6 +1218,7 @@ a.dropdown-item-custom:hover span {
   border-radius: 8px;
 
   font-size: 14px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -777,64 +1228,87 @@ a.dropdown-item-custom:hover span {
     gap 0.3s ease;
 }
 
+
 .card-content button:hover {
+
   background: #102c60;
 
   gap: 15px;
 }
 
 
-/* ===================== TABLET ===================== */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 768px) {
 
   .join-hero {
+
     min-height: 310px;
 
     padding: 60px 20px;
   }
 
+
   .hero-description {
+
     font-size: 16px;
   }
 
+
   .join-options {
+
     padding: 60px 18px 75px;
   }
 
+
   .cards-container {
+
     grid-template-columns: 1fr;
 
     max-width: 600px;
   }
 
+
   .card-image-wrapper {
+
     height: 270px;
   }
+
 }
 
 
-/* ===================== MOBILE ===================== */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 480px) {
 
   .join-hero {
+
     min-height: 285px;
 
     padding: 50px 18px;
   }
 
+
   .hero-small-text {
+
     font-size: 11px;
 
     letter-spacing: 2px;
   }
 
+
   .hero-content h1 {
+
     font-size: 42px;
   }
 
+
   .hero-description {
+
     margin-top: 18px;
 
     font-size: 15px;
@@ -842,37 +1316,53 @@ a.dropdown-item-custom:hover span {
     line-height: 1.6;
   }
 
+
   .join-options {
+
     padding: 45px 15px 60px;
   }
 
+
   .section-heading {
+
     margin-bottom: 30px;
   }
 
+
   .section-heading h2 {
+
     font-size: 30px;
   }
 
+
   .section-heading span {
+
     font-size: 14px;
   }
 
+
   .card-image-wrapper {
+
     height: 220px;
   }
 
+
   .card-content {
+
     padding: 24px;
   }
 
+
   .card-content h3 {
+
     font-size: 24px;
   }
 
+
   .card-content button {
+
     width: 100%;
   }
-}
 
 }
+

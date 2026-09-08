@@ -1,8 +1,23 @@
 import { MongoClient } from "mongodb";
-//import clientPromise from "@/lib/mongodb";
-if (!process.env.MONGODB_URI) throw new Error("Add Mongo URI to .env.local");
 
-const client = new MongoClient(process.env.MONGODB_URI);
-const clientPromise = client.connect();
+const uri = process.env.MONGODB_URI;
+
+if (!uri) {
+  throw new Error("MONGODB_URI environment variable is not configured");
+}
+
+const client = new MongoClient(uri);
+
+declare global {
+  var mongoClientPromise: Promise<MongoClient> | undefined;
+}
+
+const clientPromise =
+  globalThis.mongoClientPromise ??
+  (globalThis.mongoClientPromise = client.connect());
+
+export const dbPromise = clientPromise.then((connectedClient) =>
+  connectedClient.db(process.env.MONGODB_DB || "DearoVC")
+);
 
 export default clientPromise;

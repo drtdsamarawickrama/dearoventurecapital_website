@@ -1,6 +1,6 @@
 
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import { dbPromise } from "@/lib/mongodb";
 
 export async function POST(request: Request) {
   try {
@@ -43,13 +43,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Connect to MongoDB
-    const client = await clientPromise;
-
-    // Your MongoDB database
-    const db = client.db("DearoVC");
-
-    // Your collection
+    const db = await dbPromise;
     const collection = db.collection("customer_application");
 
     // Customer application document
@@ -114,4 +108,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

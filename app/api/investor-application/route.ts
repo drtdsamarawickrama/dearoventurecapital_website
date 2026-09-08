@@ -1,6 +1,6 @@
 
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import { dbPromise } from "@/lib/mongodb";
 
 // =====================================================
 // POST - Save investor application
@@ -45,13 +45,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Connect to MongoDB
-    const client = await clientPromise;
-
-    // Select database
-    const db = client.db("DearoVC");
-
-    // Select collection
+    const db = await dbPromise;
     const collection = db.collection("investor_application");
 
     // Prepare application data
@@ -113,13 +107,7 @@ export async function POST(request: Request) {
 // =====================================================
 export async function GET() {
   try {
-    // Connect to MongoDB
-    const client = await clientPromise;
-
-    // Select database
-    const db = client.db("DearoVC");
-
-    // Select collection
+    const db = await dbPromise;
     const collection = db.collection("investor_application");
 
     // Get all applications
@@ -146,4 +134,3 @@ export async function GET() {
     );
   }
 }
-
