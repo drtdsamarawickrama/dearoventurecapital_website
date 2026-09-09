@@ -46,7 +46,7 @@ export default function CareersPage() {
       shortDescription:
         "Provide legal support, ensure compliance, and assist with corporate matters.",
 
-      image: "/images/careers/LEGAL OFFICER.jpg",
+      image: "/images/careers/legal_officer.png",
     },
 
      {
