@@ -1,55 +1,142 @@
+
 "use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Briefcase, Users, TrendingUp, MonitorPlay, ChevronDown, CheckCircle2, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Briefcase,
+  Users,
+  TrendingUp,
+  MonitorPlay,
+  ChevronDown,
+} from "lucide-react";
 import Head from "next/head";
 
 export default function CareersPage() {
-  const [detailsOpen, setDetailsOpen] = useState(false);
+  const [openCareer, setOpenCareer] = useState<number | null>(null);
 
+  // ============================================================
+  // CURRENT OPENINGS
+  // ============================================================
+  const careers = [
+    {
+      id: 2,
+      title: "Company Secretary",
+      type: "Full Time",
+      shortDescription:
+        "Ensure compliance, maintain records, and support corporate governance.",
+      image: "/images/careers/COMPANY SECRETARY.jpg",
+    },
+
+    {
+      id: 3,
+      title: "Business Development Professional - Investment",
+      type: "Full Time",
+      shortDescription:
+        "Drive business growth, build client relationships, and identify new investment opportunities.",
+
+      image: "/images/careers/business_development.jpg",
+    },
+
+    {
+      id: 4,
+      title: "Legal Officer",
+      type: "Full Time",
+      shortDescription:
+        "Provide legal support, ensure compliance, and assist with corporate matters.",
+
+      image: "/images/careers/LEGAL OFFICER.jpg",
+    },
+
+     {
+      id: 5,
+      title: "Business Development Manager And Executive - Investment",
+      type: "Full Time",
+      shortDescription:
+        "Manage investment operations, support clients, and identify opportunities for business growth.",
+
+      image: "/images/careers/MANAGER EXCECUTIVE - INVESTMENT.jpg",
+    },
+
+    {
+      id: 6,
+      title: "Personal Assistant To the CEO",
+      type: "Full Time",
+      shortDescription:
+        "Provide administrative support and assist with daily operations.",
+
+      image: "/images/careers/PERSONAL ASSITANT.jpg",
+
+  
+    },
+
+    {
+      id: 7,
+      title: "Receptionist",
+      type: "Full Time",
+      shortDescription:
+        "Welcome visitors, handle inquiries, manage calls, and provide professional front-desk support.",
+
+      image: "/images/careers/RECEPTIONIST.jpg",
+
+  
+    },
+
+
+
+  ];
+
+  // ============================================================
+  // BENEFITS
+  // ============================================================
   const benefits = [
     {
       icon: <TrendingUp className="text-primary" size={32} />,
-      title: <span className="text-black">Attractive Earnings</span>,
-      description: "Performance Based Incentives"
+      title: "Attractive Earnings",
+      description: "Performance Based Incentives",
     },
     {
       icon: <MonitorPlay className="text-primary" size={32} />,
-      title: <span className="text-black">Training & Development</span>,
-      description: "Comprehensive Training Provided"
+      title: "Training & Development",
+      description: "Comprehensive Training Provided",
     },
     {
       icon: <Briefcase className="text-primary" size={32} />,
-      title: <span className="text-black">Career Growth</span>,
-      description: "Opportunities for Advancement"
+      title: "Career Growth",
+      description: "Opportunities for Advancement",
     },
     {
       icon: <Users className="text-primary" size={32} />,
-      title: <span className="text-black">Supportive Environment</span>,
-      description: "Be Part of a Dynamic and Professional Team"
-    }
+      title: "Supportive Environment",
+      description: "Be Part of a Dynamic and Professional Team",
+    },
   ];
 
-  const requirements = [
-    "Male and Female candidates",
-    "Age 21 years and above",
-    "With experience or without experience",
-    "Excellent communication and interpersonal skills",
-    "Passion for sales, customer service, and business development",
-    "Self-motivated individuals with a desire to achieve career growth and financial success"
-  ];
+  // ============================================================
+  // TOGGLE CAREER DETAILS
+  // ============================================================
+  const toggleCareer = (id: number) => {
+    setOpenCareer(openCareer === id ? null : id);
+  };
 
   return (
     <main className="careers-main bg-light">
       <Head>
         <title>Careers - Dearo Venture Capital</title>
-        <meta name="description" content="Join Dearo Venture Capital and build wealth while empowering futures." />
+
+        <meta
+          name="description"
+          content="Join Dearo Venture Capital and build wealth while empowering futures."
+        />
       </Head>
 
-      {/* Hero Section */}
+      {/* ========================================================
+          HERO SECTION
+      ======================================================== */}
       <section className="careers-hero position-relative d-flex align-items-center justify-content-center text-center">
         <div className="hero-overlay"></div>
+
         <div className="container position-relative z-1 py-5">
           <motion.h1
             className="display-3 fw-bold text-white mb-4"
@@ -59,6 +146,7 @@ export default function CareersPage() {
           >
             Shape the Future <br /> With Us
           </motion.h1>
+
           <motion.p
             className="lead text-white-50 mb-5 mx-auto"
             style={{ maxWidth: "700px" }}
@@ -66,8 +154,10 @@ export default function CareersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Step into a rewarding career in the investment industry with unlimited growth opportunities.
+            Step into a rewarding career in the investment industry with
+            unlimited growth opportunities.
           </motion.p>
+
           <motion.a
             href="#open-roles"
             className="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold hero-btn"
@@ -80,24 +170,24 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Join Us Section */}
+      {/* ========================================================
+          WHY JOIN US
+      ======================================================== */}
       <section className="py-5 bg-white">
         <div className="container py-5">
           <div className="text-center mb-5">
             <motion.h2
-              className="display-5 fw-bold mb-3 text-black section-title"
+              className="display-5 fw-bold mb-3 section-title"
               initial={{ opacity: 0, y: 20 }}
-              color="#0b1f4b !important"
-
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               Why Join Dearo?
             </motion.h2>
+
             <motion.p
               className="text-muted"
-              color="#0b1f4b !important"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -106,6 +196,7 @@ export default function CareersPage() {
               Discover the benefits of being part of our exceptional team.
             </motion.p>
           </div>
+
           <div className="row g-4 pt-3">
             {benefits.map((benefit, index) => (
               <div className="col-md-6 col-lg-3" key={index}>
@@ -114,13 +205,26 @@ export default function CareersPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                  }}
                 >
-                  <div className="icon-wrapper mb-4 mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white shadow-sm" style={{ width: "80px", height: "80px" }}>
+                  <div
+                    className="icon-wrapper mb-4 mx-auto d-flex align-items-center justify-content-center rounded-circle bg-white shadow-sm"
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                    }}
+                  >
                     {benefit.icon}
                   </div>
+
                   <h4 className="fw-bold mb-3 h5">{benefit.title}</h4>
-                  <p className="text-muted small mb-0">{benefit.description}</p>
+
+                  <p className="text-muted small mb-0">
+                    {benefit.description}
+                  </p>
                 </motion.div>
               </div>
             ))}
@@ -128,130 +232,186 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Roles Section */}
+      {/* ========================================================
+          CURRENT OPPORTUNITIES
+      ======================================================== */}
       <section id="open-roles" className="py-5 bg-light">
         <div className="container py-5">
-          <div className="row align-items-center mb-5">
-            <div className="col-md-12 text-center">
-              <motion.h2
-                className="display-5 fw-bold text-navy blue section-title mb-3"
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                Current Opportunities
-              </motion.h2>
-            </div>
-          </div>
 
-          <div className="role-list max-w-4xl mx-auto" style={{ maxWidth: "800px", margin: "0 auto" }}>
-            <motion.div
-              className="role-card rounded-4 mb-4 shadow-sm border bg-white overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
+          {/* Heading */}
+          <div className="text-center mb-5">
+            <motion.h2
+              className="display-5 fw-bold section-title mb-3"
+              initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="p-4 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-                <div className="role-info mb-4 mb-md-0">
-                  <span className="badge bg-primary bg-opacity-10 text-white mb-3 px-3 py-2 rounded-pill fw-bold">Full Time</span>
-                  <h3 className="h4 fw-bold mb-2 text-black">Business Development Professionals - Investments</h3>
-                  <p className="text-muted mb-0 d-flex align-items-center gap-2">
-                    Step into a rewarding career in the investment industry with unlimited growth opportunities.
-                  </p>
-                </div>
-                <div className="role-action text-md-end">
-                  <button
-                    onClick={() => setDetailsOpen(!detailsOpen)}
-                    className="btn btn-outline-primary rounded-pill px-4 py-2 d-flex align-items-center gap-2 text-nowrap fw-bold mx-auto mx-md-0"
-                  >
-                    {detailsOpen ? "Hide Details" : "View Details"}
-                    <motion.div
-                      animate={{ rotate: detailsOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ChevronDown size={18} />
-                    </motion.div>
-                  </button>
-                </div>
-              </div>
+              Current Opportunities
+            </motion.h2>
 
-              {/* Expansible Details */}
-              <AnimatePresence>
-                {detailsOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="border-top"
-                  >
-                    <div className="p-4 p-md-5 bg-light bg-opacity-50">
+            <p className="text-muted mx-auto careers-subtitle">
+              Explore our current career opportunities and take the next step
+              in your professional journey.
+            </p>
+          </div>
 
-                      <div className="row g-4">
-                        {/* Who Can Apply */}
-                        <div className="col-lg-6">
-                          <h4 className="fw-bold mb-4 text-black d-flex align-items-center gap-2">
-                            Who Can Apply?
-                          </h4>
-                          <ul className="list-unstyled mb-0">
-                            {requirements.map((req, i) => (
-                              <li key={i} className="mb-3 d-flex align-items-start gap-3">
-                                <CheckCircle2 className="text-primary mt-1 flex-shrink-0" size={20} />
-                                <span className="text-muted">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+          {/* Career List */}
+          <div className="career-list mx-auto">
+            {careers.map((career, index) => {
+              const isOpen = openCareer === career.id;
 
-                        {/* Venue & Action */}
-                        <div className="col-lg-6">
-                          <div className="bg-white p-4 rounded-4 shadow-sm border mb-4">
-                            <h5 className="fw-bold text-black mb-3 d-flex align-items-center gap-2">
-                              <MapPin className="text-primary" size={20} />
-                              Walk-In Interview Venue
-                            </h5>
-                            <p className="text-muted mb-0">
-                              The Ceylinco House, 9th Floor, <br />
-                              No. 69, Janadhipathi Mawatha, <br />
-                              Colombo 01.
-                            </p>
-                          </div>
+              return (
+                <motion.div
+                  className="career-card bg-white rounded-4 shadow-sm border overflow-hidden mb-4"
+                  key={career.id}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                  }}
+                >
 
-                          <div className="text-center mt-5">
-                            <p className="fw-bold mb-3 text-black">
-                              Take the first step towards a successful future!
-                            </p>
+                  {/* =================================================
+                      CAREER HEADER
+                  ================================================= */}
+                  <div className="career-header p-4 p-md-5">
+                    <div className="row align-items-center">
 
-                            <a
-                              href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@dearoinvestment.com&su=Application%20for%20Business%20Development%20Professional%20-%20Investments"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-dark rounded-pill px-5 py-3 d-inline-flex align-items-center gap-2 apply-btn w-100 justify-content-center fw-bold shadow-sm"
-                            >
-                              Apply Now <ArrowRight size={18} />
-                            </a>
-                            <p className="small text-muted mt-3 mb-0">
-                              Send your CV to careers@dearoinvestment.com
-                            </p>
-                          </div>
-                        </div>
+                      {/* Job Title + Short Description */}
+                      <div className="col-lg-9">
+
+                        <span className="badge career-badge mb-3 px-3 py-2 rounded-pill fw-bold">
+                          {career.type}
+                        </span>
+
+                        <h3 className="h4 fw-bold mb-2 career-title">
+                          {career.title}
+                        </h3>
+
+                        <p className="text-muted mb-0 career-short-description">
+                          {career.shortDescription}
+                        </p>
+
+                      </div>
+
+                      {/* View Details Button */}
+                      <div className="col-lg-3 mt-4 mt-lg-0">
+                        <button
+                          onClick={() => toggleCareer(career.id)}
+                          className="btn btn-outline-primary rounded-pill px-4 py-2 d-flex align-items-center justify-content-center gap-2 fw-bold mx-auto mx-lg-0 ms-lg-auto details-btn"
+                        >
+                          {isOpen ? "Hide Details" : "View Details"}
+
+                          <motion.div
+                            animate={{
+                              rotate: isOpen ? 180 : 0,
+                            }}
+                            transition={{
+                              duration: 0.3,
+                            }}
+                          >
+                            <ChevronDown size={18} />
+                          </motion.div>
+                        </button>
                       </div>
 
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                  </div>
+
+                  {/* =================================================
+                      DETAILS
+                  ================================================= */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{
+                          height: 0,
+                          opacity: 0,
+                        }}
+                        animate={{
+                          height: "auto",
+                          opacity: 1,
+                        }}
+                        exit={{
+                          height: 0,
+                          opacity: 0,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        className="career-details border-top"
+                      >
+
+                        {/* CENTERED IMAGE + APPLY BUTTON */}
+                        <div className="career-details-content p-4 p-md-5">
+
+                          <div className="career-image-container">
+
+                            <div className="career-image-wrapper">
+                              <img
+                                src={career.image}
+                                alt={career.title}
+                                className="career-image"
+                              />
+                            </div>
+
+                            {/* APPLY NOW UNDER IMAGE */}
+
+                            <div className="apply-container">
+                              <a
+                                href={`https://mail.google.com/mail/?view=cm&fs=1&to=careers@dearoinvestment.com&su=${encodeURIComponent(
+                                  `Application for ${career.title}`
+                                )}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-dark rounded-pill px-5 py-3 d-inline-flex align-items-center justify-content-center gap-2 apply-btn fw-bold shadow-sm"
+                              >
+                                Apply Now
+                                <ArrowRight size={18} />
+                              </a>
+
+                              <p className="small text-muted mt-3 mb-0">
+                                Send your CV to careers@dearoinvestment.com
+                              </p>
+                            </div>
+
+
+                          </div>
+
+                        </div>
+
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* ========================================================
+          CSS
+      ======================================================== */}
       <style jsx>{`
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
         .careers-main {
           overflow-x: hidden;
         }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
         .careers-hero {
           min-height: 500px;
           height: 60vh;
@@ -259,79 +419,286 @@ export default function CareersPage() {
           background-size: cover;
           position: relative;
         }
+
         .hero-overlay {
           position: absolute;
-          top: 0;
-          left: 0;
+          inset: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, rgba(26, 40, 80, 0.95) 0%, rgba(13, 110, 253, 0.85) 100%);
+          background: linear-gradient(
+            135deg,
+            rgba(26, 40, 80, 0.95) 0%,
+            rgba(13, 110, 253, 0.85) 100%
+          );
         }
+
         .hero-btn {
-          background: linear-gradient(90deg, #0d6efd, #0bb5ff);
+          background: linear-gradient(
+            90deg,
+            #0d6efd,
+            #0bb5ff
+          );
           border: none;
           box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
           transition: all 0.3s ease;
         }
+
         .hero-btn:hover {
           transform: translateY(-3px) scale(1.02);
           box-shadow: 0 12px 30px rgba(13, 110, 253, 0.4);
         }
+
+
+        /* =====================================================
+           SECTION TITLE
+        ===================================================== */
+
         .section-title {
-          background: linear-gradient(90deg, #1a2850, #0d6efd);
+          background: linear-gradient(
+            90deg,
+            #1a2850,
+            #0d6efd
+          );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           display: inline-block;
         }
-        .benefit-card {
-          border: 1px solid rgba(0,0,0,0.05);
-          transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        .careers-subtitle {
+          max-width: 650px;
         }
+
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .benefit-card {
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          transition: all 0.3s
+            cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
         .benefit-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
           background-color: #fff !important;
           border-color: rgba(13, 110, 253, 0.2);
         }
-        .role-card {
-          transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-          border: 1px solid rgba(0,0,0,0.08) !important;
+
+
+        /* =====================================================
+           CAREER LIST
+        ===================================================== */
+
+        .career-list {
+          max-width: 1000px;
         }
-        .role-card:hover {
-          box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+
+        .career-card {
+          border: 1px solid rgba(0, 0, 0, 0.08) !important;
+          transition: all 0.3s
+            cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .career-card:hover {
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
           border-color: rgba(13, 110, 253, 0.3) !important;
         }
+
+
+        /* =====================================================
+           CAREER HEADER
+        ===================================================== */
+
+        .career-header {
+          min-height: 170px;
+        }
+
+        .career-badge {
+          background-color: rgba(13, 110, 253, 0.1);
+          color: #0d6efd;
+        }
+
+        .career-title {
+          color: #111;
+        }
+
+        .career-short-description {
+          line-height: 1.7;
+        }
+
+        .details-btn {
+          min-width: 155px;
+        }
+
+
+        /* =====================================================
+           DETAILS
+        ===================================================== */
+
+        .career-details {
+          background: rgba(248, 249, 250, 0.7);
+        }
+
+        .career-details-content {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .career-image-container {
+          width: 100%;
+          max-width: 650px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+
+        /* =====================================================
+           CAREER IMAGE
+        ===================================================== */
+
+        .career-image-wrapper {
+  width: 100%;
+  max-width: 650px;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #f1f3f5;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-image {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+        .career-image-wrapper:hover .career-image {
+          transform: scale(1.05);
+        }
+
+
+        /* =====================================================
+           APPLY BUTTON
+        ===================================================== */
+
+        .apply-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          margin-top: 25px;
+        }
+
         .apply-btn {
           background-color: #1a2850;
+          border: none;
+          min-width: 220px;
           transition: all 0.3s ease;
         }
+
         .apply-btn:hover {
           background-color: #0d6efd;
-          transform: scale(1.02);
-          box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2) !important;
+          transform: translateY(-2px);
+          box-shadow: 0 10px 20px rgba(
+            13,
+            110,
+            253,
+            0.2
+          ) !important;
         }
-        .text-primary {
-          color: #0d6efd !important;
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 767px) {
+
+          .careers-hero {
+            min-height: 450px;
+            height: auto;
+            padding: 60px 0;
+          }
+
+          .careers-hero h1 {
+            font-size: 2.3rem;
+          }
+
+          .careers-hero p {
+            font-size: 1rem;
+          }
+
+          .career-header {
+            min-height: auto;
+          }
+
+          .career-title {
+            font-size: 1.25rem;
+            line-height: 1.5;
+          }
+
+          .career-short-description {
+            font-size: 0.95rem;
+          }
+
+          .details-btn {
+            width: 100%;
+            max-width: 200px;
+          }
+
+          .career-image-container {
+            max-width: 100%;
+          }
+
+          .career-image-wrapper {
+  height: auto;
+  min-height: 230px;
+  width: 100%;
+}
+
+.career-image {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+          .apply-container {
+            margin-top: 20px;
+          }
+
+          .apply-btn {
+            width: 100%;
+            max-width: 300px;
+          }
+
         }
-        .bg-primary {
-          background-color: #0d6efd !important;
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (min-width: 768px) and (max-width: 991px) {
+
+          .career-image-wrapper {
+            height: 280px;
+          }
+
         }
-        .text-black {
-          color: #111 !important;
-        }
-        .text-navy blue {
-              color="#0b1f4b !important"
-        }  
-        .btn-outline-primary {
-          color: #0d6efd;
-          border-color: #0d6efd;
-          transition: all 0.3s ease;
-        }
-        .btn-outline-primary:hover {
-          background-color: #0d6efd;
-          color: #fff;
-        }
+
       `}</style>
     </main>
   );
 }
+
