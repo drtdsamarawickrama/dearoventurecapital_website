@@ -1,32 +1,17 @@
 import { NextResponse } from "next/server";
-import { isAdminAuthenticated } from "@/components/lib/admin-auth";
-import clientPromise from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
-function toNumber(value: unknown) {
-  if (typeof value === "number") {
-    return value;
-  }
+import { dbPromise } from "@/lib/mongodb";
 
-  if (typeof value === "string") {
-    return (
-      Number(value.replace(/[^\d.-]/g, "")) || 0
-    );
-  }
+import {
+  isAdminAuthenticated,
+} from "@/components/lib/admin-auth";
 
-  return 0;
-}
+export const dynamic = "force-dynamic";
 
-function getStatus(value: unknown) {
-  if (
-    value === "Pending" ||
-    value === "Approved" ||
-    value === "Rejected"
-  ) {
-    return value;
-  }
-
-  return "Pending";
-}
+/* =====================================================
+   GET APPLICATIONS
+===================================================== */
 
 export async function GET() {
   try {
@@ -37,121 +22,54 @@ export async function GET() {
       return NextResponse.json(
         {
           success: false,
-          message: "Unauthorized.",
+          message: "Unauthorized",
         },
-        { status: 401 }
+        {
+          status: 401,
+        }
       );
     }
 
-    const client = await clientPromise;
+    const db = await dbPromise;
 
-    const db = client.db("DearoVC");
+    /* ================= CUSTOMER APPLICATIONS ================= */
 
-    const investorCollection = db.collection(
-      "investor_application"
-    );
+    const customers =
+      await db
+        .collection("customer_application")
+        .find({})
+        .sort({
+          createdAt: -1,
+        })
+        .toArray();
 
-    const fundingCollection = db.collection(
-      "customer_application"
-    );
+    /* ================= INVESTOR APPLICATIONS ================= */
 
-    const [investors, funding] =
-      await Promise.all([
-        investorCollection
-          .find({})
-          .sort({ createdAt: -1, _id: -1 })
-          .toArray(),
-
-        fundingCollection
-          .find({})
-          .sort({ createdAt: -1, _id: -1 })
-          .toArray(),
-      ]);
-
-    const investorApplications =
-      investors.map((doc: any) => ({
-        id: doc._id.toString(),
-
-        name: String(
-          doc.name || "Unknown Applicant"
-        ),
-
-        nic: String(
-          doc.nic || doc.NIC || "-"
-        ),
-
-        email: String(
-          doc.email || "-"
-        ),
-
-        phone: String(
-          doc.phone || "-"
-        ),
-
-        type: "investor",
-
-        capital: toNumber(doc.capital),
-
-        status: getStatus(doc.status),
-
-        submittedAt: (
-          doc.submittedAt ||
-          doc.createdAt ||
-          doc._id.getTimestamp()
-        ).toISOString(),
-
-        businessName: "",
-      }));
-
-    const fundingApplications =
-      funding.map((doc: any) => ({
-        id: doc._id.toString(),
-
-        name: String(
-          doc.name || "Unknown Applicant"
-        ),
-
-        nic: String(
-          doc.NIC || doc.nic || "-"
-        ),
-
-        email: String(
-          doc.email || "-"
-        ),
-
-        phone: String(
-          doc.phone || "-"
-        ),
-
-        type: "funding",
-
-        capital: toNumber(doc.capital),
-
-        status: getStatus(doc.status),
-
-        submittedAt: (
-          doc.submittedAt ||
-          doc.createdAt ||
-          doc._id.getTimestamp()
-        ).toISOString(),
-
-        businessName: String(
-          doc.businessName || ""
-        ),
-      }));
-
-    const applications = [
-      ...investorApplications,
-      ...fundingApplications,
-    ].sort(
-      (a, b) =>
-        new Date(b.submittedAt).getTime() -
-        new Date(a.submittedAt).getTime()
-    );
+    const investors =
+      await db
+        .collection("investor_application")
+        .find({})
+        .sort({
+          createdAt: -1,
+        })
+        .toArray();
 
     return NextResponse.json({
       success: true,
-      applications,
+
+      customers: customers.map(
+        (item) => ({
+          ...item,
+          _id: item._id.toString(),
+        })
+      ),
+
+      investors: investors.map(
+        (item) => ({
+          ...item,
+          _id: item._id.toString(),
+        })
+      ),
     });
   } catch (error) {
     console.error(
@@ -165,7 +83,228 @@ export async function GET() {
         message:
           "Failed to load applications.",
       },
-      { status: 500 }
+      {
+        status: 500,
+      }
+    );
+  }
+}
+
+
+/* =====================================================
+   PATCH APPLICATION
+   SAVE ADMIN NOTE + STATUS
+===================================================== */
+
+export async function PATCH(
+  request: Request
+) {
+  try {
+    /* ================= AUTHENTICATION ================= */
+
+    const authenticated =
+      await isAdminAuthenticated();
+
+    if (!authenticated) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Unauthorized",
+        },
+        {
+          status: 401,
+        }
+      );
+    }
+
+    /* ================= REQUEST BODY ================= */
+
+    const body =
+      await request.json();
+
+    const {
+      id,
+      type,
+      adminNote,
+      status,
+    } = body;
+
+    /* ================= ID VALIDATION ================= */
+
+    if (!id) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Application ID is required.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    /* ================= TYPE VALIDATION ================= */
+
+    if (
+      type !== "customer" &&
+      type !== "investor"
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Invalid application type.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    /* ================= OBJECT ID VALIDATION ================= */
+
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Invalid application ID.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    /* ================= STATUS VALIDATION ================= */
+
+    const allowedStatuses = [
+      "Pending",
+      "Under Review",
+      "Approved",
+      "Rejected",
+    ];
+
+    if (
+      status !== undefined &&
+      !allowedStatuses.includes(status)
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Invalid application status.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    /* ================= DATABASE ================= */
+
+    const db = await dbPromise;
+
+    const collectionName =
+      type === "customer"
+        ? "customer_application"
+        : "investor_application";
+
+    const collection =
+      db.collection(collectionName);
+
+    /* ================= UPDATE DATA ================= */
+
+    const updateData: {
+      adminNote?: string;
+      status?: string;
+      updatedAt?: Date;
+    } = {
+      updatedAt: new Date(),
+    };
+
+    if (
+      adminNote !== undefined
+    ) {
+      updateData.adminNote =
+        String(adminNote).trim();
+    }
+
+    if (
+      status !== undefined
+    ) {
+      updateData.status = status;
+    }
+
+    /* ================= UPDATE ================= */
+
+    const result =
+      await collection.updateOne(
+        {
+          _id: new ObjectId(id),
+        },
+        {
+          $set: updateData,
+        }
+      );
+
+    /* ================= NOT FOUND ================= */
+
+    if (
+      result.matchedCount === 0
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Application not found.",
+        },
+        {
+          status: 404,
+        }
+      );
+    }
+
+    /* ================= GET UPDATED RECORD ================= */
+
+    const updatedApplication =
+      await collection.findOne({
+        _id: new ObjectId(id),
+      });
+
+    /* ================= RESPONSE ================= */
+
+    return NextResponse.json({
+      success: true,
+
+      message:
+        "Record saved successfully.",
+
+      application:
+        updatedApplication
+          ? {
+              ...updatedApplication,
+              _id:
+                updatedApplication._id.toString(),
+            }
+          : null,
+    });
+  } catch (error) {
+    console.error(
+      "Admin applications PATCH error:",
+      error
+    );
+
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          "Failed to save application record.",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }
