@@ -2,33 +2,33 @@
 
 import Image from "next/image";
 
-const directors = [
-  {
-    name: "Mr. Prasanna Sanjeewa Ranasinghe",
-    role: "Executive Director / Chief Executive Officer",
-    image: "/images/directors/prasanna 1.png",
-  },
-  {
-    name: "Mr. Roshan Jansen",
-    role: "Executive Director / Deputy Chief Executive Officer",
-    image: "/images/directors/roshan.png",
-  },
-  {
-    name: "Mr. Upul Edirisooriya",
-    role: "Non Independent Non Executive Director",
-    image: "/images/directors/upul.png",
-  },
-  {
-    name: "Mr. Seiichirou Ukegawa",
-    role: "Non Independent Non Executive Director",
-    image: "/images/directors/Seiichirou-Ukegawa.webp",
-  },
-  {
-    name: "Mr. Iwatsuka Sangyo",
-    role: "Non Independent Non Executive Director",
-    image: "/images/directors/Iwatsuka-Sangyo.jpeg",
-  },
-];
+// const directors = [
+//   {
+//     name: "Mr. Prasanna Sanjeewa Ranasinghe",
+//     role: "Executive Director / Chief Executive Officer",
+//     image: "/images/directors/prasanna 1.png",
+//   },
+//   {
+//     name: "Mr. Roshan Jansen",
+//     role: "Executive Director / Deputy Chief Executive Officer",
+//     image: "/images/directors/roshan.png",
+//   },
+//   {
+//     name: "Mr. Upul Edirisooriya",
+//     role: "Non Independent Non Executive Director",
+//     image: "/images/directors/upul.png",
+//   },
+//   {
+//     name: "Mr. Seiichirou Ukegawa",
+//     role: "Non Independent Non Executive Director",
+//     image: "/images/directors/Seiichirou-Ukegawa.webp",
+//   },
+//   {
+//     name: "Mr. Iwatsuka Sangyo",
+//     role: "Non Independent Non Executive Director",
+//     image: "/images/directors/Iwatsuka-Sangyo.jpeg",
+//   },
+// ];
 
 const corporateManagement = [
   {
@@ -63,15 +63,15 @@ export default function DirectorsPage() {
     <main className="directors-page">
       <section className="container py-5">
 
-        {/* Board of Directors */}
+        {/* Board of Directors
         <div className="text-center mb-5">
           <h1 className="page-title">Board of Directors</h1>
           <p className="page-subtitle">
             Strategic leadership guiding Dearo Venture Capital Limited
           </p>
-        </div>
+        </div> */}
 
-        <div className="row justify-content-center g-4 mb-5">
+        {/* <div className="row justify-content-center g-4 mb-5">
           {directors.map((director, index) => (
             <div key={index} className="col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 border-0 shadow-sm text-center director-card p-4">
@@ -90,7 +90,7 @@ export default function DirectorsPage() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Divider */}
         <div className="section-divider my-5">
