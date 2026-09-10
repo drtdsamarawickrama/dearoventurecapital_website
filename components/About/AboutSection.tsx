@@ -116,30 +116,47 @@ export default function AboutSection() {
                 sustainable growth.
               </p>
 
-              {/* VISION */}
-              <h4 className="section-title vision-title">
-                Our <strong>Vision</strong>
-              </h4>
+              {/* ================= VISION & MISSION ================= */}
+              <div className="row vision-mission-row">
 
-              <p>
-                To become Sri Lanka's most trusted and innovative investment
-                and venture capital organization, creating lasting value for
-                stakeholders while contributing to the nation's economic
-                prosperity.
-              </p>
+                {/* VISION */}
+                <div className="col-12 col-md-6 vision-mission-column">
+                  <div className="vision-mission-card h-100">
 
-              {/* MISSION */}
-              <h4 className="section-title mission-title">
-                Our <strong>Mission</strong>
-              </h4>
+                    <h4 className="section-title vision-title">
+                      Our <strong>Vision</strong>
+                    </h4>
 
-              <p className="story-text">
-                To empower individuals, entrepreneurs, SMEs, and corporate
-                partners through innovative investment solutions, strategic
-                partnerships, and responsible business practices that drive
-                sustainable growth and create meaningful economic
-                opportunities.
-              </p>
+                    <p>
+                      To become Sri Lanka's most trusted and innovative
+                      investment and venture capital organization, creating
+                      lasting value for stakeholders while contributing to the
+                      nation's economic prosperity.
+                    </p>
+
+                  </div>
+                </div>
+
+                {/* MISSION */}
+                <div className="col-12 col-md-6 vision-mission-column">
+                  <div className="vision-mission-card h-100">
+
+                    <h4 className="section-title mission-title">
+                      Our <strong>Mission</strong>
+                    </h4>
+
+                    <p className="story-text">
+                      To empower individuals, entrepreneurs, SMEs, and
+                      corporate partners through innovative investment
+                      solutions, strategic partnerships, and responsible
+                      business practices that drive sustainable growth and
+                      create meaningful economic opportunities.
+                    </p>
+
+                  </div>
+                </div>
+
+              </div>
 
             </div>
           </div>
@@ -296,11 +313,72 @@ export default function AboutSection() {
           font-weight: 700;
         }
 
-        .vision-title,
-        .mission-title {
+
+        /* ==================================================
+           VISION & MISSION
+        ================================================== */
+
+        .vision-mission-row {
           margin-top: 32px;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        .vision-mission-column {
+          margin-bottom: 24px;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .vision-mission-card {
+          background: #ffffff;
+          padding: 28px 26px;
+          border-radius: 14px;
+          border-left: 4px solid #1e40af;
+
+          box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.05);
+
+          transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+
+          display: flex;
+          flex-direction: column;
+        }
+
+        .vision-mission-card:hover {
+          transform: translateY(-4px);
+
+          box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .vision-mission-card h4 {
+          margin-top: 0;
           margin-bottom: 14px;
           font-size: clamp(1.2rem, 2vw, 1.5rem);
+        }
+
+        .vision-mission-card p {
+          color: #374151;
+
+          font-size:
+            clamp(0.95rem, 1.1vw, 1.05rem);
+
+          line-height: 1.75;
+
+          text-align: justify;
+
+          text-justify: inter-word;
+
+          margin-bottom: 0;
+
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+
+          font-family: inherit;
+          font-weight: 400;
         }
 
 
@@ -331,7 +409,6 @@ export default function AboutSection() {
 
         /* ==================================================
            PARAGRAPH ALIGNMENT
-           ALL PARAGRAPHS ARE JUSTIFIED
         ================================================== */
 
         .about-content,
@@ -345,16 +422,13 @@ export default function AboutSection() {
         .story-text {
           color: #374151;
 
-          /* RESPONSIVE FONT */
-          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+          font-size:
+            clamp(0.95rem, 1.1vw, 1.05rem);
 
-          /* RESPONSIVE LINE HEIGHT */
           line-height: 1.75;
 
-          /* JUSTIFY TEXT */
           text-align: justify;
 
-          /* BETTER WORD DISTRIBUTION */
           text-justify: inter-word;
 
           margin-bottom: 20px;
@@ -424,8 +498,6 @@ export default function AboutSection() {
           color: #6b7280;
           font-size: clamp(0.9rem, 1vw, 1rem);
           margin-bottom: 35px;
-
-          /* Keep subtitle centered */
           text-align: center;
         }
 
@@ -518,6 +590,11 @@ export default function AboutSection() {
             padding: 24px 22px;
           }
 
+          /* VISION & MISSION */
+          .vision-mission-card {
+            padding: 24px 22px;
+          }
+
           .award-card {
             padding: 24px 14px;
             min-height: 160px;
@@ -536,7 +613,8 @@ export default function AboutSection() {
           .about-content p,
           .story-content p,
           .milestone-card p,
-          .story-text {
+          .story-text,
+          .vision-mission-card p {
             text-align: justify;
           }
         }
@@ -561,6 +639,42 @@ export default function AboutSection() {
           .section-heading {
             font-size:
               clamp(1.3rem, 3vw, 1.6rem);
+          }
+
+          /* VISION & MISSION */
+          .vision-mission-row {
+            margin-top: 24px;
+          }
+
+          .vision-mission-column {
+            margin-bottom: 16px;
+            padding-left: 12px;
+            padding-right: 12px;
+          }
+
+          .vision-mission-card {
+            padding: 20px 18px;
+            border-radius: 12px;
+          }
+
+          .vision-mission-card h4 {
+            font-size:
+              clamp(1.1rem, 4vw, 1.2rem);
+
+            margin-bottom: 12px;
+          }
+
+          .vision-mission-card p {
+            font-size:
+              clamp(0.88rem, 2.8vw, 0.95rem);
+
+            line-height: 1.7;
+
+            text-align: justify;
+
+            text-justify: inter-word;
+
+            margin-bottom: 0;
           }
 
           /* JUSTIFIED MOBILE TEXT */
@@ -620,12 +734,36 @@ export default function AboutSection() {
             margin-bottom: 25px;
           }
 
-          .vision-title,
-          .mission-title {
-            margin-top: 28px;
+          /* VISION & MISSION */
+          .vision-mission-row {
+            margin-top: 20px;
+          }
 
+          .vision-mission-column {
+            margin-bottom: 16px;
+          }
+
+          .vision-mission-card {
+            padding: 18px 16px;
+            border-radius: 10px;
+          }
+
+          .vision-mission-card h4 {
             font-size:
-              clamp(1.1rem, 4vw, 1.2rem);
+              clamp(1.05rem, 4vw, 1.15rem);
+
+            margin-bottom: 10px;
+          }
+
+          .vision-mission-card p {
+            font-size:
+              clamp(0.86rem, 2.8vw, 0.94rem);
+
+            line-height: 1.7;
+
+            text-align: justify;
+
+            margin-bottom: 0;
           }
 
 
@@ -641,7 +779,6 @@ export default function AboutSection() {
 
             line-height: 1.7;
 
-            /* IMPORTANT */
             text-align: justify;
 
             text-justify: inter-word;
@@ -738,6 +875,23 @@ export default function AboutSection() {
               clamp(1.1rem, 4vw, 1.3rem);
           }
 
+          /* VISION & MISSION */
+          .vision-mission-card {
+            padding: 16px 14px;
+          }
+
+          .vision-mission-card h4 {
+            font-size:
+              clamp(1rem, 4vw, 1.1rem);
+          }
+
+          .vision-mission-card p {
+            font-size:
+              clamp(0.82rem, 3vw, 0.88rem);
+
+            line-height: 1.7;
+          }
+
           .about-content p,
           .story-content p,
           .milestone-card p,
@@ -746,7 +900,6 @@ export default function AboutSection() {
             font-size:
               clamp(0.82rem, 3vw, 0.88rem);
 
-            /* IMPORTANT */
             text-align: justify;
 
             line-height: 1.7;
@@ -793,8 +946,16 @@ export default function AboutSection() {
 
             font-size: 1.05rem;
 
-            /* IMPORTANT */
             text-align: justify;
+          }
+
+          /* VISION & MISSION */
+          .vision-mission-card {
+            padding: 28px 26px;
+          }
+
+          .vision-mission-card p {
+            font-size: 1.05rem;
           }
 
           .milestone-card p {
@@ -831,6 +992,10 @@ export default function AboutSection() {
             text-align: justify;
           }
 
+          .vision-mission-card p {
+            font-size: 1.1rem;
+          }
+
           .milestone-card p {
             text-align: justify;
           }
@@ -844,12 +1009,14 @@ export default function AboutSection() {
         @media (prefers-reduced-motion: reduce) {
 
           .milestone-card,
-          .award-card {
+          .award-card,
+          .vision-mission-card {
             transition: none;
           }
 
           .milestone-card:hover,
-          .award-card:hover {
+          .award-card:hover,
+          .vision-mission-card:hover {
             transform: none;
           }
         }

@@ -184,13 +184,13 @@ export default function Navbar() {
                     About Us
                   </Link>
 
-                  <Link
+                  {/* <Link
                     href="/director"
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
                     Our Leadership
-                  </Link>
+                  </Link> */}
 
                   <Link
                     href="/sectors"
