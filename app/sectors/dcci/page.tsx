@@ -7,7 +7,7 @@ export default function DCCIPage() {
   return (
     <main className="dcci-page">
       {/* ================= HERO IMAGE ================= */}
-      <section className="dcci-hero">
+      {/* <section className="dcci-hero">
         <Image
           src="/images/dcc.jpg"
           alt="DCCI - From Our Waters to the World"
@@ -15,7 +15,7 @@ export default function DCCIPage() {
           priority
           className="hero-image"
         />
-      </section>
+      </section> */}
 
       {/* ================= CONTENT ================= */}
       <section className="dcci-content">

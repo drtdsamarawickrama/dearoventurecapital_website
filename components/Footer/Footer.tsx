@@ -24,7 +24,7 @@ export default function Footer() {
     "Agriculture & Plantation",
     "Engineering & Construction",
     "Education & Training",
-    "Dearo Lime",
+    // "Dearo Lime",
     "DCCI – From Our Waters to the World",
     "DEARO IT SOLUTION",
   ];
@@ -172,7 +172,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.tiktok.com/@dearo.venture.cap?_r=1&_t=ZS-99dfg3pHyBo"
                 className="social-btn tiktok"
                 aria-label="TikTok"
               >

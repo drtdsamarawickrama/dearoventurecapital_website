@@ -7,7 +7,7 @@ export default function EducationPage() {
   return (
     <main className="education-page">
       {/* ================= HERO IMAGE ================= */}
-      <section className="education-hero">
+      {/* <section className="education-hero">
         <Image
           src="/images/ed.png"
           alt="Dearo Education"
@@ -15,7 +15,7 @@ export default function EducationPage() {
           priority
           className="hero-image"
         />
-      </section>
+      </section> */}
 
       {/* ================= CONTENT ================= */}
       <section className="education-content">
