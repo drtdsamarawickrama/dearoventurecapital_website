@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ITSolutionsPage() {
   return (
     <main className="it-page">
-      {/* ================= HERO IMAGE ================= */}
+      {/* ================= HERO IMAGE =================
       <section className="it-hero">
         <Image
           src="/images/it.jpg"
@@ -15,7 +15,7 @@ export default function ITSolutionsPage() {
           priority
           className="hero-image"
         />
-      </section>
+      </section> */}
 
       {/* ================= CONTENT ================= */}
       <section className="it-content">

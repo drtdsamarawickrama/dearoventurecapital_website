@@ -7,7 +7,7 @@ export default function EngineeringPage() {
   return (
     <main className="engineering-page">
       {/* ================= HERO IMAGE ================= */}
-      <section className="engineering-hero">
+      {/* <section className="engineering-hero">
         <Image
           src="/images/eng.png"
           alt="Dearo Engineering "
@@ -15,7 +15,7 @@ export default function EngineeringPage() {
           priority
           className="hero-image"
         />
-      </section>
+      </section> */}
 
       {/* ================= CONTENT ================= */}
       <section className="engineering-content">
