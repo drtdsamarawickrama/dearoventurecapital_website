@@ -12,7 +12,7 @@ const directors = [
       
       // "Chairman of the Credit Committee",
     ],
-    image: "/images/directors/mr jabeer.png",
+    image: "/images/directors/jabeer_new.jpg",
 
     description:
       "Mr. K.M.M. Jabir is an experienced financial services professional with extensive expertise in banking, finance, operations, and corporate leadership.",
@@ -26,7 +26,7 @@ const directors = [
     experience: [
       "Former Board Director - SMIB",
       "Former Executive Director/ CEO- Janashakthi Finance PLC",
-      "Former Executive Director/ CEO- Richard Ariepis Finance Ltd",
+      "Former Executive Director/ CEO- Richard Pieris Finance Ltd",
       "DGM - Operations - People Leasing PLC",
     ],
   },
@@ -36,7 +36,7 @@ const directors = [
     role: [
       "Non Independent / Executive Director",
     ],
-    image: "/images/directors/Picture1-Picsart-AiImageEnhancer.png",
+    image: "/images/directors/prasanna_new.jpg",
 
     description:
       "Mr. Prasanna Sanjeewa Ranasinghe is a senior business leader with experience in investment, finance, marketing, and strategic management. He currently serves as the Managing Director and Chief Executive Officer of Dearo Venture Capital Ltd.",
@@ -59,7 +59,7 @@ const directors = [
       "Independent / Non Executive Director",
       // "Chairman of the IT Steering Committee",
     ],
-    image: "/images/directors/muditha.jpg",
+    image: "/images/directors/muditha_new.jpg",
 
     description:
       "Mr. Muditha Welihinda is an information technology professional with extensive experience in IT management, information systems auditing, and technology leadership.",
@@ -86,7 +86,7 @@ const directors = [
       "Independent / Non-Executive Director",
       // "Chairman of the Risk & Compliance Committee",
     ],
-    image: "/images/directors/lalith.jpg",
+    image: "/images/directors/lalith_new.jpg",
 
     description:
       "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services.",
@@ -140,7 +140,7 @@ const directors = [
     role: [
       "Independent / Non Executive Director",
     ],
-    image: "/images/directors/shaheena.jpg",
+    image: "/images/directors/saheena_new.jpg",
 
     description:
       "Ms. Shaheena Mohamed is a legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions.",
