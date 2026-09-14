@@ -382,13 +382,13 @@ export default function DirectorsPage() {
 
         {/* ================= DIVIDER ================= */}
 
-        <div className="section-divider my-5">
+        {/* <div className="section-divider my-5">
           <span className="divider-line" />
-        </div>
+        </div> */}
 
         {/* ================= CORPORATE MANAGEMENT ================= */}
 
-        <div className="text-center mb-5">
+        {/* <div className="text-center mb-5">
 
           <h2 className="page-title">
             Corporate Management
@@ -398,9 +398,9 @@ export default function DirectorsPage() {
             Driving operational excellence across Dearo Venture Capital Limited
           </p>
 
-        </div>
+        </div> */}
 
-        <div className="row justify-content-center g-4 management-row">
+        {/* <div className="row justify-content-center g-4 management-row">
 
           {corporateManagement.map((member, index) => (
 
@@ -413,7 +413,7 @@ export default function DirectorsPage() {
 
                 {/* ================= IMAGE ================= */}
 
-                <div className="mx-auto mb-3 position-relative photo-wrapper">
+                {/* <div className="mx-auto mb-3 position-relative photo-wrapper">
 
                   <Image
                     src={member.image}
@@ -424,29 +424,29 @@ export default function DirectorsPage() {
                       objectFit: "cover",
                       borderRadius: "50%",
                     }}
-                  />
+                  /> */} 
 
-                </div>
+                {/* </div> */}
 
                 {/* ================= NAME ================= */}
 
-                <h6 className="fw-semibold mb-1">
+                {/* <h6 className="fw-semibold mb-1">
                   {member.name}
-                </h6>
+                </h6> */}
 
                 {/* ================= ROLE ================= */}
 
-                <small className="role-badge">
+                {/* <small className="role-badge">
                   {member.role}
                 </small>
 
-              </div>
+              </div> */}
 
-            </div>
+            {/* </div> */}
 
-          ))}
+          {/* ))} */}
 
-        </div>
+        {/* </div> */}
 
       </section>
 
