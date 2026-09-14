@@ -7,7 +7,7 @@ export default function AgriculturePage() {
   return (
     <main className="agriculture-page">
       {/* ================= HERO IMAGE ================= */}
-      <section className="agriculture-hero">
+      {/* <section className="agriculture-hero">
         <Image
           src="/images/ag.jpeg"
           alt="Dearo Agriculture"
@@ -15,7 +15,7 @@ export default function AgriculturePage() {
           priority
           className="hero-image"
         />
-      </section>
+      </section> */}
 
       {/* ================= CONTENT ================= */}
       <section className="agriculture-content">
