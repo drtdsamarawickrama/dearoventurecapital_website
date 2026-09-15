@@ -12,7 +12,7 @@ const directors = [
       
       // "Chairman of the Credit Committee",
     ],
-    image: "/images/directors/mr jabeer.png",
+    image: "/images/directors/jabeer_new.jpg",
 
     description:
       "Mr. K.M.M. Jabir is an experienced financial services professional with extensive expertise in banking, finance, operations, and corporate leadership.",
@@ -26,7 +26,7 @@ const directors = [
     experience: [
       "Former Board Director - SMIB",
       "Former Executive Director/ CEO- Janashakthi Finance PLC",
-      "Former Executive Director/ CEO- Richard Ariepis Finance Ltd",
+      "Former Executive Director/ CEO- Richard Pieris Finance Ltd",
       "DGM - Operations - People Leasing PLC",
     ],
   },
@@ -36,7 +36,7 @@ const directors = [
     role: [
       "Non Independent / Executive Director",
     ],
-    image: "/images/directors/Picture1-Picsart-AiImageEnhancer.png",
+    image: "/images/directors/prasanna_new.jpg",
 
     description:
       "Mr. Prasanna Sanjeewa Ranasinghe is a senior business leader with experience in investment, finance, marketing, and strategic management. He currently serves as the Managing Director and Chief Executive Officer of Dearo Venture Capital Ltd.",
@@ -59,7 +59,7 @@ const directors = [
       "Independent / Non Executive Director",
       // "Chairman of the IT Steering Committee",
     ],
-    image: "/images/directors/muditha.jpg",
+    image: "/images/directors/muditha_new.jpg",
 
     description:
       "Mr. Muditha Welihinda is an information technology professional with extensive experience in IT management, information systems auditing, and technology leadership.",
@@ -86,7 +86,7 @@ const directors = [
       "Independent / Non-Executive Director",
       // "Chairman of the Risk & Compliance Committee",
     ],
-    image: "/images/directors/lalith.jpg",
+    image: "/images/directors/lalith_new.jpg",
 
     description:
       "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services.",
@@ -140,7 +140,7 @@ const directors = [
     role: [
       "Independent / Non Executive Director",
     ],
-    image: "/images/directors/shaheena.jpg",
+    image: "/images/directors/saheena_new.jpg",
 
     description:
       "Ms. Shaheena Mohamed is a legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions.",
@@ -382,13 +382,13 @@ export default function DirectorsPage() {
 
         {/* ================= DIVIDER ================= */}
 
-        <div className="section-divider my-5">
+        {/* <div className="section-divider my-5">
           <span className="divider-line" />
-        </div>
+        </div> */}
 
         {/* ================= CORPORATE MANAGEMENT ================= */}
 
-        <div className="text-center mb-5">
+        {/* <div className="text-center mb-5">
 
           <h2 className="page-title">
             Corporate Management
@@ -398,9 +398,9 @@ export default function DirectorsPage() {
             Driving operational excellence across Dearo Venture Capital Limited
           </p>
 
-        </div>
+        </div> */}
 
-        <div className="row justify-content-center g-4 management-row">
+        {/* <div className="row justify-content-center g-4 management-row">
 
           {corporateManagement.map((member, index) => (
 
@@ -413,7 +413,7 @@ export default function DirectorsPage() {
 
                 {/* ================= IMAGE ================= */}
 
-                <div className="mx-auto mb-3 position-relative photo-wrapper">
+                {/* <div className="mx-auto mb-3 position-relative photo-wrapper">
 
                   <Image
                     src={member.image}
@@ -424,29 +424,29 @@ export default function DirectorsPage() {
                       objectFit: "cover",
                       borderRadius: "50%",
                     }}
-                  />
+                  /> */} 
 
-                </div>
+                {/* </div> */}
 
                 {/* ================= NAME ================= */}
 
-                <h6 className="fw-semibold mb-1">
+                {/* <h6 className="fw-semibold mb-1">
                   {member.name}
-                </h6>
+                </h6> */}
 
                 {/* ================= ROLE ================= */}
 
-                <small className="role-badge">
+                {/* <small className="role-badge">
                   {member.role}
                 </small>
 
-              </div>
+              </div> */}
 
-            </div>
+            {/* </div> */}
 
-          ))}
+          {/* ))} */}
 
-        </div>
+        {/* </div> */}
 
       </section>
 
