@@ -195,7 +195,7 @@ const corporateManagement = [
     role: "Head of Adminstration",
     image: "/images/directors/rajitha.jpg",
     description:
-"Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives."
+"Mr. Rajitha Bandara serves as the Head of Administration at Dearo Venture Capital, providing effective leadership across administrative operations and organizational support. He focuses on maintaining efficient processes, coordinating internal functions, strengthening operational standards, and supporting a productive workplace environment, contributing to the company’s overall efficiency, growth, and professional excellence."
   },
 
   {
