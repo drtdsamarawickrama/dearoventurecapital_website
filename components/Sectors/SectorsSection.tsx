@@ -40,6 +40,7 @@ const sectors = [
     image: "/images/it.jpg",
     href: "/sectors/it-solutions",
   },
+  
 ];
 
 export default function BusinessSectors() {
