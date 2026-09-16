@@ -1226,7 +1226,7 @@ footer .quick-link::after {
   transition:
     background 0.3s ease,
     gap 0.3s ease;
-}
+} 
 
 
 .card-content button:hover {

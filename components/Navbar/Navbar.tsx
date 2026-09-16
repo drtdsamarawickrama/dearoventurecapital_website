@@ -181,7 +181,7 @@ export default function Navbar() {
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
-                    About Us
+                    Our Company
                   </Link>
 
                   <Link
@@ -200,13 +200,13 @@ export default function Navbar() {
                     Subsidiaries
                   </Link>
 
-                  <Link
+                  {/* <Link
                     href="#"
                     className="dropdown-item-custom"
                     onClick={closeMenu}
                   >
                     Islamic Services
-                  </Link>
+                  </Link> */}
 
                 </div>
               </li>
