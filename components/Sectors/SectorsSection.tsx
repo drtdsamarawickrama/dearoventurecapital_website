@@ -9,38 +9,44 @@ const sectors = [
     title: "Agriculture & Plantation",
     description:
       "Sustainable farming solutions powered by modern agricultural technology and innovation.",
-    image: "/images/ag.jpeg",
+    image: "/images/Untitled design (1).png",
     href: "/sectors/agriculture",
   },
   {
     title: "Engineering & Construction",
     description:
       "High-quality civil, structural, and infrastructure development across Sri Lanka.",
-    image: "/images/eng.png",
+    image: "/images/Untitled design (2).png",
     href: "/sectors/engineering",
   },
   {
     title: "Education & Training",
     description:
       "Professional education programs focused on skills development and future readiness.",
-    image: "/images/ed.png",
+    image: "/images/Untitled design (3).png",
     href: "/sectors/education",
   },
   {
     title: "DCCI – From Our Waters to the World",
     description:
       "Sustainable source seafood processed with international quality standards for global markets.",
-    image: "/images/dcc.jpg",
+    image: "/images/Untitled design (4).png",
     href: "/sectors/dcci",
   },
   {
     title: "Dearo IT Solutions",
     description:
-      "Innovating the Digital Future: Smart, Secure and scalable IT solutions designed to empower your business.",
-    image: "/images/it.jpg",
+      "Innovating the Digital Future: Smart, secure and scalable IT solutions designed to empower your business.",
+    image: "/images/Untitled design (5).png",
     href: "/sectors/it-solutions",
   },
-  
+  {
+    title: "Dearo Islamic Services",
+    description:
+      "Shariah-compliant solutions offering ethical, transparent and responsible financial services designed to support sustainable growth.",
+    image: "/images/Untitled design (6).png",
+    href: "/sectors/#",
+  },
 ];
 
 export default function BusinessSectors() {
@@ -50,7 +56,7 @@ export default function BusinessSectors() {
 
         {/* ================= HEADER ================= */}
         <div className="sectors-header">
-          {/* <span className="section-label">OUR BUSINESS</span> */}
+          <span className="section-label">OUR BUSINESS</span>
 
           <h2>Our Subsidiaries</h2>
 
@@ -76,6 +82,7 @@ export default function BusinessSectors() {
                 aria-label={`View ${sector.title}`}
               >
                 <div className="sector-image-wrapper">
+
                   <Image
                     src={sector.image}
                     alt={sector.title}
@@ -89,8 +96,10 @@ export default function BusinessSectors() {
                     priority={index === 0}
                   />
 
-                  <div className="image-gradient" />
+                  {/* Red bottom accent */}
+                  <div className="image-accent" />
 
+                  {/* View More */}
                   <div className="view-more">
                     <span>View More</span>
                     <span className="arrow">→</span>
@@ -103,11 +112,6 @@ export default function BusinessSectors() {
                 <h3>{sector.title}</h3>
 
                 <p>{sector.description}</p>
-
-                {/* <Link href={sector.href} className="learn-more">
-                  Explore
-                  <span>→</span>
-                </Link> */}
               </div>
             </article>
           ))}
@@ -116,17 +120,15 @@ export default function BusinessSectors() {
 
       {/* ================= STYLES ================= */}
       <style jsx>{`
+
         /* =====================================================
-           SECTION
+           MAIN SECTION
         ===================================================== */
 
         .sectors-section {
           width: 100%;
-
-          /* Reduced top space */
-          padding: 35px 24px 80px;
-
-          background: #f7f9fc;
+          padding: 45px 24px 90px;
+          background: #ffffff;
           overflow: hidden;
         }
 
@@ -142,42 +144,35 @@ export default function BusinessSectors() {
 
         .sectors-header {
           max-width: 720px;
-          margin: 0 auto 45px;
+          margin: 0 auto 50px;
           text-align: center;
-
           animation: headerFade 0.8s ease forwards;
         }
 
         .section-label {
           display: inline-block;
           margin-bottom: 10px;
-
+          color: #c62828;
           font-size: 0.75rem;
-          font-weight: 700;
+          font-weight: 800;
           letter-spacing: 2px;
           text-transform: uppercase;
-
-          color: #1769aa;
         }
 
         .sectors-header h2 {
           margin: 0 0 12px;
-
+          color: #0b1f4b !important;
           font-size: clamp(2rem, 4vw, 3.2rem);
           line-height: 1.15;
           font-weight: 750;
           letter-spacing: -1px;
-
-          color: #0b1f4b !important;
         }
 
         .sectors-header p {
           margin: 0;
-
+          color: #667085;
           font-size: clamp(0.95rem, 1.3vw, 1.08rem);
           line-height: 1.6;
-
-          color: #667085;
         }
 
         /* =====================================================
@@ -186,7 +181,7 @@ export default function BusinessSectors() {
 
         .sectors-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(4, minmax(0, 1fr));
           gap: 28px;
         }
 
@@ -197,18 +192,15 @@ export default function BusinessSectors() {
         .sector-card {
           display: flex;
           flex-direction: column;
-
           min-width: 0;
-
+          min-height: 100%;
           background: #ffffff;
-
-          border: 1px solid rgba(11, 31, 75, 0.07);
-          border-radius: 22px;
-
+          border: 1px solid rgba(11, 31, 75, 0.12);
+          border-radius: 20px;
           overflow: hidden;
 
           box-shadow:
-            0 8px 25px rgba(11, 31, 75, 0.05),
+            0 8px 25px rgba(11, 31, 75, 0.07),
             0 2px 8px rgba(11, 31, 75, 0.03);
 
           opacity: 0;
@@ -224,69 +216,87 @@ export default function BusinessSectors() {
         .sector-card:hover {
           transform: translateY(-8px);
 
-          border-color: rgba(23, 105, 170, 0.16);
+          border-color: #c62828;
 
           box-shadow:
-            0 24px 55px rgba(11, 31, 75, 0.11),
-            0 8px 20px rgba(11, 31, 75, 0.05);
+            0 24px 55px rgba(11, 31, 75, 0.14),
+            0 8px 20px rgba(198, 40, 40, 0.08);
         }
 
         /* =====================================================
-           IMAGE
+           IMAGE LINK
         ===================================================== */
 
         .sector-image-link {
           display: block;
-
+          width: 100%;
           text-decoration: none;
           color: inherit;
         }
+
+        /* =====================================================
+           IMAGE WRAPPER
+        ===================================================== */
 
         .sector-image-wrapper {
           position: relative;
 
           width: 100%;
-          height: 250px;
+
+          /*
+            Responsive aspect ratio.
+            This prevents images from becoming stretched.
+          */
+          aspect-ratio: 16 / 10;
 
           overflow: hidden;
 
-          background: #e9edf3;
-        }
-
-        .sector-image {
-          object-fit: cover;
-
-          transition:
-            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-            filter 0.5s ease;
-        }
-
-        .sector-card:hover .sector-image {
-          transform: scale(1.07);
+          background: #f4f6fa;
         }
 
         /* =====================================================
-           IMAGE GRADIENT
+           IMAGE
+
+           IMPORTANT:
+           cover keeps the image proportional.
+           It may crop a small amount from the edges,
+           but it will NOT stretch the image.
         ===================================================== */
 
-        .image-gradient {
-          position: absolute;
-          inset: 0;
+        .sector-image {
+          object-fit: cover !important;
+          object-position: center center;
 
-          background:
-            linear-gradient(
-              to bottom,
-              rgba(11, 31, 75, 0) 35%,
-              rgba(11, 31, 75, 0.58) 100%
-            );
-
-          opacity: 0.75;
-
-          transition: opacity 0.4s ease;
+          transition: transform 0.5s ease;
         }
 
-        .sector-card:hover .image-gradient {
-          opacity: 1;
+        .sector-card:hover .sector-image {
+          transform: scale(1.04);
+        }
+
+        /* =====================================================
+           RED ACCENT
+        ===================================================== */
+
+        .image-accent {
+          position: absolute;
+
+          left: 0;
+          bottom: 0;
+
+          width: 100%;
+          height: 5px;
+
+          background: #c62828;
+
+          transform: scaleX(0);
+          transform-origin: left;
+
+          transition: transform 0.4s ease;
+        }
+
+        .sector-card:hover .image-accent {
+          transform: scaleX(1);
         }
 
         /* =====================================================
@@ -296,29 +306,27 @@ export default function BusinessSectors() {
         .view-more {
           position: absolute;
 
-          left: 22px;
+          left: 20px;
           bottom: 20px;
 
           display: inline-flex;
           align-items: center;
+
           gap: 9px;
 
-          padding: 9px 14px;
+          padding: 9px 15px;
 
-          border: 1px solid rgba(255, 255, 255, 0.5);
+          border: 1px solid #ffffff;
           border-radius: 30px;
 
-          background: rgba(255, 255, 255, 0.12);
-
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-
+          background: #0b1f4b;
           color: #ffffff;
 
           font-size: 0.8rem;
-          font-weight: 600;
+          font-weight: 700;
 
           opacity: 0;
+
           transform: translateY(8px);
 
           transition:
@@ -330,6 +338,10 @@ export default function BusinessSectors() {
         .sector-card:hover .view-more {
           opacity: 1;
           transform: translateY(0);
+        }
+
+        .view-more:hover {
+          background: #c62828;
         }
 
         .view-more .arrow {
@@ -344,7 +356,7 @@ export default function BusinessSectors() {
         }
 
         /* =====================================================
-           CONTENT
+           CARD CONTENT
         ===================================================== */
 
         .sector-content {
@@ -352,67 +364,60 @@ export default function BusinessSectors() {
           flex-direction: column;
           flex: 1;
 
-          padding: 25px 27px 24px;
+          padding: 25px 27px 26px;
+
+          background: #ffffff;
         }
+
+        /* =====================================================
+           CARD TITLE
+        ===================================================== */
 
         .sector-content h3 {
-          margin: 0 0 11px;
+          position: relative;
+
+          margin: 0 0 13px;
+
+          padding-left: 14px;
+
+          color: #0b1f4b;
 
           font-size: clamp(1.15rem, 1.5vw, 1.35rem);
-          line-height: 1.35;
-          font-weight: 700;
 
-          color: #111827;
+          line-height: 1.35;
+
+          font-weight: 700;
         }
+
+        .sector-content h3::before {
+          content: "";
+
+          position: absolute;
+
+          left: 0;
+          top: 3px;
+
+          width: 4px;
+
+          height: calc(100% - 6px);
+
+          border-radius: 5px;
+
+          background: #c62828;
+        }
+
+        /* =====================================================
+           CARD DESCRIPTION
+        ===================================================== */
 
         .sector-content p {
           margin: 0;
 
-          font-size: 0.93rem;
-          line-height: 1.7;
-
           color: #667085;
-        }
 
-        /* =====================================================
-           EXPLORE LINK
-        ===================================================== */
+          font-size: 0.93rem;
 
-        .learn-more {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-
-          width: fit-content;
-
-          margin-top: auto;
-          padding-top: 18px;
-
-          color: #0b4f8a;
-
-          text-decoration: none;
-
-          font-size: 0.88rem;
-          font-weight: 700;
-
-          transition:
-            color 0.3s ease,
-            gap 0.3s ease;
-        }
-
-        .learn-more span {
-          font-size: 1.05rem;
-
-          transition: transform 0.3s ease;
-        }
-
-        .learn-more:hover {
-          color: #1769aa;
-          gap: 11px;
-        }
-
-        .learn-more:hover span {
-          transform: translateX(3px);
+          line-height: 1.7;
         }
 
         /* =====================================================
@@ -420,8 +425,9 @@ export default function BusinessSectors() {
         ===================================================== */
 
         @media (min-width: 640px) and (max-width: 1023px) {
+
           .sectors-section {
-            padding: 32px 28px 70px;
+            padding: 40px 28px 75px;
           }
 
           .sectors-grid {
@@ -430,7 +436,11 @@ export default function BusinessSectors() {
           }
 
           .sector-image-wrapper {
-            height: 235px;
+            aspect-ratio: 16 / 10;
+          }
+
+          .sector-content {
+            padding: 23px 24px 24px;
           }
         }
 
@@ -439,9 +449,9 @@ export default function BusinessSectors() {
         ===================================================== */
 
         @media (max-width: 639px) {
+
           .sectors-section {
-            /* Reduced top space on mobile */
-            padding: 25px 18px 60px;
+            padding: 30px 18px 65px;
           }
 
           .sectors-header {
@@ -463,6 +473,8 @@ export default function BusinessSectors() {
             line-height: 1.6;
           }
 
+          /* One column */
+
           .sectors-grid {
             grid-template-columns: 1fr;
             gap: 20px;
@@ -472,12 +484,29 @@ export default function BusinessSectors() {
             border-radius: 18px;
           }
 
+          /* Responsive image */
+
           .sector-image-wrapper {
-            height: 220px;
+            width: 100%;
+
+            /*
+              Keeps the same proportion on every
+              mobile screen.
+            */
+            aspect-ratio: 16 / 10;
+
+            background: #f4f6fa;
           }
 
+          .sector-image {
+            object-fit: cover !important;
+            object-position: center center;
+          }
+
+          /* Content */
+
           .sector-content {
-            padding: 22px 21px 21px;
+            padding: 22px 21px 22px;
           }
 
           .sector-content h3 {
@@ -489,13 +518,23 @@ export default function BusinessSectors() {
             line-height: 1.65;
           }
 
-          /* No hover-only button on mobile */
+          /* View more visible on mobile */
+
           .view-more {
-            display: none;
+            opacity: 1;
+
+            transform: none;
+
+            left: 15px;
+            bottom: 15px;
+
+            padding: 8px 12px;
+
+            font-size: 0.75rem;
           }
 
-          .learn-more {
-            padding-top: 16px;
+          .image-accent {
+            transform: scaleX(1);
           }
         }
 
@@ -504,16 +543,25 @@ export default function BusinessSectors() {
         ===================================================== */
 
         @media (max-width: 380px) {
+
           .sectors-section {
-            padding: 22px 14px 55px;
+            padding: 25px 14px 55px;
           }
 
           .sector-image-wrapper {
-            height: 205px;
+            aspect-ratio: 16 / 10;
           }
 
           .sector-content {
             padding: 20px 18px;
+          }
+
+          .sector-content h3 {
+            font-size: 1.1rem;
+          }
+
+          .sector-content p {
+            font-size: 0.88rem;
           }
         }
 
@@ -522,6 +570,7 @@ export default function BusinessSectors() {
         ===================================================== */
 
         @media (prefers-reduced-motion: reduce) {
+
           .sector-card,
           .sectors-header {
             animation: none;
@@ -531,7 +580,7 @@ export default function BusinessSectors() {
           .sector-card,
           .sector-image,
           .view-more,
-          .learn-more {
+          .image-accent {
             transition: none;
           }
         }
@@ -541,6 +590,7 @@ export default function BusinessSectors() {
         ===================================================== */
 
         @keyframes cardFade {
+
           from {
             opacity: 0;
             transform: translateY(25px);
@@ -553,6 +603,7 @@ export default function BusinessSectors() {
         }
 
         @keyframes headerFade {
+
           from {
             opacity: 0;
             transform: translateY(18px);
@@ -563,6 +614,7 @@ export default function BusinessSectors() {
             transform: translateY(0);
           }
         }
+
       `}</style>
     </section>
   );

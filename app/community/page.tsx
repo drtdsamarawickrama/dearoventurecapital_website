@@ -6,18 +6,19 @@ import Image from "next/image";
 
 const newsArticles = [
   {
-    title:
-      "Dearo Venture Capital Announces New Board of Directors",
+    title: "Dearo Venture Capital Announces New Board of Directors",
     description:
       "Dearo Venture Capital Ltd has strengthened its leadership with the appointment of a new Board of Directors, marking a significant milestone in the company’s continued growth and strategic development. The announcement was made at a special media conference held on 10 September 2026 at the company’s Head Office at Ceylinco House, Colombo 01.",
-    images: ["/images/news/news_m-1.jpg",
+    images: [
+      "/images/news/news_m-1.jpg",
       "/images/news/news_m-2.jpg",
-            "/images/news/news_m-3.jpg",
-                  "/images/news/news_m-4.jpg",
-
-
+      "/images/news/news_m-3.jpg",
+      "/images/news/news_m-4.jpg",
+      "/images/news/news_m-5.jpg",
+      "/images/news/news_m_6.jpg",
+      "/images/news/news_m-7.jpg",
+      "/images/news/news_m-8.jpg",
     ],
-
   },
 
   {
@@ -62,25 +63,97 @@ const newsArticles = [
 export default function NewsPage() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
+  /*
+    Each news article has its own slider index.
+    Example:
+    First article = 0
+    Second article = 0
+    Third article = 0
+  */
   const [slideIndexes, setSlideIndexes] = useState<number[]>(
     newsArticles.map(() => 0)
   );
 
-  /* ================= AUTO IMAGE SLIDER ================= */
+  /* =====================================================
+     AUTO IMAGE SLIDER
+     
+     Every 5 seconds the current image changes.
+     This works for ALL images in each article.
+  ===================================================== */
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideIndexes((prev) =>
-        prev.map((value, index) =>
-          newsArticles[index].images.length > 1
-            ? (value + 1) % newsArticles[index].images.length
-            : value
-        )
+        prev.map((value, index) => {
+          const imageCount = newsArticles[index].images.length;
+
+          if (imageCount <= 1) {
+            return 0;
+          }
+
+          return (value + 1) % imageCount;
+        })
       );
-    }, 4000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
+
+  /* =====================================================
+     MANUAL PREVIOUS
+  ===================================================== */
+
+  const previousSlide = (newsIndex: number) => {
+    setSlideIndexes((prev) => {
+      const updated = [...prev];
+
+      const imageCount = newsArticles[newsIndex].images.length;
+
+      if (imageCount <= 1) {
+        return updated;
+      }
+
+      updated[newsIndex] =
+        (updated[newsIndex] - 1 + imageCount) % imageCount;
+
+      return updated;
+    });
+  };
+
+  /* =====================================================
+     MANUAL NEXT
+  ===================================================== */
+
+  const nextSlide = (newsIndex: number) => {
+    setSlideIndexes((prev) => {
+      const updated = [...prev];
+
+      const imageCount = newsArticles[newsIndex].images.length;
+
+      if (imageCount <= 1) {
+        return updated;
+      }
+
+      updated[newsIndex] =
+        (updated[newsIndex] + 1) % imageCount;
+
+      return updated;
+    });
+  };
+
+  /* =====================================================
+     GO TO SPECIFIC SLIDE
+  ===================================================== */
+
+  const goToSlide = (newsIndex: number, slideIndex: number) => {
+    setSlideIndexes((prev) => {
+      const updated = [...prev];
+
+      updated[newsIndex] = slideIndex;
+
+      return updated;
+    });
+  };
 
   return (
     <main className="news-page">
@@ -101,6 +174,7 @@ export default function NewsPage() {
           </h1>
 
         </div>
+
       </section>
 
 
@@ -113,16 +187,6 @@ export default function NewsPage() {
         <div className="container">
 
           <div className="news-section-heading">
-
-            {/* <div>
-              <div className="section-label">
-                LATEST FROM DEARO
-              </div>
-
-              <h2>
-                Our <span>News</span>
-              </h2>
-            </div> */}
 
             <div className="heading-line"></div>
 
@@ -152,10 +216,14 @@ export default function NewsPage() {
                   <article className="news-card">
 
                     {/* =================================================
-                        IMAGE
+                        IMAGE SLIDER
                     ================================================= */}
 
                     <div className="news-image">
+
+                      {/* ===============================
+                          ALL IMAGES
+                      =============================== */}
 
                       {news.images.map((img, imageIndex) => (
 
@@ -170,19 +238,19 @@ export default function NewsPage() {
 
                           <Image
                             src={img}
-                            alt={news.title}
+                            alt={`${news.title} - Image ${imageIndex + 1}`}
                             fill
                             quality={100}
-                            priority={index < 3}
+                            priority={
+                              index === 0 && imageIndex === 0
+                            }
                             sizes="
                               (max-width: 576px) 100vw,
                               (max-width: 768px) 100vw,
                               (max-width: 1200px) 50vw,
                               33vw
                             "
-                            style={{
-                              objectFit: "cover",
-                            }}
+                            className="news-slide-image"
                           />
 
                         </div>
@@ -190,26 +258,77 @@ export default function NewsPage() {
                       ))}
 
 
-                      {/* IMAGE OVERLAY */}
+                      {/* =================================================
+                          IMAGE OVERLAY
+                      ================================================= */}
 
                       <div className="image-overlay"></div>
 
 
-                      {/* NEWS BADGE */}
+                      {/* =================================================
+                          NEWS BADGE
+                      ================================================= */}
 
-                      <div className="news-badge">
+                      {/* <div className="news-badge">
                         NEWS
-                      </div>
+                      </div> */}
 
 
-                      {/* IMAGE NUMBER */}
+                      {/* =================================================
+                          IMAGE NUMBER
 
-                      <div className="image-number">
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
+                          First article:
+                          01 / 02 / 03 / ... / 08
+                      ================================================= */}
+
+                      {news.images.length > 1 && (
+
+                        <div className="image-number">
+                          {String(currentSlide + 1).padStart(2, "0")}
+                          <span>
+                            / {String(news.images.length).padStart(2, "0")}
+                          </span>
+                        </div>
+
+                      )}
 
 
-                      {/* SLIDER DOTS */}
+                      {/* =================================================
+                          PREVIOUS / NEXT BUTTONS
+                      ================================================= */}
+
+                      {news.images.length > 1 && (
+
+                        <>
+
+                          <button
+                            type="button"
+                            className="slider-button slider-prev"
+                            onClick={() => previousSlide(index)}
+                            aria-label="Previous image"
+                          >
+                            ‹
+                          </button>
+
+                          <button
+                            type="button"
+                            className="slider-button slider-next"
+                            onClick={() => nextSlide(index)}
+                            aria-label="Next image"
+                          >
+                            ›
+                          </button>
+
+                        </>
+
+                      )}
+
+
+                      {/* =================================================
+                          SLIDER DOTS
+
+                          First news = 8 dots
+                      ================================================= */}
 
                       {news.images.length > 1 && (
 
@@ -217,14 +336,21 @@ export default function NewsPage() {
 
                           {news.images.map((_, dotIndex) => (
 
-                            <span
+                            <button
                               key={dotIndex}
+                              type="button"
+                              aria-label={`Go to image ${
+                                dotIndex + 1
+                              }`}
                               className={
                                 dotIndex === currentSlide
                                   ? "dot active"
                                   : "dot"
                               }
-                            ></span>
+                              onClick={() =>
+                                goToSlide(index, dotIndex)
+                              }
+                            />
 
                           ))}
 
@@ -236,7 +362,7 @@ export default function NewsPage() {
 
 
                     {/* =================================================
-                        CARD CONTENT
+                        CONTENT
                     ================================================= */}
 
                     <div className="news-content">
@@ -246,19 +372,28 @@ export default function NewsPage() {
                       </h3>
 
 
+                      {/* RED LINE */}
+
                       <div className="red-line"></div>
 
+
+                      {/* DESCRIPTION */}
 
                       <p>
                         {isExpanded
                           ? news.description
                           : news.description.length > previewLength
-                          ? news.description.slice(0, previewLength) + "..."
+                          ? news.description.slice(
+                              0,
+                              previewLength
+                            ) + "..."
                           : news.description}
                       </p>
 
 
-                      {/* READ MORE */}
+                      {/* =================================================
+                          READ MORE
+                      ================================================= */}
 
                       {news.description.length > previewLength && (
 
@@ -318,7 +453,11 @@ export default function NewsPage() {
 
 
         .container {
+          width: 100%;
           max-width: 1200px;
+          margin: 0 auto;
+          padding-left: 15px;
+          padding-right: 15px;
         }
 
 
@@ -373,7 +512,7 @@ export default function NewsPage() {
           text-align: center;
 
           font-size: clamp(
-            4rem,
+            3rem,
             6vw,
             5.2rem
           );
@@ -462,35 +601,6 @@ export default function NewsPage() {
         }
 
 
-        .section-label {
-          color: #e31e24;
-
-          font-size: 11px;
-
-          font-weight: 800;
-
-          letter-spacing: 2.5px;
-
-          margin-bottom: 8px;
-        }
-
-
-        .news-section-heading h2 {
-          margin: 0;
-
-          color: #0b1f4b;
-
-          font-size: 2.3rem;
-
-          font-weight: 800;
-        }
-
-
-        .news-section-heading h2 span {
-          color: #e31e24;
-        }
-
-
         .heading-line {
           flex: 1;
 
@@ -560,7 +670,7 @@ export default function NewsPage() {
 
 
         /* =====================================================
-           IMAGE
+           IMAGE CONTAINER
         ===================================================== */
 
         .news-image {
@@ -568,13 +678,21 @@ export default function NewsPage() {
 
           width: 100%;
 
-          height: 245px;
+          /*
+            Fixed aspect ratio instead of stretching.
+          */
+
+          aspect-ratio: 16 / 10;
 
           overflow: hidden;
 
           background: #0b1f4b;
         }
 
+
+        /* =====================================================
+           SLIDE
+        ===================================================== */
 
         .news-slide {
           position: absolute;
@@ -583,35 +701,46 @@ export default function NewsPage() {
 
           opacity: 0;
 
+          visibility: hidden;
+
+          z-index: 0;
+
           transition:
-            opacity 0.9s ease;
+            opacity 0.9s ease,
+            visibility 0.9s ease;
         }
 
 
         .news-slide.active {
           opacity: 1;
+
+          visibility: visible;
+
+          z-index: 1;
         }
 
 
-        /* IMAGE ZOOM */
+        /* =====================================================
+           IMAGE
 
-        .news-slide.active :global(img) {
-          animation:
-            imageZoom 5s ease
-            forwards;
+           Important:
+           object-fit cover prevents stretching.
+        ===================================================== */
+
+        .news-slide-image {
+          object-fit: cover;
+
+          object-position: center;
+
+          transform: scale(1);
+
+          transition:
+            transform 5s ease;
         }
 
 
-        @keyframes imageZoom {
-
-          from {
-            transform: scale(1);
-          }
-
-          to {
-            transform: scale(1.05);
-          }
-
+        .news-slide.active .news-slide-image {
+          transform: scale(1.04);
         }
 
 
@@ -624,7 +753,9 @@ export default function NewsPage() {
 
           inset: 0;
 
-          z-index: 1;
+          z-index: 2;
+
+          pointer-events: none;
 
           background:
             linear-gradient(
@@ -642,8 +773,6 @@ export default function NewsPage() {
                 0.55
               )
             );
-
-          pointer-events: none;
         }
 
 
@@ -657,7 +786,7 @@ export default function NewsPage() {
           left: 18px;
           top: 18px;
 
-          z-index: 3;
+          z-index: 4;
 
           padding:
             7px 13px;
@@ -695,14 +824,14 @@ export default function NewsPage() {
           right: 18px;
           bottom: 15px;
 
-          z-index: 3;
+          z-index: 4;
 
           color:
             rgba(
               255,
               255,
               255,
-              0.85
+              0.9
             );
 
           font-size: 28px;
@@ -713,8 +842,101 @@ export default function NewsPage() {
         }
 
 
+        .image-number span {
+          font-size: 13px;
+
+          font-weight: 500;
+
+          opacity: 0.8;
+
+          margin-left: 3px;
+        }
+
+
         /* =====================================================
-           DOTS
+           SLIDER BUTTONS
+        ===================================================== */
+
+        .slider-button {
+          position: absolute;
+
+          top: 50%;
+
+          z-index: 5;
+
+          width: 36px;
+          height: 36px;
+
+          display: flex;
+
+          align-items: center;
+
+          justify-content: center;
+
+          border: 1px solid
+            rgba(
+              255,
+              255,
+              255,
+              0.6
+            );
+
+          border-radius: 50%;
+
+          background:
+            rgba(
+              11,
+              31,
+              75,
+              0.75
+            );
+
+          color: #ffffff;
+
+          font-size: 28px;
+
+          line-height: 1;
+
+          cursor: pointer;
+
+          opacity: 0;
+
+          transform:
+            translateY(-50%);
+
+          transition:
+            opacity 0.3s ease,
+            background 0.3s ease,
+            transform 0.3s ease;
+        }
+
+
+        .news-image:hover .slider-button {
+          opacity: 1;
+        }
+
+
+        .slider-button:hover {
+          background: #e31e24;
+
+          transform:
+            translateY(-50%)
+            scale(1.08);
+        }
+
+
+        .slider-prev {
+          left: 14px;
+        }
+
+
+        .slider-next {
+          right: 14px;
+        }
+
+
+        /* =====================================================
+           SLIDER DOTS
         ===================================================== */
 
         .slider-dots {
@@ -723,19 +945,29 @@ export default function NewsPage() {
           left: 18px;
           bottom: 18px;
 
-          z-index: 4;
+          z-index: 5;
 
           display: flex;
 
           align-items: center;
 
-          gap: 6px;
+          gap: 5px;
+
+          max-width: calc(100% - 100px);
+
+          overflow: hidden;
         }
 
 
         .dot {
           width: 7px;
           height: 7px;
+
+          flex-shrink: 0;
+
+          padding: 0;
+
+          border: 0;
 
           border-radius: 50%;
 
@@ -747,8 +979,11 @@ export default function NewsPage() {
               0.55
             );
 
+          cursor: pointer;
+
           transition:
-            all 0.3s ease;
+            width 0.3s ease,
+            background 0.3s ease;
         }
 
 
@@ -885,6 +1120,19 @@ export default function NewsPage() {
 
 
         /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 991px) {
+
+          .news-image {
+            aspect-ratio: 16 / 10;
+          }
+
+        }
+
+
+        /* =====================================================
            MOBILE
         ===================================================== */
 
@@ -928,13 +1176,21 @@ export default function NewsPage() {
           }
 
 
-          .news-section-heading h2 {
-            font-size: 2rem;
+          .news-image {
+            aspect-ratio: 16 / 10;
           }
 
 
-          .news-image {
-            height: 230px;
+          /*
+            Always show arrows on mobile
+            because there is no hover.
+          */
+
+          .slider-button {
+            opacity: 1;
+
+            width: 34px;
+            height: 34px;
           }
 
         }
@@ -963,7 +1219,7 @@ export default function NewsPage() {
 
 
           .news-image {
-            height: 220px;
+            aspect-ratio: 16 / 10;
           }
 
 
@@ -975,6 +1231,20 @@ export default function NewsPage() {
 
           .news-content h3 {
             font-size: 1.05rem;
+          }
+
+
+          .image-number {
+            right: 15px;
+            bottom: 14px;
+
+            font-size: 23px;
+          }
+
+
+          .slider-dots {
+            left: 15px;
+            bottom: 15px;
           }
 
 
@@ -993,6 +1263,61 @@ export default function NewsPage() {
 
             left: -100px;
             bottom: -100px;
+          }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+          .news-image {
+            aspect-ratio: 4 / 3;
+          }
+
+
+          .slider-button {
+            width: 30px;
+            height: 30px;
+
+            font-size: 22px;
+          }
+
+
+          .dot {
+            width: 6px;
+            height: 6px;
+          }
+
+
+          .dot.active {
+            width: 18px;
+          }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .news-slide,
+          .news-slide-image,
+          .news-card,
+          .slider-button,
+          .dot,
+          .read-more,
+          .arrow {
+            transition: none !important;
+          }
+
+          .news-slide.active .news-slide-image {
+            transform: none;
           }
 
         }
