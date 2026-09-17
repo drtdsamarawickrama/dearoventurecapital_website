@@ -2,34 +2,10 @@
 
 import Image from "next/image";
 
-export default function AboutSection() {
-  const milestones = [
-    {
-      year: "2022",
-      title: "Our Journey",
-      description:
-        "Dearo Venture Capital Limited was formally established, laying the foundation for a disciplined and growth-oriented venture platform.",
-    },
-    {
-      year: "2023",
-      title: "Strategic Expansion",
-      description:
-        "Launch of Dearo Agri and Dearo Engineering, expanding operations into agriculture and engineering-led project facilitation. Dearo also grew its physical presence to 9 branches across Sri Lanka.",
-    },
-    {
-      year: "2024",
-      title: "Launch of Dearo Education",
-      description:
-        "Introduction of Dearo Education, extending impact into learning accessibility and educational initiatives.",
-    },
-    {
-      year: "2025",
-      title: "Nationwide Expansion",
-      description:
-        "Expanded to 25 branches across Sri Lanka, reinforcing nationwide reach and operational strength.",
-    },
-  ];
+import OurValues from "@/components/About/Our_values/page";
+import KeyMilestones from "@/components/About/KeyMilestones/page";
 
+export default function AboutSection() {
   const awards = [
     {
       title: "Iconic Awards 2024",
@@ -60,279 +36,325 @@ export default function AboutSection() {
   return (
     <section id="about" className="about-section">
       <div className="container">
-        {/* ================= ABOUT ================= */}
-        <div className="row about-row">
-          <div className="col-12">
-            {/* ABOUT TITLE */}
-            <h2 className="text-center section-title about-main-title">
-              <span className="about-text">About</span>{" "}
-              <span className="us-text">Us</span>
-            </h2>
+        {/* ==================================================
+            ABOUT HEADER
+        ================================================== */}
 
-            {/* ABOUT IMAGE */}
-            <div className="about-image-wrapper">
-              <div className="about-image-container">
-                <Image
-                  src="/images/about_dearo_new.jpg"
-                  alt="About Dearo Venture Capital"
-                  fill
-                  className="about-image"
-                  sizes="(max-width: 576px) 100vw, (max-width: 992px) 100vw, 100vw"
-                  priority
-                />
+        <div className="about-header">
+          <div className="section-kicker">
+
+          </div>
+
+          <h2 className="about-main-title">
+            <span className="about-text">About</span>{" "}
+            <span className="us-text">Us</span>
+          </h2>
+
+          <p className="about-heading-description">
+            Building opportunities. Supporting ambition. Creating sustainable
+            value.
+          </p>
+        </div>
+
+        {/* ==================================================
+            ABOUT IMAGE
+        ================================================== */}
+
+        <div className="about-image-wrapper">
+          <div className="about-image-container">
+            <Image
+              src="/images/about_dearo_new.jpg"
+              alt="About Dearo Venture Capital"
+              fill
+              className="about-image"
+              sizes="(max-width: 576px) 100vw, (max-width: 992px) 100vw, 1300px"
+              priority
+            />
+
+            <div className="image-overlay"></div>
+
+            <div className="image-badge">
+              <span className="badge-year">2022</span>
+              <span className="badge-text">Established</span>
+            </div>
+
+            <div className="image-corner image-corner-top"></div>
+            <div className="image-corner image-corner-bottom"></div>
+          </div>
+        </div>
+
+        {/* ==================================================
+            ABOUT CONTENT
+        ================================================== */}
+
+        <div className="about-description-wrapper">
+          <div className="description-accent"></div>
+
+          <p className="about-description">
+            Dearo Venture Capital Ltd is a diversified investment and business
+            development organization dedicated to creating sustainable value
+            for individuals, entrepreneurs, SMEs, and corporate partners across
+            Sri Lanka. Established in September 2022, the company has rapidly
+            evolved into one of the country's emerging investment institutions,
+            driven by a vision of empowering economic growth, supporting
+            innovation, and creating opportunities that uplift communities.
+            Through disciplined risk management, sound governance practices,
+            and a client-centric approach, Dearo Venture Capital Ltd provides
+            investment solutions that help clients achieve financial security
+            while contributing to national economic development. Our strength
+            lies in understanding market opportunities, building strategic
+            partnerships, and delivering innovative financial solutions that
+            generate long-term returns and sustainable growth.
+          </p>
+        </div>
+
+        {/* ==================================================
+            VISION & MISSION
+        ================================================== */}
+
+        <div className="vision-mission-section">
+          <div className="vision-mission-header">
+            <h3>
+              Driven by <span>purpose.</span> Focused on impact.
+            </h3>
+          </div>
+
+          <div className="row vision-mission-row">
+            {/* VISION */}
+
+            <div className="col-12 col-md-6 vision-mission-column">
+              <div className="vision-mission-card vision-card">
+                <div className="vision-mission-icon vision-icon">
+                  <svg
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 32C6 32 15 15 32 15C49 15 58 32 58 32C58 32 49 49 32 49C15 49 6 32 6 32Z"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="8"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    />
+
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="3"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+
+                <div className="vision-card-content">
+
+
+                  <h4>
+                    Our <strong>Vision</strong>
+                  </h4>
+
+                  <p>
+                    To become a trusted investment and venture capital
+                    institution contributing to sustainable economic growth
+                    and prosperity in Sri Lanka.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* ABOUT CONTENT */}
-            <div className="about-content">
-              <p className="about-description">
-                Dearo Venture Capital Ltd is a diversified investment and
-                business development organization dedicated to creating
-                sustainable value for individuals, entrepreneurs, SMEs, and
-                corporate partners across Sri Lanka. Established in September
-                2022, the company has rapidly evolved into one of the
-                country's emerging investment institutions, driven by a vision
-                of empowering economic growth, supporting innovation, and
-                creating opportunities that uplift communities. Through
-                disciplined risk management, sound governance practices, and a
-                client-centric approach, Dearo Venture Capital Ltd provides
-                investment solutions that help clients achieve financial
-                security while contributing to national economic development.
-                Our strength lies in understanding market opportunities,
-                building strategic partnerships, and delivering innovative
-                financial solutions that generate long-term returns and
-                sustainable growth.
+            {/* MISSION */}
+
+            <div className="col-12 col-md-6 vision-mission-column">
+              <div className="vision-mission-card mission-card">
+                <div className="vision-mission-icon mission-icon">
+                  <svg
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="23"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    />
+
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="14"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    />
+
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="6"
+                      fill="currentColor"
+                    />
+
+                    <path
+                      d="M32 5V13"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M32 51V59"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M5 32H13"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M51 32H59"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+
+                <div className="vision-card-content">
+
+                  <h4>
+                    Our <strong>Mission</strong>
+                  </h4>
+
+                  <p>
+                    To connect capital with opportunity by creating responsible
+                    investment solutions and supporting businesses with the
+                    resources required to grow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ==================================================
+              OUR VALUES
+          ================================================== */}
+
+          <div>
+            <OurValues />
+          </div>
+
+          {/* ==================================================
+              OUR STORY
+          ================================================== */}
+
+          <div className="story-section">
+            <div className="story-heading">
+              <h3 className="story-title">
+                <span className="story-our">Our</span>{" "}
+                <span className="story-story">Story</span>
+              </h3>
+
+              <p className="story-subtitle">
+                A journey built on opportunity, progress and purpose.
               </p>
+            </div>
 
-              {/* ================= VISION & MISSION ================= */}
-              <div className="row vision-mission-row">
-                {/* VISION */}
-                <div className="col-12 col-md-6 vision-mission-column">
-                  <div className="vision-mission-card vision-card">
-                    <div className="vision-mission-icon vision-icon">
-                      {/* Eye / Vision Icon */}
-                      <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M6 32C6 32 15 15 32 15C49 15 58 32 58 32C58 32 49 49 32 49C15 49 6 32 6 32Z"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
+            <div className="story-card">
+              <div className="story-quote">“</div>
 
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="8"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                        />
+              <div className="story-content">
+                <p>
+                  At Dearo Venture Capital Ltd, we believe that every
+                  individual, entrepreneur, and business has the potential to
+                  achieve extraordinary growth when supported by the right
+                  financial partner. Our brand was built on the vision of
+                  creating opportunities, empowering ambitions, and guiding
+                  investments toward long-term prosperity.
 
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="3"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </div>
+                  The Dearo logo represents a journey of progress. The
+                  upward-moving arrow symbolizes growth, achievement, and the
+                  continuous pursuit of success. The flowing paths beneath the
+                  arrow reflect the diverse financial journeys of our
+                  clients—individual investors, entrepreneurs, SMEs, and growing
+                  enterprises—all converging toward a common destination:
+                  financial security and wealth creation.
 
-                    <div className="card-content">
-                      <div className="accent-line"></div>
-
-                      <h4 className="vision-mission-title">
-                        Our <strong>Vision</strong>
-                      </h4>
-
-                      <p className="vision-mission-text">
-                        To become a trusted investment and venture capital institution contributing to sustainable
-economic growth and prosperity in Sri Lanka.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* MISSION */}
-                <div className="col-12 col-md-6 vision-mission-column">
-                  <div className="vision-mission-card mission-card">
-                    <div className="vision-mission-icon mission-icon">
-                      {/* Target / Mission Icon */}
-                      <svg
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="23"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                        />
-
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="14"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                        />
-
-                        <circle
-                          cx="32"
-                          cy="32"
-                          r="6"
-                          fill="currentColor"
-                        />
-
-                        <path
-                          d="M32 5V13"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                        />
-
-                        <path
-                          d="M32 51V59"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                        />
-
-                        <path
-                          d="M5 32H13"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                        />
-
-                        <path
-                          d="M51 32H59"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="accent-line"></div>
-
-                      <h4 className="vision-mission-title">
-                        Our <strong>Mission</strong>
-                      </h4>
-
-                      <p className="vision-mission-text">
-                        To connect capital with opportunity by creating responsible investment solutions and supporting
-businesses with the resources required to grow.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  Just as roads lead to new opportunities, Dearo serves as a
+                  trusted pathway connecting people with innovative investment
+                  solutions, strategic financial guidance, and sustainable
+                  wealth-building opportunities. The logo captures our
+                  commitment to helping clients move forward with confidence,
+                  clarity, and purpose.
+                </p>
               </div>
+
+              <div className="story-bottom-accent"></div>
             </div>
           </div>
+
+
+
+          <KeyMilestones />
         </div>
 
-        {/* ================= STORY ================= */}
-        <div className="row milestones-section">
-          <div className="col-12 text-center">
-            <h4 className="section-title section-heading">Our Story</h4>
-          </div>
+        {/* ==================================================
+            AWARDS & RECOGNITION
+        ================================================== */}
 
-          <div className="col-12 story-content">
-            <p>
-              At Dearo Venture Capital Ltd, we believe that every individual,
-              entrepreneur, and business has the potential to achieve
-              extraordinary growth when supported by the right financial
-              partner. Our brand was built on the vision of creating
-              opportunities, empowering ambitions, and guiding investments
-              toward long-term prosperity.
-            </p>
-
-            <p>
-              The Dearo logo represents a journey of progress. The
-              upward-moving arrow symbolizes growth, achievement, and the
-              continuous pursuit of success. The flowing paths beneath the
-              arrow reflect the diverse financial journeys of our
-              clients—individual investors, entrepreneurs, SMEs, and growing
-              enterprises—all converging toward a common destination:
-              financial security and wealth creation.
-            </p>
-
-            <p>
-              Just as roads lead to new opportunities, Dearo serves as a
-              trusted pathway connecting people with innovative investment
-              solutions, strategic financial guidance, and sustainable
-              wealth-building opportunities. The logo captures our commitment
-              to helping clients move forward with confidence, clarity, and
-              purpose.
-            </p>
-          </div>
-        </div>
-
-        {/* ================= MILESTONES ================= */}
-        <div className="row milestones-section">
-          <div className="col-12 text-center">
-            <h3 className="section-title section-heading">
-              Key Milestones
-            </h3>
-          </div>
-
-          {milestones.map((item, i) => (
-            <div
-              key={i}
-              className="col-12 col-md-6 milestone-column"
-            >
-              <div className="milestone-card h-100">
-                <h5>{item.year}</h5>
-
-                <h6>{item.title}</h6>
-
-                <p className="mb-0">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* ================= AWARDS ================= */}
-        <div className="row awards-section">
-          <div className="col-12 text-center">
-            <h3 className="section-title section-heading">
-              Awards &amp; Recognition
+        <div className="awards-section">
+          <div className="section-header">
+            <h3 className="section-heading">
+              Awards &  Recognition
             </h3>
 
-            <p className="awards-subtitle">
-              Recognition of excellence and leadership
+            <p className="section-subtitle">
+              Recognition of excellence and leadership.
             </p>
           </div>
 
-          {awards.map((award, i) => (
-            <div
-              key={i}
-              className="col-6 col-sm-6 col-md-4 col-lg-3 award-column"
-            >
-              <div className="award-card h-100">
-                <div className="award-icon">
-                  <Image
-                    src={award.image}
-                    alt={award.title}
-                    fill
-                    className="award-img"
-                    sizes="(max-width: 576px) 70px, (max-width: 992px) 90px, 110px"
-                  />
-                </div>
+          <div className="row awards-row">
+            {awards.map((award, i) => (
+              <div
+                key={i}
+                className="col-6 col-md-4 col-lg-3 award-column"
+              >
+                <div className="award-card">
+                  <div className="award-top-line"></div>
 
-                <h6>{award.title}</h6>
+                  <div className="award-icon">
+                    <Image
+                      src={award.image}
+                      alt={award.title}
+                      fill
+                      className="award-img"
+                      sizes="(max-width: 576px) 70px, (max-width: 992px) 90px, 110px"
+                    />
+                  </div>
+
+                  <h6>{award.title}</h6>
+
+                  <div className="award-bottom-line"></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -342,54 +364,91 @@ businesses with the resources required to grow.
 
       <style jsx>{`
         /* ==================================================
-           SECTION
+           MAIN SECTION
         ================================================== */
 
         .about-section {
-          padding: 0 0 80px;
-          overflow-x: hidden;
+          position: relative;
+          padding: 0 0 90px;
+          overflow: hidden;
           background: #f8fafc;
         }
 
-        .about-row {
-          margin-bottom: 70px;
+        .about-section::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 300px;
+
+          background:
+            radial-gradient(
+              circle at 10% 20%,
+              rgba(11, 31, 75, 0.05),
+              transparent 35%
+            ),
+            radial-gradient(
+              circle at 90% 10%,
+              rgba(198, 40, 40, 0.04),
+              transparent 30%
+            );
+
+          pointer-events: none;
+        }
+
+        .about-header,
+        .vision-mission-section,
+        .story-section,
+        .milestones-section,
+        .awards-section,
+        .values-section {
+          position: relative;
+          z-index: 2;
         }
 
         /* ==================================================
-           TITLES
+           ABOUT HEADER
         ================================================== */
 
-        .section-title {
-          color: #0b1f4b !important;
-          font-weight: 400;
+        .about-header {
+          text-align: center;
+          padding-top: 48px;
+          margin-bottom: 38px;
         }
 
-        .section-title strong {
-          font-weight: 700;
-        }
+        
 
         .about-main-title {
-          margin-top: 48px;
-          margin-bottom: 28px;
-          font-size: clamp(1.8rem, 3vw, 2.8rem);
-          font-weight: 800 !important;
-          line-height: 1.2;
+          margin: 0;
+
+          font-size: clamp(2.2rem, 4vw, 3.4rem);
+
+          line-height: 1.1;
+
+          font-weight: 800;
+
+          letter-spacing: -0.04em;
         }
 
-        .about-main-title .about-text {
+        .about-text {
           color: #0b1f4b;
-          font-weight: 800;
         }
 
-        .about-main-title .us-text {
+        .us-text {
           color: #c62828;
-          font-weight: 800;
         }
 
-        .section-heading {
-          font-size: clamp(1.5rem, 2.5vw, 2rem);
-          margin-bottom: 35px;
-          font-weight: 700;
+        .about-heading-description {
+          max-width: 650px;
+
+          margin: 14px auto 0;
+
+          color: #6b7280;
+
+          font-size: clamp(0.9rem, 1.1vw, 1rem);
+
+          line-height: 1.7;
         }
 
         /* ==================================================
@@ -399,119 +458,257 @@ businesses with the resources required to grow.
         .about-image-wrapper {
           width: 100%;
           max-width: 1300px;
-          margin: 0 auto 32px;
-          padding: 0;
+
+          margin: 0 auto 42px;
+
+          position: relative;
         }
 
         .about-image-container {
           position: relative;
+
           width: 100%;
+
           height: 0;
-          padding-bottom: 40%;
+
+          padding-bottom: 42%;
+
           overflow: hidden;
-          border-radius: 16px;
-          box-shadow: 0 8px 24px rgba(11, 31, 75, 0.08);
+
+          border-radius: 22px;
+
+          background: #0b1f4b;
+
+          box-shadow:
+            0 20px 50px rgba(11, 31, 75, 0.12),
+            0 5px 15px rgba(11, 31, 75, 0.06);
         }
 
         .about-image {
           object-fit: cover;
+
           object-position: center center;
+
+          transition: transform 0.8s ease;
+        }
+
+        .about-image-container:hover .about-image {
+          transform: scale(1.025);
+        }
+
+        .image-overlay {
+          position: absolute;
+
+          inset: 0;
+
+          background:
+            linear-gradient(
+              90deg,
+              rgba(11, 31, 75, 0.48),
+              transparent 45%,
+              rgba(11, 31, 75, 0.05)
+            );
+
+          z-index: 1;
+        }
+
+        .image-badge {
+          position: absolute;
+
+          left: 30px;
+          bottom: 30px;
+
+          z-index: 3;
+
+          display: flex;
+
+          flex-direction: column;
+
+          padding: 13px 18px;
+
+          min-width: 125px;
+
+          background: rgba(255, 255, 255, 0.96);
+
+          border-left: 4px solid #c62828;
+
+          border-radius: 8px;
+
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .badge-year {
+          color: #0b1f4b;
+
+          font-size: 1.35rem;
+
+          line-height: 1;
+
+          font-weight: 800;
+        }
+
+        .badge-text {
+          color: #6b7280;
+
+          font-size: 0.7rem;
+
+          margin-top: 5px;
+
+          letter-spacing: 0.08em;
+
+          text-transform: uppercase;
+        }
+
+        .image-corner {
+          position: absolute;
+
+          z-index: 3;
+
+          width: 70px;
+          height: 70px;
+
+          pointer-events: none;
+        }
+
+        .image-corner-top {
+          top: 20px;
+          right: 20px;
+
+          border-top: 2px solid rgba(255, 255, 255, 0.75);
+          border-right: 2px solid rgba(255, 255, 255, 0.75);
+        }
+
+        .image-corner-bottom {
+          bottom: 20px;
+          right: 20px;
+
+          border-bottom: 2px solid rgba(198, 40, 40, 0.9);
+          border-right: 2px solid rgba(198, 40, 40, 0.9);
         }
 
         /* ==================================================
-           ABOUT TEXT
+           ABOUT DESCRIPTION
         ================================================== */
 
-        .about-content,
-        .story-content {
+        .about-description-wrapper {
+          position: relative;
+
           width: 100%;
+
+          max-width: 1100px;
+
+          margin: 0 auto 65px;
+
+          padding: 0 60px;
         }
 
-        .about-content .about-description {
-          color: #374151;
-          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          line-height: 1.75;
-          text-align: justify;
-          text-justify: inter-word;
-          margin-bottom: 20px;
-          padding: 0 80px;
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-          font-family: inherit;
-          font-weight: 400;
+        .description-accent {
+          position: absolute;
+
+          top: 4px;
+          left: 0;
+
+          width: 4px;
+          height: 80px;
+
+          border-radius: 10px;
+
+          background: linear-gradient(
+            180deg,
+            #0b1f4b,
+            #c62828
+          );
         }
 
-        .story-content p,
-        .milestone-card p,
-        .story-text {
+        .about-description {
+          margin: 0;
+
           color: #374151;
-          font-size: clamp(0.95rem, 1.1vw, 1.05rem);
-          line-height: 1.75;
-          text-align: justify;
-          text-justify: inter-word;
-          margin-bottom: 20px;
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-          font-family: inherit;
+
+          font-size: clamp(0.96rem, 1.1vw, 1.07rem);
+
+          line-height: 1.9;
+
           font-weight: 400;
+
+          text-align: justify;
+
+          text-justify: inter-word;
+
+          letter-spacing: 0.005em;
+
+          overflow-wrap: break-word;
         }
 
         /* ==================================================
-           VISION & MISSION
+           VISION MISSION
         ================================================== */
+
+        .vision-mission-section {
+          margin-bottom: 78px;
+        }
+
+        .vision-mission-header {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+
+        .vision-mission-header h3 {
+          margin: 0;
+
+          color: #0b1f4b;
+
+          font-size: clamp(1.45rem, 2.5vw, 2rem);
+
+          font-weight: 700;
+
+          letter-spacing: -0.025em;
+        }
+
+        .vision-mission-header h3 span {
+          color: #c62828;
+        }
 
         .vision-mission-row {
-          margin-top: 30px;
-          margin-left: 0;
-          margin-right: 0;
+          margin: 0 -10px;
         }
 
-        .vision-column {
-          margin-bottom: 18px;
-          padding-left: 10px;
-          padding-right: 10px;
+        .vision-mission-column {
+          padding: 10px;
         }
-         .mission-column {
-         margin-bottom: 8px;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-
-
-
-        /* ==================================================
-           VISION & MISSION CARD
-        ================================================== */
 
         .vision-mission-card {
           position: relative;
 
-          background: #ffffff;
+          min-height: 220px;
 
-          border-radius: 12px;
-
-          padding: 24px 26px;
-
-          min-height: 215px;
-
-          border: 1px solid #e5e7eb;
+          padding: 34px 38px;
 
           overflow: hidden;
 
-          display: flex;
-          align-items: center;
+          background: #ffffff;
 
-          box-shadow: 0 8px 25px rgba(11, 31, 75, 0.08);
+          border: 1px solid rgba(11, 31, 75, 0.08);
+
+          border-radius: 18px;
+
+          box-shadow:
+            0 10px 30px rgba(11, 31, 75, 0.055);
 
           transition:
-            transform 0.35s ease,
-            box-shadow 0.35s ease,
-            border-color 0.35s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
         }
 
-        /* ==================================================
-           ANIMATED TOP LINE
-        ================================================== */
+        .vision-mission-card:hover {
+          transform: translateY(-7px);
+
+          border-color: rgba(198, 40, 40, 0.25);
+
+          box-shadow:
+            0 18px 40px rgba(11, 31, 75, 0.1);
+        }
 
         .vision-mission-card::before {
           content: "";
@@ -526,233 +723,337 @@ businesses with the resources required to grow.
 
           background: linear-gradient(
             90deg,
-            #0b1f4b,
-            #c62828,
-            #0b1f4b,
-            #c62828,
-            #0b1f4b
+            #0b1f4b 0%,
+            #0b1f4b 65%,
+            #c62828 65%,
+            #c62828 100%
           );
-
-          background-size: 250% 100%;
-
-          animation: visionBorderMove 4s linear infinite;
         }
-
-        /* No decorative circle */
-
-        .vision-mission-card::after {
-          display: none;
-        }
-
-        /* ==================================================
-           CARD CONTENT
-        ================================================== */
-
-        .card-content {
-          position: relative;
-          z-index: 2;
-          width: 100%;
-          padding-right: 55px;
-        }
-
-        /* ==================================================
-           ICON
-        ================================================== */
 
         .vision-mission-icon {
           position: absolute;
 
-          top: 22px;
-          right: 25px;
+          top: 28px;
+          right: 28px;
 
-          width: 46px;
-          height: 46px;
+          width: 48px;
+          height: 48px;
 
           display: flex;
+
           align-items: center;
           justify-content: center;
 
+          border-radius: 50%;
+
+          background: #f8fafc;
+
           color: #c62828;
 
-          z-index: 3;
-
-          animation: iconFloat 3s ease-in-out infinite;
-
           transition:
-            transform 0.35s ease,
-            color 0.35s ease;
-        }
-
-        .vision-mission-icon svg {
-          width: 42px;
-          height: 42px;
-          display: block;
+            transform 0.3s ease,
+            background 0.3s ease;
         }
 
         .mission-icon {
           color: #0b1f4b;
-          animation-delay: 0.5s;
+        }
+
+        .vision-mission-icon svg {
+          width: 31px;
+          height: 31px;
         }
 
         .vision-mission-card:hover .vision-mission-icon {
-          transform: translateY(-5px) scale(1.08);
+          transform: rotate(5deg) scale(1.08);
+
+          background: #fff4f4;
+
           color: #c62828;
         }
 
-        /* ==================================================
-           ACCENT LINE
-        ================================================== */
+        .vision-card-content {
+          position: relative;
 
-        .accent-line {
-          width: 48px;
+          z-index: 2;
+
+          padding-right: 65px;
+        }
+
+        .card-accent {
+          width: 38px;
           height: 3px;
+
+          margin-bottom: 16px;
 
           background: #c62828;
 
-          margin-bottom: 14px;
+          border-radius: 10px;
+        }
 
+        .card-label {
+          display: block;
+
+          color: #9ca3af;
+
+          font-size: 0.65rem;
+
+          font-weight: 800;
+
+          letter-spacing: 0.16em;
+
+          margin-bottom: 7px;
+        }
+
+        .vision-mission-card h4 {
+          margin: 0 0 13px;
+
+          color: #0b1f4b;
+
+          font-size: clamp(1.35rem, 2vw, 1.7rem);
+
+          font-weight: 400;
+        }
+
+        .vision-mission-card h4 strong {
+          color: #c62828;
+
+          font-weight: 800;
+        }
+
+        .vision-mission-card p {
+          margin: 0;
+
+          color: #4b5563;
+
+          font-size: clamp(0.9rem, 1vw, 1rem);
+
+          line-height: 1.75;
+
+          text-align: justify;
+        }
+
+        /* ==================================================
+           OUR VALUES
+        ================================================== */
+
+        .values-section {
           position: relative;
+
+          z-index: 2;
+
+          margin: 65px 0 78px;
+        }
+
+        /* ==================================================
+           STORY
+        ================================================== */
+
+        .story-section {
+          margin-top: 50px;
+          margin-bottom: 30px;
+        }
+
+        .story-heading {
+          text-align: center;
+
+          margin-bottom: 30px;
+        }
+
+        .story-title {
+          margin: 0;
+
+          font-size: clamp(2rem, 3.5vw, 2.8rem);
+
+          line-height: 1.15;
+
+          font-weight: 800;
+
+          letter-spacing: -0.04em;
+        }
+
+        .story-our {
+          color: #0b1f4b;
+        }
+
+        .story-story {
+          color: #c62828;
+        }
+
+        .story-subtitle {
+          margin: 10px 0 0;
+
+          color: #6b7280;
+
+          font-size: 0.9rem;
+        }
+
+        .story-card {
+          position: relative;
+
+          width: 100%;
+
+          max-width: 1250px;
+
+          margin: 0 auto;
+
+          padding: 60px 85px 52px;
 
           overflow: hidden;
 
-          transition: width 0.35s ease;
+          background: #ffffff;
+
+          border: 1px solid rgba(11, 31, 75, 0.08);
+
+          border-radius: 22px;
+
+          box-shadow:
+            0 15px 45px rgba(11, 31, 75, 0.07);
+
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
         }
 
-        .accent-line::after {
+        .story-card:hover {
+          transform: translateY(-3px);
+
+          box-shadow:
+            0 20px 50px rgba(11, 31, 75, 0.1);
+        }
+
+        .story-card::before {
           content: "";
 
           position: absolute;
 
           top: 0;
-          left: -100%;
+          left: 0;
 
-          width: 100%;
+          width: 7px;
           height: 100%;
 
-          background: #0b1f4b;
-
-          animation: accentMove 3s ease-in-out infinite;
+          background: linear-gradient(
+            180deg,
+            #0b1f4b 0%,
+            #0b1f4b 55%,
+            #c62828 55%,
+            #c62828 100%
+          );
         }
 
-        /* ==================================================
-           TITLE
-        ================================================== */
+        .story-quote {
+          position: absolute;
 
-        .vision-mission-title {
+          top: 0;
+          left: 28px;
+
+          color: #0b1f4b;
+
+          font-family: Georgia, "Times New Roman", serif;
+
+          font-size: clamp(7rem, 11vw, 10rem);
+
+          line-height: 1;
+
+          font-weight: 700;
+
+          opacity: 0.5;
+
+          pointer-events: none;
+
+          user-select: none;
+
+          z-index: 1;
+        }
+
+        .story-content {
           position: relative;
 
           z-index: 2;
 
-          color: #0b1f4b !important;
-
-          font-size: clamp(1.35rem, 2vw, 1.65rem);
-
-          font-weight: 400;
-
-          margin: 0 0 12px;
-
-          line-height: 1.3;
+          width: 100%;
         }
 
-        .vision-mission-title strong {
-          color: #c62828;
-          font-weight: 800;
-        }
-
-        /* ==================================================
-           TEXT
-        ================================================== */
-
-        .vision-mission-text {
-          position: relative;
-
-          z-index: 2;
+        .story-content p {
+          margin: 0 0 20px;
 
           color: #374151;
 
-          font-size: clamp(0.92rem, 1vw, 1rem);
+          font-size: clamp(0.96rem, 1.1vw, 1.08rem);
 
-          line-height: 1.7;
-
-          font-weight: 400;
-
-          padding: 0;
-
-          margin: 0;
+          line-height: 1.9;
 
           text-align: justify;
 
           text-justify: inter-word;
 
-          letter-spacing: 0;
+          font-weight: 400;
 
-          overflow-wrap: break-word;
+          letter-spacing: 0.005em;
+        }
 
-          word-wrap: break-word;
+        .story-content p:last-child {
+          margin-bottom: 0;
+        }
+
+        .story-bottom-accent {
+          position: absolute;
+
+          left: 7px;
+          bottom: 0;
+
+          width: calc(100% - 7px);
+
+          height: 4px;
+
+          background: linear-gradient(
+            90deg,
+            #0b1f4b 0%,
+            #0b1f4b 68%,
+            #c62828 68%,
+            #c62828 100%
+          );
         }
 
         /* ==================================================
-           HOVER
+           SECTION HEADERS
         ================================================== */
 
-        .vision-mission-card:hover {
-          transform: translateY(-6px);
+        .section-header {
+          text-align: center;
 
-          border-color: rgba(198, 40, 40, 0.35);
-
-          box-shadow:
-            0 15px 35px rgba(11, 31, 75, 0.14),
-            0 0 20px rgba(198, 40, 40, 0.05);
+          margin-bottom: 32px;
         }
 
-        .vision-mission-card:hover .accent-line {
-          width: 72px;
+        .section-heading {
+          margin: 0;
+
+          color: #0b1f4b;
+
+          font-size: clamp(1.8rem, 3vw, 2.4rem);
+
+          line-height: 1.2;
+
+          font-weight: 800;
+
+          letter-spacing: -0.035em;
         }
 
-        /* ==================================================
-           ANIMATIONS
-        ================================================== */
-
-        @keyframes visionBorderMove {
-          0% {
-            background-position: 0% 50%;
-          }
-
-          50% {
-            background-position: 100% 50%;
-          }
-
-          100% {
-            background-position: 0% 50%;
-          }
+        .section-heading span {
+          color: #c62828;
         }
 
-        @keyframes iconFloat {
-          0% {
-            transform: translateY(0);
-          }
+        .section-subtitle {
+          max-width: 600px;
 
-          50% {
-            transform: translateY(-5px);
-          }
+          margin: 10px auto 0;
 
-          100% {
-            transform: translateY(0);
-          }
-        }
+          color: #6b7280;
 
-        @keyframes accentMove {
-          0% {
-            left: -100%;
-          }
+          font-size: 0.9rem;
 
-          50% {
-            left: 100%;
-          }
-
-          100% {
-            left: 100%;
-          }
+          line-height: 1.6;
         }
 
         /* ==================================================
@@ -760,95 +1061,191 @@ businesses with the resources required to grow.
         ================================================== */
 
         .milestones-section {
-          margin-bottom: 70px;
+          margin-bottom: 50px;
         }
 
-        .milestone-column {
-          margin-bottom: 24px;
+        .milestones-grid {
+          display: grid;
+
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 20px;
+
+          max-width: 1250px;
+
+          margin: 0 auto;
         }
 
         .milestone-card {
+          position: relative;
+
+          min-height: 235px;
+
+          padding: 28px 30px;
+
+          overflow: hidden;
+
           background: #ffffff;
 
-          padding: 28px 26px;
+          border: 1px solid rgba(11, 31, 75, 0.08);
 
-          border-radius: 14px;
+          border-radius: 17px;
 
-          border-left: 4px solid #0b1f4b;
-
-          box-shadow: 0 6px 18px rgba(11, 31, 75, 0.05);
+          box-shadow:
+            0 8px 25px rgba(11, 31, 75, 0.05);
 
           transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
         }
 
         .milestone-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-5px);
 
-          box-shadow: 0 12px 28px rgba(11, 31, 75, 0.09);
+          border-color: rgba(198, 40, 40, 0.25);
+
+          box-shadow:
+            0 15px 35px rgba(11, 31, 75, 0.09);
+        }
+
+        .milestone-top {
+          display: flex;
+
+          align-items: center;
+
+          justify-content: space-between;
+
+          margin-bottom: 13px;
+        }
+
+        .milestone-year {
+          color: #c62828;
+
+          font-size: 0.85rem;
+
+          font-weight: 800;
+
+          letter-spacing: 0.12em;
+        }
+
+        .milestone-number {
+          color: #0b1f4b;
+
+          font-size: 0.7rem;
+
+          font-weight: 800;
+
+          letter-spacing: 0.1em;
+
+          opacity: 0.45;
+        }
+
+        .milestone-line {
+          width: 45px;
+          height: 3px;
+
+          margin-bottom: 17px;
+
+          background: linear-gradient(
+            90deg,
+            #0b1f4b,
+            #c62828
+          );
+
+          border-radius: 10px;
         }
 
         .milestone-card h5 {
-          font-size: clamp(0.8rem, 0.9vw, 0.85rem);
+          margin: 0 0 12px;
 
-          letter-spacing: 0.08em;
+          color: #0b1f4b;
+
+          font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+
+          line-height: 1.3;
+
+          font-weight: 750;
+        }
+
+        .milestone-card p {
+          margin: 0;
+
+          max-width: 95%;
+
+          color: #4b5563;
+
+          font-size: clamp(0.88rem, 1vw, 0.98rem);
+
+          line-height: 1.7;
+
+          text-align: justify;
+
+          text-justify: inter-word;
+        }
+
+        .milestone-arrow {
+          position: absolute;
+
+          right: 25px;
+          bottom: 20px;
 
           color: #c62828;
 
-          margin-bottom: 8px;
+          font-size: 1.25rem;
 
-          font-weight: 700;
+          opacity: 0;
+
+          transform: translate(5px, 5px);
+
+          transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
         }
 
-        .milestone-card h6 {
-          color: #0b1f4b;
+        .milestone-card:hover .milestone-arrow {
+          opacity: 1;
 
-          font-size: clamp(1rem, 1.2vw, 1.1rem);
-
-          font-weight: 700;
-
-          margin-bottom: 12px;
+          transform: translate(0, 0);
         }
 
         /* ==================================================
-           AWARDS
+           AWARDS & RECOGNITION
         ================================================== */
 
         .awards-section {
           margin-bottom: 20px;
+
+          /* ADDED PADDING */
+          padding: 45px 35px 50px;
+
+          background: #ffffff;
+
+          border-radius: 22px;
+
+          box-shadow:
+            0 10px 35px rgba(11, 31, 75, 0.04);
         }
 
-        .awards-subtitle {
-          color: #6b7280;
+        .awards-section .section-header {
+          margin-bottom: 45px;
+        }
 
-          font-size: clamp(0.9rem, 1vw, 1rem);
-
-          margin-bottom: 35px;
-
-          text-align: center;
+        .awards-row {
+          margin-left: -10px;
+          margin-right: -10px;
         }
 
         .award-column {
-          margin-bottom: 24px;
+          padding: 10px;
+
+          margin-bottom: 10px;
         }
 
         .award-card {
-          background: #ffffff;
+          position: relative;
 
-          border-radius: 16px;
-
-          border: 1px solid #e5e7eb;
-
-          padding: 28px 16px;
-
-          text-align: center;
-
-          box-shadow: 0 6px 18px rgba(11, 31, 75, 0.05);
-
-          transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
+          min-height: 235px;
 
           display: flex;
 
@@ -858,13 +1255,60 @@ businesses with the resources required to grow.
 
           justify-content: center;
 
-          min-height: 180px;
+          padding: 28px 16px 22px;
+
+          overflow: hidden;
+
+          background: #ffffff;
+
+          border: 1px solid rgba(11, 31, 75, 0.08);
+
+          border-radius: 17px;
+
+          text-align: center;
+
+          box-shadow:
+            0 7px 22px rgba(11, 31, 75, 0.05);
+
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
         }
 
         .award-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-5px);
 
-          box-shadow: 0 12px 30px rgba(11, 31, 75, 0.1);
+          border-color: rgba(198, 40, 40, 0.22);
+
+          box-shadow:
+            0 15px 35px rgba(11, 31, 75, 0.09);
+        }
+
+        .award-top-line {
+          position: absolute;
+
+          top: 0;
+          left: 0;
+
+          width: 45%;
+          height: 3px;
+
+          background: #0b1f4b;
+
+          transition:
+            width 0.3s ease,
+            background 0.3s ease;
+        }
+
+        .award-card:hover .award-top-line {
+          width: 100%;
+
+          background: linear-gradient(
+            90deg,
+            #0b1f4b,
+            #c62828
+          );
         }
 
         .award-icon {
@@ -873,28 +1317,54 @@ businesses with the resources required to grow.
           width: 110px;
           height: 110px;
 
-          margin: 0 auto 16px;
+          margin: 8px auto 18px;
 
           flex-shrink: 0;
+
+          transition: transform 0.3s ease;
+        }
+
+        .award-card:hover .award-icon {
+          transform: scale(1.04);
         }
 
         .award-img {
           object-fit: contain;
+
           object-position: center;
         }
 
         .award-card h6 {
+          max-width: 180px;
+
+          margin: 0;
+
           color: #0b1f4b;
 
-          font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+          font-size: clamp(0.78rem, 0.9vw, 0.9rem);
 
-          font-weight: 600;
+          line-height: 1.4;
 
-          margin-bottom: 0;
-
-          line-height: 1.3;
+          font-weight: 650;
 
           text-align: center;
+        }
+
+        .award-bottom-line {
+          width: 25px;
+          height: 2px;
+
+          margin-top: 13px;
+
+          background: #c62828;
+
+          border-radius: 10px;
+
+          transition: width 0.3s ease;
+        }
+
+        .award-card:hover .award-bottom-line {
+          width: 45px;
         }
 
         /* ==================================================
@@ -903,25 +1373,222 @@ businesses with the resources required to grow.
 
         @media (max-width: 992px) {
           .about-section {
-            padding-bottom: 60px;
+            padding-bottom: 65px;
           }
 
-          .about-row {
+          .about-header {
+            padding-top: 40px;
+
+            margin-bottom: 30px;
+          }
+
+          .about-image-container {
+            padding-bottom: 47%;
+
+            border-radius: 18px;
+          }
+
+          .about-image-wrapper {
+            margin-bottom: 35px;
+          }
+
+          .about-description-wrapper {
+            padding: 0 30px;
+
             margin-bottom: 55px;
           }
 
-          .milestones-section {
-            margin-bottom: 55px;
-          }
-
-          .milestone-card {
-            padding: 24px 22px;
+          .vision-mission-section {
+            margin-bottom: 60px;
           }
 
           .vision-mission-card {
-            padding: 22px 22px;
+            min-height: 245px;
 
+            padding: 30px 28px;
+          }
+
+          .vision-mission-icon {
+            top: 25px;
+            right: 24px;
+          }
+
+          .story-section {
+            margin-bottom: 60px;
+          }
+
+          .story-card {
+            padding: 50px 52px 45px;
+
+            border-radius: 18px;
+          }
+
+          .story-quote {
+            left: 20px;
+
+            font-size: 7rem;
+          }
+
+          .milestones-section {
+            margin-bottom: 60px;
+          }
+
+          .milestone-card {
+            min-height: 225px;
+
+            padding: 25px 24px;
+          }
+
+          /* AWARDS TABLET */
+
+          .awards-section {
+            padding: 38px 25px 42px;
+
+            border-radius: 18px;
+          }
+
+          .awards-section .section-header {
+            margin-bottom: 38px;
+          }
+
+          .award-card {
             min-height: 210px;
+          }
+
+          .award-icon {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 768px) {
+          .about-section {
+            padding-bottom: 50px;
+          }
+
+          .about-header {
+            padding-top: 32px;
+
+            margin-bottom: 25px;
+          }
+
+          .section-kicker {
+            font-size: 0.62rem;
+
+            gap: 7px;
+
+            letter-spacing: 0.14em;
+          }
+
+          .section-kicker span {
+            width: 18px;
+
+            height: 2px;
+          }
+
+          .about-main-title {
+            font-size: clamp(1.8rem, 7vw, 2.3rem);
+          }
+
+          .about-heading-description {
+            font-size: 0.82rem;
+
+            padding: 0 15px;
+          }
+
+          .about-image-container {
+            padding-bottom: 58%;
+
+            border-radius: 14px;
+          }
+
+          .about-image-wrapper {
+            margin-bottom: 28px;
+          }
+
+          .image-badge {
+            left: 15px;
+            bottom: 15px;
+
+            min-width: 105px;
+
+            padding: 10px 13px;
+          }
+
+          .badge-year {
+            font-size: 1.1rem;
+          }
+
+          .badge-text {
+            font-size: 0.58rem;
+          }
+
+          .image-corner {
+            width: 40px;
+            height: 40px;
+          }
+
+          .image-corner-top {
+            top: 12px;
+            right: 12px;
+          }
+
+          .image-corner-bottom {
+            bottom: 12px;
+            right: 12px;
+          }
+
+          .about-description-wrapper {
+            padding: 0 20px;
+
+            margin-bottom: 48px;
+          }
+
+          .description-accent {
+            width: 3px;
+
+            height: 65px;
+          }
+
+          .about-description {
+            font-size: clamp(0.88rem, 3vw, 0.96rem);
+
+            line-height: 1.75;
+
+            text-align: justify;
+          }
+
+          .vision-mission-section {
+            margin-bottom: 52px;
+          }
+
+          .vision-mission-header {
+            margin-bottom: 22px;
+          }
+
+          .vision-mission-header h3 {
+            font-size: clamp(1.25rem, 5vw, 1.55rem);
+          }
+
+          .vision-mission-row {
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .vision-mission-column {
+            padding: 7px 0;
+          }
+
+          .vision-mission-card {
+            min-height: 0;
+
+            padding: 25px 22px;
+
+            border-radius: 14px;
           }
 
           .vision-mission-icon {
@@ -933,317 +1600,142 @@ businesses with the resources required to grow.
           }
 
           .vision-mission-icon svg {
-            width: 37px;
-            height: 37px;
+            width: 27px;
+            height: 27px;
           }
 
-          .vision-mission-title {
-            font-size: 1.4rem;
-          }
-
-          .vision-mission-text {
-            font-size: 0.95rem;
-
-            line-height: 1.7;
-          }
-
-          .card-content {
+          .vision-card-content {
             padding-right: 50px;
           }
 
-          .award-card {
-            padding: 24px 14px;
+          .card-accent {
+            width: 32px;
 
-            min-height: 160px;
+            margin-bottom: 12px;
           }
 
-          .award-icon {
-            width: 100px;
-            height: 100px;
+          .card-label {
+            font-size: 0.58rem;
+
+            margin-bottom: 5px;
           }
 
-          .about-image-container {
-            padding-bottom: 45%;
-          }
-
-          .about-content .about-description {
-            padding: 0 50px;
-          }
-
-          .about-content p,
-          .story-content p,
-          .milestone-card p,
-          .story-text {
-            text-align: justify;
-          }
-        }
-
-        /* ==================================================
-           MOBILE
-        ================================================== */
-
-        @media (max-width: 768px) {
-          .about-image-container {
-            padding-bottom: 50%;
-
-            border-radius: 12px;
-          }
-
-          .about-main-title {
-            font-size: clamp(1.6rem, 5vw, 2rem);
-          }
-
-          .section-heading {
-            font-size: clamp(1.3rem, 4vw, 1.6rem);
-          }
-
-          .vision-mission-row {
-            margin-top: 25px;
-          }
-
-          .vision-mission-column {
-            margin-bottom: 16px;
-
-            padding-left: 8px;
-            padding-right: 8px;
-          }
-
-          .vision-mission-card {
-            padding: 22px 20px;
-
-            min-height: 0;
-
-            border-radius: 11px;
-          }
-
-          .vision-mission-card::before {
-            height: 3px;
-          }
-
-          .vision-mission-icon {
-            top: 18px;
-            right: 18px;
-
-            width: 40px;
-            height: 40px;
-          }
-
-          .vision-mission-icon svg {
-            width: 35px;
-            height: 35px;
-          }
-
-          .card-content {
-            padding-right: 48px;
-          }
-
-          .accent-line {
-            width: 42px;
-
-            height: 3px;
-
-            margin-bottom: 13px;
-          }
-
-          .vision-mission-title {
-            font-size: clamp(1.2rem, 4vw, 1.4rem);
-
-            margin-bottom: 11px;
-          }
-
-          .vision-mission-text {
-            font-size: clamp(0.88rem, 2.8vw, 0.96rem);
-
-            line-height: 1.7;
-
-            padding: 0;
-
-            text-align: justify;
-          }
-
-          .about-content .about-description {
-            padding: 0 25px;
-          }
-
-          .story-content p,
-          .milestone-card p,
-          .story-text {
-            text-align: justify;
-          }
-        }
-
-        /* ==================================================
-           SMALL MOBILE
-        ================================================== */
-
-        @media (max-width: 576px) {
-          .about-section {
-            padding-bottom: 45px;
-          }
-
-          .container {
-            padding-left: 16px;
-            padding-right: 16px;
-          }
-
-          .about-row {
-            margin-bottom: 40px;
-          }
-
-          .about-image-wrapper {
-            padding: 0;
-
-            margin-bottom: 24px;
-          }
-
-          .about-image-container {
-            padding-bottom: 55%;
-
-            border-radius: 10px;
-
-            box-shadow: 0 4px 16px rgba(11, 31, 75, 0.08);
-          }
-
-          .about-main-title {
-            margin-top: 32px;
-
-            margin-bottom: 20px;
-
-            font-size: clamp(1.5rem, 5vw, 1.7rem);
-          }
-
-          .section-heading {
-            font-size: clamp(1.3rem, 4.5vw, 1.45rem);
-
-            margin-bottom: 25px;
-          }
-
-          .vision-mission-row {
-            margin-top: 20px;
-          }
-
-          .vision-mission-column {
-            margin-bottom: 14px;
-
-            padding-left: 0;
-            padding-right: 0;
-          }
-
-          .vision-mission-card {
-            padding: 20px 18px;
-
-            border-radius: 10px;
-          }
-
-          .vision-mission-icon {
-            top: 16px;
-            right: 16px;
-
-            width: 36px;
-            height: 36px;
-          }
-
-          .vision-mission-icon svg {
-            width: 31px;
-            height: 31px;
-          }
-
-          .card-content {
-            padding-right: 42px;
-          }
-
-          .accent-line {
-            width: 38px;
-
-            height: 3px;
-
-            margin-bottom: 11px;
-          }
-
-          .vision-mission-title {
-            font-size: 1.15rem;
+          .vision-mission-card h4 {
+            font-size: 1.25rem;
 
             margin-bottom: 10px;
           }
 
-          .vision-mission-text {
-            font-size: 0.88rem;
-
-            line-height: 1.65;
-
-            padding: 0;
-
-            text-align: justify;
-          }
-
-          .about-content .about-description {
-            font-size: clamp(0.88rem, 2.8vw, 0.95rem);
+          .vision-mission-card p {
+            font-size: clamp(0.84rem, 2.8vw, 0.93rem);
 
             line-height: 1.7;
+          }
+
+          /* STORY */
+
+          .story-section {
+  margin-top: 60px;
+  margin-bottom: 78px;
+}
+
+          .story-heading {
+
+            margin-bottom: 23px;
+          }
+
+          .story-title {
+            font-size: clamp(1.7rem, 7vw, 2rem);
+          }
+
+          .story-subtitle {
+            padding: 0 15px;
+
+            font-size: 0.78rem;
+          }
+
+          .story-card {
+            padding: 43px 25px 35px;
+
+            border-radius: 14px;
+          }
+
+          .story-card::before {
+            width: 4px;
+          }
+
+          .story-quote {
+            left: 12px;
+            top: 3px;
+
+            font-size: 5.5rem;
+          }
+
+          .story-content p {
+            font-size: clamp(0.87rem, 2.8vw, 0.95rem);
+
+            line-height: 1.75;
 
             text-align: justify;
 
-            text-justify: inter-word;
-
-            padding: 0 8px;
-
             margin-bottom: 16px;
-
-            overflow-wrap: break-word;
-
-            word-break: normal;
           }
 
-          .story-content p,
-          .milestone-card p,
-          .story-text {
-            font-size: clamp(0.88rem, 2.8vw, 0.95rem);
+          .story-bottom-accent {
+            left: 4px;
 
-            line-height: 1.7;
+            width: calc(100% - 4px);
 
-            text-align: justify;
-
-            text-justify: inter-word;
-
-            margin-bottom: 16px;
-
-            overflow-wrap: break-word;
-
-            word-break: normal;
+            height: 3px;
           }
+
+          /* SECTION HEADINGS */
+
+          .section-heading {
+            font-size: clamp(1.55rem, 6vw, 1.9rem);
+          }
+
+          .section-subtitle {
+            padding: 0 20px;
+
+            font-size: 0.78rem;
+          }
+
+          /* MILESTONES */
 
           .milestones-section {
-            margin-bottom: 40px;
+            margin-bottom: 52px;
           }
 
-          .milestone-column {
-            margin-bottom: 16px;
+          /* AWARDS MOBILE */
+
+          .awards-section {
+            padding: 32px 18px 38px;
+
+            border-radius: 15px;
           }
 
-          .milestone-card {
-            padding: 20px 18px;
-
-            border-radius: 12px;
+          .awards-section .section-header {
+            margin-bottom: 32px;
           }
 
-          .milestone-card h6 {
-            font-size: clamp(0.95rem, 3vw, 1rem);
-          }
-
-          .milestone-card h5 {
-            font-size: 0.8rem;
+          .awards-row {
+            margin-left: -6px;
+            margin-right: -6px;
           }
 
           .award-column {
-            margin-bottom: 16px;
+            padding: 6px;
+
+            margin-bottom: 8px;
           }
 
           .award-card {
-            padding: 20px 12px;
+            min-height: 175px;
 
-            border-radius: 14px;
+            padding: 22px 10px 17px;
 
-            min-height: 140px;
+            border-radius: 13px;
           }
 
           .award-icon {
@@ -1254,23 +1746,166 @@ businesses with the resources required to grow.
           }
 
           .award-card h6 {
-            font-size: clamp(0.78rem, 2.5vw, 0.85rem);
+            max-width: 130px;
 
-            line-height: 1.3;
+            font-size: clamp(0.7rem, 2.5vw, 0.82rem);
+          }
+        }
+
+        /* ==================================================
+           SMALL MOBILE
+        ================================================== */
+
+        @media (max-width: 576px) {
+          .container {
+            padding-left: 15px;
+            padding-right: 15px;
           }
 
-          .awards-subtitle {
-            font-size: clamp(0.82rem, 2.8vw, 0.9rem);
+          .about-header {
+            padding-top: 27px;
 
-            margin-bottom: 25px;
-
-            text-align: center;
+            margin-bottom: 22px;
           }
 
-          .col-6 {
-            flex: 0 0 50%;
+          .about-main-title {
+            font-size: clamp(1.65rem, 8vw, 2rem);
+          }
 
-            max-width: 50%;
+          .about-heading-description {
+            font-size: 0.77rem;
+
+            line-height: 1.6;
+          }
+
+          .about-image-container {
+            padding-bottom: 62%;
+
+            border-radius: 12px;
+          }
+
+          .about-description-wrapper {
+            padding: 0 12px;
+
+            margin-bottom: 42px;
+          }
+
+          .description-accent {
+            height: 55px;
+          }
+
+          .about-description {
+            font-size: clamp(0.84rem, 3vw, 0.9rem);
+
+            line-height: 1.72;
+          }
+
+          .vision-mission-card {
+            padding: 22px 18px;
+
+            border-radius: 12px;
+          }
+
+          .vision-mission-icon {
+            top: 17px;
+            right: 17px;
+
+            width: 38px;
+            height: 38px;
+          }
+
+          .vision-mission-icon svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          .vision-card-content {
+            padding-right: 43px;
+          }
+
+          .vision-mission-card h4 {
+            font-size: 1.15rem;
+          }
+
+          .vision-mission-card p {
+            font-size: 0.84rem;
+
+            line-height: 1.65;
+          }
+
+          /* STORY */
+
+          .story-card {
+            padding: 38px 18px 30px;
+
+            border-radius: 12px;
+          }
+
+          .story-quote {
+            left: 7px;
+
+            font-size: 4.5rem;
+          }
+
+          .story-content p {
+            font-size: clamp(0.82rem, 3vw, 0.9rem);
+
+            line-height: 1.7;
+          }
+
+          /* MILESTONES */
+
+          .milestone-card {
+            padding: 20px 17px;
+          }
+
+          .milestone-year {
+            font-size: 0.75rem;
+          }
+
+          .milestone-card h5 {
+            font-size: 0.96rem;
+          }
+
+          .milestone-card p {
+            font-size: clamp(0.82rem, 3vw, 0.9rem);
+
+            line-height: 1.7;
+          }
+
+          /* AWARDS */
+
+          .awards-section {
+            padding: 28px 12px 32px;
+
+            border-radius: 12px;
+          }
+
+          .awards-section .section-header {
+            margin-bottom: 28px;
+          }
+
+          .award-card {
+            min-height: 155px;
+
+            padding: 18px 8px 15px;
+          }
+
+          .award-icon {
+            width: 70px;
+            height: 70px;
+
+            margin-bottom: 10px;
+          }
+
+          .award-card h6 {
+            max-width: 115px;
+
+            font-size: clamp(0.68rem, 2.5vw, 0.78rem);
+          }
+
+          .award-bottom-line {
+            margin-top: 9px;
           }
         }
 
@@ -1285,150 +1920,202 @@ businesses with the resources required to grow.
           }
 
           .about-main-title {
-            font-size: clamp(1.3rem, 4.5vw, 1.5rem);
+            font-size: 1.55rem;
           }
 
           .section-heading {
-            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            font-size: 1.4rem;
+          }
+
+          .about-image-container {
+            padding-bottom: 66%;
+          }
+
+          .image-badge {
+            left: 10px;
+            bottom: 10px;
+
+            min-width: 92px;
+
+            padding: 8px 10px;
+          }
+
+          .badge-year {
+            font-size: 1rem;
+          }
+
+          .badge-text {
+            font-size: 0.52rem;
+          }
+
+          .about-description-wrapper {
+            padding: 0 7px;
+          }
+
+          .about-description {
+            font-size: 0.82rem;
+
+            line-height: 1.68;
           }
 
           .vision-mission-card {
-            padding: 18px 16px;
+            padding: 19px 15px;
 
-            border-radius: 9px;
+            border-radius: 10px;
           }
 
           .vision-mission-icon {
-            top: 14px;
-            right: 14px;
+            top: 15px;
+            right: 15px;
 
-            width: 33px;
-            height: 33px;
+            width: 34px;
+            height: 34px;
           }
 
           .vision-mission-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 21px;
+            height: 21px;
           }
 
-          .card-content {
+          .vision-card-content {
             padding-right: 38px;
           }
 
-          .accent-line {
-            width: 35px;
+          .card-accent {
+            width: 28px;
 
             height: 2px;
+
+            margin-bottom: 10px;
           }
 
-          .vision-mission-title {
+          .card-label {
+            font-size: 0.52rem;
+          }
+
+          .vision-mission-card h4 {
             font-size: 1.05rem;
           }
 
-          .vision-mission-text {
-            font-size: 0.83rem;
+          .vision-mission-card p {
+            font-size: 0.8rem;
+
+            line-height: 1.62;
+          }
+
+          /* STORY */
+
+          .story-card {
+            padding: 34px 14px 27px;
+          }
+
+          .story-quote {
+            left: 4px;
+
+            font-size: 4rem;
+          }
+
+          .story-content p {
+            font-size: 0.82rem;
+
+            line-height: 1.68;
+          }
+
+          /* MILESTONES */
+
+          .milestone-card {
+            padding: 17px 14px;
+          }
+
+          .milestone-card p {
+            font-size: 0.82rem;
 
             line-height: 1.65;
           }
 
-          .about-content .about-description {
-            font-size: clamp(0.82rem, 3vw, 0.88rem);
+          /* AWARDS */
 
-            text-align: justify;
-
-            line-height: 1.7;
-
-            padding: 0 4px;
+          .awards-section {
+            padding: 24px 9px 28px;
           }
 
-          .story-content p,
-          .milestone-card p,
-          .story-text {
-            font-size: clamp(0.82rem, 3vw, 0.88rem);
-
-            text-align: justify;
-
-            line-height: 1.7;
-          }
-
-          .milestone-card {
-            padding: 16px 14px;
+          .awards-section .section-header {
+            margin-bottom: 24px;
           }
 
           .award-card {
-            padding: 16px 10px;
+            min-height: 140px;
 
-            min-height: 120px;
+            padding: 15px 7px;
           }
 
           .award-icon {
-            width: 70px;
-            height: 70px;
+            width: 62px;
+            height: 62px;
           }
 
           .award-card h6 {
-            font-size: clamp(0.7rem, 2.8vw, 0.78rem);
-          }
+            font-size: 0.68rem;
 
-          .about-image-container {
-            padding-bottom: 60%;
+            max-width: 105px;
           }
         }
 
         /* ==================================================
-           LARGE SCREENS
+           LARGE DESKTOP
         ================================================== */
 
         @media (min-width: 1200px) {
-          .about-image-container {
-            padding-bottom: 38%;
+          .about-header {
+            padding-top: 55px;
           }
 
-          .about-content .about-description {
-            font-size: 1.05rem;
+          .about-image-container {
+            padding-bottom: 39%;
+          }
 
-            text-align: justify;
-
-            padding: 0 80px;
+          .about-description-wrapper {
+            max-width: 1150px;
           }
 
           .vision-mission-card {
-            padding: 28px 30px;
+            min-height: 275px;
 
-            min-height: 220px;
+            padding: 38px 42px;
           }
 
-          .vision-mission-icon {
-            top: 24px;
-            right: 28px;
+          .story-card {
+            max-width: 1300px;
 
-            width: 48px;
-            height: 48px;
+            padding: 65px 95px 55px;
           }
 
-          .vision-mission-icon svg {
-            width: 42px;
-            height: 42px;
+          .story-content p {
+            font-size: 1.08rem;
+
+            line-height: 1.92;
           }
 
-          .card-content {
-            padding-right: 60px;
+          .milestones-grid {
+            max-width: 1300px;
+
+            gap: 22px;
           }
 
-          .vision-mission-text {
-            font-size: 1rem;
+          /* AWARDS DESKTOP */
 
-            line-height: 1.75;
+          .awards-section {
+            padding: 55px 45px 60px;
 
-            padding: 0;
+            border-radius: 24px;
           }
 
-          .milestone-card p {
-            text-align: justify;
+          .awards-section .section-header {
+            margin-bottom: 50px;
           }
 
           .award-card {
-            min-height: 200px;
+            min-height: 245px;
           }
 
           .award-icon {
@@ -1446,26 +2133,35 @@ businesses with the resources required to grow.
             padding-bottom: 35%;
           }
 
-          .about-content .about-description {
+          .about-description {
+            font-size: 1.1rem;
+          }
+
+          .story-card {
+            max-width: 1400px;
+
+            padding-left: 105px;
+            padding-right: 105px;
+          }
+
+          .story-content p {
             font-size: 1.1rem;
 
-            text-align: justify;
-
-            padding: 0 100px;
+            line-height: 1.95;
           }
 
-          .vision-mission-card {
-            min-height: 225px;
+          .story-quote {
+            font-size: 11rem;
+
+            left: 35px;
           }
 
-          .vision-mission-text {
-            font-size: 1.05rem;
-
-            line-height: 1.8;
+          .milestone-card {
+            min-height: 250px;
           }
 
-          .milestone-card p {
-            text-align: justify;
+          .awards-section {
+            padding: 60px 55px 65px;
           }
         }
 
@@ -1474,23 +2170,23 @@ businesses with the resources required to grow.
         ================================================== */
 
         @media (prefers-reduced-motion: reduce) {
-          .vision-mission-card::before,
-          .accent-line::after,
-          .vision-mission-icon {
-            animation: none;
-          }
-
-          .milestone-card,
-          .award-card,
+          .about-image,
           .vision-mission-card,
-          .accent-line,
-          .vision-mission-icon {
+          .story-card,
+          .milestone-card,
+          .milestone-arrow,
+          .award-card,
+          .award-icon,
+          .award-top-line,
+          .award-bottom-line {
             transition: none;
           }
 
+          .about-image-container:hover .about-image,
+          .vision-mission-card:hover,
+          .story-card:hover,
           .milestone-card:hover,
-          .award-card:hover,
-          .vision-mission-card:hover {
+          .award-card:hover {
             transform: none;
           }
         }

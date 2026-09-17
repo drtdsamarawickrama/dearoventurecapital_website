@@ -157,14 +157,15 @@ const corporateManagement = [
     description:
       "Mr. Roshan Jansen serves as the Deputy Chief Executive Officer of Dearo Venture Capital Limited. He plays an important role in supporting the company’s strategic direction, business operations, and sustainable growth. With his leadership and management expertise, he contributes to strengthening the company’s performance and advancing its long-term business objectives.",
   },
-
-  {
-    name: "Mrs. Hiranya Samarasinghe",
-    role: "Head of Operations",
-    image: "/images/directors/WhatsApp Image 2026-09-15 at 11.55.15.jpeg",
+   {
+    name: "Mr. Hemal Manuweera",
+    role: "Head of Human Resources",
+    image: "/images/directors/ChatGPT Image Sep 15, 2026, 02_51_54 PM.png",
     description:
-"Mrs. Hiranya Samarasinghe is an experienced operations and marketing professional with an MBA from West Texas A&M University. She specializes in strategic leadership, digital marketing, business development, data analytics, and AI-driven solutions. Her expertise in operational excellence, team leadership, and performance optimization supports sustainable growth, efficiency, and measurable organizational success."
+"As Head of HR at Dearo Venture Capital, he brings over 20 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth."
   },
+
+ 
 
   {
     name: "Mr. Minol Hewage",
@@ -175,20 +176,32 @@ const corporateManagement = [
   },
 
   {
-    name: "Mr. Hemal Manuweera",
-    role: "Head of Human Resources",
-    image: "/images/directors/ChatGPT Image Sep 15, 2026, 02_51_54 PM.png",
+    name: "Mr. Chathura Dissanayaka",
+    role: "Chief Manager Business Development",
+    image: "/images/directors/chathura.jpg",
     description:
-"As Head of HR at Dearo Venture Capital, he brings over 14 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth."
+    "Mr. Chathura Dissanayaka leads business development initiatives, focusing on identifying new opportunities, strengthening strategic partnerships, and supporting sustainable business growth. With a strong focus on client relationships and market development, he contributes to expanding the company’s presence while aligning business strategies with organizational objectives and long-term growth plans."
   },
 
-  {
-    name: "Mrs. Lasanthi Gunawardana",
-    role: "Head of Finance",
-    image: "/images/directors/ChatGPT Image Sep 15, 2026, 12_14_57 PM.png",
+   {
+    name: "Mr. Asitha Gunawardana",
+    role: "Chief Manager Business Development",
+    image: "/images/directors/asith.jpg",
     description:
-"Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives."
+    "Mr. Asitha Gunawardana is responsible for driving business development initiatives, identifying new opportunities, and strengthening strategic relationships. He focuses on expanding the company’s market presence, supporting client engagement, and developing sustainable business opportunities. His contribution helps align business development activities with organizational objectives and long-term growth strategies."
   },
+
+   {
+    name: "Mr. Rex Jeroshan",
+    role: "Head of Branch operation",
+    image: "/images/directors/rex1.jpg",
+    description:
+    "Mr. Rex Jeroshan oversees branch operations, ensuring efficient daily activities, quality service delivery, and effective coordination across branch functions. He focuses on operational performance, customer satisfaction, and process improvement while supporting organizational standards. His leadership contributes to maintaining smooth branch operations and achieving business objectives through effective management."
+  },
+
+
+ 
+
 
    {
     name: "Mr. Rajitha Bandara",
@@ -203,7 +216,23 @@ const corporateManagement = [
     role: "Head of Audit",
     image: "/images/directors/Mahesh Gunarathna Manager Audit.jpeg",
     description:
-"Mr. Mahesh Gunawardana serves as the Head of Audit at Dearo Venture Capital, overseeing internal audit functions and supporting strong governance, compliance, and risk management practices. He focuses on maintaining effective internal controls, reviewing operational processes, identifying potential risks, and promoting transparency and accountability across the organization to support sustainable business performance."}
+"Mr. Mahesh Gunawardana serves as the Head of Audit at Dearo Venture Capital, overseeing internal audit functions and supporting strong governance, compliance, and risk management practices. He focuses on maintaining effective internal controls, reviewing operational processes, identifying potential risks, and promoting transparency and accountability across the organization to support sustainable business performance."},
+
+  {
+    name: "Mrs. Lasanthi Gunawardana",
+    role: "Head of Finance",
+    image: "/images/directors/ChatGPT Image Sep 15, 2026, 12_14_57 PM.png",
+    description:
+"Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives."
+  },
+
+//  {
+//     name: "Mrs. Hiranya Samarasinghe",
+//     role: "Head of Operations",
+//     image: "/images/directors/WhatsApp Image 2026-09-15 at 11.55.15.jpeg",
+//     description:
+// "Mrs. Hiranya Samarasinghe is an experienced operations and marketing professional with an MBA from West Texas A&M University. She specializes in strategic leadership, digital marketing, business development, data analytics, and AI-driven solutions. Her expertise in operational excellence, team leadership, and performance optimization supports sustainable growth, efficiency, and measurable organizational success."
+//   },
 
   // {
   //   name: "Mr. M.H.M Fazly",
