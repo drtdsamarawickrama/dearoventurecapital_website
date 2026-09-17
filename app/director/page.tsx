@@ -48,7 +48,7 @@ const directors = [
     role: ["Independent / Non Executive Director"],
     image: "/images/directors/muditha_new.jpg",
     description:
-      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Ariepis Finance Ltd, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
+      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Peiris Finance Ltd, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
     qualifications: [
       "MBA",
       "Certified Information Systems Auditor - USA",
@@ -58,7 +58,7 @@ const directors = [
     ],
     experience: [
       "Former Director - Highbrow College & Institute",
-      "Director/ Head of IT - Richard Ariepis Finance Ltd",
+      "Director/ Head of IT - Richard Peiris Finance Ltd",
       "Manager - IT, Radwa Food Productions Ltd",
       "IT Manager - Food & Fine pastries Ltd",
     ],
