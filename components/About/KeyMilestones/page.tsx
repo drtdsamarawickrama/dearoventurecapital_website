@@ -38,7 +38,7 @@ export default function KeyMilestones() {
         {/* ================= HEADER ================= */}
         <div className="section-header">
           <h3 className="section-heading">
-            Key Milestones
+            Key <span>Milestones</span> 
           </h3>
 
           <p className="section-subtitle">
@@ -116,8 +116,12 @@ export default function KeyMilestones() {
         }
 
         .section-heading span {
-          color: #c62828;
-        }
+          font-weight: 800;
+                font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+
+      color: #c62828;
+    }
 
         .section-subtitle {
           max-width: 600px;
@@ -223,7 +227,7 @@ export default function KeyMilestones() {
 
           font-weight: 750;
 
-          color: #071d38;
+          color: #c62828;
         }
 
         .milestone-content p {

@@ -211,6 +211,22 @@ export default function Navbar() {
                 </div>
               </li>
 
+              {/* =================================================
+                  INVESTOR RELATIONS
+              ================================================= */}
+
+              <li className="nav-item">
+                <Link
+                  href="/islamic-finance"
+                  className="nav-link"
+                  onClick={closeMenu}
+                >
+                  Islamic Finance
+                </Link>
+              </li>
+
+
+
 
               {/* =================================================
                   INVESTOR RELATIONS

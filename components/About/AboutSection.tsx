@@ -4,34 +4,10 @@ import Image from "next/image";
 
 import OurValues from "@/components/About/Our_values/page";
 import KeyMilestones from "@/components/About/KeyMilestones/page";
+import AwardsRecognition from "./AwardsRecognition/page";
 
 export default function AboutSection() {
-  const awards = [
-    {
-      title: "Iconic Awards 2024",
-      image: "/images/awards/AW.jpg",
-    },
-    {
-      title: "Peoples Excellency Awards 2024",
-      image: "/images/awards/AW23.jpg",
-    },
-    {
-      title: "Iconic Awards Bangkok 2025",
-      image: "/images/awards/AW2.jpg",
-    },
-    {
-      title: "Asia Miracle Awards 2024",
-      image: "/images/awards/AW3.jpg",
-    },
-    {
-      title: "BWIO USA Awards 2025",
-      image: "/images/awards/AW4.jpg",
-    },
-    {
-      title: "Best SME Financing Initiative",
-      image: "/images/awards/AW5.jpg",
-    },
-  ];
+ 
 
   return (
     <section id="about" className="about-section">
@@ -50,10 +26,10 @@ export default function AboutSection() {
             <span className="us-text">Us</span>
           </h2>
 
-          <p className="about-heading-description">
+          {/* <p className="about-heading-description">
             Building opportunities. Supporting ambition. Creating sustainable
             value.
-          </p>
+          </p> */}
         </div>
 
         {/* ==================================================
@@ -256,6 +232,21 @@ export default function AboutSection() {
               OUR VALUES
           ================================================== */}
 
+          <div className="story-section">
+            <div className="story-heading">
+              <h3 className="story-title">
+                <span className="story-our">Our</span>{" "}
+                <span className="story-story">Values</span>
+              </h3>
+
+               <p className="story-subtitle">
+Our values guide the way we build relationships, create opportunities, and deliver sustainable growth.
+
+              </p> 
+            </div>
+
+           </div>
+
           <div>
             <OurValues />
           </div>
@@ -312,50 +303,11 @@ export default function AboutSection() {
 
 
           <KeyMilestones />
-        </div>
 
-        {/* ==================================================
-            AWARDS & RECOGNITION
-        ================================================== */}
-
-        <div className="awards-section">
-          <div className="section-header">
-            <h3 className="section-heading">
-              Awards &  Recognition
-            </h3>
-
-            <p className="section-subtitle">
-              Recognition of excellence and leadership.
-            </p>
-          </div>
-
-          <div className="row awards-row">
-            {awards.map((award, i) => (
-              <div
-                key={i}
-                className="col-6 col-md-4 col-lg-3 award-column"
-              >
-                <div className="award-card">
-                  <div className="award-top-line"></div>
-
-                  <div className="award-icon">
-                    <Image
-                      src={award.image}
-                      alt={award.title}
-                      fill
-                      className="award-img"
-                      sizes="(max-width: 576px) 70px, (max-width: 992px) 90px, 110px"
-                    />
+          <AwardsRecognition />
                   </div>
 
-                  <h6>{award.title}</h6>
-
-                  <div className="award-bottom-line"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </div>
 
       {/* ==================================================
@@ -401,7 +353,6 @@ export default function AboutSection() {
         .vision-mission-section,
         .story-section,
         .milestones-section,
-        .awards-section,
         .values-section {
           position: relative;
           z-index: 2;
@@ -851,7 +802,7 @@ export default function AboutSection() {
 
         .story-section {
           margin-top: 50px;
-          margin-bottom: 30px;
+          margin-bottom: 05px;
         }
 
         .story-heading {
@@ -1061,7 +1012,7 @@ export default function AboutSection() {
         ================================================== */
 
         .milestones-section {
-          margin-bottom: 50px;
+
         }
 
         .milestones-grid {
@@ -1209,163 +1160,7 @@ export default function AboutSection() {
           transform: translate(0, 0);
         }
 
-        /* ==================================================
-           AWARDS & RECOGNITION
-        ================================================== */
-
-        .awards-section {
-          margin-bottom: 20px;
-
-          /* ADDED PADDING */
-          padding: 45px 35px 50px;
-
-          background: #ffffff;
-
-          border-radius: 22px;
-
-          box-shadow:
-            0 10px 35px rgba(11, 31, 75, 0.04);
-        }
-
-        .awards-section .section-header {
-          margin-bottom: 45px;
-        }
-
-        .awards-row {
-          margin-left: -10px;
-          margin-right: -10px;
-        }
-
-        .award-column {
-          padding: 10px;
-
-          margin-bottom: 10px;
-        }
-
-        .award-card {
-          position: relative;
-
-          min-height: 235px;
-
-          display: flex;
-
-          flex-direction: column;
-
-          align-items: center;
-
-          justify-content: center;
-
-          padding: 28px 16px 22px;
-
-          overflow: hidden;
-
-          background: #ffffff;
-
-          border: 1px solid rgba(11, 31, 75, 0.08);
-
-          border-radius: 17px;
-
-          text-align: center;
-
-          box-shadow:
-            0 7px 22px rgba(11, 31, 75, 0.05);
-
-          transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            border-color 0.3s ease;
-        }
-
-        .award-card:hover {
-          transform: translateY(-5px);
-
-          border-color: rgba(198, 40, 40, 0.22);
-
-          box-shadow:
-            0 15px 35px rgba(11, 31, 75, 0.09);
-        }
-
-        .award-top-line {
-          position: absolute;
-
-          top: 0;
-          left: 0;
-
-          width: 45%;
-          height: 3px;
-
-          background: #0b1f4b;
-
-          transition:
-            width 0.3s ease,
-            background 0.3s ease;
-        }
-
-        .award-card:hover .award-top-line {
-          width: 100%;
-
-          background: linear-gradient(
-            90deg,
-            #0b1f4b,
-            #c62828
-          );
-        }
-
-        .award-icon {
-          position: relative;
-
-          width: 110px;
-          height: 110px;
-
-          margin: 8px auto 18px;
-
-          flex-shrink: 0;
-
-          transition: transform 0.3s ease;
-        }
-
-        .award-card:hover .award-icon {
-          transform: scale(1.04);
-        }
-
-        .award-img {
-          object-fit: contain;
-
-          object-position: center;
-        }
-
-        .award-card h6 {
-          max-width: 180px;
-
-          margin: 0;
-
-          color: #0b1f4b;
-
-          font-size: clamp(0.78rem, 0.9vw, 0.9rem);
-
-          line-height: 1.4;
-
-          font-weight: 650;
-
-          text-align: center;
-        }
-
-        .award-bottom-line {
-          width: 25px;
-          height: 2px;
-
-          margin-top: 13px;
-
-          background: #c62828;
-
-          border-radius: 10px;
-
-          transition: width 0.3s ease;
-        }
-
-        .award-card:hover .award-bottom-line {
-          width: 45px;
-        }
+       
 
         /* ==================================================
            TABLET
@@ -1439,27 +1234,7 @@ export default function AboutSection() {
             padding: 25px 24px;
           }
 
-          /* AWARDS TABLET */
-
-          .awards-section {
-            padding: 38px 25px 42px;
-
-            border-radius: 18px;
-          }
-
-          .awards-section .section-header {
-            margin-bottom: 38px;
-          }
-
-          .award-card {
-            min-height: 210px;
-          }
-
-          .award-icon {
-            width: 100px;
-            height: 100px;
-          }
-        }
+          
 
         /* ==================================================
            MOBILE
@@ -1704,54 +1479,9 @@ export default function AboutSection() {
           /* MILESTONES */
 
           .milestones-section {
-            margin-bottom: 52px;
           }
 
-          /* AWARDS MOBILE */
-
-          .awards-section {
-            padding: 32px 18px 38px;
-
-            border-radius: 15px;
-          }
-
-          .awards-section .section-header {
-            margin-bottom: 32px;
-          }
-
-          .awards-row {
-            margin-left: -6px;
-            margin-right: -6px;
-          }
-
-          .award-column {
-            padding: 6px;
-
-            margin-bottom: 8px;
-          }
-
-          .award-card {
-            min-height: 175px;
-
-            padding: 22px 10px 17px;
-
-            border-radius: 13px;
-          }
-
-          .award-icon {
-            width: 80px;
-            height: 80px;
-
-            margin-bottom: 12px;
-          }
-
-          .award-card h6 {
-            max-width: 130px;
-
-            font-size: clamp(0.7rem, 2.5vw, 0.82rem);
-          }
-        }
-
+         
         /* ==================================================
            SMALL MOBILE
         ================================================== */
@@ -1873,41 +1603,7 @@ export default function AboutSection() {
             line-height: 1.7;
           }
 
-          /* AWARDS */
-
-          .awards-section {
-            padding: 28px 12px 32px;
-
-            border-radius: 12px;
-          }
-
-          .awards-section .section-header {
-            margin-bottom: 28px;
-          }
-
-          .award-card {
-            min-height: 155px;
-
-            padding: 18px 8px 15px;
-          }
-
-          .award-icon {
-            width: 70px;
-            height: 70px;
-
-            margin-bottom: 10px;
-          }
-
-          .award-card h6 {
-            max-width: 115px;
-
-            font-size: clamp(0.68rem, 2.5vw, 0.78rem);
-          }
-
-          .award-bottom-line {
-            margin-top: 9px;
-          }
-        }
+          
 
         /* ==================================================
            VERY SMALL MOBILE
@@ -2033,33 +1729,7 @@ export default function AboutSection() {
             line-height: 1.65;
           }
 
-          /* AWARDS */
-
-          .awards-section {
-            padding: 24px 9px 28px;
-          }
-
-          .awards-section .section-header {
-            margin-bottom: 24px;
-          }
-
-          .award-card {
-            min-height: 140px;
-
-            padding: 15px 7px;
-          }
-
-          .award-icon {
-            width: 62px;
-            height: 62px;
-          }
-
-          .award-card h6 {
-            font-size: 0.68rem;
-
-            max-width: 105px;
-          }
-        }
+          
 
         /* ==================================================
            LARGE DESKTOP
@@ -2102,28 +1772,7 @@ export default function AboutSection() {
             gap: 22px;
           }
 
-          /* AWARDS DESKTOP */
-
-          .awards-section {
-            padding: 55px 45px 60px;
-
-            border-radius: 24px;
-          }
-
-          .awards-section .section-header {
-            margin-bottom: 50px;
-          }
-
-          .award-card {
-            min-height: 245px;
-          }
-
-          .award-icon {
-            width: 120px;
-            height: 120px;
-          }
-        }
-
+          
         /* ==================================================
            ULTRA WIDE
         ================================================== */

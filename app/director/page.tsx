@@ -2,26 +2,24 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+/* =========================================================
+   BOARD OF DIRECTORS
+========================================================= */
 
 const directors = [
   {
     name: "Mr. K.M.M.Jabir",
-    role: [
-      "Chairman",
-      "Independent / Non - Executive Director",
-    ],
+    role: ["Chairman", "Independent / Non - Executive Director"],
     image: "/images/directors/jabeer_new.jpg",
-
     description:
-      "Mr. K.M.M. Jabir is an experienced financial services professional with extensive expertise in banking, finance, operations, and corporate leadership.",
-
+      "Mr. K. M. M. Jabir is a distinguished financial services professional with an accomplished career spanning banking, finance, operations management, and corporate leadership. With decades of experience in Sri Lanka's financial sector, he has earned a reputation for strategic vision, operational excellence, and strong governance practices. He holds a Bachelor of Commerce degree and is a Fellow Member of the Institute of Bankers of Sri Lanka (IBSL). He is also a Finalist of the Chartered Institute of Management Accountants (CIMA), UK, and a Member of the Sri Lanka Institute of Marketing (SLIM), reflecting his multidisciplinary expertise in finance, management, and business strategy. Throughout his career, Mr. Jabir has held several senior leadership positions in leading financial institutions. He currently serves as an Independent Non-Executive Director of SMIB, contributing his extensive industry knowledge and governance expertise. Previously, he served as Executive Director and Chief Executive Officer of Janashakthi Finance PLC and Richard Pieris Finance Ltd, where he played a pivotal role in driving organizational growth, operational transformation, and sustainable business performance. He also held the position of Deputy General Manager – Operations at People’s Leasing PLC, overseeing key operational functions and contributing to the institution's success. As Chairman, Mr. Jabir provides strategic guidance and leadership, fostering a culture of integrity, innovation, and sustainable growth while strengthening stakeholder confidence and corporate governance standards.",
     qualifications: [
       "Bachelor of Commerce Fellow Member - IBSL",
       "Finalist - Chartered Institute of Management Accountants (CIMA) - UK",
       "Member of SLIM",
     ],
-
     experience: [
       "Independent Non-Executive Director - SMIB (currently)",
       "Former Executive Director/ CEO- Janashakthi Finance PLC",
@@ -34,17 +32,14 @@ const directors = [
     name: "Mr. Prasanna Sanjeewa",
     role: ["Non Independent / Executive Director"],
     image: "/images/directors/prasanna_new.jpg",
-
     description:
-      "Mr. Prasanna Sanjeewa Ranasinghe is a senior business leader with experience in investment, finance, marketing, and strategic management. He currently serves as the Managing Director and Chief Executive Officer of Dearo Venture Capital Ltd.",
-
+      "Mr. Prasanna Sanjeewa Ranasinghe is a dynamic business leader with extensive experience in investment management, finance, marketing, business development, and strategic leadership. As the Managing Director and Chief Executive Officer of Dearo Venture Capital Ltd, he plays a pivotal role in driving the company's vision, growth strategy, and operational excellence while fostering a culture of innovation, entrepreneurship, and sustainable value creation. Armed with a strong academic foundation, Mr. Ranasinghe holds a Master of Business Administration (MBA) and a Bachelor of Business Administration (BBA) in Marketing from the University of Peradeniya. He has further enhanced his professional expertise through a Diploma in Credit Management from the Institute of Bankers of Sri Lanka (IBSL) and a Diploma in Banking and Finance from the Corporate Finance Institute (CFI). Throughout his career, Mr. Ranasinghe has demonstrated exceptional leadership in business strategy, investment planning, market expansion, and stakeholder engagement. His ability to identify emerging opportunities and develop innovative business solutions has contributed significantly to organizational growth and long-term success.As the leader of Dearo Venture Capital Ltd, he is committed to empowering entrepreneurs, supporting business development, and creating sustainable investment opportunities that contribute to economic progress. Under his leadership, the organization continues to strengthen its position as a trusted partner for investors and businesses while promoting responsible growth, corporate governance, and long-term value creation. His vision is centered on building a stronger entrepreneurial ecosystem, fostering innovation, and creating lasting economic impact through strategic investments and business partnerships.",
     qualifications: [
       "MBA",
       "BBA in Marketing - Uni. of Peradeniya",
       "Diploma in Credit Management - IBSL",
       "Diploma in Banking and Finance - CFI",
     ],
-
     experience: ["MD , CEO - Dearo Venture Capital Ltd"],
   },
 
@@ -52,10 +47,8 @@ const directors = [
     name: "Mr. Muditha Welihinda",
     role: ["Independent / Non Executive Director"],
     image: "/images/directors/muditha_new.jpg",
-
     description:
-      "Mr. Muditha Welihinda is an information technology professional with extensive experience in IT management, information systems auditing, and technology leadership.",
-
+      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Ariepis Finance Ltd, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
     qualifications: [
       "MBA",
       "Certified Information Systems Auditor - USA",
@@ -63,7 +56,6 @@ const directors = [
       "Member of the Australian Computer Society",
       "Member of the Institute of Data Processing Management, UK",
     ],
-
     experience: [
       "Former Director - Highbrow College & Institute",
       "Director/ Head of IT - Richard Ariepis Finance Ltd",
@@ -76,9 +68,8 @@ const directors = [
     name: "Mr. Lalith J. Fernando",
     role: ["Independent / Non-Executive Director"],
     image: "/images/directors/lalith_new.jpg",
-
     description:
-      "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services.",
+      "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services. He holds a BSc in Statistics from the University of Peradeniya and an MSc in Management from the University of Sri Jayewardenepura, and is a Fellow of the Institute of Bankers of Sri Lanka (IBSL) and a Financial Risk Manager (FRM) certified by the Global Association of Risk Professionals (GARP), USA. He was the first Sri Lankan to obtain the FRM designation in 2012. Throughout his career, he has served in several senior and advisory roles, including Consultant in Risk Management, Consultant and Resource Person at IBSL, Chief Risk Officer / Deputy General Manager at PABC Bank, and Chief Risk Officer / Deputy General Manager at Bank of Ceylon (BOC). His extensive expertise in financial risk management, banking, and compliance brings valuable professional insight and experience to his role as an Independent / Non-Executive Director.",
 
     qualifications: [
       "BSc in Statistic - Uni. Of Peradeniya",
@@ -87,7 +78,6 @@ const directors = [
       "Financial Risk Manager (FRM) - GARP, USA",
       "First Sri Lankan to obtain the FRM Designation in 2012",
     ],
-
     experience: [
       "Consultant - Risk Management",
       "Consultant/Resource Person - IBSL",
@@ -100,9 +90,8 @@ const directors = [
     name: "Dr. Neil Bogahalanda",
     role: ["Independent / Non Executive Director"],
     image: "/images/directors/neil bogahalanda.jpg",
-
     description:
-      "Dr. Neil Bogahalanda is an accomplished human resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education.",
+      "Dr. Neil Bogahalanda is an accomplished Human Resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education. He holds a PhD from MSU, Malaysia, and an MBA, and is a member of the Institute of Certified Management Accountants (ICMA), the Chartered Institute of Personnel Management (CIPM), and the Sri Lanka Institute of Directors (SLID). He is also the recipient of the Lifetime Gold Award presented by the CIPM in recognition of his professional contribution and achievements. Throughout his distinguished career, he has held several senior leadership positions, including President of CIPM, Head of Group HR at Royal Ceramics Lanka PLC, General Manager – HR at Brownes Group, and Assistant General Manager – HR at Sampath Bank. His extensive expertise in human resources, corporate management, and organizational development brings valuable strategic insight and leadership to his role as an Independent / Non-Executive Director.",
 
     qualifications: [
       "PHD - MSU, Malaysia",
@@ -112,7 +101,6 @@ const directors = [
       "Member - SLID",
       "Winner of the Lifetime Gold Award offered by the CIPM",
     ],
-
     experience: [
       "President - CIPM",
       "Head of Group HR - Royal Ceramics Lanka PLC",
@@ -125,9 +113,8 @@ const directors = [
     name: "Ms. Shaheena Mohamed",
     role: ["Independent / Non Executive Director"],
     image: "/images/directors/saheena_new.jpg",
-
     description:
-      "Ms. Shaheena Mohamed is a legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions.",
+      "Ms. Shaheena Mohamed is an accomplished legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions. She is an Attorney-at-Law and holds a Professional Diploma in Anti-Money Laundering, an MBA, and a Postgraduate Diploma in Economic Development from the University of Colombo. Throughout her career, she has gained diverse experience in legal, compliance, and corporate governance roles, including serving as an Independent Legal Practitioner, Visiting Lecturer at the Institute of Chartered Corporate Secretaries of Sri Lanka, Deputy General Manager – Compliance & Company Secretary at Sri Lanka Insurance Corporation, and Group Company Secretary at Janashakthi Group. Her extensive knowledge and experience in legal affairs, regulatory compliance, and corporate governance bring valuable professional expertise and strategic insight to her role as an Independent / Non-Executive Director.",
 
     qualifications: [
       "Attorney at Law",
@@ -135,7 +122,6 @@ const directors = [
       "MBA",
       "Post Graduate Diploma in Economic Development-Uni. of Colombo",
     ],
-
     experience: [
       "Independent Legal Practitioner",
       "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
@@ -157,22 +143,22 @@ const corporateManagement = [
     description:
       "Mr. Roshan Jansen serves as the Deputy Chief Executive Officer of Dearo Venture Capital Limited. He plays an important role in supporting the company’s strategic direction, business operations, and sustainable growth. With his leadership and management expertise, he contributes to strengthening the company’s performance and advancing its long-term business objectives.",
   },
-   {
+
+  {
     name: "Mr. Hemal Manuweera",
     role: "Head of Human Resources",
     image: "/images/directors/ChatGPT Image Sep 15, 2026, 02_51_54 PM.png",
     description:
-"As Head of HR at Dearo Venture Capital, he brings over 20 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth."
+      "As Head of HR at Dearo Venture Capital, he brings over 20 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth.",
   },
-
- 
 
   {
     name: "Mr. Minol Hewage",
     role: "Head of Marketing, Communication & Branding",
-    image: "/images/directors/WhatsApp Image 2026-09-15 at 1.03.52 PM.jpeg",
+    image:
+      "/images/directors/WhatsApp Image 2026-09-15 at 1.03.52 PM.jpeg",
     description:
-"As Head of Marketing, Communication & Branding at Dearo Venture Capital, he brings extensive experience in brand development, strategic communication, digital marketing, media, and creative strategy. His expertise focuses on strengthening brand presence, engaging target audiences, creating impactful communication, and developing innovative marketing strategies that support business growth, reputation, and long-term success."
+      "As Head of Marketing, Communication & Branding at Dearo Venture Capital, he brings extensive experience in brand development, strategic communication, digital marketing, media, and creative strategy. His expertise focuses on strengthening brand presence, engaging target audiences, creating impactful communication, and developing innovative marketing strategies that support business growth, reputation, and long-term success.",
   },
 
   {
@@ -180,35 +166,31 @@ const corporateManagement = [
     role: "Chief Manager Business Development",
     image: "/images/directors/chathura.jpg",
     description:
-    "Mr. Chathura Dissanayaka leads business development initiatives, focusing on identifying new opportunities, strengthening strategic partnerships, and supporting sustainable business growth. With a strong focus on client relationships and market development, he contributes to expanding the company’s presence while aligning business strategies with organizational objectives and long-term growth plans."
+      "Mr. Chathura Dissanayaka leads business development initiatives, focusing on identifying new opportunities, strengthening strategic partnerships, and supporting sustainable business growth. With a strong focus on client relationships and market development, he contributes to expanding the company’s presence while aligning business strategies with organizational objectives and long-term growth plans.",
   },
 
-   {
+  {
     name: "Mr. Asitha Gunawardana",
     role: "Chief Manager Business Development",
     image: "/images/directors/asith.jpg",
     description:
-    "Mr. Asitha Gunawardana is responsible for driving business development initiatives, identifying new opportunities, and strengthening strategic relationships. He focuses on expanding the company’s market presence, supporting client engagement, and developing sustainable business opportunities. His contribution helps align business development activities with organizational objectives and long-term growth strategies."
+      "Mr. Asitha Gunawardana is responsible for driving business development initiatives, identifying new opportunities, and strengthening strategic relationships. He focuses on expanding the company’s market presence, supporting client engagement, and developing sustainable business opportunities. His contribution helps align business development activities with organizational objectives and long-term growth strategies.",
   },
 
-   {
+  {
     name: "Mr. Rex Jeroshan",
     role: "Head of Branch operation",
     image: "/images/directors/rex1.jpg",
     description:
-    "Mr. Rex Jeroshan oversees branch operations, ensuring efficient daily activities, quality service delivery, and effective coordination across branch functions. He focuses on operational performance, customer satisfaction, and process improvement while supporting organizational standards. His leadership contributes to maintaining smooth branch operations and achieving business objectives through effective management."
+      "Mr. Rex Jeroshan oversees branch operations, ensuring efficient daily activities, quality service delivery, and effective coordination across branch functions. He focuses on operational performance, customer satisfaction, and process improvement while supporting organizational standards. His leadership contributes to maintaining smooth branch operations and achieving business objectives through effective management.",
   },
 
-
- 
-
-
-   {
+  {
     name: "Mr. Rajitha Bandara",
     role: "Head of Adminstration",
     image: "/images/directors/rajitha.jpg",
     description:
-"Mr. Rajitha Bandara serves as the Head of Administration at Dearo Venture Capital, providing effective leadership across administrative operations and organizational support. He focuses on maintaining efficient processes, coordinating internal functions, strengthening operational standards, and supporting a productive workplace environment, contributing to the company’s overall efficiency, growth, and professional excellence."
+      "Mr. Rajitha Bandara serves as the Head of Administration at Dearo Venture Capital, providing effective leadership across administrative operations and organizational support. He focuses on maintaining efficient processes, coordinating internal functions, strengthening operational standards, and supporting a productive workplace environment, contributing to the company’s overall efficiency, growth, and professional excellence.",
   },
 
   {
@@ -216,35 +198,21 @@ const corporateManagement = [
     role: "Head of Audit",
     image: "/images/directors/Mahesh Gunarathna Manager Audit.jpeg",
     description:
-"Mr. Mahesh Gunawardana serves as the Head of Audit at Dearo Venture Capital, overseeing internal audit functions and supporting strong governance, compliance, and risk management practices. He focuses on maintaining effective internal controls, reviewing operational processes, identifying potential risks, and promoting transparency and accountability across the organization to support sustainable business performance."},
+      "Mr. Mahesh Gunawardana serves as the Head of Audit at Dearo Venture Capital, overseeing internal audit functions and supporting strong governance, compliance, and risk management practices. He focuses on maintaining effective internal controls, reviewing operational processes, identifying potential risks, and promoting transparency and accountability across the organization to support sustainable business performance.",
+  },
 
   {
     name: "Mrs. Lasanthi Gunawardana",
     role: "Head of Finance",
-    image: "/images/directors/ChatGPT Image Sep 15, 2026, 12_14_57 PM.png",
+    image:
+      "/images/directors/ChatGPT Image Sep 15, 2026, 12_14_57 PM.png",
     description:
-"Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives."
+      "Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives.",
   },
-
-//  {
-//     name: "Mrs. Hiranya Samarasinghe",
-//     role: "Head of Operations",
-//     image: "/images/directors/WhatsApp Image 2026-09-15 at 11.55.15.jpeg",
-//     description:
-// "Mrs. Hiranya Samarasinghe is an experienced operations and marketing professional with an MBA from West Texas A&M University. She specializes in strategic leadership, digital marketing, business development, data analytics, and AI-driven solutions. Her expertise in operational excellence, team leadership, and performance optimization supports sustainable growth, efficiency, and measurable organizational success."
-//   },
-
-  // {
-  //   name: "Mr. M.H.M Fazly",
-  //   role: "Head of Islamic Services",
-  //   image: "/images/directors/fazly.png",
-  //   description:
-  //     "Mr. Chathura Dissanayaka is responsible for channel development and business expansion initiatives, focusing on strengthening distribution channels, developing strategic relationships, and supporting the company's efforts to expand its market reach.",
-  // },
 ];
 
 /* =========================================================
-   CORPORATE GOVERNANCE
+   GOVERNANCE
 ========================================================= */
 
 const governanceItems = [
@@ -254,121 +222,120 @@ const governanceItems = [
       "Learn about the structure, composition, responsibilities, and oversight of the Board of Directors.",
     content:
       "Dearo Venture Capital Limited is committed to maintaining an effective Board structure that supports responsible decision-making, strategic direction, accountability, and appropriate oversight of the company’s operations. The Board provides leadership and supervision while promoting transparency and sound corporate practices.",
-    icon: "01",
   },
-
   {
     title: "Corporate Governance",
     shortDescription:
       "Our framework for responsible leadership, transparency, accountability, and sustainable growth.",
     content:
       "Corporate governance at Dearo Venture Capital Limited is guided by principles of accountability, transparency, integrity, responsible decision-making, and effective oversight. The company seeks to maintain appropriate governance practices that support stakeholder confidence and sustainable long-term growth.",
-    icon: "02",
   },
-
   {
     title: "Risk Management",
     shortDescription:
       "A structured approach to identifying, assessing, monitoring, and managing business risks.",
     content:
       "Risk management supports the company in identifying and assessing material business and operational risks, implementing appropriate controls, monitoring risk exposure, and taking timely action where required. The objective is to support sound business decisions while protecting the company and its stakeholders.",
-    icon: "03",
   },
-
   {
     title: "Compliance",
     shortDescription:
       "Commitment to applicable laws, regulations, standards, and responsible business practices.",
     content:
       "Dearo Venture Capital Limited is committed to conducting its business in accordance with applicable laws, regulations, regulatory requirements, internal policies, and recognized standards. Compliance responsibilities form an important part of maintaining the company’s integrity and institutional credibility.",
-    icon: "04",
   },
-
   {
     title: "Internal Controls",
     shortDescription:
       "Controls designed to support operational effectiveness, accuracy, accountability, and asset protection.",
     content:
       "The company maintains internal control practices designed to support effective operations, reliable information, appropriate authorization, accountability, protection of company assets, and the identification of potential control weaknesses. Internal controls are reviewed and strengthened as business requirements evolve.",
-    icon: "05",
   },
-
   {
     title: "Ethics",
     shortDescription:
       "Promoting integrity, professionalism, fairness, and responsible conduct across the organization.",
     content:
       "Dearo Venture Capital Limited expects directors, management, employees, and representatives to conduct themselves with integrity, professionalism, fairness, and respect. Ethical business conduct is fundamental to maintaining trust with customers, investors, employees, regulators, and other stakeholders.",
-    icon: "06",
   },
-
   {
     title: "Conflict of Interest Policy",
     shortDescription:
       "Guidelines for identifying, disclosing, managing, and addressing potential conflicts of interest.",
     content:
       "The company is committed to identifying and appropriately managing actual, potential, or perceived conflicts of interest. Individuals are expected to disclose relevant conflicts and act in the best interests of the company while maintaining transparency and professional integrity.",
-    icon: "07",
   },
-
   {
     title: "Privacy Policy",
     shortDescription:
       "Our approach to protecting personal information and maintaining responsible data practices.",
     content:
       "Dearo Venture Capital Limited recognizes the importance of protecting personal and confidential information. The company aims to handle information responsibly, maintain appropriate safeguards, and use personal information only for legitimate business and service-related purposes in accordance with applicable requirements.",
-    icon: "08",
   },
-
   {
     title: "Customer Complaints",
     shortDescription:
       "A structured approach to receiving, reviewing, and responding to customer concerns.",
     content:
       "Dearo Venture Capital Limited values customer feedback and is committed to handling complaints fairly, respectfully, and within appropriate processes. Customer concerns are reviewed with the objective of providing suitable responses, identifying service improvements, and strengthening customer experience.",
-    icon: "09",
   },
-
   {
     title: "Whistleblowing Policy",
     shortDescription:
       "A confidential mechanism for raising concerns about suspected wrongdoing or unethical conduct.",
     content:
       "The whistleblowing framework supports the responsible reporting of suspected misconduct, unethical behavior, fraud, serious control concerns, or other inappropriate activities. The company encourages concerns to be raised responsibly and aims to handle reported matters with appropriate confidentiality and fairness.",
-    icon: "10",
   },
 ];
 
+/* =========================================================
+   PAGE
+========================================================= */
+
 export default function DirectorsPage() {
-  const [openDirector, setOpenDirector] = useState<number | null>(null);
-  const [openManagement, setOpenManagement] = useState<number | null>(null);
+  const [selectedProfile, setSelectedProfile] = useState<{
+    type: "director" | "management";
+    index: number;
+  } | null>(null);
+
   const [openGovernance, setOpenGovernance] = useState<number | null>(null);
 
-  const toggleDirectorProfile = (index: number) => {
-    if (openDirector === index) {
-      setOpenDirector(null);
-    } else {
-      setOpenDirector(index);
-      setOpenManagement(null);
-    }
+  const openDirectorProfile = (index: number) => {
+    setSelectedProfile({
+      type: "director",
+      index,
+    });
   };
 
-  const toggleManagementProfile = (index: number) => {
-    if (openManagement === index) {
-      setOpenManagement(null);
-    } else {
-      setOpenManagement(index);
-      setOpenDirector(null);
-    }
+  const openManagementProfile = (index: number) => {
+    setSelectedProfile({
+      type: "management",
+      index,
+    });
+  };
+
+  const closeProfile = () => {
+    setSelectedProfile(null);
   };
 
   const toggleGovernance = (index: number) => {
-    if (openGovernance === index) {
-      setOpenGovernance(null);
-    } else {
-      setOpenGovernance(index);
-    }
+    setOpenGovernance(openGovernance === index ? null : index);
   };
+
+  /* ESCAPE TO CLOSE */
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeProfile();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   return (
     <main className="directors-page">
@@ -379,9 +346,7 @@ export default function DirectorsPage() {
         ===================================================== */}
 
         <div className="text-center mb-5">
-          <div className="section-label">
-            LEADERSHIP
-          </div>
+          <div className="section-label">LEADERSHIP</div>
 
           <h1 className="page-title">
             Board of Directors
@@ -392,363 +357,132 @@ export default function DirectorsPage() {
           </p>
         </div>
 
-        <div className="row justify-content-center g-4 mb-5 directors-row">
-
-          {directors.map((director, index) => {
-            const isOpen = openDirector === index;
-
-            return (
-              <div
-                key={index}
-                className={`director-column ${
-                  isOpen
-                    ? "col-lg-6 col-md-12"
-                    : "col-lg-3 col-md-6"
-                } col-sm-12`}
-              >
-
-                <div
-                  className={`director-layout ${
-                    isOpen ? "profile-is-open" : ""
-                  }`}
-                >
-
-                  {/* DIRECTOR CARD */}
-
-                  <div
-                    className={`card border-0 shadow-sm text-center director-card p-4 ${
-                      isOpen ? "profile-open" : ""
-                    }`}
-                  >
-
-                    <div className="mx-auto mb-3 position-relative photo-wrapper">
-
-                      <Image
-                        src={director.image}
-                        alt={director.name}
-                        fill
-                        sizes="210px"
-                        style={{
-                          objectFit: "cover",
-                          objectPosition: "center top",
-                          borderRadius: "50%",
-                        }}
-                      />
-
-                    </div>
-
-                    <h6 className="fw-semibold mb-1">
-                      {director.name}
-                    </h6>
-
-                    <div className="director-role">
-
-                      {director.role.map((role, roleIndex) => (
-                        <div
-                          key={roleIndex}
-                          className="role-line"
-                        >
-                          {role}
-                        </div>
-                      ))}
-
-                    </div>
-
-                    <div className="profile-box">
-
-                      <button
-                        type="button"
-                        className={`profile-button ${
-                          isOpen ? "active" : ""
-                        }`}
-                        onClick={() =>
-                          toggleDirectorProfile(index)
-                        }
-                      >
-                        {isOpen
-                          ? "Hide Profile"
-                          : "View Profile"}
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                  {/* DIRECTOR PROFILE */}
-
-                  {isOpen && (
-                    <div className="profile-content">
-
-                      <div className="profile-header">
-
-                        <div className="profile-header-icon">
-                          <span>✓</span>
-                        </div>
-
-                        <div>
-                          <h4>
-                            {director.name}
-                          </h4>
-
-                          <p>
-                            {director.role.join(" • ")}
-                          </p>
-                        </div>
-
-                      </div>
-
-                      <div className="profile-description">
-
-                        <h5>
-                          Profile
-                        </h5>
-
-                        <p>
-                          {director.description}
-                        </p>
-
-                      </div>
-
-                      <div className="profile-section">
-
-                        <h5>
-                          Academic & Professional Qualifications
-                        </h5>
-
-                        <ul>
-                          {director.qualifications.map(
-                            (qualification, qualificationIndex) => (
-                              <li key={qualificationIndex}>
-                                {qualification}
-                              </li>
-                            )
-                          )}
-                        </ul>
-
-                      </div>
-
-                      <div className="profile-section">
-
-                        <h5>
-                          Professional Experience
-                        </h5>
-
-                        <ul>
-                          {director.experience.map(
-                            (experience, experienceIndex) => (
-                              <li key={experienceIndex}>
-                                {experience}
-                              </li>
-                            )
-                          )}
-                        </ul>
-
-                      </div>
-
-                    </div>
-                  )}
-
+        <div className="row justify-content-center g-4 directors-row">
+          {directors.map((director, index) => (
+            <div
+              key={index}
+              className="col-lg-3 col-md-6 col-sm-12"
+            >
+              <div className="director-card">
+                <div className="photo-wrapper">
+                  <Image
+                    src={director.image}
+                    alt={director.name}
+                    fill
+                    sizes="210px"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                      borderRadius: "50%",
+                    }}
+                  />
                 </div>
 
+                <h6 className="person-name">
+                  {director.name}
+                </h6>
+
+                <div className="person-role">
+                  {director.role.map((role, roleIndex) => (
+                    <div key={roleIndex}>
+                      {role}
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  className="profile-button"
+                  onClick={() => openDirectorProfile(index)}
+                >
+                  View Profile
+                </button>
               </div>
-            );
-          })}
-
-        </div>
-
-        {/* DIVIDER */}
-
-        <div className="section-divider my-5">
-          <span className="divider-line" />
-          <span className="divider-diamond" />
-          <span className="divider-line" />
+            </div>
+          ))}
         </div>
 
         {/* =====================================================
             CORPORATE MANAGEMENT
         ===================================================== */}
 
-        <div className="text-center mb-5">
-
+        <div className="management-heading text-center">
           <div className="section-label">
-            LEADERSHIP TEAM
+            MANAGEMENT
           </div>
 
-          <h2 className="page-title">
+          <h2 className="page-title management-title">
             Corporate Management
           </h2>
 
           <p className="page-subtitle">
-            Driving operational excellence across Dearo Venture Capital Limited
+            Experienced professionals supporting our strategic growth
           </p>
-
         </div>
 
         <div className="row justify-content-center g-4 management-row">
-
-          {corporateManagement.map((member, index) => {
-
-            const isOpen = openManagement === index;
-
-            return (
-              <div
-                key={index}
-                className={`management-column ${
-                  isOpen
-                    ? "col-lg-6 col-md-12"
-                    : "col-lg-3 col-md-6"
-                } col-sm-12`}
-              >
-
-                <div
-                  className={`management-layout ${
-                    isOpen
-                      ? "management-profile-open"
-                      : ""
-                  }`}
-                >
-
-                  {/* MANAGEMENT CARD */}
-
-                  <div
-                    className={`card border-0 shadow-sm text-center director-card management-card p-4 ${
-                      isOpen
-                        ? "management-card-open"
-                        : ""
-                    }`}
-                  >
-
-                    <div className="mx-auto mb-3 position-relative photo-wrapper">
-
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        sizes="210px"
-                        style={{
-                          objectFit: "cover",
-                          objectPosition: "center top",
-                          borderRadius: "50%",
-                        }}
-                      />
-
-                    </div>
-
-                    <h6 className="fw-semibold mb-1">
-                      {member.name}
-                    </h6>
-
-                    <div className="management-role">
-                      {member.role}
-                    </div>
-
-                    <div className="profile-box">
-
-                      <button
-                        type="button"
-                        className={`profile-button ${
-                          isOpen ? "active" : ""
-                        }`}
-                        onClick={() =>
-                          toggleManagementProfile(index)
-                        }
-                      >
-                        {isOpen
-                          ? "Hide Profile"
-                          : "View Profile"}
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                  {/* MANAGEMENT PROFILE */}
-
-                  {isOpen && (
-                    <div className="profile-content management-profile-content">
-
-                      <div className="profile-header">
-
-                        <div className="profile-header-icon">
-                          <span>✓</span>
-                        </div>
-
-                        <div>
-
-                          <h4>
-                            {member.name}
-                          </h4>
-
-                          <p>
-                            {member.role}
-                          </p>
-
-                        </div>
-
-                      </div>
-
-                      <div className="profile-description management-description">
-
-                        <h5>
-                          Profile
-                        </h5>
-
-                        <p>
-                          {member.description}
-                        </p>
-
-                      </div>
-
-                    </div>
-                  )}
-
+          {corporateManagement.map((person, index) => (
+            <div
+              key={index}
+              className="col-lg-3 col-md-6 col-sm-12"
+            >
+              <div className="director-card management-card">
+                <div className="photo-wrapper">
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    sizes="210px"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                      borderRadius: "50%",
+                    }}
+                  />
                 </div>
 
+                <h6 className="person-name">
+                  {person.name}
+                </h6>
+
+                <div className="person-role management-person-role">
+                  {person.role}
+                </div>
+
+                <button
+                  type="button"
+                  className="profile-button"
+                  onClick={() => openManagementProfile(index)}
+                >
+                  View Profile
+                </button>
               </div>
-            );
-          })}
-
+            </div>
+          ))}
         </div>
 
         {/* =====================================================
-            CORPORATE GOVERNANCE DIVIDER
-        ===================================================== */}
-
-        <div className="section-divider governance-divider my-5">
-          <span className="divider-line" />
-          <span className="divider-diamond" />
-          <span className="divider-line" />
-        </div>
-
-        {/* =====================================================
-            CORPORATE GOVERNANCE
+            GOVERNANCE
         ===================================================== */}
 
         <section className="corporate-governance-section">
-
-          <div className="text-center governance-heading">
-
+          <div className="governance-heading text-center">
             <div className="governance-label">
-              GOVERNANCE &amp; ACCOUNTABILITY
+              CORPORATE GOVERNANCE
             </div>
 
             <h2 className="page-title">
-              Corporate Governance
+              Governance &amp; Responsibility
             </h2>
 
             <p className="page-subtitle governance-subtitle">
               Our commitment to responsible leadership, transparency,
-              accountability, integrity, and sustainable growth.
+              accountability, and sustainable business practices.
             </p>
-
           </div>
 
-          {/* GOVERNANCE CARDS */}
-
           <div className="row g-4 governance-grid">
-
             {governanceItems.map((item, index) => {
-
               const isOpen = openGovernance === index;
 
               return (
@@ -756,93 +490,66 @@ export default function DirectorsPage() {
                   key={index}
                   className="col-lg-6 col-md-6 col-12"
                 >
-
                   <div
-                    className={`governance-card ${
-                      isOpen
-                        ? "governance-card-open"
-                        : ""
-                    }`}
+                    className={`governance-card ${isOpen ? "governance-card-open" : ""
+                      }`}
                   >
-
                     <button
                       type="button"
                       className="governance-card-button"
-                      onClick={() =>
-                        toggleGovernance(index)
-                      }
+                      onClick={() => toggleGovernance(index)}
                       aria-expanded={isOpen}
                     >
+                      <div className="governance-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
 
-                      <span className="governance-number">
-                        {item.icon}
-                      </span>
-
-                      <span className="governance-card-text">
-
-                        <span className="governance-title">
+                      <div className="governance-card-text">
+                        <div className="governance-title">
                           {item.title}
-                        </span>
+                        </div>
 
-                        <span className="governance-short">
+                        <div className="governance-short">
                           {item.shortDescription}
-                        </span>
+                        </div>
+                      </div>
 
-                      </span>
-
-                      <span
-                        className={`governance-arrow ${
-                          isOpen ? "arrow-open" : ""
-                        }`}
+                      <div
+                        className={`governance-arrow ${isOpen ? "arrow-open" : ""
+                          }`}
                       >
                         +
-                      </span>
-
+                      </div>
                     </button>
 
                     {isOpen && (
                       <div className="governance-content">
-
                         <div className="governance-content-line" />
 
-                        <p>
-                          {item.content}
-                        </p>
+                        <p>{item.content}</p>
 
                         <button
                           type="button"
                           className="governance-close"
-                          onClick={() =>
-                            toggleGovernance(index)
-                          }
+                          onClick={() => toggleGovernance(index)}
                         >
                           Close
                         </button>
-
                       </div>
                     )}
-
                   </div>
-
                 </div>
               );
             })}
-
           </div>
 
-          {/* GOVERNANCE FOOTER */}
-
           <div className="governance-footer">
-
             <div className="governance-footer-icon">
               ✓
             </div>
 
             <div>
-
-              <h5>
-                Our Commitment
-              </h5>
+              <h5>Our Commitment</h5>
 
               <p>
                 Dearo Venture Capital Limited is committed to maintaining
@@ -851,41 +558,213 @@ export default function DirectorsPage() {
                 and confidence among our customers, investors, employees,
                 regulators, and other stakeholders.
               </p>
-
             </div>
-
           </div>
-
         </section>
-
       </section>
 
-      {/* =========================================================
+      {/* =====================================================
+          PROFILE POPUP
+      ===================================================== */}
+
+      {selectedProfile && (
+        <div
+          className="profile-modal-overlay"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeProfile();
+            }
+          }}
+        >
+          <div
+            className="profile-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profile-title"
+          >
+            <button
+              type="button"
+              className="profile-modal-close"
+              onClick={closeProfile}
+              aria-label="Close profile"
+            >
+              ×
+            </button>
+
+            {selectedProfile.type === "director" ? (
+              <div className="profile-modal-inner">
+                <div className="profile-modal-image">
+                  <Image
+                    src={directors[selectedProfile.index].image}
+                    alt={directors[selectedProfile.index].name}
+                    fill
+                    sizes="280px"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                    }}
+                  />
+                </div>
+
+                <div className="profile-modal-details">
+                  <div className="profile-modal-label">
+                    BOARD OF DIRECTORS
+                  </div>
+
+                  <h2 id="profile-title">
+                    {directors[selectedProfile.index].name}
+                  </h2>
+
+                  <div className="profile-modal-role">
+                    {directors[selectedProfile.index].role.map(
+                      (role, index) => (
+                        <span key={index}>{role}</span>
+                      )
+                    )}
+                  </div>
+
+                  <div className="profile-modal-divider" />
+
+                  <div className="profile-modal-section">
+                    <h3>Profile</h3>
+
+                    <p>
+                      {directors[selectedProfile.index].description}
+                    </p>
+                  </div>
+
+                  <div className="profile-modal-section">
+                    {/* <h3>
+                      Academic &amp; Professional Qualifications
+                    </h3> */}
+
+                    {/* <ul>
+                      {directors[
+                        selectedProfile.index
+                      ].qualifications.map((qualification, index) => (
+                        <li key={index}>
+                          {qualification}
+                        </li>
+                      ))}
+                    </ul> */}
+                  </div>
+
+                  <div className="profile-modal-section">
+                    {/* <h3>Professional Experience</h3> */}
+
+                    {/* <ul>
+                      {directors[
+                        selectedProfile.index
+                      ].experience.map((experience, index) => (
+                        <li key={index}>
+                          {experience}
+                        </li>
+                      ))}
+                    </ul> */}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="profile-modal-inner">
+                <div className="profile-modal-image">
+                  <Image
+                    src={
+                      corporateManagement[
+                        selectedProfile.index
+                      ].image
+                    }
+                    alt={
+                      corporateManagement[
+                        selectedProfile.index
+                      ].name
+                    }
+                    fill
+                    sizes="280px"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                    }}
+                  />
+                </div>
+
+                <div className="profile-modal-details">
+                  <div className="profile-modal-label">
+                    CORPORATE MANAGEMENT
+                  </div>
+
+                  <h2 id="profile-title">
+                    {
+                      corporateManagement[
+                        selectedProfile.index
+                      ].name
+                    }
+                  </h2>
+
+                  <div className="profile-modal-role">
+                    <span>
+                      {
+                        corporateManagement[
+                          selectedProfile.index
+                        ].role
+                      }
+                    </span>
+                  </div>
+
+                  <div className="profile-modal-divider" />
+
+                  <div className="profile-modal-section">
+                    <h3>Profile</h3>
+
+                    <p>
+                      {
+                        corporateManagement[
+                          selectedProfile.index
+                        ].description
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* =====================================================
           STYLES
-      ========================================================= */}
+      ===================================================== */}
 
       <style jsx>{`
-
-        /* =====================================================
-           COLOR THEME
-        ===================================================== */
-
         .directors-page {
-          --navy: #0B1F4B;
-          --navy-light: #17366D;
-          --red: #B21F2D;
-          --red-dark: #941A26;
-          --red-light: #F8E9EB;
-          --text: #555F6D;
-          --border: #E1E5EA;
+          --navy: #0b1f4b;
+          --navy-light: #17366d;
+          --red: #b21f2d;
+          --red-dark: #941a26;
+          --red-light: #f8e9eb;
+          --text: #555f6d;
+          --border: #e1e5ea;
 
-          background: #F8F9FA;
+          background: #f8f9fa;
           min-height: 100vh;
         }
 
         /* =====================================================
-           TITLES
+           HEADINGS
         ===================================================== */
+
+        .section-label {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px 15px;
+          margin-bottom: 13px;
+          border-radius: 50px;
+          background: var(--red-light);
+          color: var(--red);
+          font-size: 0.68rem;
+          font-weight: 700;
+          letter-spacing: 1.3px;
+        }
 
         .page-title {
           font-size: clamp(2rem, 3vw, 2.8rem);
@@ -900,58 +779,47 @@ export default function DirectorsPage() {
           margin-top: 6px;
         }
 
-        .section-label {
-          display: inline-flex;
+        /* =====================================================
+           DIRECTOR / MANAGEMENT CARDS
+        ===================================================== */
+
+        .director-card {
+          height: 100%;
+          min-height: 375px;
+
+          padding: 28px 22px;
+
+          background: #ffffff;
+
+          border: 1px solid #e4e8ee;
+          border-radius: 18px;
+
+          text-align: center;
+
+          display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
 
-          padding: 6px 15px;
-          margin-bottom: 13px;
+          box-shadow:
+            0 8px 24px rgba(11, 31, 75, 0.06);
 
-          border-radius: 50px;
-
-          background: var(--red-light);
-          color: var(--red);
-
-          font-size: 0.68rem;
-          font-weight: 700;
-
-          letter-spacing: 1.3px;
-        }
-
-        /* =====================================================
-           COLUMNS
-        ===================================================== */
-
-        .director-column,
-        .management-column {
           transition:
-            width 0.35s ease,
-            flex 0.35s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
         }
 
-        /* =====================================================
-           LAYOUT
-        ===================================================== */
+        .director-card:hover {
+          transform: translateY(-7px);
 
-        .director-layout,
-        .management-layout {
-          width: 100%;
-          display: flex;
-          align-items: stretch;
-          gap: 18px;
-          position: relative;
+          border-color: rgba(178, 31, 45, 0.35);
+
+          box-shadow:
+            0 16px 35px rgba(11, 31, 75, 0.12);
         }
 
-        .director-layout:not(.profile-is-open),
-        .management-layout:not(.management-profile-open) {
-          display: block;
-        }
-
-        .director-layout.profile-is-open,
-        .management-layout.management-profile-open {
-          display: flex;
-          flex-direction: row;
+        .management-card {
+          min-height: 375px;
         }
 
         /* =====================================================
@@ -959,143 +827,48 @@ export default function DirectorsPage() {
         ===================================================== */
 
         .photo-wrapper {
-          width: 210px;
-          height: 210px;
+          position: relative;
+
+          width: 190px;
+          height: 190px;
+
+          margin: 0 auto 20px;
+
           flex-shrink: 0;
 
-          overflow: hidden;
           border-radius: 50%;
 
-          background: #fff;
-
-          border: 4px solid #fff;
+          background: #f1f3f6;
 
           box-shadow:
-            0 0 0 2px rgba(178, 31, 45, 0.12),
-            0 8px 22px rgba(11, 31, 75, 0.10);
-        }
+            0 0 0 5px #ffffff,
+            0 0 0 7px rgba(178, 31, 45, 0.14),
+            0 12px 28px rgba(11, 31, 75, 0.12);
 
-        /* =====================================================
-           CARD
-        ===================================================== */
-
-        .director-card {
-          transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            width 0.35s ease;
-
-          border-radius: 12px;
-
-          background: #fff;
-
-          cursor: default;
-
-          min-height: 390px;
-          height: auto !important;
-
-          align-self: flex-start;
-
-          display: flex;
-          flex-direction: column;
-
-          width: 100%;
-
-          border-top: 3px solid transparent !important;
-        }
-
-        .director-card:hover {
-          transform: translateY(-6px);
-
-          border-top-color: var(--red) !important;
-
-          box-shadow:
-            0 14px 28px rgba(11, 31, 75, 0.13) !important;
-        }
-
-        .management-card {
-          min-height: 370px;
-        }
-
-        /* =====================================================
-           OPEN CARD
-        ===================================================== */
-
-        .director-layout.profile-is-open .director-card {
-          width: 48%;
-          flex-shrink: 0;
-        }
-
-        .director-card.profile-open {
-          min-height: 390px;
-          border-top-color: var(--red) !important;
-        }
-
-        .management-layout.management-profile-open
-          .management-card {
-          width: 48%;
-          flex-shrink: 0;
-        }
-
-        .management-card-open {
-          min-height: 370px;
-          border-top-color: var(--red) !important;
-        }
-
-        /* =====================================================
-           ROW
-        ===================================================== */
-
-        .directors-row,
-        .management-row {
-          align-items: flex-start !important;
+          overflow: hidden;
         }
 
         /* =====================================================
            NAME
         ===================================================== */
 
-        h6 {
+        .person-name {
           font-size: 1rem;
           font-weight: 600;
           color: #111;
           margin-top: 8px;
+
+          margin: 0 0 9px;
         }
 
         /* =====================================================
-           DIRECTOR ROLE
+           ROLE
         ===================================================== */
 
-        .director-role {
-          margin-top: 4px;
-
-          color: #6c757d;
-
-          font-size: 0.85rem;
-          line-height: 1.5;
-
-          min-height: 63px;
-
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-        }
-
-        .role-line {
-          display: block;
-          width: 100%;
-        }
-
-        /* =====================================================
-           MANAGEMENT ROLE
-        ===================================================== */
-
-        .management-role {
-          margin-top: 5px;
-
+        .person-role {
           color: var(--navy);
 
-          font-size: 0.85rem;
+font-size: 0.85rem;
           line-height: 1.5;
 
           min-height: 63px;
@@ -1107,20 +880,28 @@ export default function DirectorsPage() {
           text-align: center;
 
           font-weight: 600;
+          line-height: 1.5;
+
+          min-height: 63px;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          margin-bottom: 20px;
+        }
+
+        .management-person-role {
+          min-height: 50px;
         }
 
         /* =====================================================
-           PROFILE BOX
-        ===================================================== */
-
-        .profile-box {
-          margin-top: auto;
-          padding-top: 18px;
-          width: 100%;
-        }
-
-        /* =====================================================
-           PROFILE BUTTON
+           VIEW PROFILE BUTTON
         ===================================================== */
 
         .profile-button {
@@ -1159,273 +940,299 @@ export default function DirectorsPage() {
 
         /* =====================================================
            PROFILE CONTENT
+        
+
+        /* =====================================================
+           MANAGEMENT HEADING
         ===================================================== */
 
-        .profile-content {
-          width: 52%;
-          min-height: 390px;
+        .management-heading {
+          margin-top: 80px;
+          margin-bottom: 42px;
+        }
 
-          padding: 22px;
+        .management-title {
+          margin-bottom: 12px;
+        }
 
-          background: #fff;
+        .management-row {
+          margin-bottom: 80px;
+        }
 
-          border: 1px solid var(--border);
+        /* =====================================================
+           PROFILE MODAL
+        ===================================================== */
 
-          border-top: 3px solid var(--red);
+        .profile-modal-overlay {
+          position: fixed;
 
-          border-radius: 12px;
+          inset: 0;
 
-          text-align: left;
+          z-index: 9999;
 
-          cursor: default;
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+
+          padding: 25px;
+
+          background: rgba(5, 15, 35, 0.74);
+
+          backdrop-filter: blur(7px);
+
+          animation: overlayIn 0.2s ease;
+        }
+
+        .profile-modal {
+          position: relative;
+
+          width: min(100%, 1000px);
+
+          max-height: 90vh;
+
+          overflow-y: auto;
+
+          background: #ffffff;
+
+          border-radius: 20px;
+
+          border-top: 5px solid var(--red);
 
           box-shadow:
-            0 10px 25px rgba(11, 31, 75, 0.10);
+            0 25px 70px rgba(0, 0, 0, 0.3);
 
-          animation: profileOpenRight 0.35s ease;
+          animation: profileModalIn 0.3s ease;
+        }
+
+        .profile-modal-inner {
+          display: grid;
+
+          grid-template-columns: 280px 1fr;
+
+          gap: 38px;
+
+          align-items: flex-start;
+
+          padding: 42px;
+        }
+
+        .profile-modal-image {
+          position: relative;
+
+          width: 280px;
+          height: 330px;
 
           overflow: hidden;
+
+          border-radius: 16px;
+
+          background: #f2f4f7;
+
+          box-shadow:
+            0 0 0 2px rgba(178, 31, 45, 0.14),
+            0 14px 35px rgba(11, 31, 75, 0.15);
         }
 
-        .management-profile-content {
-          min-height: 370px;
+        .profile-modal-details {
+          min-width: 0;
 
+          padding-right: 10px;
+        }
+
+        .profile-modal-label {
+          display: inline-flex;
+
+          padding: 6px 12px;
+
+          margin-bottom: 12px;
+
+          border-radius: 50px;
+
+          background: var(--red-light);
+
+          color: var(--red);
+
+          font-size: 0.68rem;
+          font-weight: 800;
+
+          letter-spacing: 1.1px;
+        }
+
+        .profile-modal-details h2 {
+          margin: 0;
+
+          color: var(--navy);
+
+          font-size: clamp(1.5rem, 3vw, 2.25rem);
+
+          font-weight: 750;
+
+          line-height: 1.2;
+        }
+
+        .profile-modal-role {
           display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
+
+          flex-wrap: wrap;
+
+          gap: 7px;
+
+          margin-top: 12px;
+
+          color: var(--red);
+
+          font-size: 0.9rem;
+
+          font-weight: 650;
+
+          line-height: 1.55;
+        }
+
+        .profile-modal-role span:not(:last-child)::after {
+          content: " •";
+
+          color: #a1a8b2;
+
+          margin-left: 7px;
+        }
+
+        .profile-modal-divider {
+          height: 1px;
+
+          margin: 22px 0;
+
+          background:
+            linear-gradient(
+              90deg,
+              var(--red),
+              var(--navy),
+              transparent
+            );
+        }
+
+        .profile-modal-section {
+          margin-bottom: 23px;
+        }
+
+        .profile-modal-section h3 {
+          display: flex;
+
+          gap: 8px;
+
+          margin: 0 0 10px;
+
+          color: var(--red);
+
+          font-size: 0.95rem;
+
+          font-weight: 750;
+        }
+
+        .profile-modal-section h3::before {
+          content: "";
+
+          width: 4px;
+
+          min-width: 4px;
+
+          border-radius: 5px;
+
+          background: var(--red);
+        }
+
+        .profile-modal-section p,
+        .profile-modal-section li {
+          color: var(--text);
+
+          font-size: 0.86rem;
+
+          line-height: 1.75;
+        }
+
+        .profile-modal-section p {
+          margin: 0;
+
+          text-align: justify;
+        }
+
+        .profile-modal-section ul {
+          margin: 0;
+
+          padding-left: 20px;
+        }
+
+        .profile-modal-section li {
+          margin-bottom: 6px;
+        }
+
+        .profile-modal-section li::marker {
+          color: var(--red);
         }
 
         /* =====================================================
-           PROFILE ANIMATION
+           CLOSE BUTTON
         ===================================================== */
 
-        @keyframes profileOpenRight {
-          from {
-            opacity: 0;
-            transform: translateX(-15px);
-          }
+        .profile-modal-close {
+          position: absolute;
 
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+          top: 17px;
+          right: 17px;
 
-        /* =====================================================
-           PROFILE HEADER
-        ===================================================== */
+          z-index: 5;
 
-        .profile-header {
-          display: flex;
-          align-items: center;
+          width: 42px;
+          height: 42px;
 
-          gap: 12px;
-
-          padding-bottom: 16px;
-          margin-bottom: 17px;
-
-          border-bottom: 1px solid var(--border);
-        }
-
-        .profile-header-icon {
-          width: 38px;
-          height: 38px;
-          min-width: 38px;
+          border: 0;
 
           border-radius: 50%;
+
+          background: var(--navy);
+
+          color: #ffffff;
+
+          font-size: 1.7rem;
+
+          line-height: 1;
+
+          cursor: pointer;
 
           display: flex;
           align-items: center;
           justify-content: center;
 
+          transition:
+            background 0.25s ease,
+            transform 0.25s ease;
+        }
+
+        .profile-modal-close:hover {
           background: var(--red);
 
-          color: #fff;
-
-          font-size: 18px;
-          font-weight: 700;
-
-          box-shadow:
-            0 5px 12px rgba(178, 31, 45, 0.20);
-        }
-
-        .profile-header h4 {
-          margin: 0;
-
-          color: var(--navy);
-
-          font-size: 1.05rem;
-          font-weight: 700;
-
-          line-height: 1.3;
-        }
-
-        .profile-header p {
-          margin: 3px 0 0;
-
-          color: #8a929c;
-
-          font-size: 0.75rem;
+          transform: rotate(90deg);
         }
 
         /* =====================================================
-           PROFILE DESCRIPTION
-        ===================================================== */
-
-        .profile-description {
-          margin-bottom: 18px;
-          padding-bottom: 14px;
-
-          border-bottom: 1px solid var(--border);
-        }
-
-        .profile-description h5,
-        .profile-section h5 {
-          color: var(--red);
-
-          font-size: 0.88rem;
-          font-weight: 700;
-
-          line-height: 1.4;
-
-          margin-bottom: 9px;
-
-          display: flex;
-          align-items: center;
-          gap: 7px;
-        }
-
-        .profile-description h5::before,
-        .profile-section h5::before {
-          content: "";
-
-          width: 4px;
-          height: 16px;
-
-          border-radius: 5px;
-
-          background: var(--red);
-
-          display: inline-block;
-        }
-
-        .profile-description p {
-          margin: 0;
-
-          color: var(--text);
-
-          font-size: 0.8rem;
-          line-height: 1.65;
-
-          text-align: justify;
-        }
-
-        .management-description {
-          border-bottom: none;
-
-          margin-bottom: 0;
-
-          padding-bottom: 0;
-        }
-
-        /* =====================================================
-           PROFILE SECTION
-        ===================================================== */
-
-        .profile-section {
-          margin-bottom: 18px;
-        }
-
-        .profile-section:last-child {
-          margin-bottom: 0;
-        }
-
-        .profile-section ul {
-          margin: 0;
-          padding-left: 18px;
-        }
-
-        .profile-section li {
-          color: #6c757d;
-
-          font-size: 0.78rem;
-          line-height: 1.55;
-
-          margin-bottom: 6px;
-        }
-
-        .profile-section li::marker {
-          color: var(--red);
-        }
-
-        .profile-section li:last-child {
-          margin-bottom: 0;
-        }
-
-        /* =====================================================
-           DIVIDER
-        ===================================================== */
-
-        .section-divider {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .divider-line {
-          flex: 1;
-
-          height: 2px;
-
-          background: linear-gradient(
-            90deg,
-            transparent,
-            var(--navy),
-            var(--red)
-          );
-
-          display: block;
-        }
-
-        .divider-line:last-child {
-          background: linear-gradient(
-            90deg,
-            var(--red),
-            var(--navy),
-            transparent
-          );
-        }
-
-        .divider-diamond {
-          width: 9px;
-          height: 9px;
-
-          background: var(--red);
-
-          transform: rotate(45deg);
-
-          flex-shrink: 0;
-
-          box-shadow:
-            0 0 0 4px var(--red-light);
-        }
-
-        /* =====================================================
-           CORPORATE GOVERNANCE
+           GOVERNANCE
         ===================================================== */
 
         .corporate-governance-section {
-          margin-top: 10px;
+          margin-top: 30px;
+
           padding: 10px 0 30px;
         }
 
         .governance-heading {
           max-width: 850px;
+
           margin: 0 auto 42px;
         }
 
         .governance-label {
           display: inline-flex;
+
           align-items: center;
           justify-content: center;
 
@@ -1438,13 +1245,12 @@ export default function DirectorsPage() {
           color: var(--red);
 
           font-size: 0.7rem;
+
           font-weight: 700;
 
           letter-spacing: 1.2px;
 
           margin-bottom: 14px;
-
-          border: 1px solid rgba(178, 31, 45, 0.15);
         }
 
         .governance-subtitle {
@@ -1456,23 +1262,16 @@ export default function DirectorsPage() {
           line-height: 1.7;
         }
 
-        /* =====================================================
-           GOVERNANCE GRID
-        ===================================================== */
-
         .governance-grid {
           max-width: 1100px;
+
           margin: 0 auto;
         }
-
-        /* =====================================================
-           GOVERNANCE CARD
-        ===================================================== */
 
         .governance-card {
           height: 100%;
 
-          background: #fff;
+          background: #ffffff;
 
           border: 1px solid #e3e8ef;
 
@@ -1496,12 +1295,8 @@ export default function DirectorsPage() {
           border-color: var(--red);
 
           box-shadow:
-            0 12px 28px rgba(11, 31, 75, 0.10);
+            0 12px 28px rgba(11, 31, 75, 0.1);
         }
-
-        /* =====================================================
-           GOVERNANCE BUTTON
-        ===================================================== */
 
         .governance-card-button {
           width: 100%;
@@ -1528,11 +1323,13 @@ export default function DirectorsPage() {
         .governance-number {
           width: 48px;
           height: 48px;
+
           min-width: 48px;
 
           border-radius: 12px;
 
           display: flex;
+
           align-items: center;
           justify-content: center;
 
@@ -1541,15 +1338,10 @@ export default function DirectorsPage() {
           color: #fff;
 
           font-size: 0.75rem;
+
           font-weight: 700;
 
-          letter-spacing: 0.5px;
-
-          box-shadow:
-            0 5px 12px rgba(11, 31, 75, 0.15);
-
-          transition:
-            all 0.25s ease;
+          transition: background 0.25s ease;
         }
 
         .governance-card:hover .governance-number,
@@ -1561,6 +1353,7 @@ export default function DirectorsPage() {
           flex: 1;
 
           display: flex;
+
           flex-direction: column;
 
           gap: 7px;
@@ -1570,6 +1363,7 @@ export default function DirectorsPage() {
           color: var(--navy);
 
           font-size: 1.02rem;
+
           font-weight: 700;
 
           line-height: 1.35;
@@ -1579,21 +1373,20 @@ export default function DirectorsPage() {
           color: #727b87;
 
           font-size: 0.79rem;
+
           line-height: 1.55;
         }
-
-        /* =====================================================
-           GOVERNANCE ARROW
-        ===================================================== */
 
         .governance-arrow {
           width: 32px;
           height: 32px;
+
           min-width: 32px;
 
           border-radius: 50%;
 
           display: flex;
+
           align-items: center;
           justify-content: center;
 
@@ -1602,7 +1395,6 @@ export default function DirectorsPage() {
           color: var(--red);
 
           font-size: 1.25rem;
-          font-weight: 400;
 
           transition:
             transform 0.25s ease,
@@ -1619,30 +1411,15 @@ export default function DirectorsPage() {
           transform: rotate(45deg);
         }
 
-        /* =====================================================
-           GOVERNANCE CONTENT
-        ===================================================== */
-
         .governance-content {
           padding: 0 24px 24px;
 
           animation: governanceOpen 0.3s ease;
         }
 
-        @keyframes governanceOpen {
-          from {
-            opacity: 0;
-            transform: translateY(-8px);
-          }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         .governance-content-line {
           width: 100%;
+
           height: 1px;
 
           background: #e5e9ef;
@@ -1656,6 +1433,7 @@ export default function DirectorsPage() {
           color: #5d6672;
 
           font-size: 0.82rem;
+
           line-height: 1.75;
 
           text-align: justify;
@@ -1671,22 +1449,11 @@ export default function DirectorsPage() {
           color: var(--red);
 
           font-size: 0.76rem;
-          font-weight: 700;
 
-          padding: 0;
+          font-weight: 700;
 
           cursor: pointer;
         }
-
-        .governance-close:hover {
-          color: var(--navy);
-
-          text-decoration: underline;
-        }
-
-        /* =====================================================
-           GOVERNANCE FOOTER
-        ===================================================== */
 
         .governance-footer {
           max-width: 1100px;
@@ -1714,6 +1481,7 @@ export default function DirectorsPage() {
         .governance-footer-icon {
           width: 42px;
           height: 42px;
+
           min-width: 42px;
 
           border-radius: 50%;
@@ -1723,14 +1491,13 @@ export default function DirectorsPage() {
           color: #fff;
 
           display: flex;
+
           align-items: center;
           justify-content: center;
 
           font-size: 18px;
-          font-weight: 700;
 
-          box-shadow:
-            0 5px 12px rgba(178, 31, 45, 0.25);
+          font-weight: 700;
         }
 
         .governance-footer h5 {
@@ -1739,6 +1506,7 @@ export default function DirectorsPage() {
           margin: 0 0 7px;
 
           font-size: 0.98rem;
+
           font-weight: 700;
         }
 
@@ -1748,32 +1516,46 @@ export default function DirectorsPage() {
           margin: 0;
 
           font-size: 0.78rem;
+
           line-height: 1.7;
         }
 
         /* =====================================================
-           LARGE DESKTOP
+           ANIMATIONS
         ===================================================== */
 
-        @media (min-width: 1200px) {
-
-          .director-layout.profile-is-open,
-          .management-layout.management-profile-open {
-            gap: 20px;
+        @keyframes profileModalIn {
+          from {
+            opacity: 0;
+            transform: translateY(18px) scale(0.97);
           }
 
-          .director-layout.profile-is-open .director-card,
-          .management-layout.management-profile-open
-            .management-card {
-            width: 46%;
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes overlayIn {
+          from {
+            opacity: 0;
           }
 
-          .director-layout.profile-is-open .profile-content,
-          .management-layout.management-profile-open
-            .profile-content {
-            width: 54%;
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes governanceOpen {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
           }
 
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         /* =====================================================
@@ -1781,12 +1563,7 @@ export default function DirectorsPage() {
         ===================================================== */
 
         @media (max-width: 1199px) and (min-width: 768px) {
-
-          .director-card {
-            min-height: 380px;
-            margin-bottom: 20px;
-          }
-
+          .director-card,
           .management-card {
             min-height: 360px;
           }
@@ -1795,36 +1572,6 @@ export default function DirectorsPage() {
             width: 180px;
             height: 180px;
           }
-
-          .director-role {
-            min-height: 60px;
-          }
-
-          .management-role {
-            min-height: 60px;
-          }
-
-          .director-layout.profile-is-open,
-          .management-layout.management-profile-open {
-            width: 100%;
-          }
-
-          .director-layout.profile-is-open .director-card,
-          .management-layout.management-profile-open
-            .management-card {
-            width: 45%;
-          }
-
-          .director-layout.profile-is-open .profile-content,
-          .management-layout.management-profile-open
-            .profile-content {
-            width: 55%;
-          }
-
-          .governance-card-button {
-            min-height: 145px;
-          }
-
         }
 
         /* =====================================================
@@ -1832,32 +1579,76 @@ export default function DirectorsPage() {
         ===================================================== */
 
         @media (max-width: 767px) {
+          .profile-modal-overlay {
+            padding: 14px;
+          }
 
-          .director-layout.profile-is-open,
-          .management-layout.management-profile-open {
+          .profile-modal {
+            max-height: 92vh;
+
+            border-radius: 16px;
+          }
+
+          .profile-modal-inner {
             display: flex;
+
             flex-direction: column;
-            gap: 15px;
+
+            align-items: center;
+
+            gap: 22px;
+
+            padding: 30px 22px 26px;
           }
 
-          .director-layout.profile-is-open .director-card,
-          .management-layout.management-profile-open
-            .management-card {
+          .profile-modal-image {
+            width: min(230px, 72vw);
+
+            height: min(260px, 72vw);
+          }
+
+          .profile-modal-details {
             width: 100%;
+
+            padding-right: 0;
           }
 
-          .director-layout.profile-is-open .profile-content,
-          .management-layout.management-profile-open
-            .profile-content {
-            width: 100%;
+          .profile-modal-details h2 {
+            font-size: 1.45rem;
           }
 
-          .profile-content {
+          .profile-modal-section p,
+          .profile-modal-section li {
+            font-size: 0.8rem;
+
+            line-height: 1.65;
+          }
+
+          .profile-modal-close {
+            top: 10px;
+
+            right: 10px;
+
+            width: 38px;
+
+            height: 38px;
+
+            font-size: 1.45rem;
+          }
+
+          .director-card,
+          .management-card {
             min-height: auto;
           }
 
-          .management-profile-content {
-            min-height: auto;
+          .management-heading {
+            margin-top: 60px;
+
+            margin-bottom: 35px;
+          }
+
+          .management-row {
+            margin-bottom: 60px;
           }
 
           .governance-card-button {
@@ -1871,6 +1662,7 @@ export default function DirectorsPage() {
           .governance-number {
             width: 42px;
             height: 42px;
+
             min-width: 42px;
 
             border-radius: 10px;
@@ -1889,15 +1681,13 @@ export default function DirectorsPage() {
 
             gap: 14px;
           }
-
         }
 
         /* =====================================================
-           MOBILE 576
+           SMALL MOBILE
         ===================================================== */
 
         @media (max-width: 576px) {
-
           .directors-page {
             padding: 0;
           }
@@ -1908,86 +1698,56 @@ export default function DirectorsPage() {
 
           .page-subtitle {
             font-size: 0.9rem;
+
             padding: 0 10px;
           }
 
           .section-label {
             font-size: 0.62rem;
+
             padding: 5px 12px;
           }
 
-          .director-card {
-            min-height: auto;
-            margin-bottom: 0;
+          .director-card,
+          .management-card {
             padding: 22px !important;
+
+            border-radius: 15px;
           }
 
           .photo-wrapper {
             width: 160px;
+
             height: 160px;
           }
 
-          .director-role {
-            font-size: 0.82rem;
-            min-height: auto;
-          }
-
-          .management-role {
-            font-size: 0.82rem;
-            min-height: auto;
-          }
-
-          .profile-content {
-            padding: 16px;
-
-            border-radius: 10px;
-
-            box-shadow:
-              0 8px 20px rgba(11, 31, 75, 0.08);
-          }
-
-          .profile-header {
-            padding-bottom: 13px;
-            margin-bottom: 14px;
-          }
-
-          .profile-header-icon {
-            width: 34px;
-            height: 34px;
-            min-width: 34px;
-
-            font-size: 15px;
-          }
-
-          .profile-header h4 {
+          .person-name {
             font-size: 0.95rem;
           }
 
-          .profile-description {
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-          }
+          .person-role {
+            font-size: 0.82rem;
 
-          .profile-description h5,
-          .profile-section h5 {
-            font-size: 0.84rem;
-          }
+            min-height: auto;
 
-          .profile-description p {
-            font-size: 0.76rem;
-            line-height: 1.6;
-          }
-
-          .profile-section li {
-            font-size: 0.76rem;
+            margin-bottom: 18px;
           }
 
           .profile-button {
             font-size: 0.82rem;
-            padding: 8px 12px;
+
+            padding: 8px 16px;
           }
 
-          /* GOVERNANCE */
+          .management-heading {
+            margin-top: 50px;
+
+            margin-bottom: 30px;
+          }
+
+          .management-row {
+            margin-bottom: 50px;
+          }
 
           .corporate-governance-section {
             padding-bottom: 15px;
@@ -1995,11 +1755,6 @@ export default function DirectorsPage() {
 
           .governance-heading {
             margin-bottom: 30px;
-          }
-
-          .governance-label {
-            font-size: 0.62rem;
-            letter-spacing: 0.9px;
           }
 
           .governance-card-button {
@@ -2013,13 +1768,10 @@ export default function DirectorsPage() {
           .governance-number {
             width: 38px;
             height: 38px;
+
             min-width: 38px;
 
             font-size: 0.68rem;
-          }
-
-          .governance-card-text {
-            gap: 5px;
           }
 
           .governance-title {
@@ -2028,12 +1780,14 @@ export default function DirectorsPage() {
 
           .governance-short {
             font-size: 0.72rem;
+
             line-height: 1.5;
           }
 
           .governance-arrow {
             width: 28px;
             height: 28px;
+
             min-width: 28px;
 
             font-size: 1.05rem;
@@ -2045,6 +1799,7 @@ export default function DirectorsPage() {
 
           .governance-content p {
             font-size: 0.75rem;
+
             line-height: 1.65;
           }
 
@@ -2057,13 +1812,13 @@ export default function DirectorsPage() {
           .governance-footer-icon {
             width: 38px;
             height: 38px;
+
             min-width: 38px;
           }
 
           .governance-footer p {
             font-size: 0.74rem;
           }
-
         }
 
         /* =====================================================
@@ -2071,40 +1826,41 @@ export default function DirectorsPage() {
         ===================================================== */
 
         @media (max-width: 380px) {
-
           .photo-wrapper {
             width: 145px;
+
             height: 145px;
           }
 
-          .director-card {
+          .director-card,
+          .management-card {
             padding: 18px !important;
           }
 
-          .profile-content {
-            padding: 14px;
+          .person-name {
+            font-size: 0.9rem;
           }
 
-          .profile-header h4 {
-            font-size: 0.88rem;
+          .person-role {
+            font-size: 0.75rem;
           }
 
-          .profile-description p {
-            font-size: 0.74rem;
-          }
+          .profile-button {
+            font-size: 0.76rem;
 
-          .profile-section li {
-            font-size: 0.73rem;
+            padding: 7px 14px;
           }
 
           .governance-card-button {
             gap: 10px;
+
             padding: 15px;
           }
 
           .governance-number {
             width: 34px;
             height: 34px;
+
             min-width: 34px;
 
             font-size: 0.62rem;
@@ -2117,11 +1873,8 @@ export default function DirectorsPage() {
           .governance-short {
             font-size: 0.68rem;
           }
-
         }
-
       `}</style>
-
     </main>
   );
 }
