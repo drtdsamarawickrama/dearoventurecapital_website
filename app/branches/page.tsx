@@ -237,12 +237,13 @@ export default function BranchNetworkPage() {
           max-width: 750px;
           padding: 80px 0;
           color: #ffffff;
+          align: center;
         }
 
         .hero-label {
           display: inline-block;
           margin-bottom: 15px;
-          color: #ffffff;
+          color: #e63950;
           font-size: clamp(11px, 1.2vw, 13px);
           font-weight: 700;
           letter-spacing: 2px;

@@ -215,7 +215,7 @@ export default function Navbar() {
                   INVESTOR RELATIONS
               ================================================= */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   href="/islamic-finance"
                   className="nav-link"
@@ -223,7 +223,7 @@ export default function Navbar() {
                 >
                   Islamic Finance
                 </Link>
-              </li>
+              </li> */}
 
 
 

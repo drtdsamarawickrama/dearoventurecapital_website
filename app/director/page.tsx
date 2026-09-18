@@ -141,7 +141,7 @@ const corporateManagement = [
     role: "Deputy Chief Executive Officer",
     image: "/images/directors/roshan.png",
     description:
-      "Mr. Roshan Jansen serves as the Deputy Chief Executive Officer of Dearo Venture Capital Limited. He plays an important role in supporting the company’s strategic direction, business operations, and sustainable growth. With his leadership and management expertise, he contributes to strengthening the company’s performance and advancing its long-term business objectives.",
+"Mr. Roshan Jansen serves as the Deputy Chief Executive Officer of Dearo Venture Capital Limited, bringing extensive experience in financial services, business operations, sales, and strategic management. Prior to joining Dearo Venture Capital, he served as Chief Operating Officer at LCB Finance PLC, General Manager – Sales and Fixed Deposits at Richard Pieris Finance Limited, and Assistant General Manager - Investments at Softlogic Life Insurance PLC. With his strong leadership and industry expertise, Mr. Jansen plays a key role in supporting the company’s strategic direction, strengthening business operations, driving sustainable growth, and advancing Dearo Venture Capital Limited’s long-term business objectives.",
   },
 
   {
@@ -868,13 +868,13 @@ export default function DirectorsPage() {
         .person-role {
           color: var(--navy);
 
-font-size: 0.85rem;
+          font-size: 0.85rem;
           line-height: 1.5;
 
           min-height: 63px;
 
           display: flex;
-          align-items: flex-start;
+          align-items: flex-center;
           justify-content: center;
 
           text-align: center;
@@ -892,6 +892,7 @@ font-size: 0.85rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
+          margin-top: 10px;
 
           margin-bottom: 20px;
         }
