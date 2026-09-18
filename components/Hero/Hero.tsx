@@ -451,7 +451,6 @@ export default function Hero() {
           line-height: clamp(0.95, 1, 1.02);
           letter-spacing: clamp(-0.02em, -0.04em, -0.045em);
           color: #ffffff;
-          text-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
         }
 
         .title-main {

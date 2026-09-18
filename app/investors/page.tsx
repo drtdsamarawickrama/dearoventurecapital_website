@@ -48,14 +48,21 @@ export default function InvestorPage() {
       ===================================================== */}
 
       <section className="investor-hero">
+        <div className="hero-pattern"></div>
+
+        <div className="hero-accent hero-accent-left"></div>
+        <div className="hero-accent hero-accent-right"></div>
+
         <div className="hero-content">
+          <span className="hero-label">DEARO VENTURE CAPITAL</span>
 
           <h1>Investor Relations</h1>
+
+          <div className="hero-line"></div>
 
           <p>
             Transparency. Growth. Sustainable Value.
           </p>
-
         </div>
       </section>
 
@@ -70,17 +77,13 @@ export default function InvestorPage() {
 
           <div className="section-heading">
 
+            <span className="section-label">
+              FINANCIAL INFORMATION
+            </span>
+
             <h2>Financial Reports</h2>
 
-            {/* Optional description */}
-
-            {/* 
-            <p>
-              At Dearo Venture Capital Limited, we believe in complete
-              financial transparency. Our reports provide a clear view of
-              performance, risk, and strategy.
-            </p>
-            */}
+            <div className="section-red-line"></div>
 
           </div>
 
@@ -96,67 +99,7 @@ export default function InvestorPage() {
                   key={index}
                 >
 
-                  {/* Optional number */}
-
-                  {/* 
-                  <div className="card-number">
-                    0{index + 1}
-                  </div>
-                  */}
-
-                  <h3>
-                    {item.title}
-                  </h3>
-
-                  <p>
-                    {item.text}
-                  </p>
-
-                </div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          INVESTOR RELATIONS
-      ===================================================== */}
-
-      {/* 
-      <section className="relations-section">
-
-        <div className="page-container">
-
-          <div className="section-heading">
-
-            <h2>Investor Relations</h2>
-
-            <p>
-              We are committed to building long-term relationships with our
-              investors through transparency, responsible investment and
-              sustainable growth.
-            </p>
-
-          </div>
-
-
-          <div className="outer-box relations-box">
-
-            <div className="cards-grid">
-
-              {investorRelations.map((item, index) => (
-
-                <div
-                  className="relation-card"
-                  key={index}
-                >
+                  <div className="card-accent"></div>
 
                   <div className="card-number">
                     0{index + 1}
@@ -181,7 +124,6 @@ export default function InvestorPage() {
         </div>
 
       </section>
-      */}
 
 
       {/* =====================================================
@@ -189,6 +131,8 @@ export default function InvestorPage() {
       ===================================================== */}
 
       <section className="investor-invitation">
+
+        <div className="invitation-pattern"></div>
 
         <div className="page-container">
 
@@ -201,6 +145,8 @@ export default function InvestorPage() {
             <h2>
               Investor Invitation
             </h2>
+
+            <div className="invitation-line"></div>
 
             <p className="invitation-description">
               Partner with a high-growth, impact-driven financial institution
@@ -217,13 +163,9 @@ export default function InvestorPage() {
                   key={index}
                 >
 
-                  {/* Optional number */}
-
-                  {/* 
                   <div className="invitation-number">
                     0{index + 1}
                   </div>
-                  */}
 
                   <h3>
                     {item.title}
@@ -256,9 +198,15 @@ export default function InvestorPage() {
 
           <div className="cta-content">
 
+            <span className="cta-label">
+              LET'S BUILD THE FUTURE
+            </span>
+
             <h2>
               Ready to Partner With Dearo?
             </h2>
+
+            <div className="cta-line"></div>
 
             <p>
               Join us in driving sustainable growth and impactful returns.
@@ -285,6 +233,19 @@ export default function InvestorPage() {
       <style jsx>{`
 
         /* =====================================================
+           COLOR SYSTEM
+        ===================================================== */
+
+        /*
+          NAVY  : #0B1F4B
+          DARK  : #071633
+          RED   : #C8102E
+          RED 2 : #A50D26
+          WHITE : #FFFFFF
+        */
+
+
+        /* =====================================================
            RESET
         ===================================================== */
 
@@ -292,8 +253,10 @@ export default function InvestorPage() {
           width: 100%;
           max-width: 100%;
           overflow-x: hidden;
+
           background: #f7f9fc;
-          color: #111827;
+          color: #172033;
+
           box-sizing: border-box;
         }
 
@@ -311,7 +274,9 @@ export default function InvestorPage() {
         .page-container {
           width: 100%;
           max-width: 1200px;
+
           margin: 0 auto;
+
           padding-left: 24px;
           padding-right: 24px;
         }
@@ -323,36 +288,121 @@ export default function InvestorPage() {
 
         .investor-hero {
           position: relative;
+
           width: 100%;
-          height: 280px;
+          height: 300px;
+
           overflow: hidden;
-          background: #0b1f4b;
+
+          background:
+            linear-gradient(
+              135deg,
+              #071633 0%,
+              #0b1f4b 60%,
+              #102a5f 100%
+            );
 
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
+        .hero-pattern {
+          position: absolute;
+          inset: 0;
+
+          background-image:
+            linear-gradient(
+              135deg,
+              rgba(255,255,255,0.035) 25%,
+              transparent 25%
+            );
+
+          background-size: 45px 45px;
+
+          opacity: 0.5;
+        }
+
+        .hero-accent {
+          position: absolute;
+
+          width: 180px;
+          height: 180px;
+
+          border: 1px solid rgba(200, 16, 46, 0.45);
+
+          transform: rotate(45deg);
+
+          pointer-events: none;
+        }
+
+        .hero-accent-left {
+          left: -120px;
+          bottom: -110px;
+        }
+
+        .hero-accent-right {
+          right: -120px;
+          top: -110px;
+
+          border-color: rgba(255,255,255,0.08);
+        }
+
         .hero-content {
           position: relative;
-          z-index: 1;
+
+          z-index: 2;
+
           width: 100%;
+
           padding: 0 24px;
+
           text-align: center;
         }
 
-        .hero-content h1 {
-          margin: 0 0 10px;
-          color: #ffffff;
-          font-size: clamp(32px, 4vw, 48px);
+        .hero-label {
+          display: inline-block;
+
+          margin-bottom: 14px;
+
+          color: #e63950;
+
+          font-size: 12px;
           font-weight: 700;
+
+          letter-spacing: 3px;
+        }
+
+        .hero-content h1 {
+          margin: 0 0 12px;
+
+          color: #ffffff;
+
+          font-size: clamp(32px, 5vw, 64px);
+
+          font-weight: 700;
+
           line-height: 1.2;
+        }
+
+        .hero-line {
+          width: 55px;
+          height: 3px;
+
+          margin: 0 auto 15px;
+
+          background: #c8102e;
+
+          border-radius: 10px;
         }
 
         .hero-content p {
           margin: 0;
-          color: #d9e2f2;
+
+          color: #dce5f5;
+
           font-size: 16px;
+
           line-height: 1.6;
         }
 
@@ -363,25 +413,49 @@ export default function InvestorPage() {
 
         .section-heading {
           width: 100%;
+
           max-width: 850px;
+
           margin: 0 auto 45px;
+
           text-align: center;
         }
 
-        .section-heading h2 {
-          margin: 0 0 16px;
-          color: #0b1f4b;
-          font-size: clamp(28px, 4vw, 44px);
+        .section-label {
+          display: inline-block;
+
+          margin-bottom: 12px;
+
+          color: #c8102e;
+
+          font-size: 12px;
+
           font-weight: 700;
+
+          letter-spacing: 2.5px;
+        }
+
+        .section-heading h2 {
+          margin: 0 0 15px;
+
+          color: #0b1f4b;
+
+          font-size: clamp(28px, 4vw, 44px);
+
+          font-weight: 700;
+
           line-height: 1.2;
         }
 
-        .section-heading p {
-          width: 100%;
-          margin: 0;
-          color: #667085;
-          font-size: 16px;
-          line-height: 1.8;
+        .section-red-line {
+          width: 50px;
+          height: 3px;
+
+          margin: 0 auto;
+
+          background: #c8102e;
+
+          border-radius: 10px;
         }
 
 
@@ -391,37 +465,91 @@ export default function InvestorPage() {
 
         .reports-section {
           width: 100%;
+
           padding: 90px 0;
-          background: #f7f9fc;
+
+          background:
+            linear-gradient(
+              180deg,
+              #f7f9fc 0%,
+              #ffffff 100%
+            );
         }
 
         .outer-box {
+          position: relative;
+
           width: 100%;
+
           padding: 30px;
+
           background: #ffffff;
-          border: 1px solid #e5e9f0;
+
+          border: 1px solid #e1e6ef;
+
           border-radius: 22px;
-          box-shadow: 0 10px 35px rgba(11, 31, 75, 0.06);
+
+          box-shadow:
+            0 12px 40px rgba(11, 31, 75, 0.07);
+        }
+
+        .outer-box::before {
+          content: "";
+
+          position: absolute;
+
+          top: 0;
+          left: 40px;
+          right: 40px;
+
+          height: 3px;
+
+          background: #c8102e;
+
+          border-radius: 0 0 10px 10px;
         }
 
         .cards-grid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
+
+          grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
           gap: 24px;
+
           width: 100%;
         }
 
-        .report-card {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          min-width: 0;
-          min-height: 250px;
-          padding: 28px 24px;
 
-          background: #f8fafc;
-          border: 1px solid #e5e9f0;
+        /* =====================================================
+           REPORT CARDS
+        ===================================================== */
+
+        .report-card {
+          position: relative;
+
+          display: flex;
+
+          flex-direction: column;
+
+          width: 100%;
+
+          min-width: 0;
+
+          min-height: 250px;
+
+          padding: 30px 24px;
+
+          overflow: hidden;
+
+          background: #ffffff;
+
+          border: 1px solid #e1e6ef;
+
           border-radius: 16px;
+
+          box-shadow:
+            0 5px 20px rgba(11, 31, 75, 0.035);
 
           transition:
             transform 0.3s ease,
@@ -430,11 +558,37 @@ export default function InvestorPage() {
             background 0.3s ease;
         }
 
+        .card-accent {
+          position: absolute;
+
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 4px;
+
+          background: #c8102e;
+
+          transform: scaleX(0.25);
+
+          transform-origin: left;
+
+          transition: transform 0.3s ease;
+        }
+
         .report-card:hover {
-          transform: translateY(-6px);
+          transform: translateY(-7px);
+
           background: #ffffff;
-          border-color: #0b1f4b;
-          box-shadow: 0 12px 30px rgba(11, 31, 75, 0.1);
+
+          border-color: #c8102e;
+
+          box-shadow:
+            0 16px 35px rgba(11, 31, 75, 0.12);
+        }
+
+        .report-card:hover .card-accent {
+          transform: scaleX(1);
         }
 
 
@@ -444,20 +598,36 @@ export default function InvestorPage() {
 
         .card-number {
           display: flex;
+
           align-items: center;
           justify-content: center;
+
           flex-shrink: 0;
 
           width: 42px;
           height: 42px;
+
           margin-bottom: 22px;
 
           border-radius: 50%;
+
           background: #0b1f4b;
+
           color: #ffffff;
 
           font-size: 13px;
+
           font-weight: 700;
+
+          transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+        }
+
+        .report-card:hover .card-number {
+          background: #c8102e;
+
+          transform: scale(1.05);
         }
 
 
@@ -465,68 +635,26 @@ export default function InvestorPage() {
            CARD TYPOGRAPHY
         ===================================================== */
 
-        .report-card h3,
-        .relation-card h3 {
+        .report-card h3 {
           margin: 0 0 12px;
 
           color: #0b1f4b;
 
           font-size: 18px;
+
           font-weight: 700;
+
           line-height: 1.45;
         }
 
-        .report-card p,
-        .relation-card p {
+        .report-card p {
           margin: 0;
 
           color: #667085;
 
           font-size: 14px;
+
           line-height: 1.75;
-        }
-
-
-        /* =====================================================
-           INVESTOR RELATIONS
-        ===================================================== */
-
-        .relations-section {
-          width: 100%;
-          padding: 90px 0;
-          background: #ffffff;
-        }
-
-        .relations-box {
-          background: #f7f9fc;
-        }
-
-        .relation-card {
-          display: flex;
-          flex-direction: column;
-
-          width: 100%;
-          min-width: 0;
-          min-height: 250px;
-
-          padding: 28px 24px;
-
-          background: #ffffff;
-          border: 1px solid #e5e9f0;
-          border-radius: 16px;
-
-          transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            border-color 0.3s ease;
-        }
-
-        .relation-card:hover {
-          transform: translateY(-6px);
-
-          border-color: #0b1f4b;
-
-          box-shadow: 0 12px 30px rgba(11, 31, 75, 0.1);
         }
 
 
@@ -535,41 +663,90 @@ export default function InvestorPage() {
         ===================================================== */
 
         .investor-invitation {
+          position: relative;
+
           width: 100%;
+
           padding: 90px 0;
-          background: #0b1f4b;
+
+          overflow: hidden;
+
+          background:
+            linear-gradient(
+              135deg,
+              #071633 0%,
+              #0b1f4b 60%,
+              #102b62 100%
+            );
+        }
+
+        .invitation-pattern {
+          position: absolute;
+
+          inset: 0;
+
+          background-image:
+            linear-gradient(
+              135deg,
+              rgba(200, 16, 46, 0.08) 25%,
+              transparent 25%
+            );
+
+          background-size: 55px 55px;
+
+          pointer-events: none;
         }
 
         .invitation-content {
+          position: relative;
+
+          z-index: 1;
+
           width: 100%;
+
           text-align: center;
         }
 
         .invitation-label {
           display: inline-block;
 
-          margin-bottom: 15px;
+          margin-bottom: 14px;
 
-          color: #b9c9e6;
+          color: #e63950;
 
           font-size: 13px;
+
           font-weight: 700;
 
-          letter-spacing: 2px;
+          letter-spacing: 2.5px;
         }
 
         .invitation-content h2 {
-          margin: 0 0 16px;
+          margin: 0 0 14px;
 
           color: #ffffff;
 
           font-size: clamp(28px, 4vw, 44px);
+
           font-weight: 700;
+
           line-height: 1.2;
+        }
+
+        .invitation-line {
+          width: 55px;
+          height: 3px;
+
+          margin: 0 auto 18px;
+
+          background: #c8102e;
+
+          border-radius: 10px;
         }
 
         .invitation-description {
           width: 100%;
+
           max-width: 800px;
 
           margin: 0 auto;
@@ -577,6 +754,7 @@ export default function InvestorPage() {
           color: #d9e2f2;
 
           font-size: 16px;
+
           line-height: 1.8;
         }
 
@@ -599,39 +777,82 @@ export default function InvestorPage() {
         }
 
         .invitation-card {
+          position: relative;
+
           display: flex;
+
           flex-direction: column;
 
           width: 100%;
+
           min-width: 0;
+
           min-height: 250px;
 
           padding: 28px 24px;
 
           text-align: left;
 
-          background: rgba(255, 255, 255, 0.08);
+          background:
+            rgba(255, 255, 255, 0.075);
 
-          border: 1px solid rgba(255, 255, 255, 0.16);
+          border: 1px solid
+            rgba(255, 255, 255, 0.14);
 
           border-radius: 16px;
+
+          backdrop-filter: blur(8px);
 
           transition:
             transform 0.3s ease,
             background 0.3s ease,
-            border-color 0.3s ease;
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        .invitation-card::before {
+          content: "";
+
+          position: absolute;
+
+          top: 0;
+          left: 0;
+
+          width: 4px;
+          height: 0;
+
+          background: #c8102e;
+
+          border-radius: 16px 0 0 16px;
+
+          transition: height 0.3s ease;
         }
 
         .invitation-card:hover {
-          transform: translateY(-6px);
+          transform: translateY(-7px);
 
-          background: rgba(255, 255, 255, 0.13);
+          background:
+            rgba(255, 255, 255, 0.12);
 
-          border-color: rgba(255, 255, 255, 0.35);
+          border-color:
+            rgba(200, 16, 46, 0.65);
+
+          box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.2);
         }
+
+        .invitation-card:hover::before {
+          height: 100%;
+        }
+
+
+        /* =====================================================
+           INVITATION NUMBER
+        ===================================================== */
 
         .invitation-number {
           display: flex;
+
           align-items: center;
           justify-content: center;
 
@@ -644,12 +865,31 @@ export default function InvestorPage() {
 
           border-radius: 50%;
 
-          background: #ffffff;
-          color: #0b1f4b;
+          background: #c8102e;
+
+          color: #ffffff;
 
           font-size: 13px;
+
           font-weight: 700;
+
+          transition:
+            background 0.3s ease,
+            transform 0.3s ease;
         }
+
+        .invitation-card:hover .invitation-number {
+          background: #ffffff;
+
+          color: #0b1f4b;
+
+          transform: scale(1.05);
+        }
+
+
+        /* =====================================================
+           INVITATION TYPOGRAPHY
+        ===================================================== */
 
         .invitation-card h3 {
           margin: 0 0 12px;
@@ -657,7 +897,9 @@ export default function InvestorPage() {
           color: #ffffff;
 
           font-size: 18px;
+
           font-weight: 700;
+
           line-height: 1.45;
         }
 
@@ -667,6 +909,7 @@ export default function InvestorPage() {
           color: #d9e2f2;
 
           font-size: 14px;
+
           line-height: 1.75;
         }
 
@@ -677,24 +920,58 @@ export default function InvestorPage() {
 
         .investor-cta {
           width: 100%;
+
           padding: 85px 0;
 
-          background: #ffffff;
+          background:
+            linear-gradient(
+              180deg,
+              #ffffff 0%,
+              #f7f9fc 100%
+            );
         }
 
         .cta-content {
           width: 100%;
+
           text-align: center;
         }
 
+        .cta-label {
+          display: inline-block;
+
+          margin-bottom: 12px;
+
+          color: #c8102e;
+
+          font-size: 12px;
+
+          font-weight: 700;
+
+          letter-spacing: 2.5px;
+        }
+
         .cta-content h2 {
-          margin: 0 0 15px;
+          margin: 0 0 14px;
 
           color: #0b1f4b;
 
           font-size: clamp(28px, 4vw, 38px);
+
           font-weight: 700;
+
           line-height: 1.25;
+        }
+
+        .cta-line {
+          width: 50px;
+          height: 3px;
+
+          margin: 0 auto 18px;
+
+          background: #c8102e;
+
+          border-radius: 10px;
         }
 
         .cta-content p {
@@ -703,39 +980,61 @@ export default function InvestorPage() {
           color: #667085;
 
           font-size: 16px;
+
           line-height: 1.7;
         }
 
+
+        /* =====================================================
+           CTA BUTTON
+        ===================================================== */
+
         .cta-button {
           display: inline-flex;
+
           align-items: center;
           justify-content: center;
 
           min-height: 52px;
 
-          padding: 0 32px;
+          padding: 0 34px;
 
           border-radius: 8px;
 
-          background: #0b1f4b;
+          background: #c8102e;
+
           color: #ffffff;
 
           font-size: 16px;
+
           font-weight: 600;
 
           text-decoration: none;
 
+          box-shadow:
+            0 8px 20px rgba(200, 16, 46, 0.2);
+
           transition:
             transform 0.3s ease,
-            background 0.3s ease;
+            background 0.3s ease,
+            box-shadow 0.3s ease;
         }
 
         .cta-button:hover {
-          transform: translateY(-2px);
+          transform: translateY(-3px);
 
-          background: #16356f;
+          background: #a50d26;
 
           color: #ffffff;
+
+          box-shadow:
+            0 12px 28px rgba(200, 16, 46, 0.3);
+        }
+
+        .cta-button:focus-visible {
+          outline: 3px solid rgba(200, 16, 46, 0.3);
+
+          outline-offset: 4px;
         }
 
 
@@ -757,7 +1056,6 @@ export default function InvestorPage() {
           }
 
           .report-card,
-          .relation-card,
           .invitation-card {
             min-height: 220px;
           }
@@ -776,10 +1074,8 @@ export default function InvestorPage() {
             padding-right: 20px;
           }
 
-          /* Reduced Hero Height */
-
           .investor-hero {
-            height: 230px;
+            height: 235px;
           }
 
           .hero-content h1 {
@@ -790,8 +1086,12 @@ export default function InvestorPage() {
             font-size: 15px;
           }
 
+          .hero-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+          }
+
           .reports-section,
-          .relations-section,
           .investor-invitation {
             padding: 65px 0;
           }
@@ -808,7 +1108,13 @@ export default function InvestorPage() {
 
           .outer-box {
             padding: 20px;
+
             border-radius: 18px;
+          }
+
+          .outer-box::before {
+            left: 25px;
+            right: 25px;
           }
 
           .cards-grid,
@@ -820,22 +1126,21 @@ export default function InvestorPage() {
           }
 
           .report-card,
-          .relation-card,
           .invitation-card {
             min-height: 210px;
+
             padding: 22px 20px;
           }
 
           .report-card h3,
-          .relation-card h3,
           .invitation-card h3 {
             font-size: 17px;
           }
 
           .report-card p,
-          .relation-card p,
           .invitation-card p {
             font-size: 13px;
+
             line-height: 1.7;
           }
 
@@ -857,10 +1162,8 @@ export default function InvestorPage() {
             padding-right: 16px;
           }
 
-          /* Smaller Hero */
-
           .investor-hero {
-            height: 200px;
+            height: 205px;
           }
 
           .hero-content {
@@ -868,7 +1171,7 @@ export default function InvestorPage() {
           }
 
           .hero-content h1 {
-            margin-bottom: 8px;
+            margin-bottom: 9px;
 
             font-size: 30px;
           }
@@ -877,14 +1180,33 @@ export default function InvestorPage() {
             font-size: 14px;
           }
 
+          .hero-label {
+            margin-bottom: 10px;
+
+            font-size: 9px;
+
+            letter-spacing: 1.8px;
+          }
+
+          .hero-line {
+            width: 45px;
+            height: 2px;
+          }
+
           .reports-section,
-          .relations-section,
           .investor-invitation {
             padding: 55px 0;
           }
 
           .section-heading {
             margin-bottom: 28px;
+          }
+
+          .section-label,
+          .cta-label {
+            font-size: 10px;
+
+            letter-spacing: 2px;
           }
 
           .section-heading h2,
@@ -895,24 +1217,32 @@ export default function InvestorPage() {
           .section-heading p,
           .invitation-description {
             font-size: 14px;
+
             line-height: 1.7;
           }
 
           .outer-box {
             padding: 12px;
+
             border-radius: 16px;
+          }
+
+          .outer-box::before {
+            left: 18px;
+            right: 18px;
           }
 
           .cards-grid,
           .invitation-grid {
             grid-template-columns: 1fr;
+
             gap: 14px;
           }
 
           .report-card,
-          .relation-card,
           .invitation-card {
             min-height: auto;
+
             padding: 24px 20px;
           }
 
@@ -925,13 +1255,11 @@ export default function InvestorPage() {
           }
 
           .report-card h3,
-          .relation-card h3,
           .invitation-card h3 {
             font-size: 17px;
           }
 
           .report-card p,
-          .relation-card p,
           .invitation-card p {
             font-size: 14px;
           }
@@ -958,6 +1286,7 @@ export default function InvestorPage() {
 
           .cta-button {
             width: 100%;
+
             max-width: 320px;
           }
 
@@ -976,7 +1305,7 @@ export default function InvestorPage() {
           }
 
           .investor-hero {
-            height: 180px;
+            height: 185px;
           }
 
           .hero-content h1 {
@@ -997,9 +1326,27 @@ export default function InvestorPage() {
           }
 
           .report-card,
-          .relation-card,
           .invitation-card {
             padding: 20px 16px;
+          }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .report-card,
+          .invitation-card,
+          .cta-button,
+          .card-number,
+          .invitation-number,
+          .card-accent,
+          .invitation-card::before {
+            transition: none;
           }
 
         }
@@ -1009,3 +1356,4 @@ export default function InvestorPage() {
     </main>
   );
 }
+

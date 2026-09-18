@@ -2,68 +2,68 @@
 
 import React from "react";
 import {
-Handshake,
-FileSearch,
-Lightbulb,
-Leaf,
-UserRound,
-TrendingUp,
+  Handshake,
+  FileSearch,
+  Lightbulb,
+  Leaf,
+  UserRound,
+  TrendingUp,
 } from "lucide-react";
 
 const values = [
-{
-title: "INTEGRITY",
-color: "navy",
-icon: Handshake,
-},
-{
-title: "TRANSPARENCY",
-color: "white",
-icon: FileSearch,
-},
-{
-title: "INNOVATION",
-color: "red",
-icon: Lightbulb,
-},
-{
-title: "RESPONSIBILITY",
-color: "navy",
-icon: Leaf,
-},
-{
-title: "CUSTOMER FOCUS",
-color: "white",
-icon: UserRound,
-twoLines: true,
-},
-{
-title: "SUSTAINABLE GROWTH",
-color: "red",
-icon: TrendingUp,
-twoLines: true,
-},
+  {
+    title: "INTEGRITY",
+    color: "navy",
+    icon: Handshake,
+  },
+  {
+    title: "TRANSPARENCY",
+    color: "white",
+    icon: FileSearch,
+  },
+  {
+    title: "INNOVATION",
+    color: "red",
+    icon: Lightbulb,
+  },
+  {
+    title: "RESPONSIBILITY",
+    color: "navy",
+    icon: Leaf,
+  },
+  {
+    title: "CUSTOMER FOCUS",
+    color: "white",
+    icon: UserRound,
+    twoLines: true,
+  },
+  {
+    title: "SUSTAINABLE GROWTH",
+    color: "red",
+    icon: TrendingUp,
+    twoLines: true,
+  },
 ];
 
 export default function OurValues() {
-return ( <section className="values-section"> <div className="values-container">
+  return (<section className="values-section"> <div className="values-container">
 
     {/* HEADER */}
-    <div className="values-header">
+    {/* <div className="values-header">
       <div className="section-kicker">
-       
+
       </div>
 
       <h2>
         Our <span>Values</span>
       </h2>
-    </div>
+    </div> */}
 
     {/* DESCRIPTION */}
-    <p className="values-description">
+    {/* <p className="values-description">
       Our values guide the way we build relationships, create
       opportunities, and deliver sustainable growth.
-    </p>
+    </p> */}
 
     {/* VALUES */}
     <div className="values-grid">
@@ -93,7 +93,7 @@ return ( <section className="values-section"> <div className="values-container">
     </div>
   </div>
 
-  <style jsx>{`
+    <style jsx>{`
     /* =========================================
        MAIN SECTION
     ========================================= */
@@ -124,7 +124,6 @@ return ( <section className="values-section"> <div className="values-container">
       align-items: center;
       justify-content: center;
       gap: 10px;
-
       color: #c62828;
 
       font-size: 0.7rem;
@@ -150,22 +149,18 @@ return ( <section className="values-section"> <div className="values-container">
       margin: 0;
 
       color: #0b1f4b;
-
       font-family: Arial, Helvetica, sans-serif;
-
-      font-size: clamp(1.45rem, 2.5vw, 2rem);
-
-      font-weight: 700;
-
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
       line-height: 1.2;
-
       letter-spacing: -0.025em;
-
       text-align: center;
     }
 
     .values-header h2 span {
       color: #c62828;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
     }
 
     /* =========================================
@@ -207,7 +202,7 @@ return ( <section className="values-section"> <div className="values-container">
     ========================================= */
 
     .value-card {
-      min-height: 205px;
+      min-height: 305px;
 
       padding: 25px 10px;
 
@@ -551,8 +546,8 @@ return ( <section className="values-section"> <div className="values-container">
       }
     }
   `}</style>
-</section>
+  </section>
 
 
-);
+  );
 }

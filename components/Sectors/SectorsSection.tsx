@@ -45,7 +45,7 @@ const sectors = [
     description:
       "Shariah-compliant solutions offering ethical, transparent and responsible financial services designed to support sustainable growth.",
     image: "/images/Untitled design (6).png",
-    href: "/sectors/#",
+    href: "/#",
   },
 ];
 
