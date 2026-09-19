@@ -18,6 +18,20 @@ const newsArticles = [
       "/images/news/news_m_6.jpg",
       "/images/news/news_m-7.jpg",
       "/images/news/news_m-8.jpg",
+      "/images/news/news_m-9.jpg",
+      "/images/news/news_m-10.jpg",
+      "/images/news/news_m-11.jpg",
+      "/images/news/news_m-12.jpg",
+      "/images/news/news_m-13.jpg",
+      "/images/news/news_m-14.jpg",
+      "/images/news/news_m-15.jpg",
+      "/images/news/news_m-16.jpg",
+      "/images/news/news_m-17.jpg",
+      "/images/news/news_m-18.jpg",
+      "/images/news/news_m-19.jpg",
+
+
+      
     ],
   },
 

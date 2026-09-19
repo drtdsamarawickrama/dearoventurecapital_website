@@ -298,6 +298,94 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
               <div className="story-bottom-accent"></div>
             </div>
+          </div> 
+
+          {/* ==================================================
+             WHY INVEST WITH DEARO
+        ================================================== */}
+
+        <div className="vision-mission-section">
+          <div className="vision-mission-header">
+            <h3>
+              Investing with <span>purpose.</span> Creating lasting value.
+            </h3>
+          </div>
+
+          <div className="row vision-mission-row">
+            {/* VISION */}
+
+            <div className="col-12 col-md-6 vision-mission-column">
+              <div className="vision-mission-card vision-card">
+                
+
+                <div className="vision-card-content">
+
+
+                  <h4>
+                    Our <strong>Investment Philosophy</strong>
+                  </h4>
+
+                  <p>
+                    Long-term value creation.
+                  </p>
+                  <p>
+                    Strategic and responsible investing.
+                  </p>
+                  <p>
+                    Diversification across high-potential sectors.
+                  </p>
+                  <p>
+                    Transparency and trust in stakeholder relationships.
+                  </p>
+                  <p>
+                    Strong corporate governance and compliance.
+                  </p>
+                  <p>
+                    Driving sustainable growth.
+                  </p>
+                  <p>
+                    Sustainable and ethical business practices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="col-12 col-md-6 vision-mission-column">
+              <div className="vision-mission-card mission-card">
+                
+
+                <div className="vision-card-content">
+
+                  <h4>
+                    Why <strong>Invest With Dearo</strong>
+                  </h4>
+
+                  <p>
+                    Strong leadership and corporate governance.
+                  </p>
+                  <p>
+                    Diversified investment portfolio.
+                  </p>
+                  <p>
+                    Focus on sustainable and scalable ventures.
+                  </p>
+                  <p>
+                    Investor-friendly investment structures.
+                  </p>
+                  <p>
+                    Commitment to transparency and accountability.
+                  </p>
+                  <p>
+                    Professional management and risk controls.
+                  </p>
+                  <p>
+                    Long-term wealth creation opportunities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
 
 
@@ -596,7 +684,7 @@ Our values guide the way we build relationships, create opportunities, and deliv
         ================================================== */
 
         .vision-mission-section {
-          margin-bottom: 78px;
+          margin-bottom: 50px;
         }
 
         .vision-mission-header {
@@ -802,7 +890,7 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
         .story-section {
           margin-top: 50px;
-          margin-bottom: 05px;
+          margin-bottom: 60px;
         }
 
         .story-heading {
