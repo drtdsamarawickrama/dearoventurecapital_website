@@ -58,7 +58,6 @@ export default function InvestorPage() {
 
           <h1>Investor Relations</h1>
 
-          <div className="hero-line"></div>
 
           <p>
             Transparency. Growth. Sustainable Value.
@@ -83,7 +82,6 @@ export default function InvestorPage() {
 
             <h2>Financial Reports</h2>
 
-            <div className="section-red-line"></div>
 
           </div>
 
@@ -146,7 +144,6 @@ export default function InvestorPage() {
               Investor Invitation
             </h2>
 
-            <div className="invitation-line"></div>
 
             <p className="invitation-description">
               Partner with a high-growth, impact-driven financial institution
@@ -206,7 +203,6 @@ export default function InvestorPage() {
               Ready to Partner With Dearo?
             </h2>
 
-            <div className="cta-line"></div>
 
             <p>
               Join us in driving sustainable growth and impactful returns.
