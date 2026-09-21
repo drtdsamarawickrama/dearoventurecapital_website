@@ -49,7 +49,7 @@ export default function CareersPage() {
       image: "/images/careers/legal_officer.png",
     },
 
-     {
+    {
       id: 5,
       title: "Business Development Manager And Executive - Investment",
       type: "Full Time",
@@ -68,7 +68,7 @@ export default function CareersPage() {
 
       image: "/images/careers/PERSONAL ASSITANT.jpg",
 
-  
+
     },
 
     {
@@ -80,7 +80,7 @@ export default function CareersPage() {
 
       image: "/images/careers/RECEPTIONIST.jpg",
 
-  
+
     },
 
 
@@ -183,7 +183,9 @@ export default function CareersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Why Join Dearo?
+              <span className="why-join-navy">Why Join DEAR</span>
+              <span className="why-join-red">O</span>{" "}
+              <span className="why-join-navy">?</span>
             </motion.h2>
 
             <motion.p
@@ -467,6 +469,15 @@ export default function CareersPage() {
         .careers-subtitle {
           max-width: 650px;
         }
+
+
+        .why-join-navy {
+          color: #071a3d;
+}
+
+.why-join-red {
+  color: #ed1c24;
+}
 
 
         /* =====================================================

@@ -20,7 +20,7 @@ export default function JoinDearoPage() {
             </p>
 
             <h1>
-              JOIN <span>DEARO</span>
+              JOIN DEAR<span>O</span>
             </h1>
 
             <p className="hero-description">
@@ -277,7 +277,7 @@ export default function JoinDearoPage() {
         }
 
         .hero-content h1 span {
-          color: #ffffff;
+          color: #f20b0b;
         }
 
         .hero-description {

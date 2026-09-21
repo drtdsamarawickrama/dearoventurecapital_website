@@ -39,7 +39,7 @@ export default function AboutSection() {
         <div className="about-image-wrapper">
           <div className="about-image-container">
             <Image
-              src="/images/about_dearo_new.jpg"
+              src="/images/ChatGPT Image Sep 21, 2026, 10_35_40 AM.png"
               alt="About Dearo Venture Capital"
               fill
               className="about-image"
@@ -49,10 +49,10 @@ export default function AboutSection() {
 
             <div className="image-overlay"></div>
 
-            <div className="image-badge">
+            {/* <div className="image-badge">
               <span className="badge-year">2022</span>
               <span className="badge-text">Established</span>
-            </div>
+            </div> */}
 
             <div className="image-corner image-corner-top"></div>
             <div className="image-corner image-corner-bottom"></div>
@@ -358,7 +358,7 @@ Our values guide the way we build relationships, create opportunities, and deliv
                 <div className="vision-card-content">
 
                   <h4>
-                    Why <strong>Invest With Dearo</strong>
+                    Why Invest With DEAR<strong>O</strong>
                   </h4>
 
                   <p>
@@ -391,6 +391,31 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
 
           <KeyMilestones />
+{/* ==================================================
+    INTRO VIDEO
+================================================== */}
+
+<div className="about-video-section">
+  <div className="about-video-container">
+    <video
+      src="/videos/intro.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      className="about-video"
+    >
+      Your browser does not support the video tag.
+    </video>
+
+    <div className="video-overlay"></div>
+
+    
+  </div>
+</div>
+
+
 
           <AwardsRecognition />
                   </div>
@@ -490,13 +515,84 @@ Our values guide the way we build relationships, create opportunities, and deliv
           line-height: 1.7;
         }
 
+
+
+        /* ==================================================
+   INTRO VIDEO
+================================================== */
+
+.about-video-section {
+  position: relative;
+  width: 100%;
+  margin: 70px auto 75px;
+  z-index: 2;
+}
+
+.about-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: 0;
+  padding-bottom: 42%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #0b1f4b;
+  box-shadow: 0 15px 45px rgba(11, 31, 75, 0.12);
+}
+
+.about-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Optional dark overlay */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 31, 75, 0.02),
+    rgba(11, 31, 75, 0.12)
+  );
+}
+
+/* Decorative corners */
+.video-corner {
+  position: absolute;
+  z-index: 3;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+}
+
+.video-corner-top {
+  top: 20px;
+  right: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.video-corner-bottom {
+  bottom: 20px;
+  left: 20px;
+  border-bottom: 2px solid rgba(198, 40, 40, 0.9);
+  border-left: 2px solid rgba(198, 40, 40, 0.9);
+}
+
         /* ==================================================
            ABOUT IMAGE
         ================================================== */
 
         .about-image-wrapper {
           width: 100%;
-          max-width: 1300px;
 
           margin: 0 auto 42px;
 
@@ -516,11 +612,8 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
           border-radius: 22px;
 
-          background: #0b1f4b;
 
-          box-shadow:
-            0 20px 50px rgba(11, 31, 75, 0.12),
-            0 5px 15px rgba(11, 31, 75, 0.06);
+        
         }
 
         .about-image {
@@ -535,68 +628,11 @@ Our values guide the way we build relationships, create opportunities, and deliv
           transform: scale(1.025);
         }
 
-        .image-overlay {
-          position: absolute;
+        
 
-          inset: 0;
 
-          background:
-            linear-gradient(
-              90deg,
-              rgba(11, 31, 75, 0.48),
-              transparent 45%,
-              rgba(11, 31, 75, 0.05)
-            );
 
-          z-index: 1;
-        }
-
-        .image-badge {
-          position: absolute;
-
-          left: 30px;
-          bottom: 30px;
-
-          z-index: 3;
-
-          display: flex;
-
-          flex-direction: column;
-
-          padding: 13px 18px;
-
-          min-width: 125px;
-
-          background: rgba(255, 255, 255, 0.96);
-
-          border-left: 4px solid #c62828;
-
-          border-radius: 8px;
-
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .badge-year {
-          color: #0b1f4b;
-
-          font-size: 1.35rem;
-
-          line-height: 1;
-
-          font-weight: 800;
-        }
-
-        .badge-text {
-          color: #6b7280;
-
-          font-size: 0.7rem;
-
-          margin-top: 5px;
-
-          letter-spacing: 0.08em;
-
-          text-transform: uppercase;
-        }
+       
 
         .image-corner {
           position: absolute;
@@ -851,7 +887,7 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
           font-size: clamp(1.35rem, 2vw, 1.7rem);
 
-          font-weight: 400;
+          font-weight: 700;
         }
 
         .vision-mission-card h4 strong {
