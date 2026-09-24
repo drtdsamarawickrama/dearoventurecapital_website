@@ -20,6 +20,21 @@ export default function CareersPage() {
   // CURRENT OPENINGS
   // ============================================================
   const careers = [
+
+
+    {
+      id: 1,
+      title: "Executive / Senior Executive , Manager / Assistant Manager  Senior Manager , Regional Manager",
+      type: "Full Time",
+      shortDescription:
+        "Lead and manage regional operations, drive business growth, supervise teams, and ensure effective performance and customer satisfaction.",
+
+      image: "/images/careers/manager.png",
+
+      email: "hr@dearoinvestment.com",
+
+
+    },
     {
       id: 2,
       title: "Company Secretary",
@@ -27,7 +42,11 @@ export default function CareersPage() {
       shortDescription:
         "Ensure compliance, maintain records, and support corporate governance.",
       image: "/images/careers/COMPANY SECRETARY.jpg",
+
+      email: "careers@dearoinvestment.com",
     },
+
+
 
     {
       id: 3,
@@ -37,6 +56,8 @@ export default function CareersPage() {
         "Drive business growth, build client relationships, and identify new investment opportunities.",
 
       image: "/images/careers/business_development.jpg",
+
+      email: "careers@dearoinvestment.com",
     },
 
     {
@@ -47,6 +68,7 @@ export default function CareersPage() {
         "Provide legal support, ensure compliance, and assist with corporate matters.",
 
       image: "/images/careers/legal_officer.png",
+      email: "careers@dearoinvestment.com",
     },
 
     {
@@ -57,6 +79,7 @@ export default function CareersPage() {
         "Manage investment operations, support clients, and identify opportunities for business growth.",
 
       image: "/images/careers/MANAGER EXCECUTIVE - INVESTMENT.jpg",
+      email: "careers@dearoinvestment.com",
     },
 
     {
@@ -67,6 +90,7 @@ export default function CareersPage() {
         "Provide administrative support and assist with daily operations.",
 
       image: "/images/careers/PERSONAL ASSITANT.jpg",
+      email: "careers@dearoinvestment.com",
 
 
     },
@@ -79,9 +103,12 @@ export default function CareersPage() {
         "Welcome visitors, handle inquiries, manage calls, and provide professional front-desk support.",
 
       image: "/images/careers/RECEPTIONIST.jpg",
+      email: "careers@dearoinvestment.com",
 
 
     },
+
+
 
 
 
@@ -364,7 +391,7 @@ export default function CareersPage() {
 
                             <div className="apply-container">
                               <a
-                                href={`https://mail.google.com/mail/?view=cm&fs=1&to=careers@dearoinvestment.com&su=${encodeURIComponent(
+                                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${career.email}&su=${encodeURIComponent(
                                   `Application for ${career.title}`
                                 )}`}
                                 target="_blank"
@@ -376,7 +403,7 @@ export default function CareersPage() {
                               </a>
 
                               <p className="small text-muted mt-3 mb-0">
-                                Send your CV to careers@dearoinvestment.com
+                                Send your CV to {career.email}
                               </p>
                             </div>
 
