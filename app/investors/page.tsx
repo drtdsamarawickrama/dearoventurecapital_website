@@ -58,7 +58,6 @@ export default function InvestorPage() {
 
           <h1>Investor Relations</h1>
 
-          <div className="hero-line"></div>
 
           <p>
             Transparency. Growth. Sustainable Value.
@@ -83,7 +82,6 @@ export default function InvestorPage() {
 
             <h2>Financial Reports</h2>
 
-            <div className="section-red-line"></div>
 
           </div>
 
@@ -146,7 +144,6 @@ export default function InvestorPage() {
               Investor Invitation
             </h2>
 
-            <div className="invitation-line"></div>
 
             <p className="invitation-description">
               Partner with a high-growth, impact-driven financial institution
@@ -203,10 +200,8 @@ export default function InvestorPage() {
             </span>
 
             <h2>
-              Ready to Partner With Dearo?
-            </h2>
-
-            <div className="cta-line"></div>
+  Ready to Partner With DEAR<span className="dearo-o">O</span>?
+</h2>
 
             <p>
               Join us in driving sustainable growth and impactful returns.
@@ -435,6 +430,8 @@ export default function InvestorPage() {
           letter-spacing: 2.5px;
         }
 
+        
+
         .section-heading h2 {
           margin: 0 0 15px;
 
@@ -446,6 +443,19 @@ export default function InvestorPage() {
 
           line-height: 1.2;
         }
+
+        .section-heading h2 span {
+          margin: 0 0 15px;
+
+          color: #ea0c0c;
+
+          font-size: clamp(28px, 4vw, 44px);
+
+          font-weight: 700;
+
+          line-height: 1.2;
+        }
+
 
         .section-red-line {
           width: 50px;
@@ -962,6 +972,10 @@ export default function InvestorPage() {
 
           line-height: 1.25;
         }
+
+        .cta-content h2 .dearo-o {
+  color: #c8102e !important;
+}
 
         .cta-line {
           width: 50px;
