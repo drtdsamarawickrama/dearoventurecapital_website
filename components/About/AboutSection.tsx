@@ -391,30 +391,13 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
 
           <KeyMilestones />
-{/* ==================================================
-    INTRO VIDEO
-================================================== */}
-
-<div className="about-video-section">
-  <div className="about-video-container">
-    <video
-      src="/videos/intro.mp4"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      className="about-video"
-    >
-      Your browser does not support the video tag.
-    </video>
-
-    <div className="video-overlay"></div>
-
-    
-  </div>
-</div>
-
+{/* ================================================== INTRO VIDEO ================================================== */} 
+<div className="about-video-section"> 
+  <div className="about-video-container"> 
+    <video src="/videos/intro.mp4" autoPlay muted loop playsInline preload="auto" className="about-video" > Your browser does not support the video tag. </video> 
+    <div className="video-overlay"></div> 
+    </div> 
+    </div>
 
 
           <AwardsRecognition />
@@ -517,76 +500,7 @@ Our values guide the way we build relationships, create opportunities, and deliv
 
 
 
-        /* ==================================================
-   INTRO VIDEO
-================================================== */
-
-.about-video-section {
-  position: relative;
-  width: 100%;
-  margin: 70px auto 75px;
-  z-index: 2;
-}
-
-.about-video-container {
-  position: relative;
-  width: 100%;
-  max-width: 1300px;
-  height: 0;
-  padding-bottom: 42%;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 22px;
-  background: #0b1f4b;
-  box-shadow: 0 15px 45px rgba(11, 31, 75, 0.12);
-}
-
-.about-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* Optional dark overlay */
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(11, 31, 75, 0.02),
-    rgba(11, 31, 75, 0.12)
-  );
-}
-
-/* Decorative corners */
-.video-corner {
-  position: absolute;
-  z-index: 3;
-  width: 70px;
-  height: 70px;
-  pointer-events: none;
-}
-
-.video-corner-top {
-  top: 20px;
-  right: 20px;
-  border-top: 2px solid rgba(255, 255, 255, 0.8);
-  border-right: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.video-corner-bottom {
-  bottom: 20px;
-  left: 20px;
-  border-bottom: 2px solid rgba(198, 40, 40, 0.9);
-  border-left: 2px solid rgba(198, 40, 40, 0.9);
-}
-
+        /* ================================================== INTRO VIDEO ================================================== */ .about-video-section { position: relative; width: 100%; margin: 70px auto 75px; padding: 0; z-index: 2; border: none; outline: none; box-shadow: none; } .about-video-container { position: relative; width: 100%; max-width: 1300px; height: 0; padding-bottom: 42%; margin: 0 auto; overflow: hidden; border: none; outline: none; border-radius: 22px; background: #0b1f4b; box-shadow: none; } .about-video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; margin: 0; padding: 0; border: 0; outline: 0; vertical-align: top; object-fit: cover; object-position: center center; } /* Video overlay */ .video-overlay { position: absolute; inset: 0; z-index: 2; margin: 0; padding: 0; pointer-events: none; background: linear-gradient( 180deg, rgba(11, 31, 75, 0.02), rgba(11, 31, 75, 0.12) ); border: none; }
         /* ==================================================
            ABOUT IMAGE
         ================================================== */
