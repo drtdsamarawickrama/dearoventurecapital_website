@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
+import DearoChatbot from "@/components/Chatbot/DearoChatbot";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
@@ -23,8 +24,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="grow">{children}</main>
         <Footer />
+
+          <DearoChatbot />
+
       </body>
     </html>
   );

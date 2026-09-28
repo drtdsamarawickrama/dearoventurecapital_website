@@ -55,7 +55,7 @@ export default function CareersPage() {
       shortDescription:
         "Drive business growth, build client relationships, and identify new investment opportunities.",
 
-      image: "/images/careers/business_development.jpg",
+      image: "/images/careers/business _D_P.jpg",
 
       email: "careers@dearoinvestment.com",
     },
