@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -7,34 +6,93 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is Dearo Venture Capital?",
+    question: "What is Dearo Venture Capital Ltd?",
     answer:
-      "Dearo Venture Capital is an investment company focused on supporting innovative businesses and entrepreneurs with growth opportunities and strategic guidance.",
+      "Dearo Venture Capital Ltd is a diversified investment and business-development organization focused on creating sustainable value for individuals, entrepreneurs, SMEs and corporate partners across Sri Lanka. The company aims to connect capital with business opportunities while supporting sustainable growth and economic development.",
+  },
+
+  {
+    question: "What is an Equity Investment?",
+    answer:
+      "An equity investment means investing capital in exchange for an ownership interest or shares in a company, subject to the specific structure and terms of the investment agreement. The investor's potential return is linked to the performance and value of the underlying business and the applicable terms of the investment.",
+  },
+
+  {
+    question: "How does the Dearo Equity Investment model work?",
+    answer:
+      "Dearo's investment approach is designed to connect capital with growth opportunities. Depending on the specific investment structure, investors participate in opportunities associated with businesses and ventures supported by Dearo. The exact investment amount, ownership structure, return mechanism, investment period and applicable conditions are explained to investors before they make an investment decision.",
+  },
+
+  {
+    question: "Who can invest with Dearo Venture Capital?",
+    answer:
+      "Investment opportunities may be suitable for individuals and other eligible investors, subject to the applicable investment terms, eligibility requirements and due-diligence procedures. Our investment team can explain the available opportunities and the requirements applicable to each investor.",
+  },
+
+  {
+    question: "What is the minimum investment amount?",
+    answer:
+       `
+      <p>The minimum investment amount can vary depending on the particular investment opportunity
+and its structure.</p>
+
+      <p>
+        For the most accurate information, please contact our investment team for the currently
+available investment options.
+      </p>
+    `,
+  },
+
+  {
+    question: "What kind of businesses does Dearo focus on?",
+    answer: `
+      <p>Dearo operates across a diversified range of sectors, including:</p>
+
+      <ul>
+        <li>Agriculture &amp; Plantation</li>
+        <li>Engineering &amp; Construction</li>
+        <li>Education &amp; Training</li>
+        <li>Seafood and Export-Oriented Businesses</li>
+        <li>Information Technology</li>
+        <li>Islamic Financial Services</li>
+      </ul>
+
+      <p>
+        The company states that diversification and investment across
+        high-potential sectors form part of its investment philosophy.
+      </p>
+    `,
+  },
+
+  {
+    question: "Why does Dearo focus on SMEs and entrepreneurs?",
+    answer:
+      "SMEs and entrepreneurs can play an important role in economic development, employment and innovation. Dearo&#39;s mission is to connect capital with opportunity and support businesses with resources required for growth.",
+  },
+  {
+    question: "How can my investment contribute to business growth?",
+    answer:
+      "Capital can help businesses expand operations, develop products or services, improve infrastructure, enter new markets and pursue growth opportunities.",
+  },
+  {
+    question: "Does Dearo invest in only one industry?",
+    answer:
+      "No. Dearo's business portfolio spans multiple sectors, including agriculture, engineering, education, IT and seafood-related businesses. This diversified approach forms part of the company&#39;s stated investment philosophy."
+  },
+  {
+    question: "How does Dearo support the businesses it works with?",
+    answer:
+      "Dearo aims to provide businesses with access to capital, strategic partnerships, business-development support and resources required for growth. Its stated mission is to connect capital with opportunity and support businesses with the resources required to grow."
+  },
+  {
+    question: "Can I withdraw or sell my investment?",
+    answer:
+      "This depends on the structure of the investment and the terms of the relevant agreement. For an equity investment, investors should understand the applicable transfer, exit, redemption or liquidity provisions before investing.",
   },
   // {
-  //   question: "What types of businesses do you invest in?",
+  //   question: "Why does Dearo focus on SMEs and entrepreneurs?",
   //   answer:
-  //     "We are interested in innovative businesses and promising ventures with strong growth potential, sustainable business models, and capable management teams.",
-  // },
-  // {
-  //   question: "How can I contact Dearo Venture Capital?",
-  //   answer:
-  //     "You can contact us through the contact form on this website. Our team will review your inquiry and get back to you as soon as possible.",
-  // },
-  // {
-  //   question: "How can I submit my business or investment proposal?",
-  //   answer:
-  //     "You can submit your business or investment inquiry through our contact section. Please provide relevant information about your business, project, and funding requirements.",
-  // },
-  // {
-  //   question: "Do you provide support beyond financial investment?",
-  //   answer:
-  //     "Yes. Depending on the opportunity, we may provide strategic guidance, business development support, networking opportunities, and other forms of assistance.",
-  // },
-  // {
-  //   question: "How long does it take to receive a response?",
-  //   answer:
-  //     "Our team reviews inquiries carefully. Response times may vary depending on the nature and complexity of your request.",
+  //     "SMEs and entrepreneurs can play an important role in economic development, employment and innovation. Dearo&#39;s mission is to connect capital with opportunity and support businesses with resources required for growth.",
   // },
 ];
 
@@ -74,20 +132,20 @@ export default function ContactPage() {
       {/* =====================================================
           CONTACT FORM SECTION
       ====================================================== */}
-
       <ContactSection />
 
       {/* =====================================================
           FAQ SECTION
       ====================================================== */}
-
       <section className="faq-section">
         <div className="faq-container">
 
           {/* Section Heading */}
           <div className="faq-heading">
             <span>FAQ</span>
+
             <h2>Frequently Asked Questions</h2>
+
             <p>
               Find answers to some of the most common questions about
               Dearo Venture Capital.
@@ -120,7 +178,13 @@ export default function ContactPage() {
                     openIndex === index ? "show" : ""
                   }`}
                 >
-                  <p>{faq.answer}</p>
+                  {/* Render normal text and HTML bullet points */}
+                  <div
+                    className="faq-answer-content"
+                    dangerouslySetInnerHTML={{
+                      __html: faq.answer,
+                    }}
+                  />
                 </div>
               </div>
             ))}
@@ -288,16 +352,38 @@ export default function ContactPage() {
         }
 
         .faq-answer.show {
-          max-height: 300px;
+          max-height: 500px;
           opacity: 1;
         }
 
-        .faq-answer p {
+        /* Answer Content */
+
+        .faq-answer-content {
           padding: 0 25px 22px;
-          margin: 0;
           color: #667085;
           font-size: 15px;
           line-height: 1.8;
+        }
+
+        .faq-answer-content p {
+          margin: 0 0 12px;
+        }
+
+        .faq-answer-content p:last-child {
+          margin-bottom: 0;
+        }
+
+        .faq-answer-content ul {
+          margin: 0 0 15px;
+          padding-left: 25px;
+        }
+
+        .faq-answer-content li {
+          margin-bottom: 6px;
+        }
+
+        .faq-answer-content li:last-child {
+          margin-bottom: 0;
         }
 
         /* ================================
@@ -338,13 +424,16 @@ export default function ContactPage() {
             font-size: 15px;
           }
 
-          .faq-answer p {
+          .faq-answer-content {
             padding: 0 18px 18px;
             font-size: 14px;
+          }
+
+          .faq-answer-content ul {
+            padding-left: 22px;
           }
         }
       `}</style>
     </>
   );
 }
-
