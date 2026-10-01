@@ -200,6 +200,22 @@ export default function Navbar() {
                     Subsidiaries
                   </Link>
 
+                  <Link
+                    href="/branches"
+                    className="dropdown-item-custom"
+                    onClick={closeMenu}
+                  >
+                    Branch Network
+                  </Link>
+
+                  {/* <Link
+                  href="/branches"
+                  className="nav-link"
+                  onClick={closeMenu}
+                >
+                  Branch Network
+                </Link> */}
+
                   {/* <Link
                     href="#"
                     className="dropdown-item-custom"
@@ -247,7 +263,7 @@ export default function Navbar() {
                   BRANCH NETWORK
               ================================================= */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   href="/branches"
                   className="nav-link"
@@ -255,7 +271,7 @@ export default function Navbar() {
                 >
                   Branch Network
                 </Link>
-              </li>
+              </li> */}
 
 
               {/* =================================================
@@ -271,6 +287,22 @@ export default function Navbar() {
                   News & Updates
                 </Link>
               </li>
+
+
+              {/* =================================================
+                  APPLY NOW
+              ================================================= */}
+
+              <li className="nav-item">
+                <Link
+                  href="/portal"
+                  className="nav-link"
+                  onClick={closeMenu}
+                >
+                  Apply Now
+                </Link>
+              </li>
+
 
 
               {/* =================================================
@@ -302,21 +334,23 @@ export default function Navbar() {
                 </Link>
               </li>
 
-
-              {/* =================================================
-                  APPLY NOW
+               {/* =================================================
+                  CONTACT
               ================================================= */}
 
               <li className="nav-item">
                 <Link
-                  href="/portal"
+                  href="/faq"
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Apply Now
+                  FAQ
                 </Link>
               </li>
 
+
+
+              
             </ul>
           </div>
 
