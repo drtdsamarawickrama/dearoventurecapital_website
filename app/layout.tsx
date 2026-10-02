@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="grow">{children}</main>
         <Footer />
 
-           {/* <DearoChatbot />  */}
+            {/* <DearoChatbot />   */}
 
       </body>
     </html>
