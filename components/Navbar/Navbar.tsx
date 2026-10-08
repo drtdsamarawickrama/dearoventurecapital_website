@@ -92,9 +92,8 @@ export default function Navbar() {
       ================================================= */}
 
       <nav
-        className={`navbar navbar-expand-lg premium-nav ${
-          scrolled ? "scrolled" : ""
-        }`}
+        className={`navbar navbar-expand-lg premium-nav ${scrolled ? "scrolled" : ""
+          }`}
       >
         <div className="container-fluid px-3 px-lg-4">
 
@@ -138,9 +137,8 @@ export default function Navbar() {
           ================================================= */}
 
           <div
-            className={`collapse navbar-collapse ${
-              isOpen ? "show" : ""
-            }`}
+            className={`collapse navbar-collapse ${isOpen ? "show" : ""
+              }`}
           >
             <ul className="navbar-nav ms-auto align-items-lg-center nav-menu">
 
@@ -150,9 +148,8 @@ export default function Navbar() {
               ================================================= */}
 
               <li
-                className={`nav-item dropdown-custom ${
-                  aboutOpen ? "dropdown-active" : ""
-                }`}
+                className={`nav-item dropdown-custom ${aboutOpen ? "dropdown-active" : ""
+                  }`}
               >
 
                 <button
@@ -165,9 +162,8 @@ export default function Navbar() {
 
                   <ChevronDown
                     size={15}
-                    className={`dropdown-icon ${
-                      aboutOpen ? "rotate" : ""
-                    }`}
+                    className={`dropdown-icon ${aboutOpen ? "rotate" : ""
+                      }`}
                   />
                 </button>
 
@@ -228,18 +224,18 @@ export default function Navbar() {
               </li>
 
               {/* =================================================
-                  INVESTOR RELATIONS
+                  Islamic Services
               ================================================= */}
 
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link
                   href="/islamic-finance"
                   className="nav-link"
                   onClick={closeMenu}
                 >
-                  Islamic Finance
+                  Islamic Services
                 </Link>
-              </li> */}
+              </li>
 
 
 
@@ -334,7 +330,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
-               {/* =================================================
+              {/* =================================================
                   CONTACT
               ================================================= */}
 
@@ -350,7 +346,7 @@ export default function Navbar() {
 
 
 
-              
+
             </ul>
           </div>
 

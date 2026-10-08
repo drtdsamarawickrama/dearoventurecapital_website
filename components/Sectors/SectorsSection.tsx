@@ -26,13 +26,13 @@ const sectors = [
     image: "/images/Untitled design (3).png",
     href: "/sectors/education",
   },
-  {
-    title: "DCCI – From Our Waters to the World",
-    description:
-      "Sustainable source seafood processed with international quality standards for global markets.",
-    image: "/images/Untitled design (4).png",
-    href: "/sectors/dcci",
-  },
+  // {
+  //   title: "DCCI – From Our Waters to the World",
+  //   description:
+  //     "Sustainable source seafood processed with international quality standards for global markets.",
+  //   image: "/images/Untitled design (4).png",
+  //   href: "/sectors/dcci",
+  // },
   {
     title: "Dearo IT Solutions",
     description:
@@ -133,7 +133,7 @@ export default function BusinessSectors() {
         }
 
         .sectors-container {
-          width: 100%;
+          width: 100%; 
           max-width: 1280px;
           margin: 0 auto;
         }
