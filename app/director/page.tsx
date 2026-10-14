@@ -64,25 +64,29 @@ const directors = [
   },
 
   {
-    name: "Mr. Muditha Welihinda",
+    name: "Dr. Neil Bogahalanda",
     role: ["Independent / Non Executive Director"],
-    image: "/images/directors/muditha_new.jpg",
+    image: "/images/directors/neil bogahalanda.jpg",
     description:
-      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Peiris Group, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
+      "Dr. Neil Bogahalanda is an accomplished Human Resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education. He holds a PhD from MSU, Malaysia, and an MBA, and is a member of the Institute of Certified Management Accountants (ICMA), the Chartered Institute of Personnel Management (CIPM), and the Sri Lanka Institute of Directors (SLID). He is also the recipient of the Lifetime Gold Award presented by the CIPM in recognition of his professional contribution and achievements. Throughout his distinguished career, he has held several senior leadership positions, including President of CIPM, Head of Group HR at Royal Ceramics Lanka PLC, General Manager – HR at Brownes Group, and Assistant General Manager – HR at Sampath Bank. His extensive expertise in human resources, corporate management, and organizational development brings valuable strategic insight and leadership to his role as an Independent / Non-Executive Director.",
+
     qualifications: [
+      "PHD - MSU, Malaysia",
       "MBA",
-      "Certified Information Systems Auditor - USA",
-      "Member of the British Computer Society",
-      "Member of the Australian Computer Society",
-      "Member of the Institute of Data Processing Management, UK",
+      "Member - ICMA",
+      "Member - CIPM",
+      "Member - SLID",
+      "Winner of the Lifetime Gold Award offered by the CIPM",
     ],
     experience: [
-      "Former Director - Highbrow College & Institute",
-      "Director/ Head of IT - Richard Peiris Group",
-      "Manager - IT, Radwa Food Productions Ltd",
-      "IT Manager - Food & Fine pastries Ltd",
+      "President - CIPM",
+      "Head of Group HR - Royal Ceramics Lanka PLC",
+      "GM - HR, Browens Group",
+      "AGM - HR, Sampath Bank",
     ],
   },
+
+ 
 
   {
     name: "Mr. Lalith J. Fernando",
@@ -106,28 +110,28 @@ const directors = [
     ],
   },
 
-  {
-    name: "Dr. Neil Bogahalanda",
+   {
+    name: "Mr. Muditha Welihinda",
     role: ["Independent / Non Executive Director"],
-    image: "/images/directors/neil bogahalanda.jpg",
+    image: "/images/directors/muditha_new.jpg",
     description:
-      "Dr. Neil Bogahalanda is an accomplished Human Resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education. He holds a PhD from MSU, Malaysia, and an MBA, and is a member of the Institute of Certified Management Accountants (ICMA), the Chartered Institute of Personnel Management (CIPM), and the Sri Lanka Institute of Directors (SLID). He is also the recipient of the Lifetime Gold Award presented by the CIPM in recognition of his professional contribution and achievements. Throughout his distinguished career, he has held several senior leadership positions, including President of CIPM, Head of Group HR at Royal Ceramics Lanka PLC, General Manager – HR at Brownes Group, and Assistant General Manager – HR at Sampath Bank. His extensive expertise in human resources, corporate management, and organizational development brings valuable strategic insight and leadership to his role as an Independent / Non-Executive Director.",
-
+      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Peiris Group, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
     qualifications: [
-      "PHD - MSU, Malaysia",
       "MBA",
-      "Member - ICMA",
-      "Member - CIPM",
-      "Member - SLID",
-      "Winner of the Lifetime Gold Award offered by the CIPM",
+      "Certified Information Systems Auditor - USA",
+      "Member of the British Computer Society",
+      "Member of the Australian Computer Society",
+      "Member of the Institute of Data Processing Management, UK",
     ],
     experience: [
-      "President - CIPM",
-      "Head of Group HR - Royal Ceramics Lanka PLC",
-      "GM - HR, Browens Group",
-      "AGM - HR, Sampath Bank",
+      "Former Director - Highbrow College & Institute",
+      "Director/ Head of IT - Richard Peiris Group",
+      "Manager - IT, Radwa Food Productions Ltd",
+      "IT Manager - Food & Fine pastries Ltd",
     ],
   },
+
+  
 
   {
     name: "Ms. Shaheena Mohamed",
