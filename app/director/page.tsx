@@ -44,6 +44,26 @@ const directors = [
   },
 
   {
+    name: "Mr. Andreas Wiik",
+    role: ["Independent / Non Executive Director"],
+    image: "/images/directors/AW pp.jpg",
+    description:
+      "Mr. Andreas Wiik is an experienced international business leader with extensive expertise in investor relations, business strategy, corporate management, finance and accounting, and agriculture project management. He holds a Master’s degree in Business & Economics from BI Norwegian School of Management, specializing in International Management and Corporate Social Responsibility (CSR). With over 18 years of international experience across Norway, the United Kingdom, China, and Sri Lanka, he has worked across diverse industries, including finance, agriculture, fashion, sports, apparel and textiles, telecommunications, fibre technology, and food retail. His professional background also encompasses start-up development, fundraising, management consulting, and sports team management and coaching. Drawing on his broad international experience, strategic insight, and business leadership, he brings valuable expertise and guidance to his role as Independent / Non-Executive Director at Dearo Venture Capital Limited.",
+    qualifications: [
+      // "Attorney at Law",
+      // "Professional Diploma in Anti-Money Laundering",
+      // "MBA",
+      // "Post Graduate Diploma in Economic Development-Uni. of Colombo",
+    ],
+    experience: [
+      // "Independent Legal Practitioner",
+      // "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
+      // "DGM-Compliance & Company Secretary - Sri Lanka Insurance Corporation",
+      // "Group company Secretary - Janashakthi Group",
+    ],
+  },
+
+  {
     name: "Mr. Muditha Welihinda",
     role: ["Independent / Non Executive Director"],
     image: "/images/directors/muditha_new.jpg",
@@ -129,6 +149,8 @@ const directors = [
       "Group company Secretary - Janashakthi Group",
     ],
   },
+
+  
 ];
 
 /* =========================================================

@@ -29,10 +29,10 @@ export default function AwardsRecognition() {
       title: "Best SME Financing Initiative",
       image: "/images/awards/AW5.jpg",
     },
-    // {
-    //   title: "Business Excellence in Micro Finance 2026",
-    //   image: "/images/awards/aw_2026.png",
-    // },
+     {
+       title: "Business Excellence in Micro Finance 2026",
+       image: "/images/awards/aw_2026.jpg",
+     },
   ];
 
   return (
