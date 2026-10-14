@@ -227,7 +227,7 @@ export default function Navbar() {
                   Islamic Services
               ================================================= */}
 
-              {/* <li className="nav-item">
+               <li className="nav-item">
                 <Link
                   href="/islamic-finance"
                   className="nav-link"
@@ -235,7 +235,7 @@ export default function Navbar() {
                 >
                   Islamic Services
                 </Link>
-              </li> */}
+              </li> 
 
 
 
