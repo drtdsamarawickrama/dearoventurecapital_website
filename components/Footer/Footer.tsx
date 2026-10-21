@@ -24,9 +24,8 @@ export default function Footer() {
     "Agriculture & Plantation",
     "Engineering & Construction",
     "Education & Training",
-    // "Dearo Lime",
-    "DCCI – From Our Waters to the World",
     "DEARO IT SOLUTION",
+    "Dearo Islamic Services",
   ];
 
   return (
