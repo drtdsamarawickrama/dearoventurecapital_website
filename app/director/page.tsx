@@ -227,14 +227,7 @@ const corporateManagement = [
       "Mr. Mahesh Gunawardana serves as the Head of Audit at Dearo Venture Capital, overseeing internal audit functions and supporting strong governance, compliance, and risk management practices. He focuses on maintaining effective internal controls, reviewing operational processes, identifying potential risks, and promoting transparency and accountability across the organization to support sustainable business performance.",
   },
 
-  {
-    name: "Mrs. Lasanthi Gunawardana",
-    role: "Head of Finance",
-    image:
-      "/images/directors/ChatGPT Image Sep 15, 2026, 12_14_57 PM.png",
-    description:
-      "Ms. Lasanthi Maheshika Gunawardhana serves as the Head of Finance at Dearo Venture Capital Limited. She is responsible for overseeing financial operations, planning, reporting, budgeting, and financial controls. Her role supports sound financial management, regulatory compliance, accurate reporting, and effective decision-making while contributing to the company’s sustainable growth and long-term financial objectives.",
-  },
+  
 ];
 
 /* =========================================================
