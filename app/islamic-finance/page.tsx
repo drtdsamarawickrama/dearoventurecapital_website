@@ -7,6 +7,7 @@ import WhatIsMusharaka from "./WhatIsMusharaka";
 import WhyChooseMusharaka from "./WhyChooseMusharaka";
 import MusharakaInvestmentWorks from "./MusharakaInvestmentWorks";
 import OurApproach from "./OurApproach";
+import Leadership from "./Leadership";
 import InvestWithPurpose from "./InvestWithPurpose";
 // import WhyChooseMusharaka from "./WhyChooseMusharaka";
 // import MusharakaInvestmentWorks from "./MusharakaInvestmentWorks";
@@ -101,10 +102,15 @@ export default function IslamicFinancePage() {
 
       <OurApproach />
 
+      {/* LEADERSHIP */}
+
+<Leadership />
+
 
       {/* =========================================================
           INVEST WITH PURPOSE
       ========================================================= */}
+
 
       <InvestWithPurpose />
 

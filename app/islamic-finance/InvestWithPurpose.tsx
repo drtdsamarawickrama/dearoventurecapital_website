@@ -31,7 +31,7 @@ export default function InvestWithPurpose() {
 
             {/* ISLAMIC ADVISER */}
 
-            <div className="islamic-adviser">
+            {/* <div className="islamic-adviser">
               <span className="adviser-label">
                 ISLAMIC ADVISER
               </span>
@@ -39,7 +39,7 @@ export default function InvestWithPurpose() {
               <h4>
                 Ash-Shaikh H. Abdul Nazar
               </h4>
-            </div>
+            </div> */}
           </div>
 
         </div>

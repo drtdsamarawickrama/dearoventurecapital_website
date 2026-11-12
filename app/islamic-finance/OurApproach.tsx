@@ -189,7 +189,7 @@ export default function OurApproach() {
         .shared-growth-section {
           position: relative;
 
-          padding: 105px 0;
+          padding: 50px 0;
 
           background: #f5f8f6;
 
