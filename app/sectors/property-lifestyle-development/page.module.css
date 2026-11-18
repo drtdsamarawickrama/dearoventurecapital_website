@@ -679,6 +679,9 @@
   );
 }
 
+
+
+
 .homeFeatures {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1189,5 +1192,66 @@
 
   .contactBox {
     padding: 25px 18px;
+  }
+}
+
+/* =========================================
+   DEARO INTRODUCTION VIDEO
+   FULLY RESPONSIVE YOUTUBE VIDEO
+========================================= */
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 50px auto 65px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #071a3a;
+  border-bottom: 5px solid #16834b;
+  box-shadow: 0 15px 40px rgba(7, 26, 58, 0.15);
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.videoWrapper:hover {
+  border-bottom-color: #ed1c24;
+  box-shadow: 0 20px 45px rgba(7, 26, 58, 0.22);
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .videoWrapper {
+    max-width: 100%;
+    margin: 40px auto 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .videoWrapper {
+    width: 100%;
+    margin: 30px auto 40px;
+    border-radius: 8px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .videoWrapper {
+    width: 100%;
+    margin: 25px auto 35px;
+    border-radius: 6px;
   }
 }

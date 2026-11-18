@@ -48,10 +48,10 @@ const sectors = [
     href: "/islamic-finance",
   },
    {
-  title: "Dearo Property & Lifestyle Development",
+  title: "Dearo Travel & Hospitality",
   description:
     "Building dreams and creating destinations through innovative home-building solutions and boutique tourism villa development opportunities across Sri Lanka.",
-  image: "/images/Dearo Tropical Property Branding.png",
+  image: "/images/DEARO Property & Lifestyle Logo.png",
   href: "/sectors/property-lifestyle-development",
 },
 ];

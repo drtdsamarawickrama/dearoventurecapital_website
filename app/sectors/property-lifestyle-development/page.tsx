@@ -75,10 +75,10 @@ const destinations = [
         name: "BATTICALOA",
         places: "Pasikuda, Kalkudah",
       },
-    //   {
-    //     name: "AMPARA",
-    //     places: "Arugam Bay, Pottuvil, Whiskey Point",
-    //   },
+      //   {
+      //     name: "AMPARA",
+      //     places: "Arugam Bay, Pottuvil, Whiskey Point",
+      //   },
     ],
   },
 ];
@@ -163,6 +163,18 @@ export default function PropertyLifestylePage() {
               growing tourism accommodation sector.
             </p>
           </div>
+
+
+          <div className={styles.videoWrapper}>
+            <iframe
+              src="https://www.youtube.com/embed/5eMTzPmE-m0?autoplay=0&mute=1&loop=1&playlist=5eMTzPmE-m0"
+              title="Get to Know DEARO"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+
 
           <div className={styles.conceptGrid}>
             <a href="#tourism" className={styles.conceptCard}>
@@ -747,12 +759,16 @@ export default function PropertyLifestylePage() {
             </div>
 
             <div className={styles.contactDetails}>
-              <a href="mailto:info@dearoventurecapital.com">
-                ✉ info@dearoventurecapital.com
+              <a href="mailto:manoj@dearoventurecapital.com">
+                ✉ manoj@dearoventurecapital.com
               </a>
 
-              <a href="tel:+94114782400">
-                ☎ 011 478 2400
+              <a href="tel:+94760303622">
+                ☎ +94 760303622
+              </a>
+
+               <a href="tel:+94776834515">
+                ☎ +94 776834515
               </a>
 
               <p>
@@ -762,7 +778,7 @@ export default function PropertyLifestylePage() {
               </p>
 
               <a
-                href="mailto:info@dearoventurecapital.com?subject=Property%20and%20Lifestyle%20Development%20Enquiry"
+                href="mailto:manoj@dearoventurecapital.com?subject=Property%20and%20Lifestyle%20Development%20Enquiry"
                 className={styles.primaryBtn}
               >
                 Send an Enquiry →

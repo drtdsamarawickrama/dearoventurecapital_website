@@ -26,6 +26,8 @@ export default function Footer() {
     "Education & Training",
     "DEARO IT SOLUTION",
     "Dearo Islamic Services",
+    "Dearo Travel & Hospitality",
+
   ];
 
   return (
