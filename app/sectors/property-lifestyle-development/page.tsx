@@ -30,6 +30,49 @@ const homeFeatures = [
   { icon: "🌳", title: "Landscaped Garden" },
 ];
 
+const villaOptions = [
+  {
+    number: "01",
+    category: "PREMIUM VILLA DESIGN",
+    title:
+      "Three-Bedroom Tourist Villa with Three Attached Bathrooms",
+    area: "150 m²",
+    image: "/images/villa-option1.jpeg",
+    pdf: "/pdfs/villa_option_1.pdf",
+    alt: "Three-bedroom tourist villa with three attached bathrooms",
+    description:
+      "A modern single-storey three-bedroom tourist villa on a 150 m² covered plan, with a private bathroom for every bedroom. Features an open living and dining hub, a fully equipped kitchen, a shaded timber veranda and dedicated parking. Designed for easy repeat roll-out across Sri Lanka's tourism locations.",
+    specifications: [
+      ["🛏️", "3 Bedrooms"],
+      ["🚿", "3 Attached Bathrooms"],
+      ["🛋️", "Living & Dining"],
+      ["🍽️", "Fully Equipped Kitchen"],
+      ["🌿", "Timber Veranda"],
+      ["🚗", "Dedicated Parking"],
+    ],
+  },
+  {
+    number: "02",
+    category: "COST-EFFICIENT VILLA DESIGN",
+    title:
+      "Three-Bedroom Tourist Villa with One Common Bathroom",
+    area: "142.5 m²",
+    image: "/images/villa-option2.jpeg",
+    pdf: "/pdfs/villa_option_2.pdf",
+    alt: "Three-bedroom tourist villa with one common bathroom",
+    description:
+      "A modern single-storey three-bedroom tourist villa on a 142.5 m² covered plan, with one shared bathroom opening from the living area. Features an open living and dining hub, a fully equipped kitchen, a shaded timber veranda and dedicated parking. A cost-efficient layout designed for easy repeat roll-out across Sri Lanka's tourism locations.",
+    specifications: [
+      ["🛏️", "3 Bedrooms"],
+      ["🚿", "1 Common Bathroom"],
+      ["🛋️", "Living & Dining"],
+      ["🍽️", "Fully Equipped Kitchen"],
+      ["🌿", "Timber Veranda"],
+      ["🚗", "Dedicated Parking"],
+    ],
+  },
+];
+
 const process = [
   {
     number: "01",
@@ -75,10 +118,6 @@ const destinations = [
         name: "BATTICALOA",
         places: "Pasikuda, Kalkudah",
       },
-      //   {
-      //     name: "AMPARA",
-      //     places: "Arugam Bay, Pottuvil, Whiskey Point",
-      //   },
     ],
   },
 ];
@@ -95,6 +134,31 @@ const futureLocations = [
   "Anuradhapura",
   "Puttalam",
   "Negombo",
+];
+
+const developmentApproach = [
+  ["01", "Project Planning"],
+  ["02", "Construction Management"],
+  ["03", "Marketing"],
+  ["04", "Tourism Operations"],
+  ["05", "Guest Services"],
+];
+
+const reasons = [
+  ["🏢", "Diversified Organisation", "A diversified Sri Lankan business-development organisation."],
+  ["🌱", "Responsible Development", "A focus on responsible and sustainable development."],
+  ["📋", "Professional Coordination", "Professional project planning and coordination."],
+  ["🤝", "Strategic Partnerships", "Building valuable development partnerships."],
+  ["👥", "Customer-Focused Service", "Understanding and responding to customer needs."],
+  ["🌍", "Collaboration Opportunities", "Opportunities for local and international collaboration."],
+];
+
+const partnerTypes = [
+  "Local & International Investors",
+  "Landowners & Property Partners",
+  "Tourism Entrepreneurs",
+  "Hospitality Operators",
+  "Joint-Venture Partners",
 ];
 
 export default function PropertyLifestylePage() {
@@ -164,7 +228,7 @@ export default function PropertyLifestylePage() {
             </p>
           </div>
 
-
+          {/* COMPANY VIDEO */}
           <div className={styles.videoWrapper}>
             <iframe
               src="https://www.youtube.com/embed/5eMTzPmE-m0?autoplay=0&mute=1&loop=1&playlist=5eMTzPmE-m0"
@@ -175,7 +239,7 @@ export default function PropertyLifestylePage() {
             />
           </div>
 
-
+          {/* DEVELOPMENT CONCEPTS */}
           <div className={styles.conceptGrid}>
             <a href="#tourism" className={styles.conceptCard}>
               <div className={styles.conceptNumber}>01</div>
@@ -204,6 +268,7 @@ export default function PropertyLifestylePage() {
 
       {/* TOURISM VILLAS */}
       <section className={styles.tourism} id="tourism">
+
         <div className={styles.tourismHero}>
           <div className={styles.tourismOverlay}></div>
 
@@ -226,11 +291,10 @@ export default function PropertyLifestylePage() {
         </div>
 
         <div className="container">
+
           <div className={styles.tourismDescription}>
             <div>
-              <span className={styles.sectionLabel}>
-                OUR VISION
-              </span>
+              <span className={styles.sectionLabel}>OUR VISION</span>
 
               <h3>
                 Bringing Tropical Living
@@ -253,7 +317,7 @@ export default function PropertyLifestylePage() {
             <h3>Designed for Comfort & Relaxation</h3>
           </div>
 
-          {/* CENTERED VILLA IMAGE - CLICK TO ENLARGE */}
+          {/* MAIN VILLA IMAGE */}
           <div
             className={styles.villaGallery}
             style={{
@@ -292,7 +356,7 @@ export default function PropertyLifestylePage() {
             </a>
           </div>
 
-          {/* FULL-SCREEN IMAGE PREVIEW - CSS ONLY */}
+          {/* VILLA IMAGE LIGHTBOX */}
           <div id="villa-image-preview" className="villa-image-lightbox">
             <a
               href="#tourism"
@@ -308,88 +372,14 @@ export default function PropertyLifestylePage() {
               ×
             </a>
 
-            <img
+            {/* <img
               src="/images/villa1.jpeg"
               alt="Modern luxury villa exterior enlarged"
               className="villa-image-lightbox-img"
-            />
+            /> */}
           </div>
 
-          <style>{`
-            .villa-image-lightbox {
-              display: none;
-              position: fixed;
-              inset: 0;
-              z-index: 99999;
-              align-items: center;
-              justify-content: center;
-              padding: 35px;
-            }
-
-            .villa-image-lightbox:target {
-              display: flex;
-            }
-
-            .villa-image-lightbox-backdrop {
-              position: absolute;
-              inset: 0;
-              background: rgba(0, 0, 0, 0.92);
-              cursor: zoom-out;
-            }
-
-            .villa-image-lightbox-img {
-              position: relative;
-              z-index: 1;
-              display: block;
-              max-width: 95vw;
-              max-height: 88vh;
-              width: auto;
-              height: auto;
-              object-fit: contain;
-              border-radius: 8px;
-              box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-            }
-
-            .villa-image-lightbox-close {
-              position: absolute;
-              top: 18px;
-              right: 28px;
-              z-index: 2;
-              color: #ffffff;
-              background: #ed1c24;
-              width: 44px;
-              height: 44px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 50%;
-              text-decoration: none;
-              font-size: 32px;
-              line-height: 1;
-              font-weight: 400;
-              cursor: pointer;
-            }
-
-            @media (max-width: 600px) {
-              .villa-image-lightbox {
-                padding: 15px;
-              }
-
-              .villa-image-lightbox-close {
-                top: 12px;
-                right: 12px;
-                width: 40px;
-                height: 40px;
-              }
-
-              .villa-image-lightbox-img {
-                max-width: 96vw;
-                max-height: 82vh;
-              }
-            }
-          `}</style>
-
-          {/* VILLA FEATURE CARDS */}
+          {/* EXISTING VILLA FEATURES */}
           <div className={styles.featureGrid}>
             {villaFeatures.map((feature) => (
               <div className={styles.featureCard} key={feature.title}>
@@ -399,12 +389,98 @@ export default function PropertyLifestylePage() {
               </div>
             ))}
           </div>
+
+          {/* =====================================
+              NEW SECTION: TWO VILLA OPTIONS
+          ===================================== */}
+
+          <section className={styles.villaTypesSection}>
+
+            <div className={styles.featureHeading}>
+              <span className={styles.sectionLabel}>
+                OUR VILLA DESIGNS
+              </span>
+
+              <h3>Explore Our Tourist Villa Options</h3>
+
+              <p>
+                Discover our two proposed three-bedroom tourist villa
+                designs, thoughtfully planned to provide comfortable
+                accommodation and efficient development opportunities
+                across Sri Lanka.
+              </p>
+            </div>
+
+            <div className={styles.villaTypesGrid}>
+
+              {villaOptions.map((villa) => (
+                <article
+                  className={styles.villaTypeCard}
+                  key={villa.number}
+                >
+
+                  <div className={styles.villaTypeImage}>
+                    <img
+                      src={villa.image}
+                      alt={villa.alt}
+                    />
+
+                    <span className={styles.villaOptionBadge}>
+                      OPTION {villa.number}
+                    </span>
+                  </div>
+
+                  <div className={styles.villaTypeContent}>
+
+                    <span className={styles.villaTypeNumber}>
+                      {villa.category}
+                    </span>
+
+                    <h3>{villa.title}</h3>
+
+                    <div className={styles.villaArea}>
+                      <span>📐</span>
+                      <strong>{villa.area}</strong>
+                      <span>Modern Villa Design</span>
+                    </div>
+
+                    <p className={styles.villaDescription}>
+                      {villa.description}
+                    </p>
+
+                    <div className={styles.villaSpecifications}>
+                      {villa.specifications.map(([icon, title]) => (
+                        <div key={title}>
+                          <span>{icon}</span>
+                          <strong>{title}</strong>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href={villa.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.villaViewMore}
+                    >
+                      View Villa Design PDF
+                      <span>→</span>
+                    </a>
+
+                  </div>
+                </article>
+              ))}
+
+            </div>
+          </section>
+
         </div>
       </section>
 
       {/* TARGET DESTINATIONS AND MAP */}
       <section className={styles.destinations} id="destinations">
         <div className="container">
+
           <div className={styles.sectionHeading}>
             <span className={styles.sectionLabel}>
               OUR TARGET DESTINATIONS
@@ -422,7 +498,6 @@ export default function PropertyLifestylePage() {
             </p>
           </div>
 
-          {/* NORTH & EAST - ONE FULL-WIDTH BOX */}
           <div className={styles.destinationGrid}>
             {destinations.map((item) => (
               <div
@@ -507,12 +582,14 @@ export default function PropertyLifestylePage() {
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
       {/* DEVELOPMENT APPROACH */}
       <section className={styles.approach}>
         <div className="container">
+
           <div className={styles.sectionHeading}>
             <span className={styles.sectionLabelLight}>
               WORK WITH DEARO
@@ -530,24 +607,20 @@ export default function PropertyLifestylePage() {
           </div>
 
           <div className={styles.approachGrid}>
-            {[
-              ["01", "Project Planning"],
-              ["02", "Construction Management"],
-              ["03", "Marketing"],
-              ["04", "Tourism Operations"],
-              ["05", "Guest Services"],
-            ].map(([number, title]) => (
+            {developmentApproach.map(([number, title]) => (
               <div className={styles.approachCard} key={number}>
                 <span>{number}</span>
                 <h3>{title}</h3>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* DREAM HOME */}
       <section className={styles.dreamHome} id="dream-home">
+
         <div className={styles.homeHero}>
           <div className={styles.homeOverlay}></div>
 
@@ -570,6 +643,7 @@ export default function PropertyLifestylePage() {
         </div>
 
         <div className="container">
+
           <div className={styles.homeIntro}>
             <div>
               <span className={styles.sectionLabel}>
@@ -590,6 +664,7 @@ export default function PropertyLifestylePage() {
             </p>
           </div>
 
+          {/* HOME FEATURES */}
           <div className={styles.homeFeatures}>
             {homeFeatures.map((feature) => (
               <div className={styles.homeFeature} key={feature.title}>
@@ -601,6 +676,7 @@ export default function PropertyLifestylePage() {
 
           {/* FINANCING */}
           <div className={styles.financeSection}>
+
             <div className={styles.financeContent}>
               <span className={styles.sectionLabelLight}>
                 INDICATIVE FINANCING CONCEPT
@@ -615,6 +691,7 @@ export default function PropertyLifestylePage() {
             </div>
 
             <div className={styles.financeCards}>
+
               <div className={styles.financeCard}>
                 <span>Dearo Financing Contribution</span>
                 <strong>60%</strong>
@@ -632,6 +709,7 @@ export default function PropertyLifestylePage() {
                   <span style={{ width: "40%" }}></span>
                 </div>
               </div>
+
             </div>
 
             <p className={styles.financeNote}>
@@ -643,10 +721,12 @@ export default function PropertyLifestylePage() {
               depend on the customer's assessment and the
               final agreement.
             </p>
+
           </div>
 
           {/* HOME BUILDING PROCESS */}
           <div className={styles.processSection}>
+
             <div className={styles.sectionHeading}>
               <span className={styles.sectionLabel}>
                 HOW IT WORKS
@@ -669,15 +749,20 @@ export default function PropertyLifestylePage() {
                 </div>
               ))}
             </div>
+
           </div>
+
         </div>
       </section>
 
       {/* WHY DEARO */}
       <section className={styles.whyDearo}>
         <div className="container">
+
           <div className={styles.sectionHeading}>
-            <span className={styles.sectionLabel}>WHY CHOOSE DEARO?</span>
+            <span className={styles.sectionLabel}>
+              WHY CHOOSE DEARO?
+            </span>
 
             <h2>
               Building Opportunities Through
@@ -686,14 +771,7 @@ export default function PropertyLifestylePage() {
           </div>
 
           <div className={styles.whyGrid}>
-            {[
-              ["🏢", "Diversified Organisation", "A diversified Sri Lankan business-development organisation."],
-              ["🌱", "Responsible Development", "A focus on responsible and sustainable development."],
-              ["📋", "Professional Coordination", "Professional project planning and coordination."],
-              ["🤝", "Strategic Partnerships", "Building valuable development partnerships."],
-              ["👥", "Customer-Focused Service", "Understanding and responding to customer needs."],
-              ["🌍", "Collaboration Opportunities", "Opportunities for local and international collaboration."],
-            ].map(([icon, title, desc]) => (
+            {reasons.map(([icon, title, desc]) => (
               <div className={styles.whyCard} key={title}>
                 <span>{icon}</span>
                 <h3>{title}</h3>
@@ -701,12 +779,14 @@ export default function PropertyLifestylePage() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* PARTNERSHIPS */}
       <section className={styles.partnership}>
         <div className="container">
+
           <div className={styles.partnershipContent}>
             <span className={styles.sectionLabelLight}>
               PARTNERSHIP OPPORTUNITIES
@@ -722,13 +802,7 @@ export default function PropertyLifestylePage() {
             </p>
 
             <div className={styles.partnerTypes}>
-              {[
-                "Local & International Investors",
-                "Landowners & Property Partners",
-                "Tourism Entrepreneurs",
-                "Hospitality Operators",
-                "Joint-Venture Partners",
-              ].map((partner) => (
+              {partnerTypes.map((partner) => (
                 <span key={partner}>✓ {partner}</span>
               ))}
             </div>
@@ -737,13 +811,16 @@ export default function PropertyLifestylePage() {
               Discuss a Partnership <span>→</span>
             </Link>
           </div>
+
         </div>
       </section>
 
       {/* CONTACT */}
       <section className={styles.contact} id="contact">
         <div className="container">
+
           <div className={styles.contactBox}>
+
             <div>
               <span className={styles.sectionLabelLight}>
                 GET IN TOUCH
@@ -759,6 +836,7 @@ export default function PropertyLifestylePage() {
             </div>
 
             <div className={styles.contactDetails}>
+
               <a href="mailto:manoj@dearoventurecapital.com">
                 ✉ manoj@dearoventurecapital.com
               </a>
@@ -767,7 +845,7 @@ export default function PropertyLifestylePage() {
                 ☎ +94 760303622
               </a>
 
-               <a href="tel:+94776834515">
+              <a href="tel:+94776834515">
                 ☎ +94 776834515
               </a>
 
@@ -783,7 +861,9 @@ export default function PropertyLifestylePage() {
               >
                 Send an Enquiry →
               </a>
+
             </div>
+
           </div>
         </div>
       </section>
@@ -791,12 +871,14 @@ export default function PropertyLifestylePage() {
       {/* FOOTER TAGLINE */}
       <section className={styles.footerTagline}>
         <div className="container">
+
           <h3>DEARO VENTURE CAPITAL LTD</h3>
 
           <p>
             Building Opportunities. Creating Partnerships.
             Developing Sri Lanka.
           </p>
+
         </div>
       </section>
 
