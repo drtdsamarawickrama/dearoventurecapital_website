@@ -457,7 +457,7 @@ export default function PropertyLifestylePage() {
                       ))}
                     </div>
 
-                    <a
+                    {/* <a
                       href={villa.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -465,7 +465,7 @@ export default function PropertyLifestylePage() {
                     >
                       View Villa Design PDF
                       <span>→</span>
-                    </a>
+                    </a> */}
 
                   </div>
                 </article>
