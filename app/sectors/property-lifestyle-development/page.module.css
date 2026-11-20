@@ -254,6 +254,40 @@
 }
 
 /* =========================================
+   COMPANY VIDEO
+========================================= */
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 50px auto 65px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #071a3a;
+  border-bottom: 5px solid #16834b;
+  box-shadow: 0 15px 40px rgba(7, 26, 58, 0.15);
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.videoWrapper:hover {
+  border-bottom-color: #ed1c24;
+  box-shadow: 0 20px 45px rgba(7, 26, 58, 0.22);
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
    TOURISM VILLAS
 ========================================= */
 
@@ -371,7 +405,7 @@
 }
 
 /* =========================================
-   VILLA IMAGE GALLERY
+   MAIN VILLA IMAGE GALLERY
 ========================================= */
 
 .villaGallery {
@@ -405,6 +439,54 @@
 
 .villaImage:hover img {
   transform: scale(1.06);
+}
+
+/* =========================================
+   VILLA IMAGE LIGHTBOX
+========================================= */
+
+.villa-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(3, 12, 29, 0.94);
+}
+
+.villa-image-lightbox:target {
+  display: flex;
+}
+
+.villa-image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  cursor: zoom-out;
+}
+
+.villa-image-lightbox-img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.villa-image-lightbox-close {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* =========================================
@@ -448,6 +530,211 @@
   font-size: 13px;
   line-height: 1.7;
   margin: 0;
+}
+
+/* =========================================
+   TWO TOURIST VILLA DESIGN OPTIONS
+========================================= */
+
+.villaTypesSection {
+  width: 100%;
+  padding: 75px 0 30px;
+}
+
+.villaTypesSection .featureHeading {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  padding: 0 15px;
+}
+
+.villaTypesSection .featureHeading p {
+  max-width: 750px;
+  margin: 18px auto 0;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.villaTypesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.villaTypeCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid #e4eaf0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(7, 26, 58, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.villaTypeCard:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(7, 26, 58, 0.13);
+}
+
+.villaTypeImage {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #e9edf1;
+}
+
+.villaTypeImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.villaTypeCard:hover .villaTypeImage img {
+  transform: scale(1.06);
+}
+
+.villaOptionBadge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-block;
+  padding: 10px 17px;
+  color: var(--white);
+  background: var(--green);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.villaTypeContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.villaTypeNumber {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.villaTypeContent h3 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.villaArea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  background: #f2f7f4;
+  border-left: 4px solid var(--green);
+  border-radius: 4px;
+}
+
+.villaArea > span:first-child {
+  font-size: 20px;
+}
+
+.villaArea strong {
+  color: var(--navy);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.villaArea > span:last-child {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.villaDescription {
+  margin: 0 0 22px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.villaSpecifications {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.villaSpecifications > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 12px 10px;
+  background: #f6f8fa;
+  border: 1px solid #e9edf1;
+  border-radius: 5px;
+}
+
+.villaSpecifications > div > span {
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.villaSpecifications strong {
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.villaViewMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding: 15px 20px;
+  color: var(--white);
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.villaViewMore span {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.villaViewMore:hover {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.villaViewMore:hover span {
+  transform: translateX(5px);
 }
 
 /* =========================================
@@ -679,8 +966,9 @@
   );
 }
 
-
-
+/* =========================================
+   HOME FEATURES
+========================================= */
 
 .homeFeatures {
   display: grid;
@@ -1028,6 +1316,27 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .villaTypesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .villaTypeImage {
+    height: 230px;
+  }
+
+  .villaTypeContent {
+    padding: 23px;
+  }
+
+  .villaTypeContent h3 {
+    font-size: 20px;
+  }
+
+  .villaSpecifications {
+    gap: 9px;
+  }
+
   .approachGrid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1043,6 +1352,11 @@
   .tourismDescription,
   .homeIntro {
     gap: 30px;
+  }
+
+  .videoWrapper {
+    max-width: 100%;
+    margin: 40px auto 50px;
   }
 }
 
@@ -1097,6 +1411,31 @@
     height: 230px;
   }
 
+  .villaTypesSection {
+    padding: 50px 0 20px;
+  }
+
+  .villaTypesGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .villaTypeImage {
+    height: 260px;
+  }
+
+  .villaTypeContent {
+    padding: 25px;
+  }
+
+  .villaTypeContent h3 {
+    font-size: 21px;
+  }
+
+  .villaDescription {
+    font-size: 13px;
+  }
+
   .destinationGrid {
     grid-template-columns: 1fr;
     margin-bottom: 50px;
@@ -1144,6 +1483,12 @@
     font-size: 9px;
     padding: 13px 15px;
   }
+
+  .videoWrapper {
+    width: 100%;
+    margin: 30px auto 40px;
+    border-radius: 8px;
+  }
 }
 
 /* =========================================
@@ -1167,6 +1512,45 @@
 
   .villaImage {
     height: 240px;
+  }
+
+  .villaTypesSection {
+    padding-top: 35px;
+  }
+
+  .villaTypeImage {
+    height: 220px;
+  }
+
+  .villaTypeContent {
+    padding: 20px;
+  }
+
+  .villaTypeContent h3 {
+    font-size: 19px;
+  }
+
+  .villaSpecifications {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .villaSpecifications > div {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .villaSpecifications strong {
+    font-size: 11px;
+  }
+
+  .villaArea {
+    gap: 7px;
+    padding: 11px;
+  }
+
+  .villaViewMore {
+    padding: 14px 15px;
   }
 
   .approachGrid {
@@ -1193,62 +1577,7 @@
   .contactBox {
     padding: 25px 18px;
   }
-}
 
-/* =========================================
-   DEARO INTRODUCTION VIDEO
-   FULLY RESPONSIVE YOUTUBE VIDEO
-========================================= */
-
-.videoWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 16 / 9;
-  margin: 50px auto 65px;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #071a3a;
-  border-bottom: 5px solid #16834b;
-  box-shadow: 0 15px 40px rgba(7, 26, 58, 0.15);
-  transition: box-shadow 0.3s ease;
-  box-sizing: border-box;
-}
-
-.videoWrapper:hover {
-  border-bottom-color: #ed1c24;
-  box-shadow: 0 20px 45px rgba(7, 26, 58, 0.22);
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Tablet */
-@media (max-width: 991px) {
-  .videoWrapper {
-    max-width: 100%;
-    margin: 40px auto 50px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .videoWrapper {
-    width: 100%;
-    margin: 30px auto 40px;
-    border-radius: 8px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
   .videoWrapper {
     width: 100%;
     margin: 25px auto 35px;
