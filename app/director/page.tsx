@@ -9,24 +9,24 @@ import { useEffect, useState } from "react";
 ========================================================= */
 
 const directors = [
-  {
-    name: "Mr. K.M.M.Jabir",
-    role: ["Chairman", "Independent / Non - Executive Director"],
-    image: "/images/directors/jabeer_new.jpg",
-    description:
-      "Mr. K. M. M. Jabir is a distinguished financial services professional with an accomplished career spanning banking, finance, operations management, and corporate leadership. With decades of experience in Sri Lanka's financial sector, he has earned a reputation for strategic vision, operational excellence, and strong governance practices. He holds a Bachelor of Commerce degree and is a Fellow Member of the Institute of Bankers of Sri Lanka (IBSL). He is also a Finalist of the Chartered Institute of Management Accountants (CIMA), UK, and a Member of the Sri Lanka Institute of Marketing (SLIM), reflecting his multidisciplinary expertise in finance, management, and business strategy. Throughout his career, Mr. Jabir has held several senior leadership positions in leading financial institutions. He currently serves as an Independent Non-Executive Director of SMIB, contributing his extensive industry knowledge and governance expertise. Previously, he served as Executive Director and Chief Executive Officer of Janashakthi Finance PLC and Richard Pieris Finance Ltd, where he played a pivotal role in driving organizational growth, operational transformation, and sustainable business performance. He also held the position of Deputy General Manager – Operations at People’s Leasing PLC, overseeing key operational functions and contributing to the institution's success. As Chairman, Mr. Jabir provides strategic guidance and leadership, fostering a culture of integrity, innovation, and sustainable growth while strengthening stakeholder confidence and corporate governance standards.",
-    qualifications: [
-      "Bachelor of Commerce Fellow Member - IBSL",
-      "Finalist - Chartered Institute of Management Accountants (CIMA) - UK",
-      "Member of SLIM",
-    ],
-    experience: [
-      "Independent Non-Executive Director - SMIB (currently)",
-      "Former Executive Director/ CEO- Janashakthi Finance PLC",
-      "Former Executive Director/ CEO- Richard Pieris Finance Ltd",
-      "DGM - Operations - People Leasing PLC",
-    ],
-  },
+  // {
+  //   name: "Mr. K.M.M.Jabir",
+  //   role: ["Chairman", "Independent / Non - Executive Director"],
+  //   image: "/images/directors/jabeer_new.jpg",
+  //   description:
+  //     "Mr. K. M. M. Jabir is a distinguished financial services professional with an accomplished career spanning banking, finance, operations management, and corporate leadership. With decades of experience in Sri Lanka's financial sector, he has earned a reputation for strategic vision, operational excellence, and strong governance practices. He holds a Bachelor of Commerce degree and is a Fellow Member of the Institute of Bankers of Sri Lanka (IBSL). He is also a Finalist of the Chartered Institute of Management Accountants (CIMA), UK, and a Member of the Sri Lanka Institute of Marketing (SLIM), reflecting his multidisciplinary expertise in finance, management, and business strategy. Throughout his career, Mr. Jabir has held several senior leadership positions in leading financial institutions. He currently serves as an Independent Non-Executive Director of SMIB, contributing his extensive industry knowledge and governance expertise. Previously, he served as Executive Director and Chief Executive Officer of Janashakthi Finance PLC and Richard Pieris Finance Ltd, where he played a pivotal role in driving organizational growth, operational transformation, and sustainable business performance. He also held the position of Deputy General Manager – Operations at People’s Leasing PLC, overseeing key operational functions and contributing to the institution's success. As Chairman, Mr. Jabir provides strategic guidance and leadership, fostering a culture of integrity, innovation, and sustainable growth while strengthening stakeholder confidence and corporate governance standards.",
+  //   qualifications: [
+  //     "Bachelor of Commerce Fellow Member - IBSL",
+  //     "Finalist - Chartered Institute of Management Accountants (CIMA) - UK",
+  //     "Member of SLIM",
+  //   ],
+  //   experience: [
+  //     "Independent Non-Executive Director - SMIB (currently)",
+  //     "Former Executive Director/ CEO- Janashakthi Finance PLC",
+  //     "Former Executive Director/ CEO- Richard Pieris Finance Ltd",
+  //     "DGM - Operations - People Leasing PLC",
+  //   ],
+  // },
 
   {
     name: "Mr. Prasanna Sanjeewa",
@@ -43,116 +43,116 @@ const directors = [
     experience: ["MD , CEO - Dearo Venture Capital Ltd"],
   },
 
-  {
-    name: "Mr. Andreas Wiik",
-    role: ["Independent / Non Executive Director"],
-    image: "/images/directors/AW pp.jpg",
-    description:
-      "Mr. Andreas Wiik is an experienced international business leader with extensive expertise in investor relations, business strategy, corporate management, finance and accounting, and agriculture project management. He holds a Master’s degree in Business & Economics from BI Norwegian School of Management, specializing in International Management and Corporate Social Responsibility (CSR). With over 18 years of international experience across Norway, the United Kingdom, China, and Sri Lanka, he has worked across diverse industries, including finance, agriculture, fashion, sports, apparel and textiles, telecommunications, fibre technology, and food retail. His professional background also encompasses start-up development, fundraising, management consulting, and sports team management and coaching. Drawing on his broad international experience, strategic insight, and business leadership, he brings valuable expertise and guidance to his role as Independent / Non-Executive Director at Dearo Venture Capital Limited.",
-    qualifications: [
-      // "Attorney at Law",
-      // "Professional Diploma in Anti-Money Laundering",
-      // "MBA",
-      // "Post Graduate Diploma in Economic Development-Uni. of Colombo",
-    ],
-    experience: [
-      // "Independent Legal Practitioner",
-      // "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
-      // "DGM-Compliance & Company Secretary - Sri Lanka Insurance Corporation",
-      // "Group company Secretary - Janashakthi Group",
-    ],
-  },
+  // {
+  //   name: "Mr. Andreas Wiik",
+  //   role: ["Independent / Non Executive Director"],
+  //   image: "/images/directors/AW pp.jpg",
+  //   description:
+  //     "Mr. Andreas Wiik is an experienced international business leader with extensive expertise in investor relations, business strategy, corporate management, finance and accounting, and agriculture project management. He holds a Master’s degree in Business & Economics from BI Norwegian School of Management, specializing in International Management and Corporate Social Responsibility (CSR). With over 18 years of international experience across Norway, the United Kingdom, China, and Sri Lanka, he has worked across diverse industries, including finance, agriculture, fashion, sports, apparel and textiles, telecommunications, fibre technology, and food retail. His professional background also encompasses start-up development, fundraising, management consulting, and sports team management and coaching. Drawing on his broad international experience, strategic insight, and business leadership, he brings valuable expertise and guidance to his role as Independent / Non-Executive Director at Dearo Venture Capital Limited.",
+  //   qualifications: [
+  //     // "Attorney at Law",
+  //     // "Professional Diploma in Anti-Money Laundering",
+  //     // "MBA",
+  //     // "Post Graduate Diploma in Economic Development-Uni. of Colombo",
+  //   ],
+  //   experience: [
+  //     // "Independent Legal Practitioner",
+  //     // "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
+  //     // "DGM-Compliance & Company Secretary - Sri Lanka Insurance Corporation",
+  //     // "Group company Secretary - Janashakthi Group",
+  //   ],
+  // },
 
-  {
-    name: "Dr. Neil Bogahalanda",
-    role: ["Independent / Non Executive Director"],
-    image: "/images/directors/neil bogahalanda.jpg",
-    description:
-      "Dr. Neil Bogahalanda is an accomplished Human Resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education. He holds a PhD from MSU, Malaysia, and an MBA, and is a member of the Institute of Certified Management Accountants (ICMA), the Chartered Institute of Personnel Management (CIPM), and the Sri Lanka Institute of Directors (SLID). He is also the recipient of the Lifetime Gold Award presented by the CIPM in recognition of his professional contribution and achievements. Throughout his distinguished career, he has held several senior leadership positions, including President of CIPM, Head of Group HR at Royal Ceramics Lanka PLC, General Manager – HR at Brownes Group, and Assistant General Manager – HR at Sampath Bank. His extensive expertise in human resources, corporate management, and organizational development brings valuable strategic insight and leadership to his role as an Independent / Non-Executive Director.",
+  // {
+  //   name: "Dr. Neil Bogahalanda",
+  //   role: ["Independent / Non Executive Director"],
+  //   image: "/images/directors/neil bogahalanda.jpg",
+  //   description:
+  //     "Dr. Neil Bogahalanda is an accomplished Human Resources and corporate management professional with extensive experience in strategic HR leadership, organizational development, and professional education. He holds a PhD from MSU, Malaysia, and an MBA, and is a member of the Institute of Certified Management Accountants (ICMA), the Chartered Institute of Personnel Management (CIPM), and the Sri Lanka Institute of Directors (SLID). He is also the recipient of the Lifetime Gold Award presented by the CIPM in recognition of his professional contribution and achievements. Throughout his distinguished career, he has held several senior leadership positions, including President of CIPM, Head of Group HR at Royal Ceramics Lanka PLC, General Manager – HR at Brownes Group, and Assistant General Manager – HR at Sampath Bank. His extensive expertise in human resources, corporate management, and organizational development brings valuable strategic insight and leadership to his role as an Independent / Non-Executive Director.",
 
-    qualifications: [
-      "PHD - MSU, Malaysia",
-      "MBA",
-      "Member - ICMA",
-      "Member - CIPM",
-      "Member - SLID",
-      "Winner of the Lifetime Gold Award offered by the CIPM",
-    ],
-    experience: [
-      "President - CIPM",
-      "Head of Group HR - Royal Ceramics Lanka PLC",
-      "GM - HR, Browens Group",
-      "AGM - HR, Sampath Bank",
-    ],
-  },
+  //   qualifications: [
+  //     "PHD - MSU, Malaysia",
+  //     "MBA",
+  //     "Member - ICMA",
+  //     "Member - CIPM",
+  //     "Member - SLID",
+  //     "Winner of the Lifetime Gold Award offered by the CIPM",
+  //   ],
+  //   experience: [
+  //     "President - CIPM",
+  //     "Head of Group HR - Royal Ceramics Lanka PLC",
+  //     "GM - HR, Browens Group",
+  //     "AGM - HR, Sampath Bank",
+  //   ],
+  // },
 
  
 
-  {
-    name: "Mr. Lalith J. Fernando",
-    role: ["Independent / Non-Executive Director"],
-    image: "/images/directors/lalith_new.jpg",
-    description:
-      "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services. He holds a BSc in Statistics from the University of Peradeniya and an MSc in Management from the University of Sri Jayewardenepura, and is a Fellow of the Institute of Bankers of Sri Lanka (IBSL) and a Financial Risk Manager (FRM) certified by the Global Association of Risk Professionals (GARP), USA. He was the first Sri Lankan to obtain the FRM designation in 2012. Throughout his career, he has served in several senior and advisory roles, including Consultant in Risk Management, Consultant and Resource Person at IBSL, Chief Risk Officer / Deputy General Manager at PABC Bank, and Chief Risk Officer / Deputy General Manager at Bank of Ceylon (BOC). His extensive expertise in financial risk management, banking, and compliance brings valuable professional insight and experience to his role as an Independent / Non-Executive Director.",
+  // {
+  //   name: "Mr. Lalith J. Fernando",
+  //   role: ["Independent / Non-Executive Director"],
+  //   image: "/images/directors/lalith_new.jpg",
+  //   description:
+  //     "Mr. Lalith J. Fernando is a financial risk management professional with extensive experience in banking, risk management, compliance, and financial services. He holds a BSc in Statistics from the University of Peradeniya and an MSc in Management from the University of Sri Jayewardenepura, and is a Fellow of the Institute of Bankers of Sri Lanka (IBSL) and a Financial Risk Manager (FRM) certified by the Global Association of Risk Professionals (GARP), USA. He was the first Sri Lankan to obtain the FRM designation in 2012. Throughout his career, he has served in several senior and advisory roles, including Consultant in Risk Management, Consultant and Resource Person at IBSL, Chief Risk Officer / Deputy General Manager at PABC Bank, and Chief Risk Officer / Deputy General Manager at Bank of Ceylon (BOC). His extensive expertise in financial risk management, banking, and compliance brings valuable professional insight and experience to his role as an Independent / Non-Executive Director.",
 
-    qualifications: [
-      "BSc in Statistic - Uni. Of Peradeniya",
-      "MSc in Management - Uni. Of J'pura",
-      "Fellow - IBSL",
-      "Financial Risk Manager (FRM) - GARP, USA",
-      "First Sri Lankan to obtain the FRM Designation in 2012",
-    ],
-    experience: [
-      "Consultant - Risk Management",
-      "Consultant/Resource Person - IBSL",
-      "Chief Risk Officer/DGM-PABC Bank",
-      "Chief Risk Officer/DGM-BOC",
-    ],
-  },
+  //   qualifications: [
+  //     "BSc in Statistic - Uni. Of Peradeniya",
+  //     "MSc in Management - Uni. Of J'pura",
+  //     "Fellow - IBSL",
+  //     "Financial Risk Manager (FRM) - GARP, USA",
+  //     "First Sri Lankan to obtain the FRM Designation in 2012",
+  //   ],
+  //   experience: [
+  //     "Consultant - Risk Management",
+  //     "Consultant/Resource Person - IBSL",
+  //     "Chief Risk Officer/DGM-PABC Bank",
+  //     "Chief Risk Officer/DGM-BOC",
+  //   ],
+  // },
 
-   {
-    name: "Mr. Muditha Welihinda",
-    role: ["Independent / Non Executive Director"],
-    image: "/images/directors/muditha_new.jpg",
-    description:
-      "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Peiris Group, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
-    qualifications: [
-      "MBA",
-      "Certified Information Systems Auditor - USA",
-      "Member of the British Computer Society",
-      "Member of the Australian Computer Society",
-      "Member of the Institute of Data Processing Management, UK",
-    ],
-    experience: [
-      "Former Director - Highbrow College & Institute",
-      "Director/ Head of IT - Richard Peiris Group",
-      "Manager - IT, Radwa Food Productions Ltd",
-      "IT Manager - Food & Fine pastries Ltd",
-    ],
-  },
+  //  {
+  //   name: "Mr. Muditha Welihinda",
+  //   role: ["Independent / Non Executive Director"],
+  //   image: "/images/directors/muditha_new.jpg",
+  //   description:
+  //     "Mr. Muditha Welihinda is an experienced Information Technology professional with extensive expertise in IT management, information systems auditing, and technology leadership. He holds an MBA and is a Certified Information Systems Auditor (CISA), USA, and is a member of the British Computer Society, Australian Computer Society, and the Institute of Data Processing Management, UK. Throughout his career, he has held several senior positions across the education, finance, and food production sectors, including Former Director of Highbrow College & Institute, Director / Head of IT at Richard Peiris Group, Manager – IT at Radwa Food Productions Ltd, and IT Manager at Food & Fine Pastries Ltd. His diverse professional experience and strong background in technology and information systems enable him to bring valuable expertise, strategic insight, and leadership to his role.",
+  //   qualifications: [
+  //     "MBA",
+  //     "Certified Information Systems Auditor - USA",
+  //     "Member of the British Computer Society",
+  //     "Member of the Australian Computer Society",
+  //     "Member of the Institute of Data Processing Management, UK",
+  //   ],
+  //   experience: [
+  //     "Former Director - Highbrow College & Institute",
+  //     "Director/ Head of IT - Richard Peiris Group",
+  //     "Manager - IT, Radwa Food Productions Ltd",
+  //     "IT Manager - Food & Fine pastries Ltd",
+  //   ],
+  // },
 
   
 
-  {
-    name: "Ms. Shaheena Mohamed",
-    role: ["Independent / Non Executive Director"],
-    image: "/images/directors/saheena_new.jpg",
-    description:
-      "Ms. Shaheena Mohamed is an accomplished legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions. She is an Attorney-at-Law and holds a Professional Diploma in Anti-Money Laundering, an MBA, and a Postgraduate Diploma in Economic Development from the University of Colombo. Throughout her career, she has gained diverse experience in legal, compliance, and corporate governance roles, including serving as an Independent Legal Practitioner, Visiting Lecturer at the Institute of Chartered Corporate Secretaries of Sri Lanka, Deputy General Manager – Compliance & Company Secretary at Sri Lanka Insurance Corporation, and Group Company Secretary at Janashakthi Group. Her extensive knowledge and experience in legal affairs, regulatory compliance, and corporate governance bring valuable professional expertise and strategic insight to her role as an Independent / Non-Executive Director.",
+  // {
+  //   name: "Ms. Shaheena Mohamed",
+  //   role: ["Independent / Non Executive Director"],
+  //   image: "/images/directors/saheena_new.jpg",
+  //   description:
+  //     "Ms. Shaheena Mohamed is an accomplished legal and compliance professional with extensive experience in corporate governance, legal practice, regulatory compliance, and company secretarial functions. She is an Attorney-at-Law and holds a Professional Diploma in Anti-Money Laundering, an MBA, and a Postgraduate Diploma in Economic Development from the University of Colombo. Throughout her career, she has gained diverse experience in legal, compliance, and corporate governance roles, including serving as an Independent Legal Practitioner, Visiting Lecturer at the Institute of Chartered Corporate Secretaries of Sri Lanka, Deputy General Manager – Compliance & Company Secretary at Sri Lanka Insurance Corporation, and Group Company Secretary at Janashakthi Group. Her extensive knowledge and experience in legal affairs, regulatory compliance, and corporate governance bring valuable professional expertise and strategic insight to her role as an Independent / Non-Executive Director.",
 
-    qualifications: [
-      "Attorney at Law",
-      "Professional Diploma in Anti-Money Laundering",
-      "MBA",
-      "Post Graduate Diploma in Economic Development-Uni. of Colombo",
-    ],
-    experience: [
-      "Independent Legal Practitioner",
-      "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
-      "DGM-Compliance & Company Secretary - Sri Lanka Insurance Corporation",
-      "Group company Secretary - Janashakthi Group",
-    ],
-  },
+  //   qualifications: [
+  //     "Attorney at Law",
+  //     "Professional Diploma in Anti-Money Laundering",
+  //     "MBA",
+  //     "Post Graduate Diploma in Economic Development-Uni. of Colombo",
+  //   ],
+  //   experience: [
+  //     "Independent Legal Practitioner",
+  //     "Visiting Lecturer-Institute of Charted Corporate Secretaries of Sri Lanka",
+  //     "DGM-Compliance & Company Secretary - Sri Lanka Insurance Corporation",
+  //     "Group company Secretary - Janashakthi Group",
+  //   ],
+  // },
 
   
 ];
@@ -170,13 +170,13 @@ const corporateManagement = [
 "Mr. Roshan Jansen serves as the Deputy Chief Executive Officer of Dearo Venture Capital Limited, bringing extensive experience in financial services, business operations, sales, and strategic management. Prior to joining Dearo Venture Capital, he served as Chief Operating Officer at LCB Finance PLC, General Manager – Sales and Fixed Deposits at Richard Pieris Finance Limited, and Assistant General Manager - Investments at Softlogic Life Insurance PLC. With his strong leadership and industry expertise, Mr. Jansen plays a key role in supporting the company’s strategic direction, strengthening business operations, driving sustainable growth, and advancing Dearo Venture Capital Limited’s long-term business objectives.",
   },
 
-  {
-    name: "Mr. Hemal Manuweera",
-    role: "Head of Human Resources",
-    image: "/images/directors/ChatGPT Image Sep 15, 2026, 02_51_54 PM.png",
-    description:
-      "As Head of HR at Dearo Venture Capital, he brings over 20 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth.",
-  },
+  // {
+  //   name: "Mr. Hemal Manuweera",
+  //   role: "Head of Human Resources",
+  //   image: "/images/directors/ChatGPT Image Sep 15, 2026, 02_51_54 PM.png",
+  //   description:
+  //     "As Head of HR at Dearo Venture Capital, he brings over 20 years of experience in human resource management, talent development, employee engagement, and organizational transformation. His expertise includes HR strategy, performance management, recruitment, HR technology, and regulatory compliance, supporting a productive, people-focused workplace and sustainable organizational growth.",
+  // },
 
   {
     name: "Mr. Minol Hewage",
